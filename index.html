@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منذر الحجار | Munther AlHajjar</title>
+    <meta name="description" content="Senior Project Management & Business Development - منذر الحجار">
+    <link rel="icon" type="image/png" href="images/favicon-32x32.png">
+
+    <!-- Preload الأوزان الأكثر استخدامًا من الخط لتسريع أول عرض -->
+    <link rel="preload" href="fonts/ThmanyahSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ThmanyahSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Open Graph (معاينة الروابط على LinkedIn / واتساب / فيسبوك) -->
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="منذر الحجار | Munther AlHajjar (مدير مشاريع ومطوّر أعمال)">
+    <meta property="og:description" content="مدير مشاريع ومتخصص تطوير أعمال بخبرة 9+ سنوات، إدارة أكثر من 100 مشروع وإغلاق 17+ عقدًا استراتيجيًا.">
+    <meta property="og:image" content="https://muhajjar.com/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://muhajjar.com/">
+    <meta property="og:locale" content="ar_SA">
+    <meta property="og:site_name" content="Munther AlHajjar">
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="منذر الحجار | Munther AlHajjar">
+    <meta name="twitter:description" content="مدير مشاريع ومتخصص تطوير أعمال بخبرة 9+ سنوات.">
+    <meta name="twitter:image" content="https://muhajjar.com/og-image.jpg">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://muhajjar.com/">
+
+    <!-- Structured Data: Person (schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Munther AlHajjar",
+      "alternateName": "منذر الحجار",
+      "jobTitle": "Project Management & Business Development",
+      "description": "Project Manager specializing in business development and commercial opportunity analysis, with over 9 years of experience.",
+      "url": "https://muhajjar.com/",
+      "image": "https://muhajjar.com/og-image.jpg",
+      "email": "mailto:mu.alhajjar@gmail.com",
+      "telephone": "+966555947624",
+      "address": { "@type": "PostalAddress", "addressLocality": "Riyadh", "addressCountry": "SA" },
+      "worksFor": { "@type": "Organization", "name": "Alsoliman Real Estate" },
+      "sameAs": [
+        "https://www.linkedin.com/in/munther-alhajjar/",
+        "https://linktr.ee/mu.alhajjar"
+      ]
+    }
+    </script>
+
+    <!-- Thmanyah Sans Font (مستضاف محليًا بدل مصدر خارجي غير موثوق) -->
+    <style>
+        @font-face {
+            font-family: "Thmanyah Sans";
+            src: url("fonts/ThmanyahSans-Light.woff2") format("woff2");
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "Thmanyah Sans";
+            src: url("fonts/ThmanyahSans-Regular.woff2") format("woff2");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "Thmanyah Sans";
+            src: url("fonts/ThmanyahSans-Medium.woff2") format("woff2");
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "Thmanyah Sans";
+            src: url("fonts/ThmanyahSans-Bold.woff2") format("woff2");
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "Thmanyah Sans";
+            src: url("fonts/ThmanyahSans-Black.woff2") format("woff2");
+            font-weight: 900;
+            font-style: normal;
+            font-display: swap;
+        }
+        /* حماية إضافية: يمنع letter-spacing من كسر اتصال الحروف العربية
+           إذا أُضيف مستقبلًا على أي عنصر */
+        :lang(ar) { letter-spacing: normal; }
+    </style>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'majalla': ['"Thmanyah Sans"', 'Traditional Arabic', 'Arial', 'sans-serif'],
+                    },
+                    colors: {
+                        luxury: {
+                            50: '#FAF9F6',
+                            100: '#F5F3EE',
+                            200: '#E8E4DB',
+                            300: '#D4CFC4',
+                            400: '#B8B0A0',
+                            500: '#9A9080',
+                            600: '#7A7060',
+                            700: '#5A5045',
+                            800: '#3A3530',
+                            900: '#1C1C1C',
+                            950: '#0A0A0A',
+                        },
+                        accent: {
+                            light: '#B8956A',
+                            DEFAULT: '#A67B4F',
+                            dark: '#8B6914',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #B8956A; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #A67B4F; }
+        html { scroll-behavior: smooth; }
+        ::selection { background: #B8956A; color: white; }
+
+        /* Larger Font Sizes (reduced 15% site-wide per latest revision) */
+        body { font-size: 0.9775rem; line-height: 1.8; }
+        .text-hero-name { font-size: clamp(2.6775rem, 7.65vw, 5.355rem); line-height: 1.1; }
+        .text-section-title { font-size: clamp(1.9125rem, 3.825vw, 3.06rem); line-height: 1.2; }
+        .text-card-title { font-size: 1.36rem; }
+        .text-body-lg { font-size: 1.0625rem; line-height: 1.9; }
+        .text-body-xl { font-size: 1.19rem; line-height: 2; }
+
+        /* Site-wide typography scale: -15% off Tailwind's default utility sizes,
+           so every text-* class used across the page shrinks consistently. */
+        .text-sm { font-size: 0.74375rem !important; }
+        .text-base { font-size: 0.85rem !important; }
+        .text-lg { font-size: 0.95625rem !important; }
+        .text-xl { font-size: 1.0625rem !important; }
+        .text-2xl { font-size: 1.275rem !important; }
+        .text-3xl { font-size: 1.59375rem !important; }
+        .text-4xl { font-size: 1.9125rem !important; }
+
+        /* Container width: -20% off the page's max-w-* section containers,
+           so content has more breathing room on the sides and never spans
+           edge-to-edge on wide screens. */
+        .max-w-7xl { max-width: 64rem !important; }
+        .max-w-6xl { max-width: 57.6rem !important; }
+        .max-w-5xl { max-width: 51.2rem !important; }
+        .max-w-2xl { max-width: 33.6rem !important; }
+
+        .profile-img { filter: grayscale(30%) contrast(1.1); transition: all 0.7s ease; }
+        .profile-img:hover { filter: grayscale(0%) contrast(1.05); }
+        .gold-line { height: 2px; background: linear-gradient(90deg, transparent, #B8956A, transparent); width: 0; transition: width 1.5s ease; }
+        .gold-line.active { width: 100%; }
+        .nav-glass { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        .link-luxury { position: relative; font-size: 0.8925rem; }
+        .link-luxury::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #B8956A; transition: width 0.3s ease; }
+        .link-luxury:hover::after { width: 100%; }
+        .luxury-card { transition: all 0.4s ease; border: 1px solid transparent; }
+        .luxury-card:hover { border-color: #B8956A; transform: translateY(-4px); }
+        .dark .luxury-card { background: rgba(255,255,255,0.03); }
+        .dark .luxury-card:hover { background: rgba(255,255,255,0.06); border-color: #D4AF37; }
+        .timeline-line { position: absolute; right: 7px; top: 0; bottom: 0; width: 1px; background: linear-gradient(to bottom, #B8956A, transparent); }
+        [dir="ltr"] .timeline-line { right: auto; left: 7px; }
+        .btn-shine { position: relative; overflow: hidden; }
+        .btn-shine::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); transition: left 0.5s ease; }
+        .btn-shine:hover::before { left: 100%; }
+        .badge-position { right: -1.5rem; }
+        [dir="ltr"] .badge-position { right: auto; left: -1.5rem; }
+
+        /* Scroll Progress Bar */
+        .scroll-progress-container {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 200px;
+            background: rgba(184, 149, 106, 0.15);
+            border-radius: 10px;
+            z-index: 100;
+            overflow: hidden;
+        }
+        .scroll-progress-fill {
+            width: 100%;
+            background: linear-gradient(180deg, #B8956A, #D4AF37, #B8956A);
+            border-radius: 10px;
+            transition: height 0.1s ease-out;
+            box-shadow: 0 0 10px rgba(184, 149, 106, 0.5);
+        }
+        .scroll-progress-dot {
+            position: absolute;
+            right: -5px;
+            width: 14px;
+            height: 14px;
+            background: #B8956A;
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(184, 149, 106, 0.8);
+            transition: top 0.1s ease-out;
+            border: 2px solid #FAF9F6;
+        }
+        .dark .scroll-progress-dot { border-color: #0A0A0A; }
+
+        /* Scroll to Top Button */
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #B8956A, #A67B4F);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 100;
+            box-shadow: 0 8px 32px rgba(166, 123, 79, 0.4);
+            border: none;
+        }
+        .scroll-top-btn.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .scroll-top-btn:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 12px 40px rgba(166, 123, 79, 0.6);
+        }
+        .scroll-top-btn i {
+            color: white;
+            font-size: 1.3rem;
+            animation: bounceUp 2s infinite;
+        }
+        @keyframes bounceUp {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-6px); }
+            60% { transform: translateY(-3px); }
+        }
+
+        /* Percentage indicator */
+        .scroll-percent {
+            position: fixed;
+            right: 45px;
+            bottom: 110px;
+            font-family: "Thmanyah Sans", sans-serif;
+            font-size: 1rem;
+            color: #B8956A;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 100;
+            background: rgba(250, 249, 246, 0.9);
+            padding: 4px 10px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        .dark .scroll-percent { background: rgba(10, 10, 10, 0.9); }
+        .scroll-percent.visible { opacity: 1; }
+
+        @media (max-width: 768px) {
+            .scroll-progress-container { right: 10px; height: 150px; }
+            .scroll-top-btn { right: 20px; bottom: 20px; width: 48px; height: 48px; }
+            .scroll-percent { right: 15px; bottom: 80px; }
+        }
+
+        .profile-slideshow { position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 1.5rem; }
+        .profile-slideshow img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; filter: grayscale(30%) contrast(1.1); transition: filter 0.7s ease; animation: profileFade 24s infinite; }
+        .profile-slideshow img:nth-child(1) { animation-delay: 0s; }
+        .profile-slideshow img:nth-child(2) { animation-delay: 4s; }
+        .profile-slideshow img:nth-child(3) { animation-delay: 8s; }
+        .profile-slideshow img:nth-child(4) { animation-delay: 12s; }
+        .profile-slideshow img:nth-child(5) { animation-delay: 16s; }
+        .profile-slideshow img:nth-child(6) { animation-delay: 20s; }
+        @keyframes profileFade {
+            0% { opacity: 0; transform: scale(1.05); }
+            4% { opacity: 1; transform: scale(1); }
+            16% { opacity: 1; transform: scale(1); }
+            20% { opacity: 0; transform: scale(1.05); }
+            100% { opacity: 0; transform: scale(1.05); }
+        }
+        .profile-slideshow:hover img { filter: grayscale(0%) contrast(1.05); }
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+        .video-container { position: relative; width: 100%; border-radius: 1.5rem; overflow: hidden; background: #000; }
+        .video-container video { width: 100%; height: auto; display: block; }
+        @media (max-width: 768px) { .hero-image-wrapper { margin-top: 3rem !important; } }
+
+        /* Project card logo styling */
+        .project-logo {
+            max-height: 70px;
+            width: auto;
+            object-fit: contain;
+            transition: filter 0.3s ease;
+        }
+        /* In dark mode, render logos as flat white so they stay legible on dark cards
+           without needing a background plate behind each one */
+        html.dark .project-logo {
+            filter: brightness(0) invert(1);
+        }
+    </style>
+</head>
+<body class="font-majalla bg-luxury-50 text-luxury-900 dark:bg-luxury-950 dark:text-luxury-100 transition-colors duration-500">
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+        <div class="scroll-progress-dot" id="scrollProgressDot"></div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top-btn" id="scrollTopBtn" onclick="scrollToTop()" aria-label="الصعود لأعلى الصفحة">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    <div class="scroll-percent" id="scrollPercent">0%</div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 nav-glass bg-luxury-50/80 dark:bg-luxury-950/80 border-b border-luxury-200 dark:border-luxury-800 transition-colors duration-500">
+        <div class="max-w-7xl mx-auto px-8 sm:px-10 lg:px-8">
+            <div class="flex items-center justify-between h-24">
+                <a href="#" class="flex items-center">
+                    <img src="images/logo.png" alt="Munther AlHajjar Logo" class="h-12 md:h-14 w-auto object-contain">
+                </a>
+                <div class="hidden md:flex items-center gap-10">
+                    <a href="#about" class="link-luxury tracking-wide uppercase" data-i18n="nav_about">نبذة</a>
+                    <a href="#experience" class="link-luxury tracking-wide uppercase" data-i18n="nav_experience">خبرات</a>
+                    <a href="#projects" class="link-luxury tracking-wide uppercase" data-i18n="nav_projects">أعمال</a>
+                    <a href="#certifications" class="link-luxury tracking-wide uppercase" data-i18n="nav_certs">شهادات</a>
+                    <a href="#contact" class="link-luxury tracking-wide uppercase" data-i18n="nav_contact">تواصل</a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button onclick="toggleLanguage()" class="w-12 h-12 rounded-full border border-luxury-300 dark:border-luxury-700 flex items-center justify-center hover:border-accent transition-colors duration-300" title="Switch Language">
+                        <span id="lang-btn" class="text-base font-majalla font-bold">EN</span>
+                    </button>
+                    <button onclick="toggleDarkMode()" class="w-12 h-12 rounded-full border border-luxury-300 dark:border-luxury-700 flex items-center justify-center hover:border-accent transition-colors duration-300">
+                        <i class="fas fa-moon dark:hidden text-luxury-700 text-lg"></i>
+                        <i class="fas fa-sun hidden dark:block text-accent-light text-lg"></i>
+                    </button>
+                    <button onclick="toggleMobileMenu()" class="md:hidden w-12 h-12 flex items-center justify-center">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-luxury-50 dark:bg-luxury-950 border-t border-luxury-200 dark:border-luxury-800">
+            <div class="px-6 py-6 space-y-5">
+                <a href="#about" class="block py-2 text-xl" data-i18n="nav_about">نبذة</a>
+                <a href="#experience" class="block py-2 text-xl" data-i18n="nav_experience">خبرات</a>
+                <a href="#projects" class="block py-2 text-xl" data-i18n="nav_projects">أعمال</a>
+                <a href="#certifications" class="block py-2 text-xl" data-i18n="nav_certs">شهادات</a>
+                <a href="#contact" class="block py-2 text-xl" data-i18n="nav_contact">تواصل</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center pt-40 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5 dark:opacity-10">
+            <div class="absolute top-20 right-20 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 left-20 w-72 h-72 bg-accent-light rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-8 sm:px-10 lg:px-8 w-full relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div class="order-2 lg:order-1 text-center lg:text-start" data-aos="fade-up" data-aos-duration="1000">
+                    <p class="text-accent dark:text-accent-light tracking-[0.3em] text-lg uppercase mb-6 font-majalla" data-i18n="hero_subtitle">إدارة المشاريع وتطوير الأعمال</p>
+                    <h1 class="font-majalla text-hero-name leading-tight mb-8 text-luxury-900 dark:text-luxury-50">
+                        <span data-i18n="hero_name1">منذر</span><br>
+                        <span class="text-accent dark:text-accent-light" data-i18n="hero_name2">الحجار</span>
+                    </h1>
+                    <div class="gold-line active mx-auto lg:mx-0 mb-10 max-w-xs"></div>
+                    <p class="text-luxury-600 dark:text-luxury-400 text-body-xl mb-12 max-w-2xl mx-auto lg:mx-0 font-majalla" data-i18n="hero_desc">
+                        مدير مشاريع متخصص في تطوير الأعمال وتحليل الفرص التجارية، خبرة أكثر من 9 سنوات. سجل حافل في إدارة مشاريع متعددة (+100 مشروع)، وإغلاق عقود استراتيجية (+17 عقد)، وتحقيق نمو مبيعات بنسبة 48%.
+                    </p>
+                    <div class="flex items-center justify-center lg:justify-start gap-5 flex-wrap">
+                        <a href="https://www.linkedin.com/in/munther-alhajjar/" target="_blank" title="LinkedIn" class="w-14 h-14 rounded-full border border-luxury-300 dark:border-luxury-700 flex items-center justify-center hover:bg-accent hover:border-accent hover:text-white transition-all duration-300 group">
+                            <i class="fab fa-linkedin-in text-xl group-hover:scale-110 transition-transform"></i>
+                        </a>
+                        <a href="https://api.whatsapp.com/send/?phone=966555947624&text&type=phone_number&app_absent=0" target="_blank" title="WhatsApp" class="w-14 h-14 rounded-full border border-luxury-300 dark:border-luxury-700 flex items-center justify-center hover:bg-accent hover:border-accent hover:text-white transition-all duration-300 group">
+                            <i class="fab fa-whatsapp text-xl group-hover:scale-110 transition-transform"></i>
+                        </a>
+                        <a href="mailto:mu.alhajjar@gmail.com" title="Email" class="w-14 h-14 rounded-full border border-luxury-300 dark:border-luxury-700 flex items-center justify-center hover:bg-accent hover:border-accent hover:text-white transition-all duration-300 group">
+                            <i class="fas fa-envelope text-xl group-hover:scale-110 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2 flex justify-center hero-image-wrapper" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-accent/20 dark:bg-accent/10 rounded-3xl transform rotate-3 scale-105"></div>
+                        <div class="absolute inset-0 border-2 border-accent/30 rounded-3xl transform -rotate-2 scale-105"></div>
+                        <img src="images/profile-hero.gif" alt="Munther AlHajjar" class="relative w-80 h-80 md:w-[28rem] md:h-[28rem] shadow-2xl rounded-3xl object-cover profile-img">
+                        <div class="absolute -bottom-8 -right-8 badge-position bg-luxury-50 dark:bg-luxury-900 border border-luxury-200 dark:border-luxury-700 rounded-2xl px-8 py-5 shadow-xl" data-aos="zoom-in" data-aos-delay="500">
+                            <p class="text-sm text-luxury-500 dark:text-luxury-400 uppercase tracking-wider mb-1" data-i18n="badge_title">الخبرة</p>
+                            <p class="font-majalla text-3xl text-accent dark:text-accent-light">9+ <span class="text-lg font-majalla text-luxury-600 dark:text-luxury-400" data-i18n="badge_years">سنوات</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-28 relative">
+        <div class="max-w-5xl mx-auto px-8 sm:px-10 lg:px-8">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <p class="text-accent dark:text-accent-light tracking-[0.3em] text-base uppercase mb-4" data-i18n="section_about_sub">Professional Summary</p>
+                <h2 class="font-majalla text-section-title mb-6" data-i18n="section_about_title">موجز مهني</h2>
+                <div class="gold-line active mx-auto max-w-xs"></div>
+            </div>
+            <div class="luxury-card bg-white dark:bg-luxury-900/50 rounded-3xl p-10 md:p-14" data-aos="fade-up" data-aos-delay="100">
+                <div class="space-y-8 text-body-lg leading-relaxed text-luxury-700 dark:text-luxury-300 text-center font-majalla">
+                    <p data-i18n="about_text1">
+                        مدير مشاريع متخصص في تطوير الأعمال وتحليل الفرص التجارية، خبرة أكثر من 9 سنوات. أمتلك سجل حافل في إدارة مشاريع متعددة (+100 مشروع)، وإغلاق عقود استراتيجية (+17 عقد)، وتحقيق نمو مبيعات بنسبة 48% من خلال تطوير الخدمات والمنتجات وتحسين العمليات وتعزيز العلاقات مع العملاء والشركاء والموردين.
+                    </p>
+                    <p data-i18n="about_text2">
+                        كما توليت إدارة أكثر من 350 منتجًا مع الحفاظ على 94% رضا عملاء. أمتلك خبرة في إدارة العقود والتفاوض، وتطبيق ممارسات الحوكمة بأنظمة SAP ERP (MM) وBitrix24، وأمتلك خبرة في إنشاء RFP، المناقصات Bidding، وإدارة الشراكات B2B.
+                    </p>
+                    <p data-i18n="about_text3">
+                        أتميز بقدرات متقدمة في تطوير الأعمال، وإعداد العروض الفنية والمالية (RFP & Bidding)، وإدارة المشاريع والعمليات، وبناء الشراكات الاستراتيجية، وإدارة أصحاب المصلحة، والتخطيط الاستراتيجي، وتحليل الفرص التجارية، والتفاوض وإدارة العقود، مع سجل ناجح في قيادة المبادرات وتحقيق مستهدفات النمو والكفاءة التشغيلية.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-14">
+                    <div class="text-center">
+                        <p class="font-majalla text-4xl text-accent dark:text-accent-light mb-2">100+</p>
+                        <p class="text-base text-luxury-500 dark:text-luxury-400" data-i18n="stat_projects">مشروع</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="font-majalla text-4xl text-accent dark:text-accent-light mb-2">48%</p>
+                        <p class="text-base text-luxury-500 dark:text-luxury-400" data-i18n="stat_growth">نمو المبيعات</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="font-majalla text-4xl text-accent dark:text-accent-light mb-2">350+</p>
+                        <p class="text-base text-luxury-500 dark:text-luxury-400" data-i18n="stat_artworks">منتج استثماري وفني</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="font-majalla text-4xl text-accent dark:text-accent-light mb-2">17+</p>
+                        <p class="text-base text-luxury-500 dark:text-luxury-400" data-i18n="stat_contracts">عقد استراتيجي</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-28 bg-luxury-100 dark:bg-luxury-900/30 transition-colors duration-500">
+        <div class="max-w-6xl mx-auto px-8 sm:px-10 lg:px-8">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <p class="text-accent dark:text-accent-light tracking-[0.3em] text-base uppercase mb-4" data-i18n="section_exp_sub">المسيرة المهنية</p>
+                <h2 class="font-majalla text-section-title mb-6" data-i18n="section_exp_title">الخبرات العملية</h2>
+                <div class="gold-line active mx-auto max-w-xs"></div>
+            </div>
+            <div class="space-y-10">
+                <!-- Job 1 -->
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-2xl p-10 relative overflow-hidden" data-aos="fade-up">
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-accent/5 rounded-bl-full"></div>
+                    <div class="relative">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+                            <div>
+                                <h3 class="font-majalla text-card-title mb-2" data-i18n="job1_title">تطوير الأعمال وإدارة المشاريع (ترقية)</h3>
+                                <p class="text-accent dark:text-accent-light font-majalla text-lg" data-i18n="job1_company">شركة السليمان العقارية (الرياض)</p>
+                            </div>
+                            <span class="text-base text-luxury-500 dark:text-luxury-400 mt-3 md:mt-0 font-majalla bg-luxury-100 dark:bg-luxury-900 px-4 py-2 rounded-full">Oct 2024 - Present</span>
+                        </div>
+                        <ul class="space-y-3 text-luxury-600 dark:text-luxury-400 text-body-lg">
+                            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-accent mt-2.5 flex-shrink-0"></span><span data-i18n="job1_1"><strong>تطوير الفرص الاستثمارية:</strong> دراسة الفرص والمناقصات وترشيح منتجات جديدة لشركة كثيب كمثال، وهي إحدى شركات السليمان العقارية وتحديد الموارد والتكاليف والجداول الزمنية بما يضمن تعظيم العائد على الاستثمار (ROI).</span></li>
+                            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-accent mt-2.5 flex-shrink-0"></span><span data-i18n="job1_2"><strong>إدارة الشراكات الاستراتيجية:</strong> اختيار وتفاوض وإدارة علاقات الشراكات والوكالات لتدعم أهداف النمو، العلاقة مع شركة Night Frank ومقدمي الخدمات المختلفة كمنصات البيع وغيرها، وإدارة واختيار الموردين كمهندسي الديكور لوحدات العرض ومكاتب البيع الثابتة والمتنقلة.</span></li>
+                            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-accent mt-2.5 flex-shrink-0"></span><span data-i18n="job1_3"><strong>الحوكمة المالية والتكاليف:</strong> الإشراف على إعداد الميزانيات وتتبع التكاليف التشغيلية والتنفيذية ورفع المستخلصات والمستحقات، باستخدام نظام SAP MM (PR - RFQ - PO - GR - SES) لضمان الالتزام بالميزانيات.</span></li>
+                            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-accent mt-2.5 flex-shrink-0"></span><span data-i18n="job1_4"><strong>إدارة أصحاب المصلحة:</strong> بناء علاقات وثيقة استراتيجية طويلة الأجل مع المستثمرين والعملاء وكبار أصحاب المصلحة لعرض خطط العمل وتوقيع العقود.</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-2xl p-10 relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-accent/5 rounded-bl-full"></div>
+                    <div class="relative">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+                            <div>
+                                <h3 class="font-majalla text-card-title mb-2" data-i18n="job2_title">مدير المشاريع</h3>
+                                <p class="text-accent dark:text-accent-light font-majalla text-lg" data-i18n="job2_company">شركة السليمان العقارية (الرياض)</p>
+                            </div>
+                            <span class="text-base text-luxury-500 dark:text-luxury-400 mt-3 md:mt-0 font-majalla bg-luxury-100 dark:bg-luxury-900 px-4 py-2 rounded-full">Apr 2022 - Oct 2024</span>
+                        </div>
+                        <ul class="space-y-3 text-luxury-600 dark:text-luxury-400 text-body-lg">
+                            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-accent mt-2.5 flex-shrink-0"></span><span data-i18n="job2_1"><strong>إدارة دورة حياة المشاريع وعلاقات العملاء:</strong> الإشراف الكامل على جميع مشاريع الشركة، وتوجيه وإدارة فرق العمل الإبداعية والهندسية لتحقيق الأهداف التشغيلية والتجارية، والوصول المباشر مع العملاء.</span></li>
+                            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-accent mt-2.5 flex-shrink-0"></span><span data-i18n="job2_2"><strong>إدارة العقود والشراكات والتحكم في الجودة والتكلفة:</strong> تطوير وتنفيذ اتفاقيات التعاون مع الوكالات الإعلانية والموردين لتحقيق كفاءة أعلى في التكاليف والسرعة والجودة، ضمان تسليم المشاريع في الوقت المحدد وضمن الميزانية.</span></li>
+                            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-accent mt-2.5 flex-shrink-0"></span><span data-i18n="job2_3"><strong>توفير حلول النمو:</strong> بناء معايير لقياس الجودة وضمان تسليم المشاريع ضمن الميزانيات المحددة والجداول الزمنية.</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-2xl p-10 relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-accent/5 rounded-bl-full"></div>
+                    <div class="relative">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+                            <div>
+                                <h3 class="font-majalla text-card-title mb-2" data-i18n="job3_title">مدير تطوير الأعمال والمنتجات (ترقية)</h3>
+                                <p class="text-accent dark:text-accent-light font-majalla text-lg" data-i18n="job3_company">وكالة هوية الإعلامية (حرف جاليري) (الرياض)</p>
+                            </div>
+                            <span class="text-base text-luxury-500 dark:text-luxury-400 mt-3 md:mt-0 font-majalla bg-luxury-100 dark:bg-luxury-900 px-4 py-2 rounded-full">Oct 2021 - Apr 2022</span>
+                        </div>
+                        <ul class="space-y-3 text-luxury-600 dark:text-luxury-400 text-body-lg">
+                            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-accent mt-2.5 flex-shrink-0"></span><span data-i18n="job3_1"><strong>تطوير المنتجات:</strong> إدارة وتطوير أكثر من 350 عمل فني في مجال الخط العربي، من التصميم حتى الإغلاق المالي.</span></li>
+                            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-accent mt-2.5 flex-shrink-0"></span><span data-i18n="job3_2"><strong>تحليل السوق:</strong> دراسة اتجاهات السوق لتحديد المنتجات الأكثر طلبًا وتوجيه خطط الإنتاج بناءً عليها.</span></li>
+                            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-accent mt-2.5 flex-shrink-0"></span><span data-i18n="job3_3"><strong>التفاوض والإغلاق:</strong> إدارة المفاوضات مع العملاء والفنانين لضمان هوامش ربح مثلى.</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 4 -->
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-2xl p-10 relative overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-accent/5 rounded-bl-full"></div>
+                    <div class="relative">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+                            <div>
+                                <h3 class="font-majalla text-card-title mb-2" data-i18n="job4_title">مدير مشاريع إعلامية (ترقية)</h3>
+                                <p class="text-accent dark:text-accent-light font-majalla text-lg" data-i18n="job4_company">وكالة هوية الإعلامية (الرياض)</p>
+                            </div>
+                            <span class="text-base text-luxury-500 dark:text-luxury-400 mt-3 md:mt-0 font-majalla bg-luxury-100 dark:bg-luxury-900 px-4 py-2 rounded-full">Oct 2020 - Apr 2022</span>
+                        </div>
+                        <ul class="space-y-3 text-luxury-600 dark:text-luxury-400 text-body-lg">
+                            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-accent mt-2.5 flex-shrink-0"></span><span data-i18n="job4_1"><strong>تحقيق نمو المبيعات:</strong> إدارة أكثر من 41 مشروعًا إعلاميًا، مما أسهم في زيادة المبيعات بنسبة 48% وتحقيق معدل رضا عملاء 94%.</span></li>
+                            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-accent mt-2.5 flex-shrink-0"></span><span data-i18n="job4_2"><strong>بناء علاقات B2B:</strong> تطوير علاقات مع شركات وعلامات تجارية جديدة لتوسيع قاعدة العملاء.</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 5 -->
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-2xl p-10 relative overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-accent/5 rounded-bl-full"></div>
+                    <div class="relative">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+                            <div>
+                                <h3 class="font-majalla text-card-title mb-2" data-i18n="job5_title">مساعد مدير مشاريع تنفيذي</h3>
+                                <p class="text-accent dark:text-accent-light font-majalla text-lg" data-i18n="job5_company">وكالة هوية الإعلامية (الرياض)</p>
+                            </div>
+                            <span class="text-base text-luxury-500 dark:text-luxury-400 mt-3 md:mt-0 font-majalla bg-luxury-100 dark:bg-luxury-900 px-4 py-2 rounded-full">Mar 2019 - Oct 2020</span>
+                        </div>
+                        <ul class="space-y-3 text-luxury-600 dark:text-luxury-400 text-body-lg">
+                            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-accent mt-2.5 flex-shrink-0"></span><span data-i18n="job5_1"><strong>دعم تطوير الأعمال:</strong> المساعدة في تحليل الفرص الجديدة، إعداد العروض التقديمية، ومتابعة التقدم نحو الأهداف التجارية.</span></li>
+                            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-accent mt-2.5 flex-shrink-0"></span><span data-i18n="job5_2"><strong>إعداد التقارير الاستراتيجية:</strong> توثيق وتحليل البيانات لدعم اتخاذ القرار.</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 6 -->
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-2xl p-10 relative overflow-hidden" data-aos="fade-up" data-aos-delay="500">
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-accent/5 rounded-bl-full"></div>
+                    <div class="relative">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+                            <div>
+                                <h3 class="font-majalla text-card-title mb-2" data-i18n="job6_title">مصمم منتجات وتسويق</h3>
+                                <p class="text-accent dark:text-accent-light font-majalla text-lg" data-i18n="job6_company">مجموعة أبريز (الرياض)</p>
+                            </div>
+                            <span class="text-base text-luxury-500 dark:text-luxury-400 mt-3 md:mt-0 font-majalla bg-luxury-100 dark:bg-luxury-900 px-4 py-2 rounded-full">Jul 2018 - Mar 2019</span>
+                        </div>
+                        <ul class="space-y-3 text-luxury-600 dark:text-luxury-400 text-body-lg">
+                            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-accent mt-2.5 flex-shrink-0"></span><span data-i18n="job6_1">تصميم منتجات الهدايا وإنتاج محتوى تسويقي لوسائل التواصل الاجتماعي.</span></li>
+                            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-accent mt-2.5 flex-shrink-0"></span><span data-i18n="job6_2">المساهمة في تطوير خطوط إنتاج جديدة بناءً على تحليل تفضيلات العملاء.</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 7 -->
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-2xl p-10 relative overflow-hidden" data-aos="fade-up" data-aos-delay="600">
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-accent/5 rounded-bl-full"></div>
+                    <div class="relative">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+                            <div>
+                                <h3 class="font-majalla text-card-title mb-2" data-i18n="job7_title">مساعد تصميم إضاءة (Gaffer Assistant)</h3>
+                                <p class="text-accent dark:text-accent-light font-majalla text-lg" data-i18n="job7_company">EQEW Rental House (Film Equipment & Technical Crew) (الرياض)</p>
+                            </div>
+                            <span class="text-base text-luxury-500 dark:text-luxury-400 mt-3 md:mt-0 font-majalla bg-luxury-100 dark:bg-luxury-900 px-4 py-2 rounded-full">Jun 2017 - Jul 2018</span>
+                        </div>
+                        <ul class="space-y-3 text-luxury-600 dark:text-luxury-400 text-body-lg">
+                            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-accent mt-2.5 flex-shrink-0"></span><span data-i18n="job7_1">مساعد تصميم توزيع الإضاءة والتركيبات الكهربائية في مواقع التصوير للإنتاج الإعلامي.</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 8 -->
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-2xl p-10 relative overflow-hidden" data-aos="fade-up" data-aos-delay="700">
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-accent/5 rounded-bl-full"></div>
+                    <div class="relative">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+                            <div>
+                                <h3 class="font-majalla text-card-title mb-2" data-i18n="job8_title">مصمم صناعي وتجربة مستخدم</h3>
+                                <p class="text-accent dark:text-accent-light font-majalla text-lg" data-i18n="job8_company">وكالة براند هاوس (الرياض)</p>
+                            </div>
+                            <span class="text-base text-luxury-500 dark:text-luxury-400 mt-3 md:mt-0 font-majalla bg-luxury-100 dark:bg-luxury-900 px-4 py-2 rounded-full">Jan 2015 - Jun 2017</span>
+                        </div>
+                        <ul class="space-y-3 text-luxury-600 dark:text-luxury-400 text-body-lg">
+                            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-accent mt-2.5 flex-shrink-0"></span><span data-i18n="job8_1">دمج التصميم البصري مع الاحتياجات التجارية لتعزيز تجربة المستخدم.</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 9 -->
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-2xl p-10 relative overflow-hidden" data-aos="fade-up" data-aos-delay="800">
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-accent/5 rounded-bl-full"></div>
+                    <div class="relative">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+                            <div>
+                                <h3 class="font-majalla text-card-title mb-2" data-i18n="job9_title">مشرف فريق المبيعات وخدمة العملاء</h3>
+                                <p class="text-accent dark:text-accent-light font-majalla text-lg" data-i18n="job9_company">LG Electronics (متاجر أكسيوم تليكوم) (الرياض)</p>
+                            </div>
+                            <span class="text-base text-luxury-500 dark:text-luxury-400 mt-3 md:mt-0 font-majalla bg-luxury-100 dark:bg-luxury-900 px-4 py-2 rounded-full">Nov 2013 - Dec 2015</span>
+                        </div>
+                        <ul class="space-y-3 text-luxury-600 dark:text-luxury-400 text-body-lg">
+                            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-accent mt-2.5 flex-shrink-0"></span><span data-i18n="job9_1">الإشراف على قسم رضا العملاء وتدريب فرق المبيعات.</span></li>
+                            <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-accent mt-2.5 flex-shrink-0"></span><span data-i18n="job9_2">تحليل أداء المبيعات وتقديم توصيات لتحسين النتائج.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-28">
+        <div class="max-w-7xl mx-auto px-8 sm:px-10 lg:px-8">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <p class="text-accent dark:text-accent-light tracking-[0.3em] text-base uppercase mb-4" data-i18n="section_proj_sub">أبرز الأعمال</p>
+                <h2 class="font-majalla text-section-title mb-6" data-i18n="section_proj_title">المشاريع والشراكات</h2>
+                <div class="gold-line active mx-auto max-w-xs"></div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
+                <!-- Existing + New Projects -->
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-2xl p-8 group cursor-pointer flex flex-col items-center justify-center min-h-[200px]" data-aos="fade-up">
+                    <img src="logos/alsoliman-realestate.png" alt="Alsoliman Real Estate" class="project-logo mb-4 block dark:hidden group-hover:scale-105 transition-transform">
+                    <img src="logos/alsoliman-realestate-dark.png" alt="Alsoliman Real Estate" class="project-logo mb-4 hidden dark:block group-hover:scale-105 transition-transform" style="filter:none;">
+                    <p class="text-base text-luxury-500 dark:text-luxury-400 text-center font-majalla" data-i18n="proj_alsoliman">شركة السليمان العقارية</p>
+                </div>
+
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-2xl p-8 group cursor-pointer flex flex-col items-center justify-center min-h-[200px]" data-aos="fade-up" data-aos-delay="50">
+                    <img src="logos/albasateen-realestate.png" alt="Al Basateen Real Estate" class="project-logo mb-4 group-hover:scale-105 transition-transform">
+                    <p class="text-base text-luxury-500 dark:text-luxury-400 text-center font-majalla" data-i18n="proj_albasateen">شركة البساتين العقارية</p>
+                </div>
+
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-2xl p-8 group cursor-pointer flex flex-col items-center justify-center min-h-[200px]" data-aos="fade-up" data-aos-delay="100">
+                    <img src="logos/basma-realestate-valuation.png" alt="Basma Real Estate Valuation" class="project-logo mb-4 group-hover:scale-105 transition-transform">
+                    <p class="text-base text-luxury-500 dark:text-luxury-400 text-center font-majalla" data-i18n="proj_basma">بصمة للتقييم العقاري وإدارة الأملاك</p>
+                </div>
+
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-2xl p-8 group cursor-pointer flex flex-col items-center justify-center min-h-[200px]" data-aos="fade-up" data-aos-delay="150">
+                    <img src="logos/lcgpa.png" alt="LCGPA" class="project-logo mb-4 group-hover:scale-105 transition-transform" style="max-height:100px;">
+                    <p class="text-base text-luxury-500 dark:text-luxury-400 text-center font-majalla" data-i18n="proj_lcgpa">هيئة المحتوى المحلي والمشتريات الحكومية</p>
+                </div>
+
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-2xl p-8 group cursor-pointer flex flex-col items-center justify-center min-h-[200px]" data-aos="fade-up" data-aos-delay="200">
+                    <img src="logos/riyadh-front.png" alt="Riyadh Front" class="project-logo mb-4 group-hover:scale-105 transition-transform">
+                    <p class="text-base text-luxury-500 dark:text-luxury-400 text-center font-majalla" data-i18n="proj_riyadhfront">واجهة الرياض</p>
+                </div>
+
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-2xl p-8 group cursor-pointer flex flex-col items-center justify-center min-h-[200px]" data-aos="fade-up" data-aos-delay="250">
+                    <img src="logos/almashreq-hotel.png" alt="Al Mashreq Hotel" class="project-logo mb-4 group-hover:scale-105 transition-transform">
+                    <p class="text-base text-luxury-500 dark:text-luxury-400 text-center">Al Mashreq Boutique Hotel</p>
+                </div>
+
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-2xl p-8 group cursor-pointer flex flex-col items-center justify-center min-h-[200px]" data-aos="fade-up" data-aos-delay="300">
+                    <img src="logos/ncms-logo.png" alt="National Company for Mechanical Systems - NCMS" class="project-logo mb-4 group-hover:scale-105 transition-transform">
+                    <p class="text-base text-luxury-500 dark:text-luxury-400 text-center">National Company for Mechanical Systems - NCMS</p>
+                </div>
+
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-2xl p-8 group cursor-pointer flex flex-col items-center justify-center min-h-[200px]" data-aos="fade-up" data-aos-delay="350">
+                    <img src="logos/barcode-realestate-valuation.png" alt="Barcode Real Estate Valuation" class="project-logo mb-4 group-hover:scale-105 transition-transform" style="max-height:100px;">
+                    <p class="text-base text-luxury-500 dark:text-luxury-400 text-center font-majalla" data-i18n="proj_barcode">باركود للتقييم العقاري</p>
+                </div>
+
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-2xl p-8 group cursor-pointer flex flex-col items-center justify-center min-h-[200px]" data-aos="fade-up" data-aos-delay="400">
+                    <img src="logos/qusour-al-amariyah.png" alt="Qusour Al-Amariyah Plan" class="project-logo mb-4 group-hover:scale-105 transition-transform">
+                    <p class="text-base text-luxury-500 dark:text-luxury-400 text-center font-majalla" data-i18n="proj_qusour">مخطط القصور بالعمارية</p>
+                </div>
+
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-2xl p-8 group cursor-pointer flex flex-col items-center justify-center min-h-[200px]" data-aos="fade-up" data-aos-delay="450">
+                    <img src="logos/alsubaie-charity.png" alt="Alsubaie Charity" class="project-logo mb-4 group-hover:scale-105 transition-transform">
+                    <p class="text-base text-luxury-500 dark:text-luxury-400 text-center font-majalla" data-i18n="proj_alsubaie">مؤسسة إبراهيم السبيعي الخيرية</p>
+                </div>
+
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-2xl p-8 group cursor-pointer flex flex-col items-center justify-center min-h-[200px]" data-aos="fade-up" data-aos-delay="500">
+                    <img src="logos/health-waqf-fund.png" alt="Health Waqf Fund" class="project-logo mb-4 group-hover:scale-105 transition-transform">
+                    <p class="text-base text-luxury-500 dark:text-luxury-400 text-center font-majalla" data-i18n="proj_healthwaqf">صندوق الوقف الصحي</p>
+                </div>
+
+                <!-- NEW PROJECTS -->
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-2xl p-8 group cursor-pointer flex flex-col items-center justify-center min-h-[200px]" data-aos="fade-up" data-aos-delay="550">
+                    <img src="logos/knight-frank.png" alt="Knight Frank" class="project-logo mb-4 group-hover:scale-105 transition-transform">
+                    <p class="text-base text-luxury-500 dark:text-luxury-400 text-center">Knight Frank</p>
+                </div>
+
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-2xl p-8 group cursor-pointer flex flex-col items-center justify-center min-h-[200px]" data-aos="fade-up" data-aos-delay="600">
+                    <img src="logos/alajlan-brothers.png" alt="Ajlan & Bros" class="project-logo mb-4 group-hover:scale-105 transition-transform">
+                    <p class="text-base text-luxury-500 dark:text-luxury-400 text-center">Ajlan & Bros Group</p>
+                </div>
+
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-2xl p-8 group cursor-pointer flex flex-col items-center justify-center min-h-[200px]" data-aos="fade-up" data-aos-delay="650">
+                    <img src="logos/sahab-company.png" alt="Sahab Company" class="project-logo mb-4 group-hover:scale-105 transition-transform">
+                    <p class="text-base text-luxury-500 dark:text-luxury-400 text-center" data-i18n="proj_sahab">للحلول التقنية المتكاملة في الصحة والسلامة</p>
+                </div>
+
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-2xl p-8 group cursor-pointer flex flex-col items-center justify-center min-h-[200px]" data-aos="fade-up" data-aos-delay="700">
+                    <img src="logos/albuyut-almaktabiya.png" alt="Al Buyut Al-Maktabiya" class="project-logo mb-4 group-hover:scale-105 transition-transform">
+                    <p class="text-base text-luxury-500 dark:text-luxury-400 text-center font-majalla" data-i18n="proj_albuyut">البيوت المكتبية</p>
+                </div>
+
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-2xl p-8 group cursor-pointer flex flex-col items-center justify-center min-h-[200px]" data-aos="fade-up" data-aos-delay="750">
+                    <img src="logos/harf-gallery.png" alt="Harf Gallery" class="project-logo mb-4 group-hover:scale-105 transition-transform">
+                    <p class="text-base text-luxury-500 dark:text-luxury-400 text-center font-majalla" data-i18n="proj_harfgallery">حرف جاليري</p>
+                </div>
+
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-2xl p-8 group cursor-pointer flex flex-col items-center justify-center min-h-[200px]" data-aos="fade-up" data-aos-delay="900">
+                    <img src="logos/alnakhla-compound.png" alt="Al Nakhlah Compound" class="project-logo mb-4 group-hover:scale-105 transition-transform" style="max-height:100px;">
+                    <p class="text-base text-luxury-500 dark:text-luxury-400 text-center">Al Nakhlah Compound</p>
+                </div>
+
+
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-2xl p-8 group cursor-pointer flex flex-col items-center justify-center min-h-[200px]" data-aos="fade-up" data-aos-delay="1100">
+                    <img src="logos/arabian-dyar-realestate.png" alt="Al Diyar Al Arabiah Real Estate" class="project-logo mb-4 group-hover:scale-105 transition-transform">
+                    <p class="text-base text-luxury-500 dark:text-luxury-400 text-center">Al Diyar Al Arabiah</p>
+                </div>
+
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-2xl p-8 group cursor-pointer flex flex-col items-center justify-center min-h-[200px]" data-aos="fade-up" data-aos-delay="1150">
+                    <img src="logos/alkhoyool-realestate.png" alt="Al Khayool Al Arabiah Real Estate" class="project-logo mb-4 group-hover:scale-105 transition-transform">
+                    <p class="text-base text-luxury-500 dark:text-luxury-400 text-center">Al Khayool Al Arabiah</p>
+                </div>
+
+
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-2xl p-8 group cursor-pointer flex flex-col items-center justify-center min-h-[200px]" data-aos="fade-up" data-aos-delay="1350">
+                    <img src="logos/bader-contracting.svg" alt="Bader Contracting Company" class="project-logo mb-4 group-hover:scale-105 transition-transform" style="background:#3A3530;padding:8px;border-radius:8px;filter:none;">
+                    <p class="text-base text-luxury-500 dark:text-luxury-400 text-center font-majalla" data-i18n="proj_bader">شركة بدر للمقاولات</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Video Section -->
+    <section id="video" class="py-28 bg-luxury-100 dark:bg-luxury-900/30 transition-colors duration-500">
+        <div class="max-w-5xl mx-auto px-8 sm:px-10 lg:px-8">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <p class="text-accent dark:text-accent-light tracking-[0.3em] text-base uppercase mb-4" data-i18n="event_sub">أبرز الأحداث</p>
+                <h2 class="font-majalla text-section-title mb-6" data-i18n="event_title">حفل اطلاق Alsoliman Business Compound</h2>
+                <div class="gold-line active mx-auto max-w-xs"></div>
+            </div>
+            <div class="luxury-card bg-white dark:bg-luxury-950 rounded-3xl p-8 md:p-10" data-aos="fade-up" data-aos-delay="100">
+                <div class="video-container mb-10" style="padding:52.79% 0 0 0;position:relative;">
+                    <iframe
+                        src="https://player.vimeo.com/video/1220414895?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=0&amp;muted=0&amp;loop=0"
+                        frameborder="0"
+                        loading="lazy"
+                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:1.5rem;"
+                        title="Alsoliman Business Compound Launch Event">
+                    </iframe>
+                </div>
+                <div class="space-y-6 text-body-lg leading-relaxed text-luxury-700 dark:text-luxury-300 font-majalla text-center md:text-start">
+                    <p data-i18n="event_p1">قدت أعمال التخطيط والتطوير وإطلاق حفل Alsoliman Business Compound، وهو حدث استمر على مدى ثلاثة أيام، وجاء نتاجًا لأكثر من 45 يومًا من التخطيط المكثف والتنسيق المستمر لضمان تنفيذ الرؤية بالشكل الذي يعكس طموحات المشروع وقيمته.</p>
+                    <p data-i18n="event_p2">بدأت رحلة العمل منذ المراحل الأولى للمشروع، مرورًا بتجهيز الهوية البصرية للموقع وإنشاء التسوير الدعائي، وصولًا إلى تطوير تجربة متكاملة للحفل. وعلى مدار فترة التحضير، عقدنا 7 اجتماعات استراتيجية مع مزودي الخدمات والشركاء التنفيذيين لضمان تحقيق أفضل معادلة بين الجودة والوقت والكفاءة التشغيلية.</p>
+                    <p data-i18n="event_p3">الحدث منصة لاستعراض رحلة المشروع، وتسليط الضوء على المشاريع الحالية، والكشف عن المبادرات المستقبلية والخطط التوسعية القادمة. كما شكّل الحفل فرصة للإعلان عن شراكات استراتيجية نوعية تدعم توجهات النمو وتعزز من حضور المشروع في السوق.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mt-10">
+                    <div class="text-center p-5 bg-luxury-50 dark:bg-luxury-900 rounded-xl">
+                        <p class="font-majalla text-3xl text-accent dark:text-accent-light mb-1">45</p>
+                        <p class="text-base text-luxury-500 dark:text-luxury-400" data-i18n="event_stat1">يومًا من التخطيط والتطوير</p>
+                    </div>
+                    <div class="text-center p-5 bg-luxury-50 dark:bg-luxury-900 rounded-xl">
+                        <p class="font-majalla text-3xl text-accent dark:text-accent-light mb-1">3</p>
+                        <p class="text-base text-luxury-500 dark:text-luxury-400" data-i18n="event_stat2">أيام من الفعاليات والأنشطة</p>
+                    </div>
+                    <div class="text-center p-5 bg-luxury-50 dark:bg-luxury-900 rounded-xl">
+                        <p class="font-majalla text-3xl text-accent dark:text-accent-light mb-1">7</p>
+                        <p class="text-base text-luxury-500 dark:text-luxury-400" data-i18n="event_stat3">اجتماعات تنسيقية واستراتيجية</p>
+                    </div>
+                    <div class="text-center p-5 bg-luxury-50 dark:bg-luxury-900 rounded-xl">
+                        <p class="font-majalla text-3xl text-accent dark:text-accent-light mb-1">+</p>
+                        <p class="text-base text-luxury-500 dark:text-luxury-400" data-i18n="event_stat4">شراكات ومشاريع مستقبلية</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-28 bg-luxury-100 dark:bg-luxury-900/30 transition-colors duration-500">
+        <div class="max-w-6xl mx-auto px-8 sm:px-10 lg:px-8">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <p class="text-accent dark:text-accent-light tracking-[0.3em] text-base uppercase mb-4" data-i18n="section_cert_sub">الإنجازات</p>
+                <h2 class="font-majalla text-section-title mb-6" data-i18n="section_cert_title">الشهادات والجوائز</h2>
+                <div class="gold-line active mx-auto max-w-xs"></div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-xl p-8 flex items-center gap-5" data-aos="fade-up">
+                    <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-graduation-cap text-2xl text-accent dark:text-accent-light"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-majalla font-bold text-xl" data-i18n="cert0">بكالوريوس إدارة الأعمال</h4>
+                        <p class="text-base text-luxury-500 dark:text-luxury-400" data-i18n="cert0_sub">Midocean University (2026 - مستمر)</p>
+                    </div>
+                </div>
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-xl p-8 flex items-center gap-5" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-university text-2xl text-accent dark:text-accent-light"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-majalla font-bold text-xl" data-i18n="cert8">دبلوم الاتصال وتقنيات الإعلام</h4>
+                        <p class="text-base text-luxury-500 dark:text-luxury-400" data-i18n="cert8_sub">أكاديمية الأمير أحمد بن سلمان للإعلام التطبيقي (2016-2018)</p>
+                    </div>
+                </div>
+
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-xl p-8 flex items-center gap-5" data-aos="fade-up" data-aos-delay="50">
+                    <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-certificate text-2xl text-accent dark:text-accent-light"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-majalla font-bold text-xl" data-i18n="cert1">PMP® Project Management Institute</h4>
+                        <p class="text-base text-luxury-500 dark:text-luxury-400">2026</p>
+                    </div>
+                </div>
+
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-xl p-8 flex items-center gap-5" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-award text-2xl text-accent dark:text-accent-light"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-majalla font-bold text-xl" data-i18n="cert2">SAP ERP (Business Software) Onsite Training</h4>
+                        <p class="text-base text-luxury-500 dark:text-luxury-400">2024</p>
+                    </div>
+                </div>
+
+                <a href="https://51.alithiab.com/" target="_blank" class="luxury-card bg-white dark:bg-luxury-950 rounded-xl p-8 flex items-center gap-5 group" data-aos="fade-up" data-aos-delay="150">
+                    <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent transition-colors">
+                        <i class="fas fa-trophy text-2xl text-accent dark:text-accent-light group-hover:text-white transition-colors"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-majalla font-bold text-xl group-hover:text-accent dark:group-hover:text-accent-light transition-colors" data-i18n="cert3">Sell like a Pro<br><span class="text-base font-normal text-luxury-500 dark:text-luxury-400">علي الذياب</span></h4>
+                        <p class="text-base text-luxury-500 dark:text-luxury-400">2023 <i class="fas fa-external-link-alt text-sm mr-1"></i></p>
+                    </div>
+                </a>
+
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-xl p-8 flex items-center gap-5" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-medal text-2xl text-accent dark:text-accent-light"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-majalla font-bold text-xl" data-i18n="cert4">International Property Awards<br><span class="text-base font-normal text-luxury-500 dark:text-luxury-400">دبي</span></h4>
+                        <p class="text-base text-luxury-500 dark:text-luxury-400">2022</p>
+                    </div>
+                </div>
+
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-xl p-8 flex items-center gap-5" data-aos="fade-up" data-aos-delay="250">
+                    <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-lightbulb text-2xl text-accent dark:text-accent-light"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-majalla font-bold text-xl" data-i18n="cert5">Brand Strategy Foundations<br><span class="text-base font-normal text-luxury-500 dark:text-luxury-400">هشام جبرة</span></h4>
+                        <p class="text-base text-luxury-500 dark:text-luxury-400">2019</p>
+                    </div>
+                </div>
+
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-xl p-8 flex items-center gap-5" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-paint-brush text-2xl text-accent dark:text-accent-light"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-majalla font-bold text-xl" data-i18n="cert6">Calligraphy Workshop<br><span class="text-base font-normal text-luxury-500 dark:text-luxury-400">وائل مرقص</span></h4>
+                        <p class="text-base text-luxury-500 dark:text-luxury-400">2019</p>
+                    </div>
+                </div>
+
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-xl p-8 flex items-center gap-5" data-aos="fade-up" data-aos-delay="350">
+                    <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-tooth text-2xl text-accent dark:text-accent-light"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-majalla font-bold text-xl" data-i18n="cert7">International Dental Certificate</h4>
+                        <p class="text-base text-luxury-500 dark:text-luxury-400">2010</p>
+                    </div>
+                </div>
+
+
+
+                <div class="luxury-card bg-white dark:bg-luxury-950 rounded-xl p-8 flex items-center gap-5" data-aos="fade-up" data-aos-delay="450">
+                    <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-tooth text-2xl text-accent dark:text-accent-light"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-majalla font-bold text-xl" data-i18n="cert9">دبلوم علوم الاستعاضة السنية<br><span class="text-base font-normal text-luxury-500 dark:text-luxury-400">تقويم الأسنان</span></h4>
+                        <p class="text-base text-luxury-500 dark:text-luxury-400" data-i18n="cert9_sub">جامعة دمشق (2010-2012)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Memory Gallery -->
+    <section id="memory" class="py-28">
+        <div class="max-w-7xl mx-auto px-8 sm:px-10 lg:px-8">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <p class="text-accent dark:text-accent-light tracking-[0.3em] text-base uppercase mb-4" data-i18n="memory_sub">لحظات من المسيرة</p>
+                <h2 class="font-majalla text-section-title mb-6" data-i18n="memory_title">من الذاكرة</h2>
+                <div class="gold-line active mx-auto max-w-xs"></div>
+            </div>
+            <div class="columns-2 md:columns-2 lg:columns-3 gap-4 md:gap-5 space-y-4 md:space-y-5">
+                <!-- GIF Added -->
+                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up">
+                    <img src="images/profile-hero.gif" alt="Presenting work for the Al Madinah Hotels project" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute bottom-4 right-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <p class="font-majalla text-lg" data-i18n="memory_gif_caption">تقديم عمل لمشروع فنادق المدينة (فترة كورونا)</p>
+                    </div>
+                </div>
+
+                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="50">
+                    <img src="memories/memory-01-event.jpg" alt="Event" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="100">
+                    <img src="memories/memory-02-construction-site.jpg" alt="Construction Site" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="150">
+                    <img src="memories/memory-03-team.jpg" alt="Team" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="200">
+                    <img src="memories/memory-04-bankruptcy-commission.jpg" alt="Bankruptcy Commission" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="250">
+                    <img src="memories/memory-05-bussma.jpg" alt="Bussma" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="300">
+                    <img src="memories/memory-06-alajlan-project.jpg" alt="Al Ajlan Project" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="350">
+                    <img src="memories/memory-07-planning.jpg" alt="Planning" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="400">
+                    <img src="memories/memory-08-team-office.jpg" alt="Team Office" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="450">
+                    <img src="memories/memory-09-team.jpg" alt="Team" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="500">
+                    <img src="memories/memory-10-presentation.jpg" alt="Presentation" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="550">
+                    <img src="memories/memory-11-team-gathering.jpg" alt="Team Gathering" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="600">
+                    <img src="memories/memory-12-awards.jpg" alt="Awards" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="650">
+                    <img src="memories/memory-13-portrait.jpg" alt="Portrait" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="700">
+                    <img src="memories/memory-14-harf-gallery.jpg" alt="Harf Gallery" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-28 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5 dark:opacity-10">
+            <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[600px] h-[600px] bg-accent rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-5xl mx-auto px-8 sm:px-10 lg:px-8 relative z-10">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <p class="text-accent dark:text-accent-light tracking-[0.3em] text-base uppercase mb-4" data-i18n="section_contact_sub">لنبدأ حواراً</p>
+                <h2 class="font-majalla text-section-title mb-6" data-i18n="section_contact_title">تواصل معي</h2>
+                <div class="gold-line active mx-auto max-w-xs"></div>
+            </div>
+            <div class="luxury-card bg-white dark:bg-luxury-950 rounded-3xl p-10 md:p-14" data-aos="fade-up">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <a href="mailto:mu.alhajjar@gmail.com" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors">
+                        <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors">
+                            <i class="fas fa-envelope text-2xl text-accent dark:text-accent-light group-hover:text-white transition-colors"></i>
+                        </div>
+                        <div>
+                            <p class="text-base text-luxury-500 dark:text-luxury-400" data-i18n="contact_email">البريد الإلكتروني</p>
+                            <p class="font-majalla font-bold text-xl">mu.alhajjar@gmail.com</p>
+                        </div>
+                    </a>
+                    <a href="https://api.whatsapp.com/send/?phone=966555947624&text&type=phone_number&app_absent=0" target="_blank" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors">
+                        <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors">
+                            <i class="fab fa-whatsapp text-2xl text-accent dark:text-accent-light group-hover:text-white transition-colors"></i>
+                        </div>
+                        <div>
+                            <p class="text-base text-luxury-500 dark:text-luxury-400" data-i18n="contact_whatsapp">واتساب</p>
+                            <p class="font-majalla font-bold text-xl" dir="ltr">+966 55 594 7624</p>
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/munther-alhajjar/" target="_blank" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors">
+                        <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors">
+                            <i class="fab fa-linkedin-in text-2xl text-accent dark:text-accent-light group-hover:text-white transition-colors"></i>
+                        </div>
+                        <div>
+                            <p class="text-base text-luxury-500 dark:text-luxury-400">LinkedIn</p>
+                            <p class="font-majalla font-bold text-xl">munther-alhajjar</p>
+                        </div>
+                    </a>
+                    <a href="https://linktr.ee/mu.alhajjar" target="_blank" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors">
+                        <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors">
+                            <i class="fas fa-link text-2xl text-accent dark:text-accent-light group-hover:text-white transition-colors"></i>
+                        </div>
+                        <div>
+                            <p class="text-base text-luxury-500 dark:text-luxury-400">Linktree</p>
+                            <p class="font-majalla font-bold text-xl">mu.alhajjar</p>
+                        </div>
+                    </a>
+                    <a href="https://drive.google.com/drive/folders/13k9np2Xb5v-hgxUFDuo4V4sWREvSreTR?usp=sharing" target="_blank" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors">
+                        <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors">
+                            <i class="fas fa-file-alt text-2xl text-accent dark:text-accent-light group-hover:text-white transition-colors"></i>
+                        </div>
+                        <div>
+                            <p class="text-base text-luxury-500 dark:text-luxury-400">Resume</p>
+                            <p class="font-majalla font-bold text-xl" data-i18n="resume_dl">تحميل السيرة الذاتية</p>
+                        </div>
+                    </a>
+                    <a href="https://drive.google.com/drive/folders/166S7H-xh7p7V11q4NMQAVnm5G6Q0hR1a?usp=sharing" target="_blank" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors">
+                        <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors">
+                            <i class="fas fa-envelope-open-text text-2xl text-accent dark:text-accent-light group-hover:text-white transition-colors"></i>
+                        </div>
+                        <div>
+                            <p class="text-base text-luxury-500 dark:text-luxury-400">Cover Letter</p>
+                            <p class="font-majalla font-bold text-xl" data-i18n="coverletter_dl">تحميل الموجز التعريفي</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="mt-12 pt-10 border-t border-luxury-200 dark:border-luxury-800 text-center">
+                    <p class="text-luxury-500 dark:text-luxury-400 mb-4 text-lg">
+                        <i class="fas fa-map-marker-alt ml-2"></i>
+                        <span data-i18n="contact_location">الرياض، المملكة العربية السعودية</span>
+                    </p>
+                    <a href="https://muhajjar.com" class="inline-flex items-center gap-2 text-accent dark:text-accent-light hover:underline font-majalla text-xl">
+                        <i class="fas fa-globe"></i>
+                        muhajjar.com
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 border-t border-luxury-200 dark:border-luxury-800">
+        <div class="max-w-7xl mx-auto px-8 sm:px-10 lg:px-8 text-center">
+            <p class="text-base text-luxury-500 dark:text-luxury-400">
+                <span data-i18n="footer_copy">© 2026 منذر الحجار. جميع الحقوق محفوظة.</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        AOS.init({
+            once: true,
+            offset: 80,
+            duration: 900,
+            easing: 'ease-out-cubic',
+            delay: 0,
+            mirror: false,
+            anchorPlacement: 'top-bottom',
+        });
+
+        // Scroll Progress & Scroll to Top
+        const scrollProgressFill = document.getElementById('scrollProgressFill');
+        const scrollProgressDot = document.getElementById('scrollProgressDot');
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        const scrollPercent = document.getElementById('scrollPercent');
+
+        function updateScrollProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercentValue = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+
+            scrollProgressFill.style.height = scrollPercentValue + '%';
+            scrollProgressDot.style.top = scrollPercentValue + '%';
+            scrollPercent.textContent = Math.round(scrollPercentValue) + '%';
+
+            if (scrollTop > 500) {
+                scrollTopBtn.classList.add('visible');
+                scrollPercent.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+                scrollPercent.classList.remove('visible');
+            }
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', updateScrollProgress);
+        updateScrollProgress();
+
+        const translations = {
+            ar: {
+                nav_about: "نبذة",
+                nav_experience: "خبرات",
+                nav_projects: "أعمال",
+                nav_certs: "شهادات",
+                nav_contact: "تواصل",
+                hero_subtitle: "إدارة المشاريع وتطوير الأعمال",
+                hero_name1: "منذر",
+                hero_name2: "الحجار",
+                hero_desc: "مدير مشاريع متخصص في تطوير الأعمال وتحليل الفرص التجارية، خبرة أكثر من 9 سنوات. سجل حافل في إدارة مشاريع متعددة (+100 مشروع)، وإغلاق عقود استراتيجية (+17 عقد)، وتحقيق نمو مبيعات بنسبة 48%.",
+                badge_title: "الخبرة",
+                badge_years: "سنوات",
+                section_about_sub: "Professional Summary",
+                section_about_title: "موجز مهني",
+                about_text1: "مدير مشاريع متخصص في تطوير الأعمال وتحليل الفرص التجارية، خبرة أكثر من 9 سنوات. أمتلك سجل حافل في إدارة مشاريع متعددة (+100 مشروع)، وإغلاق عقود استراتيجية (+17 عقد)، وتحقيق نمو مبيعات بنسبة 48% من خلال تطوير الخدمات والمنتجات وتحسين العمليات وتعزيز العلاقات مع العملاء والشركاء والموردين.",
+                about_text2: "كما توليت إدارة أكثر من 350 منتجًا مع الحفاظ على 94% رضا عملاء. أمتلك خبرة في إدارة العقود والتفاوض، وتطبيق ممارسات الحوكمة بأنظمة SAP ERP (MM) وBitrix24، وأمتلك خبرة في إنشاء RFP، المناقصات Bidding، وإدارة الشراكات B2B.",
+                about_text3: "أتميز بقدرات متقدمة في تطوير الأعمال، وإعداد العروض الفنية والمالية (RFP & Bidding)، وإدارة المشاريع والعمليات، وبناء الشراكات الاستراتيجية، وإدارة أصحاب المصلحة، والتخطيط الاستراتيجي، وتحليل الفرص التجارية، والتفاوض وإدارة العقود، مع سجل ناجح في قيادة المبادرات وتحقيق مستهدفات النمو والكفاءة التشغيلية.",
+                stat_projects: "مشروع",
+                stat_growth: "نمو المبيعات",
+                stat_artworks: "منتج استثماري وفني",
+                stat_contracts: "عقد استراتيجي",
+                section_exp_sub: "المسيرة المهنية",
+                section_exp_title: "الخبرات العملية",
+                job1_title: "تطوير الأعمال وإدارة المشاريع (ترقية)",
+                job1_1: "تطوير الفرص الاستثمارية: دراسة الفرص والمناقصات وترشيح منتجات جديدة لشركة كثيب كمثال، وهي إحدى شركات السليمان العقارية وتحديد الموارد والتكاليف والجداول الزمنية بما يضمن تعظيم العائد على الاستثمار (ROI).",
+                job1_2: "إدارة الشراكات الاستراتيجية: اختيار وتفاوض وإدارة علاقات الشراكات والوكالات لتدعم أهداف النمو، العلاقة مع شركة Night Frank ومقدمي الخدمات المختلفة كمنصات البيع وغيرها، وإدارة واختيار الموردين كمهندسي الديكور لوحدات العرض ومكاتب البيع الثابتة والمتنقلة.",
+                job1_3: "الحوكمة المالية والتكاليف: الإشراف على إعداد الميزانيات وتتبع التكاليف التشغيلية والتنفيذية ورفع المستخلصات والمستحقات، باستخدام نظام SAP MM (PR - RFQ - PO - GR - SES) لضمان الالتزام بالميزانيات.",
+                job1_4: "إدارة أصحاب المصلحة: بناء علاقات وثيقة استراتيجية طويلة الأجل مع المستثمرين والعملاء وكبار أصحاب المصلحة لعرض خطط العمل وتوقيع العقود.",
+                job2_title: "مدير المشاريع",
+                job2_1: "إدارة دورة حياة المشاريع وعلاقات العملاء: الإشراف الكامل على جميع مشاريع الشركة، وتوجيه وإدارة فرق العمل الإبداعية والهندسية لتحقيق الأهداف التشغيلية والتجارية، والوصول المباشر مع العملاء.",
+                job2_2: "إدارة العقود والشراكات والتحكم في الجودة والتكلفة: تطوير وتنفيذ اتفاقيات التعاون مع الوكالات الإعلانية والموردين لتحقيق كفاءة أعلى في التكاليف والسرعة والجودة، ضمان تسليم المشاريع في الوقت المحدد وضمن الميزانية.",
+                job2_3: "توفير حلول النمو: بناء معايير لقياس الجودة وضمان تسليم المشاريع ضمن الميزانيات المحددة والجداول الزمنية.",
+                job3_title: "مدير تطوير الأعمال والمنتجات (ترقية)",
+                job3_1: "تطوير المنتجات: إدارة وتطوير أكثر من 350 عمل فني في مجال الخط العربي، من التصميم حتى الإغلاق المالي.",
+                job3_2: "تحليل السوق: دراسة اتجاهات السوق لتحديد المنتجات الأكثر طلبًا وتوجيه خطط الإنتاج بناءً عليها.",
+                job3_3: "التفاوض والإغلاق: إدارة المفاوضات مع العملاء والفنانين لضمان هوامش ربح مثلى.",
+                job4_title: "مدير مشاريع إعلامية (ترقية)",
+                job4_1: "تحقيق نمو المبيعات: إدارة أكثر من 41 مشروعًا إعلاميًا، مما أسهم في زيادة المبيعات بنسبة 48% وتحقيق معدل رضا عملاء 94%.",
+                job4_2: "بناء علاقات B2B: تطوير علاقات مع شركات وعلامات تجارية جديدة لتوسيع قاعدة العملاء.",
+                job5_title: "مساعد مدير مشاريع تنفيذي",
+                job5_1: "دعم تطوير الأعمال: المساعدة في تحليل الفرص الجديدة، إعداد العروض التقديمية، ومتابعة التقدم نحو الأهداف التجارية.",
+                job5_2: "إعداد التقارير الاستراتيجية: توثيق وتحليل البيانات لدعم اتخاذ القرار.",
+                job6_title: "مصمم منتجات وتسويق",
+                job6_1: "تصميم منتجات الهدايا وإنتاج محتوى تسويقي لوسائل التواصل الاجتماعي.",
+                job6_2: "المساهمة في تطوير خطوط إنتاج جديدة بناءً على تحليل تفضيلات العملاء.",
+                job7_title: "مساعد تصميم إضاءة (Gaffer Assistant)",
+                job7_1: "مساعد تصميم توزيع الإضاءة والتركيبات الكهربائية في مواقع التصوير للإنتاج الإعلامي.",
+                job8_title: "مصمم صناعي وتجربة مستخدم",
+                job8_1: "دمج التصميم البصري مع الاحتياجات التجارية لتعزيز تجربة المستخدم.",
+                job9_title: "مشرف فريق المبيعات وخدمة العملاء",
+                job9_1: "الإشراف على قسم رضا العملاء وتدريب فرق المبيعات.",
+                job9_2: "تحليل أداء المبيعات وتقديم توصيات لتحسين النتائج.",
+                section_proj_sub: "أبرز الأعمال",
+                section_proj_title: "المشاريع والشراكات",
+                section_cert_sub: "الإنجازات",
+                section_cert_title: "الشهادات والجوائز",
+                cert0: "بكالوريوس إدارة الأعمال",
+                cert1: "PMP® Project Management Institute",
+                cert2: "SAP ERP (Business Software) Onsite Training",
+                cert3: "Sell like a Pro<br><span class=\"text-base font-normal text-luxury-500 dark:text-luxury-400\">علي الذياب</span>",
+                cert4: "International Property Awards<br><span class=\"text-base font-normal text-luxury-500 dark:text-luxury-400\">دبي</span>",
+                cert5: "Brand Strategy Foundations<br><span class=\"text-base font-normal text-luxury-500 dark:text-luxury-400\">هشام جبرة</span>",
+                cert6: "Calligraphy Workshop<br><span class=\"text-base font-normal text-luxury-500 dark:text-luxury-400\">وائل مرقص</span>",
+                cert7: "International Dental Certificate",
+                cert8: "دبلوم الاتصال وتقنيات الإعلام",
+                cert9: "دبلوم علوم الاستعاضة السنية<br><span class=\"text-base font-normal text-luxury-500 dark:text-luxury-400\">تقويم الأسنان</span>",
+                section_contact_sub: "لنبدأ حواراً",
+                section_contact_title: "تواصل معي",
+                contact_email: "البريد الإلكتروني",
+                contact_whatsapp: "واتساب",
+                contact_location: "الرياض، المملكة العربية السعودية",
+                footer_copy: "© 2026 منذر الحجار. جميع الحقوق محفوظة.",
+
+                job1_company: "شركة السليمان العقارية (الرياض)",
+                job2_company: "شركة السليمان العقارية (الرياض)",
+                job3_company: "وكالة هوية الإعلامية (حرف جاليري) (الرياض)",
+                job4_company: "وكالة هوية الإعلامية (الرياض)",
+                job5_company: "وكالة هوية الإعلامية (الرياض)",
+                job6_company: "مجموعة أبريز (الرياض)",
+                job7_company: "EQEW Rental House (Film Equipment & Technical Crew) (الرياض)",
+                job8_company: "وكالة براند هاوس (الرياض)",
+                job9_company: "LG Electronics (متاجر أكسيوم تليكوم) (الرياض)",
+
+                proj_alsoliman: "شركة السليمان العقارية",
+                proj_albasateen: "شركة البساتين العقارية",
+                proj_basma: "بصمة للتقييم العقاري وإدارة الأملاك",
+                proj_lcgpa: "هيئة المحتوى المحلي والمشتريات الحكومية",
+                proj_riyadhfront: "واجهة الرياض",
+                proj_barcode: "باركود للتقييم العقاري",
+                proj_qusour: "مخطط القصور بالعمارية",
+                proj_alsubaie: "مؤسسة إبراهيم السبيعي الخيرية",
+                proj_healthwaqf: "صندوق الوقف الصحي",
+                proj_sahab: "للحلول التقنية المتكاملة في الصحة والسلامة",
+                proj_albuyut: "البيوت المكتبية",
+                proj_harfgallery: "حرف جاليري",
+                proj_bader: "شركة بدر للمقاولات",
+
+                event_sub: "أبرز الأحداث",
+                event_title: "حفل اطلاق Alsoliman Business Compound",
+                event_p1: "قدت أعمال التخطيط والتطوير وإطلاق حفل Alsoliman Business Compound، وهو حدث استمر على مدى ثلاثة أيام، وجاء نتاجًا لأكثر من 45 يومًا من التخطيط المكثف والتنسيق المستمر لضمان تنفيذ الرؤية بالشكل الذي يعكس طموحات المشروع وقيمته.",
+                event_p2: "بدأت رحلة العمل منذ المراحل الأولى للمشروع، مرورًا بتجهيز الهوية البصرية للموقع وإنشاء التسوير الدعائي، وصولًا إلى تطوير تجربة متكاملة للحفل. وعلى مدار فترة التحضير، عقدنا 7 اجتماعات استراتيجية مع مزودي الخدمات والشركاء التنفيذيين لضمان تحقيق أفضل معادلة بين الجودة والوقت والكفاءة التشغيلية.",
+                event_p3: "الحدث منصة لاستعراض رحلة المشروع، وتسليط الضوء على المشاريع الحالية، والكشف عن المبادرات المستقبلية والخطط التوسعية القادمة. كما شكّل الحفل فرصة للإعلان عن شراكات استراتيجية نوعية تدعم توجهات النمو وتعزز من حضور المشروع في السوق.",
+                event_stat1: "يومًا من التخطيط والتطوير",
+                event_stat2: "أيام من الفعاليات والأنشطة",
+                event_stat3: "اجتماعات تنسيقية واستراتيجية",
+                event_stat4: "شراكات ومشاريع مستقبلية",
+
+                cert0_sub: "Midocean University (2026 - مستمر)",
+                cert8_sub: "أكاديمية الأمير أحمد بن سلمان للإعلام التطبيقي (2016-2018)",
+                cert9_sub: "جامعة دمشق (2010-2012)",
+
+                memory_sub: "لحظات من المسيرة",
+                memory_title: "من الذاكرة",
+                memory_gif_caption: "تقديم عمل لمشروع فنادق المدينة (فترة كورونا)",
+
+                resume_dl: "تحميل السيرة الذاتية",
+                coverletter_dl: "تحميل الموجز التعريفي"
+            },
+            en: {
+                nav_about: "About",
+                nav_experience: "Experience",
+                nav_projects: "Works",
+                nav_certs: "Certs",
+                nav_contact: "Contact",
+                hero_subtitle: "Senior Project Management & Business Development",
+                hero_name1: "Munther",
+                hero_name2: "AlHajjar",
+                hero_desc: "Project Manager specializing in business development and commercial opportunity analysis, with over 9 years of experience. Proven track record in managing multiple projects (+100), closing strategic contracts (+17), and achieving 48% sales growth.",
+                badge_title: "Experience",
+                badge_years: "Years",
+                section_about_sub: "Professional Summary",
+                section_about_title: "Professional Summary",
+                about_text1: "Project Manager specializing in business development and commercial opportunity analysis, with over 9 years of experience. A proven track record in managing multiple projects (+100), closing strategic contracts (+17), and achieving 48% sales growth through developing services and products, improving operations, and enhancing relationships with clients, partners, and suppliers.",
+                about_text2: "Also managed over 350 products while maintaining 94% customer satisfaction. Experienced in contract management and negotiation, applying governance practices with SAP ERP (MM) and Bitrix24 systems, and experienced in creating RFPs, Bidding tenders, and B2B partnership management.",
+                about_text3: "Distinguished by advanced capabilities in business development, preparing technical and financial proposals (RFP & Bidding), project and operations management, building strategic partnerships, stakeholder management, strategic planning, business opportunity analysis, negotiation and contract management, with a successful record in leading initiatives and achieving growth and operational efficiency targets.",
+                stat_projects: "Projects",
+                stat_growth: "Sales Growth",
+                stat_artworks: "Investment & Art Products",
+                stat_contracts: "Strategic Contracts",
+                section_exp_sub: "Career Path",
+                section_exp_title: "Professional Experience",
+                job1_title: "Senior Business Development & Project Management (Promoted)",
+                job1_1: "Investment Opportunity Development: Studying opportunities and tenders and recommending new products for Katheeb Company, one of Alsoliman Real Estate companies, identifying resources, costs, and timelines to maximize ROI.",
+                job1_2: "Strategic Partnership Management: Selecting, negotiating, and managing partnership and agency relationships to support growth objectives, including the relationship with Night Frank and various service providers such as sales platforms, and managing and selecting suppliers such as interior designers for show units and fixed/mobile sales offices.",
+                job1_3: "Financial Governance & Cost Control: Supervising budget preparation, tracking operational and execution costs, and raising invoices and receivables using SAP MM (PR - RFQ - PO - GR - SES) to ensure budget compliance.",
+                job1_4: "Stakeholder Management: Building close, long-term strategic relationships with investors, clients, and senior stakeholders to present business plans and sign contracts.",
+                job2_title: "Project Manager",
+                job2_1: "Project Lifecycle & Client Relationship Management: Full supervision of all company projects, directing and managing creative and engineering teams to achieve operational and commercial objectives, with direct client access.",
+                job2_2: "Contract & Partnership Management and Quality & Cost Control: Developing and implementing cooperation agreements with advertising agencies and suppliers to achieve higher efficiency in costs, speed, and quality, ensuring projects are delivered on time and within budget.",
+                job2_3: "Growth Solutions: Building quality measurement standards and ensuring project delivery within set budgets and timelines.",
+                job3_title: "Business Development & Product Manager (Promoted)",
+                job3_1: "Product Development: Managing and developing over 350 Arabic calligraphy artworks, from design to financial closure.",
+                job3_2: "Market Analysis: Studying market trends to identify most demanded products and directing production plans accordingly.",
+                job3_3: "Negotiation & Closure: Managing negotiations with clients and artists to ensure optimal profit margins.",
+                job4_title: "Media Project Manager (Promoted)",
+                job4_1: "Sales Growth Achievement: Managing over 41 media projects, contributing to 48% sales increase and 94% customer satisfaction rate.",
+                job4_2: "B2B Relationship Building: Developing relationships with new companies and brands to expand the client base.",
+                job5_title: "Executive Assistant Project Manager",
+                job5_1: "Business Development Support: Assisting in analyzing new opportunities, preparing presentations, and tracking progress toward business objectives.",
+                job5_2: "Strategic Reporting: Documenting and analyzing data to support decision-making.",
+                job6_title: "Product Designer & Marketing Specialist",
+                job6_1: "Designing gift products and producing marketing content for social media.",
+                job6_2: "Contributing to developing new production lines based on customer preference analysis.",
+                job7_title: "Gaffer Assistant",
+                job7_1: "Assisting in lighting design distribution and electrical installations at filming locations for media production.",
+                job8_title: "Industrial Designer & UX",
+                job8_1: "Integrating visual design with business needs to enhance user experience.",
+                job9_title: "Sales & Customer Service Team Supervisor",
+                job9_1: "Supervising customer satisfaction department and training sales teams.",
+                job9_2: "Analyzing sales performance and providing recommendations to improve results.",
+                section_proj_sub: "Selected Works",
+                section_proj_title: "Projects & Partnerships",
+                section_cert_sub: "Achievements",
+                section_cert_title: "Certifications & Awards",
+                cert0: "Bachelor of Business Administration<br><span class=\"text-base font-normal text-luxury-500 dark:text-luxury-400\">In Progress</span>",
+                cert1: "PMP® Project Management Institute",
+                cert2: "SAP ERP (Business Software) Onsite Training",
+                cert3: "Sell like a Pro<br><span class=\"text-base font-normal text-luxury-500 dark:text-luxury-400\">Ali Thiab</span>",
+                cert4: "International Property Awards<br><span class=\"text-base font-normal text-luxury-500 dark:text-luxury-400\">Dubai</span>",
+                cert5: "Brand Strategy Foundations<br><span class=\"text-base font-normal text-luxury-500 dark:text-luxury-400\">Hisham Jabrah</span>",
+                cert6: "Calligraphy Workshop<br><span class=\"text-base font-normal text-luxury-500 dark:text-luxury-400\">Wael Morcos</span>",
+                cert7: "International Dental Certificate",
+                cert8: "Diploma in Communication & Media Technology",
+                cert9: "Diploma in Dental Prosthetics<br><span class=\"text-base font-normal text-luxury-500 dark:text-luxury-400\">Orthodontics</span>",
+                section_contact_sub: "Let's Connect",
+                section_contact_title: "Get in Touch",
+                contact_email: "Email",
+                contact_whatsapp: "WhatsApp",
+                contact_location: "Riyadh, Kingdom of Saudi Arabia",
+                footer_copy: "© 2026 Munther AlHajjar. All rights reserved.",
+
+                job1_company: "Alsoliman Real Estate Company (Riyadh)",
+                job2_company: "Alsoliman Real Estate Company (Riyadh)",
+                job3_company: "Hawiya Media Agency (Harf Gallery) (Riyadh)",
+                job4_company: "Hawiya Media Agency (Riyadh)",
+                job5_company: "Hawiya Media Agency (Riyadh)",
+                job6_company: "Abriz Group (Riyadh)",
+                job7_company: "EQEW Rental House (Film Equipment & Technical Crew) (Riyadh)",
+                job8_company: "Brand House Agency (Riyadh)",
+                job9_company: "LG Electronics (Axiom Telecom Stores) (Riyadh)",
+
+                proj_alsoliman: "Alsoliman Real Estate",
+                proj_albasateen: "Al Basateen Real Estate",
+                proj_basma: "Basma Real Estate Valuation & Property Management",
+                proj_lcgpa: "Local Content & Government Procurement Authority",
+                proj_riyadhfront: "Riyadh Front",
+                proj_barcode: "Barcode Real Estate Valuation",
+                proj_qusour: "Qusour Al-Amariyah Plan",
+                proj_alsubaie: "Ibrahim Alsubaie Charity Foundation",
+                proj_healthwaqf: "Health Waqf Fund",
+                proj_sahab: "Integrated Technical Solutions for Health & Safety",
+                proj_albuyut: "Al Buyut Al-Maktabiya",
+                proj_harfgallery: "Harf Gallery",
+                proj_bader: "Bader Contracting Company",
+
+                event_sub: "Featured Event",
+                event_title: "Alsoliman Business Compound Launch Event",
+                event_p1: "I led the planning, development, and launch of the Alsoliman Business Compound event, a three-day event that was the result of more than 45 days of intensive planning and continuous coordination to ensure the vision was executed in a way that reflects the project's ambitions and value.",
+                event_p2: "The journey began from the project's earliest stages, through preparing the site's visual identity and creating promotional hoardings, up to developing a fully integrated event experience. Throughout the preparation period, we held 7 strategic meetings with service providers and executive partners to ensure the best balance of quality, time, and operational efficiency.",
+                event_p3: "The event served as a platform to showcase the project's journey, highlight current projects, and unveil future initiatives and upcoming expansion plans. The celebration was also an opportunity to announce notable strategic partnerships supporting growth directions and strengthening the project's market presence.",
+                event_stat1: "Days of Planning & Development",
+                event_stat2: "Days of Events & Activities",
+                event_stat3: "Coordination & Strategic Meetings",
+                event_stat4: "Future Partnerships & Projects",
+
+                cert0_sub: "Midocean University (2026 - Ongoing)",
+                cert8_sub: "Prince Ahmed bin Salman Academy for Applied Media (2016-2018)",
+                cert9_sub: "Damascus University (2010-2012)",
+
+                memory_sub: "Moments from the Journey",
+                memory_title: "From the Memory",
+                memory_gif_caption: "Presenting work for the Al Madinah Hotels project (during COVID)",
+
+                resume_dl: "Download Resume",
+                coverletter_dl: "Download Cover Letter"
+            }
+        };
+
+        let currentLang = 'ar';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            document.documentElement.lang = currentLang;
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            document.getElementById('lang-btn').textContent = currentLang === 'ar' ? 'EN' : 'AR';
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    el.innerHTML = translations[currentLang][key];
+                }
+            });
+            setTimeout(() => { AOS.refreshHard(); }, 100);
+        }
+
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+        }
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+
+    <!-- Vimeo Player API (لفيديو حفل Alsoliman Business Compound) -->
+    <script src="https://player.vimeo.com/api/player.js"></script>
+</body>
+</html>
