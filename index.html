@@ -180,6 +180,15 @@
            mode and only allow it in LTR/English mode. */
         html[dir="rtl"] .tracking-\[0\.3em\] { letter-spacing: 0 !important; }
 
+        /* Laptop/desktop only: headings and section titles shrink an extra
+           10% on top of the site-wide base scale (hero name, section
+           titles, card titles) — mobile keeps its own separate scale below. */
+        @media (min-width: 1024px) {
+            .text-hero-name { font-size: clamp(2.4098rem, 6.885vw, 4.8195rem); }
+            .text-section-title { font-size: clamp(1.7213rem, 3.4425vw, 2.754rem); }
+            .text-card-title { font-size: 1.224rem; }
+        }
+
         .profile-img { filter: grayscale(30%) contrast(1.1); transition: all 0.7s ease; }
         .profile-img:hover { filter: grayscale(0%) contrast(1.05); }
         .gold-line { height: 2px; background: linear-gradient(90deg, transparent, #B8956A, transparent); width: 0; transition: width 1.5s ease; }
