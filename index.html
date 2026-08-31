@@ -173,6 +173,13 @@
         .max-w-5xl { max-width: 51.2rem !important; }
         .max-w-2xl { max-width: 33.6rem !important; }
 
+        /* Arabic script must not be letter-spaced: wide tracking breaks the
+           cursive joining between letters (they render disconnected). The
+           section eyebrow labels use tracking-[0.3em] for the English
+           all-caps look, so disable it whenever the page is in RTL/Arabic
+           mode and only allow it in LTR/English mode. */
+        html[dir="rtl"] .tracking-\[0\.3em\] { letter-spacing: 0 !important; }
+
         .profile-img { filter: grayscale(30%) contrast(1.1); transition: all 0.7s ease; }
         .profile-img:hover { filter: grayscale(0%) contrast(1.05); }
         .gold-line { height: 2px; background: linear-gradient(90deg, transparent, #B8956A, transparent); width: 0; transition: width 1.5s ease; }
@@ -1013,58 +1020,58 @@
             </div>
             <div class="luxury-card bg-white dark:bg-luxury-950 rounded-3xl p-10 md:p-14" data-aos="fade-up">
                 <div class="grid md:grid-cols-2 gap-8">
-                    <a href="mailto:mu.alhajjar@gmail.com" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors">
-                        <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors">
+                    <a href="mailto:mu.alhajjar@gmail.com" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors min-w-0">
+                        <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors flex-shrink-0">
                             <i class="fas fa-envelope text-2xl text-accent dark:text-accent-light group-hover:text-white transition-colors"></i>
                         </div>
-                        <div>
+                        <div class="min-w-0">
                             <p class="text-base text-luxury-500 dark:text-luxury-400" data-i18n="contact_email">البريد الإلكتروني</p>
-                            <p class="font-majalla font-bold text-xl">mu.alhajjar@gmail.com</p>
+                            <p class="font-majalla font-bold text-xl break-words">mu.alhajjar@gmail.com</p>
                         </div>
                     </a>
-                    <a href="https://api.whatsapp.com/send/?phone=966555947624&text&type=phone_number&app_absent=0" target="_blank" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors">
-                        <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors">
+                    <a href="https://api.whatsapp.com/send/?phone=966555947624&text&type=phone_number&app_absent=0" target="_blank" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors min-w-0">
+                        <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors flex-shrink-0">
                             <i class="fab fa-whatsapp text-2xl text-accent dark:text-accent-light group-hover:text-white transition-colors"></i>
                         </div>
-                        <div>
+                        <div class="min-w-0">
                             <p class="text-base text-luxury-500 dark:text-luxury-400" data-i18n="contact_whatsapp">واتساب</p>
-                            <p class="font-majalla font-bold text-xl" dir="ltr">+966 55 594 7624</p>
+                            <p class="font-majalla font-bold text-xl break-words" dir="ltr">+966 55 594 7624</p>
                         </div>
                     </a>
-                    <a href="https://www.linkedin.com/in/munther-alhajjar/" target="_blank" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors">
-                        <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors">
+                    <a href="https://www.linkedin.com/in/munther-alhajjar/" target="_blank" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors min-w-0">
+                        <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors flex-shrink-0">
                             <i class="fab fa-linkedin-in text-2xl text-accent dark:text-accent-light group-hover:text-white transition-colors"></i>
                         </div>
-                        <div>
+                        <div class="min-w-0">
                             <p class="text-base text-luxury-500 dark:text-luxury-400">LinkedIn</p>
-                            <p class="font-majalla font-bold text-xl">munther-alhajjar</p>
+                            <p class="font-majalla font-bold text-xl break-words">munther-alhajjar</p>
                         </div>
                     </a>
-                    <a href="https://linktr.ee/mu.alhajjar" target="_blank" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors">
-                        <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors">
+                    <a href="https://linktr.ee/mu.alhajjar" target="_blank" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors min-w-0">
+                        <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors flex-shrink-0">
                             <i class="fas fa-link text-2xl text-accent dark:text-accent-light group-hover:text-white transition-colors"></i>
                         </div>
-                        <div>
+                        <div class="min-w-0">
                             <p class="text-base text-luxury-500 dark:text-luxury-400">Linktree</p>
-                            <p class="font-majalla font-bold text-xl">mu.alhajjar</p>
+                            <p class="font-majalla font-bold text-xl break-words">mu.alhajjar</p>
                         </div>
                     </a>
-                    <a href="https://drive.google.com/drive/folders/13k9np2Xb5v-hgxUFDuo4V4sWREvSreTR?usp=sharing" target="_blank" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors">
-                        <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors">
+                    <a href="https://drive.google.com/drive/folders/13k9np2Xb5v-hgxUFDuo4V4sWREvSreTR?usp=sharing" target="_blank" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors min-w-0">
+                        <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors flex-shrink-0">
                             <i class="fas fa-file-alt text-2xl text-accent dark:text-accent-light group-hover:text-white transition-colors"></i>
                         </div>
-                        <div>
+                        <div class="min-w-0">
                             <p class="text-base text-luxury-500 dark:text-luxury-400">Resume</p>
-                            <p class="font-majalla font-bold text-xl" data-i18n="resume_dl">تحميل السيرة الذاتية</p>
+                            <p class="font-majalla font-bold text-xl break-words" data-i18n="resume_dl">تحميل السيرة الذاتية</p>
                         </div>
                     </a>
-                    <a href="https://drive.google.com/drive/folders/166S7H-xh7p7V11q4NMQAVnm5G6Q0hR1a?usp=sharing" target="_blank" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors">
-                        <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors">
+                    <a href="https://drive.google.com/drive/folders/166S7H-xh7p7V11q4NMQAVnm5G6Q0hR1a?usp=sharing" target="_blank" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors min-w-0">
+                        <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors flex-shrink-0">
                             <i class="fas fa-envelope-open-text text-2xl text-accent dark:text-accent-light group-hover:text-white transition-colors"></i>
                         </div>
-                        <div>
+                        <div class="min-w-0">
                             <p class="text-base text-luxury-500 dark:text-luxury-400">Cover Letter</p>
-                            <p class="font-majalla font-bold text-xl" data-i18n="coverletter_dl">تحميل الموجز التعريفي</p>
+                            <p class="font-majalla font-bold text-xl break-words" data-i18n="coverletter_dl">تحميل الموجز التعريفي</p>
                         </div>
                     </a>
                 </div>
