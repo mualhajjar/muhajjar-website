@@ -191,6 +191,14 @@
            screens — desktop/laptop keeps the semibold + earlier size. */
         @media (max-width: 767px) {
             .contact-value { font-weight: 400 !important; font-size: 0.8607rem; }
+
+            /* Email address is the longest value in the card — shrink it a
+               further 10% on top of the mobile contact-value size above. */
+            .contact-email-value { font-size: 0.7746rem !important; }
+
+            /* "تحميل السيرة الذاتية" (Resume): force "الذاتية" onto its own
+               line so it wraps the same way "تحميل الموجز التعريفي" does. */
+            .resume-break { display: block; }
         }
 
         /* Laptop/desktop only: headings and section titles shrink an extra
@@ -1048,7 +1056,7 @@
                         </div>
                         <div class="min-w-0">
                             <p class="text-base text-luxury-500 dark:text-luxury-400" data-i18n="contact_email">البريد الإلكتروني</p>
-                            <p class="font-majalla font-semibold contact-value break-words">mu.alhajjar@gmail.com</p>
+                            <p class="font-majalla font-semibold contact-value contact-email-value break-words">mu.alhajjar@gmail.com</p>
                         </div>
                     </a>
                     <a href="https://api.whatsapp.com/send/?phone=966555947624&text&type=phone_number&app_absent=0" target="_blank" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors min-w-0">
@@ -1084,7 +1092,7 @@
                         </div>
                         <div class="min-w-0">
                             <p class="text-base text-luxury-500 dark:text-luxury-400">Resume</p>
-                            <p class="font-majalla font-semibold contact-value break-words" data-i18n="resume_dl">تحميل السيرة الذاتية</p>
+                            <p class="font-majalla font-semibold contact-value break-words" data-i18n="resume_dl">تحميل السيرة<span class="resume-break"> الذاتية</span></p>
                         </div>
                     </a>
                     <a href="https://drive.google.com/drive/folders/166S7H-xh7p7V11q4NMQAVnm5G6Q0hR1a?usp=sharing" target="_blank" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors min-w-0">
@@ -1279,7 +1287,7 @@
                 memory_title: "من الذاكرة",
                 memory_gif_caption: "تقديم عمل لمشروع فنادق المدينة (فترة كورونا)",
 
-                resume_dl: "تحميل السيرة الذاتية",
+                resume_dl: "تحميل السيرة<span class=\"resume-break\"> الذاتية</span>",
                 coverletter_dl: "تحميل الموجز التعريفي"
             },
             en: {
