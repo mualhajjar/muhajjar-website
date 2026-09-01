@@ -210,6 +210,16 @@
             .text-card-title { font-size: 1.224rem; }
         }
 
+        /* "تواصل معي" (Contact) card: smaller footprint on laptop/desktop
+           only — mobile and tablet keep their existing sizing. */
+        @media (min-width: 1024px) {
+            .contact-card { padding: 2rem !important; }
+            .contact-grid { gap: 1.25rem !important; }
+            .contact-link { padding: 0.75rem !important; gap: 0.875rem !important; }
+            .contact-icon { width: 3rem !important; height: 3rem !important; }
+            .contact-icon i { font-size: 1.125rem !important; }
+        }
+
         .profile-img { filter: grayscale(30%) contrast(1.1); transition: all 0.7s ease; }
         .profile-img:hover { filter: grayscale(0%) contrast(1.05); }
         .gold-line { height: 2px; background: linear-gradient(90deg, transparent, #B8956A, transparent); width: 0; transition: width 1.5s ease; }
@@ -1055,10 +1065,10 @@
                 <h2 class="font-majalla text-section-title mb-6" data-i18n="section_contact_title">تواصل معي</h2>
                 <div class="gold-line active mx-auto max-w-xs"></div>
             </div>
-            <div class="luxury-card bg-white dark:bg-luxury-950 rounded-3xl p-10 md:p-14" data-aos="fade-up">
-                <div class="grid md:grid-cols-2 gap-8">
-                    <a href="mailto:mu.alhajjar@gmail.com" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors min-w-0">
-                        <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors flex-shrink-0">
+            <div class="luxury-card contact-card bg-white dark:bg-luxury-950 rounded-3xl p-10 md:p-14" data-aos="fade-up">
+                <div class="grid md:grid-cols-2 gap-8 contact-grid">
+                    <a href="mailto:mu.alhajjar@gmail.com" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors min-w-0 contact-link">
+                        <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors flex-shrink-0 contact-icon">
                             <i class="fas fa-envelope text-2xl text-accent dark:text-accent-light group-hover:text-white transition-colors"></i>
                         </div>
                         <div class="min-w-0">
@@ -1066,8 +1076,8 @@
                             <p class="font-majalla font-semibold contact-value contact-email-value break-words">mu.alhajjar@gmail.com</p>
                         </div>
                     </a>
-                    <a href="https://api.whatsapp.com/send/?phone=966555947624&text&type=phone_number&app_absent=0" target="_blank" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors min-w-0">
-                        <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors flex-shrink-0">
+                    <a href="https://api.whatsapp.com/send/?phone=966555947624&text&type=phone_number&app_absent=0" target="_blank" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors min-w-0 contact-link">
+                        <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors flex-shrink-0 contact-icon">
                             <i class="fab fa-whatsapp text-2xl text-accent dark:text-accent-light group-hover:text-white transition-colors"></i>
                         </div>
                         <div class="min-w-0">
@@ -1075,8 +1085,8 @@
                             <p class="font-majalla font-semibold contact-value break-words" dir="ltr">+966 55 594 7624</p>
                         </div>
                     </a>
-                    <a href="https://www.linkedin.com/in/munther-alhajjar/" target="_blank" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors min-w-0">
-                        <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors flex-shrink-0">
+                    <a href="https://www.linkedin.com/in/munther-alhajjar/" target="_blank" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors min-w-0 contact-link">
+                        <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors flex-shrink-0 contact-icon">
                             <i class="fab fa-linkedin-in text-2xl text-accent dark:text-accent-light group-hover:text-white transition-colors"></i>
                         </div>
                         <div class="min-w-0">
@@ -1084,8 +1094,8 @@
                             <p class="font-majalla font-semibold contact-value break-words">munther-alhajjar</p>
                         </div>
                     </a>
-                    <a href="https://linktr.ee/mu.alhajjar" target="_blank" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors min-w-0">
-                        <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors flex-shrink-0">
+                    <a href="https://linktr.ee/mu.alhajjar" target="_blank" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors min-w-0 contact-link">
+                        <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors flex-shrink-0 contact-icon">
                             <i class="fas fa-link text-2xl text-accent dark:text-accent-light group-hover:text-white transition-colors"></i>
                         </div>
                         <div class="min-w-0">
@@ -1093,8 +1103,8 @@
                             <p class="font-majalla font-semibold contact-value break-words">mu.alhajjar</p>
                         </div>
                     </a>
-                    <a href="https://drive.google.com/drive/folders/13k9np2Xb5v-hgxUFDuo4V4sWREvSreTR?usp=sharing" target="_blank" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors min-w-0">
-                        <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors flex-shrink-0">
+                    <a href="https://drive.google.com/drive/folders/13k9np2Xb5v-hgxUFDuo4V4sWREvSreTR?usp=sharing" target="_blank" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors min-w-0 contact-link">
+                        <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors flex-shrink-0 contact-icon">
                             <i class="fas fa-file-alt text-2xl text-accent dark:text-accent-light group-hover:text-white transition-colors"></i>
                         </div>
                         <div class="min-w-0">
@@ -1102,8 +1112,8 @@
                             <p class="font-majalla font-semibold contact-value break-words" data-i18n="resume_dl">تحميل السيرة<span class="resume-break"> الذاتية</span></p>
                         </div>
                     </a>
-                    <a href="https://drive.google.com/drive/folders/166S7H-xh7p7V11q4NMQAVnm5G6Q0hR1a?usp=sharing" target="_blank" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors min-w-0">
-                        <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors flex-shrink-0">
+                    <a href="https://drive.google.com/drive/folders/166S7H-xh7p7V11q4NMQAVnm5G6Q0hR1a?usp=sharing" target="_blank" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors min-w-0 contact-link">
+                        <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors flex-shrink-0 contact-icon">
                             <i class="fas fa-envelope-open-text text-2xl text-accent dark:text-accent-light group-hover:text-white transition-colors"></i>
                         </div>
                         <div class="min-w-0">
@@ -1125,15 +1135,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="py-10 border-t border-luxury-200 dark:border-luxury-800">
-        <div class="max-w-7xl mx-auto px-8 sm:px-10 lg:px-8 text-center">
-            <p class="text-base text-luxury-500 dark:text-luxury-400">
-                <span data-i18n="footer_copy">© 2026 منذر الحجار. جميع الحقوق محفوظة.</span>
-            </p>
-        </div>
-    </footer>
 
     <!-- JavaScript -->
     <script>
@@ -1250,7 +1251,6 @@
                 contact_email: "البريد الإلكتروني",
                 contact_whatsapp: "واتساب",
                 contact_location: "الرياض، المملكة العربية السعودية",
-                footer_copy: "© 2026 منذر الحجار. جميع الحقوق محفوظة.",
 
                 job1_company: "شركة السليمان العقارية (الرياض)",
                 job2_company: "شركة السليمان العقارية (الرياض)",
@@ -1368,7 +1368,6 @@
                 contact_email: "Email",
                 contact_whatsapp: "WhatsApp",
                 contact_location: "Riyadh, Kingdom of Saudi Arabia",
-                footer_copy: "© 2026 Munther AlHajjar. All rights reserved.",
 
                 job1_company: "Alsoliman Real Estate Company (Riyadh)",
                 job2_company: "Alsoliman Real Estate Company (Riyadh)",
