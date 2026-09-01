@@ -220,6 +220,10 @@
         .link-luxury:hover::after { width: 100%; }
         .luxury-card { transition: all 0.4s ease; border: 1px solid transparent; }
         .luxury-card:hover { border-color: #B8956A; transform: translateY(-4px); }
+        /* Certifications & Awards: always put the date on its own line,
+           clearly separated from the title/subtitle above it, on every
+           viewport (mobile, tablet, laptop, desktop). */
+        .cert-date { display: block; margin-top: 0.375rem; }
         .dark .luxury-card { background: rgba(255,255,255,0.03); }
         .dark .luxury-card:hover { background: rgba(255,255,255,0.06); border-color: #D4AF37; }
         .timeline-line { position: absolute; right: 7px; top: 0; bottom: 0; width: 1px; background: linear-gradient(to bottom, #B8956A, transparent); }
@@ -861,7 +865,7 @@
                     </div>
                     <div>
                         <h4 class="font-majalla font-bold text-xl" data-i18n="cert0">بكالوريوس إدارة الأعمال</h4>
-                        <p class="text-base text-luxury-500 dark:text-luxury-400" data-i18n="cert0_sub">Midocean University (2026 - مستمر)</p>
+                        <p class="text-base text-luxury-500 dark:text-luxury-400 cert-date" data-i18n="cert0_sub">Midocean University (2026 - مستمر)</p>
                     </div>
                 </div>
                 <div class="luxury-card bg-white dark:bg-luxury-950 rounded-xl p-8 flex items-center gap-5" data-aos="fade-up" data-aos-delay="400">
@@ -870,7 +874,7 @@
                     </div>
                     <div>
                         <h4 class="font-majalla font-bold text-xl" data-i18n="cert8">دبلوم الاتصال وتقنيات الإعلام</h4>
-                        <p class="text-base text-luxury-500 dark:text-luxury-400" data-i18n="cert8_sub">أكاديمية الأمير أحمد بن سلمان للإعلام التطبيقي (2016-2018)</p>
+                        <p class="text-base text-luxury-500 dark:text-luxury-400 cert-date" data-i18n="cert8_sub">أكاديمية الأمير أحمد بن سلمان للإعلام التطبيقي (2016-2018)</p>
                     </div>
                 </div>
 
@@ -880,7 +884,7 @@
                     </div>
                     <div>
                         <h4 class="font-majalla font-bold text-xl" data-i18n="cert1">PMP® Project Management Institute</h4>
-                        <p class="text-base text-luxury-500 dark:text-luxury-400">2026</p>
+                        <p class="text-base text-luxury-500 dark:text-luxury-400 cert-date">2026</p>
                     </div>
                 </div>
 
@@ -890,7 +894,7 @@
                     </div>
                     <div>
                         <h4 class="font-majalla font-bold text-xl" data-i18n="cert2">SAP ERP (Business Software) Onsite Training</h4>
-                        <p class="text-base text-luxury-500 dark:text-luxury-400">2024</p>
+                        <p class="text-base text-luxury-500 dark:text-luxury-400 cert-date">2024</p>
                     </div>
                 </div>
 
@@ -900,7 +904,7 @@
                     </div>
                     <div>
                         <h4 class="font-majalla font-bold text-xl group-hover:text-accent dark:group-hover:text-accent-light transition-colors" data-i18n="cert3">Sell like a Pro<br><span class="text-base font-normal text-luxury-500 dark:text-luxury-400">علي الذياب</span></h4>
-                        <p class="text-base text-luxury-500 dark:text-luxury-400">2023 <i class="fas fa-external-link-alt text-sm mr-1"></i></p>
+                        <p class="text-base text-luxury-500 dark:text-luxury-400 cert-date">2023 <i class="fas fa-external-link-alt text-sm mr-1"></i></p>
                     </div>
                 </a>
 
@@ -910,7 +914,7 @@
                     </div>
                     <div>
                         <h4 class="font-majalla font-bold text-xl" data-i18n="cert4">International Property Awards<br><span class="text-base font-normal text-luxury-500 dark:text-luxury-400">دبي</span></h4>
-                        <p class="text-base text-luxury-500 dark:text-luxury-400">2022</p>
+                        <p class="text-base text-luxury-500 dark:text-luxury-400 cert-date">2022</p>
                     </div>
                 </div>
 
@@ -920,7 +924,7 @@
                     </div>
                     <div>
                         <h4 class="font-majalla font-bold text-xl" data-i18n="cert5">Brand Strategy Foundations<br><span class="text-base font-normal text-luxury-500 dark:text-luxury-400">هشام جبرة</span></h4>
-                        <p class="text-base text-luxury-500 dark:text-luxury-400">2019</p>
+                        <p class="text-base text-luxury-500 dark:text-luxury-400 cert-date">2019</p>
                     </div>
                 </div>
 
@@ -930,7 +934,7 @@
                     </div>
                     <div>
                         <h4 class="font-majalla font-bold text-xl" data-i18n="cert6">Calligraphy Workshop<br><span class="text-base font-normal text-luxury-500 dark:text-luxury-400">وائل مرقص</span></h4>
-                        <p class="text-base text-luxury-500 dark:text-luxury-400">2019</p>
+                        <p class="text-base text-luxury-500 dark:text-luxury-400 cert-date">2019</p>
                     </div>
                 </div>
 
@@ -940,7 +944,7 @@
                     </div>
                     <div>
                         <h4 class="font-majalla font-bold text-xl" data-i18n="cert7">International Dental Certificate</h4>
-                        <p class="text-base text-luxury-500 dark:text-luxury-400">2010</p>
+                        <p class="text-base text-luxury-500 dark:text-luxury-400 cert-date">2010</p>
                     </div>
                 </div>
 
@@ -952,7 +956,7 @@
                     </div>
                     <div>
                         <h4 class="font-majalla font-bold text-xl" data-i18n="cert9">دبلوم علوم الاستعاضة السنية<br><span class="text-base font-normal text-luxury-500 dark:text-luxury-400">تقويم الأسنان</span></h4>
-                        <p class="text-base text-luxury-500 dark:text-luxury-400" data-i18n="cert9_sub">جامعة دمشق (2010-2012)</p>
+                        <p class="text-base text-luxury-500 dark:text-luxury-400 cert-date" data-i18n="cert9_sub">جامعة دمشق (2010-2012)</p>
                     </div>
                 </div>
             </div>
