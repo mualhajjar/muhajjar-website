@@ -180,6 +180,11 @@
            mode and only allow it in LTR/English mode. */
         html[dir="rtl"] .tracking-\[0\.3em\] { letter-spacing: 0 !important; }
 
+        /* Contact card values (email, WhatsApp, LinkedIn, Linktree, Resume,
+           Cover Letter): lighter weight than font-bold, and 10% smaller
+           than the site's already-scaled text-xl. */
+        .contact-value { font-size: 0.9563rem; }
+
         /* Laptop/desktop only: headings and section titles shrink an extra
            10% on top of the site-wide base scale (hero name, section
            titles, card titles) — mobile keeps its own separate scale below. */
@@ -1035,7 +1040,7 @@
                         </div>
                         <div class="min-w-0">
                             <p class="text-base text-luxury-500 dark:text-luxury-400" data-i18n="contact_email">البريد الإلكتروني</p>
-                            <p class="font-majalla font-bold text-xl break-words">mu.alhajjar@gmail.com</p>
+                            <p class="font-majalla font-semibold contact-value break-words">mu.alhajjar@gmail.com</p>
                         </div>
                     </a>
                     <a href="https://api.whatsapp.com/send/?phone=966555947624&text&type=phone_number&app_absent=0" target="_blank" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors min-w-0">
@@ -1044,7 +1049,7 @@
                         </div>
                         <div class="min-w-0">
                             <p class="text-base text-luxury-500 dark:text-luxury-400" data-i18n="contact_whatsapp">واتساب</p>
-                            <p class="font-majalla font-bold text-xl break-words" dir="ltr">+966 55 594 7624</p>
+                            <p class="font-majalla font-semibold contact-value break-words" dir="ltr">+966 55 594 7624</p>
                         </div>
                     </a>
                     <a href="https://www.linkedin.com/in/munther-alhajjar/" target="_blank" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors min-w-0">
@@ -1053,7 +1058,7 @@
                         </div>
                         <div class="min-w-0">
                             <p class="text-base text-luxury-500 dark:text-luxury-400">LinkedIn</p>
-                            <p class="font-majalla font-bold text-xl break-words">munther-alhajjar</p>
+                            <p class="font-majalla font-semibold contact-value break-words">munther-alhajjar</p>
                         </div>
                     </a>
                     <a href="https://linktr.ee/mu.alhajjar" target="_blank" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors min-w-0">
@@ -1062,7 +1067,7 @@
                         </div>
                         <div class="min-w-0">
                             <p class="text-base text-luxury-500 dark:text-luxury-400">Linktree</p>
-                            <p class="font-majalla font-bold text-xl break-words">mu.alhajjar</p>
+                            <p class="font-majalla font-semibold contact-value break-words">mu.alhajjar</p>
                         </div>
                     </a>
                     <a href="https://drive.google.com/drive/folders/13k9np2Xb5v-hgxUFDuo4V4sWREvSreTR?usp=sharing" target="_blank" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors min-w-0">
@@ -1071,7 +1076,7 @@
                         </div>
                         <div class="min-w-0">
                             <p class="text-base text-luxury-500 dark:text-luxury-400">Resume</p>
-                            <p class="font-majalla font-bold text-xl break-words" data-i18n="resume_dl">تحميل السيرة الذاتية</p>
+                            <p class="font-majalla font-semibold contact-value break-words" data-i18n="resume_dl">تحميل السيرة الذاتية</p>
                         </div>
                     </a>
                     <a href="https://drive.google.com/drive/folders/166S7H-xh7p7V11q4NMQAVnm5G6Q0hR1a?usp=sharing" target="_blank" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors min-w-0">
@@ -1080,7 +1085,7 @@
                         </div>
                         <div class="min-w-0">
                             <p class="text-base text-luxury-500 dark:text-luxury-400">Cover Letter</p>
-                            <p class="font-majalla font-bold text-xl break-words" data-i18n="coverletter_dl">تحميل الموجز التعريفي</p>
+                            <p class="font-majalla font-semibold contact-value break-words" data-i18n="coverletter_dl">تحميل الموجز التعريفي</p>
                         </div>
                     </a>
                 </div>
