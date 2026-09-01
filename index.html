@@ -365,6 +365,12 @@
         .hide-scroll::-webkit-scrollbar { display: none; }
         .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
         .video-container { position: relative; width: 100%; border-radius: 1.5rem; overflow: hidden; background: #000; }
+        /* Scale effect on the Alsoliman launch video: a quick zoom-in pulse
+           when it starts playing, and a quick zoom-out pulse when it's
+           paused/closed/exits fullscreen — on every viewport. */
+        .video-fx { transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1); transform: scale(1); }
+        .video-fx.video-fx-active { transform: scale(1.03); }
+        .video-fx.video-fx-closing { transform: scale(0.97); }
         .video-container video { width: 100%; height: auto; display: block; }
         @media (max-width: 768px) { .hero-image-wrapper { margin-top: 3rem !important; } }
 
@@ -1464,7 +1470,15 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const href = this.getAttribute('href');
+                // The logo link (href="#") and any other bare "#" link go to
+                // the top of the page (home) instead of trying to querySelector
+                // an empty id, which would throw.
+                if (!href || href === '#') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    return;
+                }
+                const target = document.querySelector(href);
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
@@ -1477,19 +1491,47 @@
     <script>
         // On every viewport (mobile, tablet, laptop, desktop): as soon as the
         // Alsoliman Business Compound launch video starts playing, request
-        // fullscreen automatically.
+        // fullscreen automatically, with a subtle scale animation on both
+        // opening (play) and closing (exiting fullscreen / pause).
         (function () {
-            const iframe = document.querySelector('#video .video-container iframe');
-            if (!iframe || typeof Vimeo === 'undefined') return;
+            const container = document.querySelector('#video .video-container');
+            const iframe = container ? container.querySelector('iframe') : null;
+            if (!container || !iframe || typeof Vimeo === 'undefined') return;
+            container.classList.add('video-fx');
             const player = new Vimeo.Player(iframe);
             let fullscreenRequested = false;
+
+            function playEffect() {
+                container.classList.add('video-fx-active');
+                window.setTimeout(() => container.classList.remove('video-fx-active'), 450);
+            }
+
+            function closeEffect() {
+                container.classList.add('video-fx-closing');
+                window.setTimeout(() => container.classList.remove('video-fx-closing'), 450);
+            }
+
             player.on('play', function () {
+                playEffect();
                 if (fullscreenRequested) return;
                 fullscreenRequested = true;
                 player.requestFullscreen().catch(function () {
                     // Fullscreen may be blocked by the browser in some
                     // contexts (e.g. no direct user gesture) — fail silently.
                 });
+            });
+
+            player.on('pause', closeEffect);
+            player.on('ended', function () {
+                closeEffect();
+                fullscreenRequested = false;
+            });
+
+            document.addEventListener('fullscreenchange', function () {
+                if (!document.fullscreenElement) {
+                    closeEffect();
+                    fullscreenRequested = false;
+                }
             });
         })();
     </script>
@@ -1546,9 +1588,16 @@
                 document.body.style.overflow = '';
             }
 
+            // Each image sits under an absolutely-positioned caption/gradient
+            // overlay div, which was silently swallowing clicks meant for the
+            // image beneath it. Delegate the click to the card wrapper
+            // instead so it fires no matter which layer (image, overlay, or
+            // caption text) was actually clicked.
             imgs.forEach((img, i) => {
                 img.style.cursor = 'zoom-in';
-                img.addEventListener('click', () => open(i));
+                const card = img.closest('.break-inside-avoid') || img.parentElement;
+                card.style.cursor = 'zoom-in';
+                card.addEventListener('click', () => open(i));
             });
 
             btnClose.addEventListener('click', close);
