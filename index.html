@@ -185,6 +185,14 @@
            than the site's already-scaled text-xl. */
         .contact-value { font-size: 0.9563rem; }
 
+        /* Mobile only: long values (the email especially) were still
+           wrapping awkwardly at font-semibold. Drop to normal weight and
+           shrink another 10% so they wrap more gracefully on narrow
+           screens — desktop/laptop keeps the semibold + earlier size. */
+        @media (max-width: 767px) {
+            .contact-value { font-weight: 400 !important; font-size: 0.8607rem; }
+        }
+
         /* Laptop/desktop only: headings and section titles shrink an extra
            10% on top of the site-wide base scale (hero name, section
            titles, card titles) — mobile keeps its own separate scale below. */
