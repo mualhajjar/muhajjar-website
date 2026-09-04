@@ -339,12 +339,19 @@
         .hide-scroll::-webkit-scrollbar { display: none; }
         .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
         .video-container { position: relative; width: 100%; border-radius: 1.5rem; overflow: hidden; background: #000; }
-        /* Scale effect on the Alsoliman launch video: a quick zoom-in pulse
-           when it starts playing, and a quick zoom-out pulse when it's
-           paused/closed/exits fullscreen — on every viewport. */
-        .video-fx { transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1); transform: scale(1); }
-        .video-fx.video-fx-active { transform: scale(1.03); }
-        .video-fx.video-fx-closing { transform: scale(0.97); }
+        /* Smooth motion on the Alsoliman launch video: a gentle zoom+glow
+           when it starts playing (entering fullscreen), and a matching
+           zoom-out + fade when it's paused/closed/exits fullscreen — on
+           every viewport. A longer, eased duration reads as a deliberate
+           cinematic transition rather than an abrupt jump. */
+        .video-fx {
+            transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), filter 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+            transform: scale(1);
+            opacity: 1;
+            will-change: transform, opacity;
+        }
+        .video-fx.video-fx-active { transform: scale(1.035); filter: brightness(1.03); }
+        .video-fx.video-fx-closing { transform: scale(0.965); opacity: 0.85; filter: brightness(0.92); }
         .video-container video { width: 100%; height: auto; display: block; }
         @media (max-width: 768px) { .hero-image-wrapper { margin-top: 3rem !important; } }
 
@@ -1478,8 +1485,10 @@
     <script>
         // On every viewport (mobile, tablet, laptop, desktop): as soon as the
         // Alsoliman Business Compound launch video starts playing, request
-        // fullscreen automatically, with a subtle scale animation on both
-        // opening (play) and closing (exiting fullscreen / pause).
+        // fullscreen automatically, with a smooth zoom/fade motion on both
+        // opening (play) and closing (exiting fullscreen / pause). Skipping
+        // (scrubbing the seek bar) while playing in fullscreen ends the
+        // "cinema" experience: the video pauses and fullscreen is exited.
         (function () {
             const container = document.querySelector('#video .video-container');
             const iframe = container ? container.querySelector('iframe') : null;
@@ -1487,18 +1496,28 @@
             container.classList.add('video-fx');
             const player = new Vimeo.Player(iframe);
             let fullscreenRequested = false;
+            let isPlaying = false;
+            // Matches the 0.6s transition duration set on .video-fx in CSS.
+            const FX_DURATION = 600;
 
             function playEffect() {
+                container.classList.remove('video-fx-closing');
+                // Restart the animation cleanly even if triggered again
+                // mid-transition.
+                void container.offsetWidth;
                 container.classList.add('video-fx-active');
-                window.setTimeout(() => container.classList.remove('video-fx-active'), 450);
+                window.setTimeout(() => container.classList.remove('video-fx-active'), FX_DURATION);
             }
 
             function closeEffect() {
+                container.classList.remove('video-fx-active');
+                void container.offsetWidth;
                 container.classList.add('video-fx-closing');
-                window.setTimeout(() => container.classList.remove('video-fx-closing'), 450);
+                window.setTimeout(() => container.classList.remove('video-fx-closing'), FX_DURATION);
             }
 
             player.on('play', function () {
+                isPlaying = true;
                 playEffect();
                 if (fullscreenRequested) return;
                 fullscreenRequested = true;
@@ -1508,10 +1527,26 @@
                 });
             });
 
-            player.on('pause', closeEffect);
+            player.on('pause', function () {
+                isPlaying = false;
+                closeEffect();
+            });
+
             player.on('ended', function () {
+                isPlaying = false;
                 closeEffect();
                 fullscreenRequested = false;
+            });
+
+            // Skipping/scrubbing the video while it's playing in the
+            // fullscreen "cinema" mode stops playback and exits fullscreen,
+            // rather than continuing to play at the new position.
+            player.on('seeked', function () {
+                if (!isPlaying || !fullscreenRequested) return;
+                player.pause().catch(function () {});
+                if (document.fullscreenElement) {
+                    document.exitFullscreen().catch(function () {});
+                }
             });
 
             document.addEventListener('fullscreenchange', function () {
