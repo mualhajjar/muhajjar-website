@@ -355,6 +355,51 @@
         .video-container video { width: 100%; height: auto; display: block; }
         @media (max-width: 768px) { .hero-image-wrapper { margin-top: 3rem !important; } }
 
+        /* Memory gallery cards: a refined frame (subtle border + shadow that
+           lifts on hover), a slower/smoother image zoom, and a magnifier
+           glyph that fades in on hover as a clear "click to enlarge" cue —
+           on top of the existing caption gradient overlay. */
+        .memory-card {
+            border: 1px solid rgba(184, 149, 106, 0.18);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+            transition: box-shadow 0.4s ease, transform 0.4s ease, border-color 0.4s ease;
+        }
+        .dark .memory-card { border-color: rgba(184, 149, 106, 0.22); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
+        .memory-card:hover {
+            box-shadow: 0 20px 40px -12px rgba(28, 28, 28, 0.28);
+            transform: translateY(-4px);
+            border-color: rgba(184, 149, 106, 0.5);
+        }
+        .memory-card img,
+        .memory-card video {
+            transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .memory-card:hover img,
+        .memory-card:hover video {
+            transform: scale(1.08);
+        }
+        .memory-zoom-cue {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.75);
+            width: 3rem;
+            height: 3rem;
+            border-radius: 9999px;
+            background: rgba(255, 255, 255, 0.16);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            opacity: 0;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            pointer-events: none;
+        }
+        .memory-card:hover .memory-zoom-cue { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+
         /* Project card logo styling */
         .project-logo {
             max-height: 70px;
@@ -979,72 +1024,87 @@
             </div>
             <div class="columns-2 md:columns-2 lg:columns-3 gap-4 md:gap-5 space-y-4 md:space-y-5">
                 <!-- GIF Added -->
-                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up">
+                <div class="memory-card break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up">
                     <video src="images/profile-hero.mp4" poster="images/profile-hero-poster.jpg" class="w-full object-cover transition-transform duration-700 group-hover:scale-105" autoplay loop muted playsinline preload="none" aria-label="Presenting work for the Al Madinah Hotels project" role="img">
                         <source src="images/profile-hero.webm" type="video/webm">
                         <source src="images/profile-hero.mp4" type="video/mp4">
                     </video>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <span class="memory-zoom-cue" aria-hidden="true"><i class="fas fa-expand"></i></span>
                     <div class="absolute bottom-4 right-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         <p class="font-majalla text-lg" data-i18n="memory_gif_caption">تقديم عمل لمشروع فنادق المدينة (فترة كورونا)</p>
                     </div>
                 </div>
 
-                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="50">
+                <div class="memory-card break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="50">
                     <img src="memories/memory-01-event.jpg" alt="Event" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <span class="memory-zoom-cue" aria-hidden="true"><i class="fas fa-expand"></i></span>
                 </div>
-                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="100">
+                <div class="memory-card break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="100">
                     <img src="memories/memory-02-construction-site.jpg" alt="Construction Site" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <span class="memory-zoom-cue" aria-hidden="true"><i class="fas fa-expand"></i></span>
                 </div>
-                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="150">
+                <div class="memory-card break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="150">
                     <img src="memories/memory-03-team.jpg" alt="Team" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <span class="memory-zoom-cue" aria-hidden="true"><i class="fas fa-expand"></i></span>
                 </div>
-                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="200">
+                <div class="memory-card break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="200">
                     <img src="memories/memory-04-bankruptcy-commission.jpg" alt="Bankruptcy Commission" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <span class="memory-zoom-cue" aria-hidden="true"><i class="fas fa-expand"></i></span>
                 </div>
-                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="250">
+                <div class="memory-card break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="250">
                     <img src="memories/memory-05-bussma.jpg" alt="Bussma" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <span class="memory-zoom-cue" aria-hidden="true"><i class="fas fa-expand"></i></span>
                 </div>
-                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="300">
+                <div class="memory-card break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="300">
                     <img src="memories/memory-06-alajlan-project.jpg" alt="Al Ajlan Project" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <span class="memory-zoom-cue" aria-hidden="true"><i class="fas fa-expand"></i></span>
                 </div>
-                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="350">
+                <div class="memory-card break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="350">
                     <img src="memories/memory-07-planning.jpg" alt="Planning" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <span class="memory-zoom-cue" aria-hidden="true"><i class="fas fa-expand"></i></span>
                 </div>
-                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="400">
+                <div class="memory-card break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="400">
                     <img src="memories/memory-08-team-office.jpg" alt="Team Office" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <span class="memory-zoom-cue" aria-hidden="true"><i class="fas fa-expand"></i></span>
                 </div>
-                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="450">
+                <div class="memory-card break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="450">
                     <img src="memories/memory-09-team.jpg" alt="Team" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <span class="memory-zoom-cue" aria-hidden="true"><i class="fas fa-expand"></i></span>
                 </div>
-                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="500">
+                <div class="memory-card break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="500">
                     <img src="memories/memory-10-presentation.jpg" alt="Presentation" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <span class="memory-zoom-cue" aria-hidden="true"><i class="fas fa-expand"></i></span>
                 </div>
-                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="550">
+                <div class="memory-card break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="550">
                     <img src="memories/memory-11-team-gathering.jpg" alt="Team Gathering" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <span class="memory-zoom-cue" aria-hidden="true"><i class="fas fa-expand"></i></span>
                 </div>
-                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="600">
+                <div class="memory-card break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="600">
                     <img src="memories/memory-12-awards.jpg" alt="Awards" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <span class="memory-zoom-cue" aria-hidden="true"><i class="fas fa-expand"></i></span>
                 </div>
-                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="650">
+                <div class="memory-card break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="650">
                     <img src="memories/memory-13-portrait.jpg" alt="Portrait" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <span class="memory-zoom-cue" aria-hidden="true"><i class="fas fa-expand"></i></span>
                 </div>
-                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="700">
+                <div class="memory-card break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="700">
                     <img src="memories/memory-14-harf-gallery.jpg" alt="Harf Gallery" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <span class="memory-zoom-cue" aria-hidden="true"><i class="fas fa-expand"></i></span>
                 </div>
             </div>
         </div>
@@ -1553,6 +1613,13 @@
                 if (!document.fullscreenElement) {
                     closeEffect();
                     fullscreenRequested = false;
+                    // Closing fullscreen (Escape key, the browser's own
+                    // close/exit control, back gesture, etc.) should stop
+                    // playback automatically rather than leaving the video
+                    // playing in the background.
+                    if (isPlaying) {
+                        player.pause().catch(function () {});
+                    }
                 }
             });
         })();
