@@ -7,11 +7,21 @@
     <meta name="description" content="Senior Project Management & Business Development - منذر الحجار">
     <link rel="icon" type="image/png" href="images/favicon-32x32.png">
 
-    <!-- Preload الأوزان الأكثر استخدامًا من الخط والصورة الرئيسية لتسريع أول عرض -->
+    <!-- Google Search Console: site ownership verification -->
+    <meta name="google-site-verification" content="xCVlyq56JZqHjULeQiY4LLFM1JHExS2z8nYHavG6FwY" />
+
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-586N895LS0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-586N895LS0');
+    </script>
+
+    <!-- Preload الأوزان الأكثر استخدامًا من الخط لتسريع أول عرض -->
     <link rel="preload" href="fonts/ThmanyahSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/ThmanyahSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="css/tailwind.min.css" as="style">
-    <link rel="preload" href="images/profile-hero-poster.jpg" as="image">
 
     <!-- Open Graph (معاينة الروابط على LinkedIn / واتساب / فيسبوك) -->
     <meta property="og:type" content="profile">
@@ -32,10 +42,6 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://muhajjar.com/">
-
-    <!-- llms.txt: تهيئة الموقع لمحركات بحث الذكاء الاصطناعي (AI Search / LLM crawlers) -->
-    <link rel="llms.txt" href="https://muhajjar.com/llms.txt">
-    <meta name="ai:llms-txt" content="https://muhajjar.com/llms.txt">
 
     <!-- Structured Data: Person (schema.org) -->
     <script type="application/ld+json">
@@ -101,16 +107,48 @@
         :lang(ar) { letter-spacing: normal; }
     </style>
 
-    <!-- Tailwind CSS: مُحوَّل مسبقًا إلى ملف CSS ثابت ومُنقّى (بدل مُحرّك CDN وقت التشغيل)
-         لتفادي حظر العرض واستهلاك المعالج، مع نفس إعدادات الألوان والخطوط المخصصة أعلاه -->
-    <link rel="stylesheet" href="css/tailwind.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Font Awesome (مستضاف محليًا) -->
-    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- AOS Animation Library (مستضاف محليًا) -->
-    <link href="css/aos.min.css" rel="stylesheet">
-    <script src="js/aos.min.js" defer></script>
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'majalla': ['"Thmanyah Sans"', 'Traditional Arabic', 'Arial', 'sans-serif'],
+                    },
+                    colors: {
+                        luxury: {
+                            50: '#FAF9F6',
+                            100: '#F5F3EE',
+                            200: '#E8E4DB',
+                            300: '#D4CFC4',
+                            400: '#B8B0A0',
+                            500: '#9A9080',
+                            600: '#7A7060',
+                            700: '#5A5045',
+                            800: '#3A3530',
+                            900: '#1C1C1C',
+                            950: '#0A0A0A',
+                        },
+                        accent: {
+                            light: '#B8956A',
+                            DEFAULT: '#A67B4F',
+                            dark: '#8B6914',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 
     <style>
         /* Custom Scrollbar */
@@ -339,46 +377,14 @@
         .hide-scroll::-webkit-scrollbar { display: none; }
         .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
         .video-container { position: relative; width: 100%; border-radius: 1.5rem; overflow: hidden; background: #000; }
-        /* Smooth motion on the Alsoliman launch video: a gentle zoom+glow
-           when it starts playing (entering fullscreen), and a matching
-           zoom-out + fade when it's paused/closed/exits fullscreen — on
-           every viewport. A longer, eased duration reads as a deliberate
-           cinematic transition rather than an abrupt jump. */
-        .video-fx {
-            transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), filter 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-            transform: scale(1);
-            opacity: 1;
-            will-change: transform, opacity;
-        }
-        .video-fx.video-fx-active { transform: scale(1.035); filter: brightness(1.03); }
-        .video-fx.video-fx-closing { transform: scale(0.965); opacity: 0.85; filter: brightness(0.92); }
+        /* Scale effect on the Alsoliman launch video: a quick zoom-in pulse
+           when it starts playing, and a quick zoom-out pulse when it's
+           paused/closed/exits fullscreen — on every viewport. */
+        .video-fx { transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1); transform: scale(1); }
+        .video-fx.video-fx-active { transform: scale(1.03); }
+        .video-fx.video-fx-closing { transform: scale(0.97); }
         .video-container video { width: 100%; height: auto; display: block; }
         @media (max-width: 768px) { .hero-image-wrapper { margin-top: 3rem !important; } }
-
-        /* Memory gallery cards: a refined frame (subtle border + shadow that
-           lifts on hover) with a gentle image zoom — purely decorative
-           polish. The gallery is a static showcase, not an interactive
-           lightbox: no click-to-enlarge affordance is shown. */
-        .memory-card {
-            border: 1px solid rgba(184, 149, 106, 0.18);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-            transition: box-shadow 0.4s ease, transform 0.4s ease, border-color 0.4s ease;
-            cursor: default;
-        }
-        .dark .memory-card { border-color: rgba(184, 149, 106, 0.22); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
-        .memory-card:hover {
-            box-shadow: 0 20px 40px -12px rgba(28, 28, 28, 0.28);
-            transform: translateY(-4px);
-            border-color: rgba(184, 149, 106, 0.5);
-        }
-        .memory-card img,
-        .memory-card video {
-            transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-        .memory-card:hover img,
-        .memory-card:hover video {
-            transform: scale(1.04);
-        }
 
         /* Project card logo styling */
         .project-logo {
@@ -426,11 +432,11 @@
                     <button onclick="toggleLanguage()" class="w-12 h-12 rounded-full border border-luxury-300 dark:border-luxury-700 flex items-center justify-center hover:border-accent transition-colors duration-300" title="Switch Language">
                         <span id="lang-btn" class="text-base font-majalla font-bold">EN</span>
                     </button>
-                    <button onclick="toggleDarkMode()" aria-label="تبديل الوضع الليلي والنهاري" title="تبديل الوضع الليلي والنهاري" class="w-12 h-12 rounded-full border border-luxury-300 dark:border-luxury-700 flex items-center justify-center hover:border-accent transition-colors duration-300">
+                    <button onclick="toggleDarkMode()" class="w-12 h-12 rounded-full border border-luxury-300 dark:border-luxury-700 flex items-center justify-center hover:border-accent transition-colors duration-300">
                         <i class="fas fa-moon dark:hidden text-luxury-700 text-lg"></i>
                         <i class="fas fa-sun hidden dark:block text-accent-light text-lg"></i>
                     </button>
-                    <button onclick="toggleMobileMenu()" aria-label="فتح قائمة التنقل" title="فتح قائمة التنقل" class="md:hidden w-12 h-12 flex items-center justify-center">
+                    <button onclick="toggleMobileMenu()" class="md:hidden w-12 h-12 flex items-center justify-center">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
@@ -481,10 +487,7 @@
                     <div class="relative">
                         <div class="absolute inset-0 bg-accent/20 dark:bg-accent/10 rounded-3xl transform rotate-3 scale-105"></div>
                         <div class="absolute inset-0 border-2 border-accent/30 rounded-3xl transform -rotate-2 scale-105"></div>
-                        <video src="images/profile-hero.mp4" poster="images/profile-hero-poster.jpg" class="relative w-80 h-80 md:w-[28rem] md:h-[28rem] shadow-2xl rounded-3xl object-cover profile-img" autoplay loop muted playsinline preload="metadata" aria-label="Munther AlHajjar" role="img">
-                            <source src="images/profile-hero.webm" type="video/webm">
-                            <source src="images/profile-hero.mp4" type="video/mp4">
-                        </video>
+                        <img src="images/profile-hero.gif" alt="Munther AlHajjar" class="relative w-80 h-80 md:w-[28rem] md:h-[28rem] shadow-2xl rounded-3xl object-cover profile-img">
                         <div class="absolute -bottom-8 -right-8 badge-position bg-luxury-50 dark:bg-luxury-900 border border-luxury-200 dark:border-luxury-700 rounded-2xl px-8 py-5 shadow-xl" data-aos="zoom-in" data-aos-delay="500">
                             <p class="text-sm text-luxury-500 dark:text-luxury-400 uppercase tracking-wider mb-1" data-i18n="badge_title">الخبرة</p>
                             <p class="font-majalla text-3xl text-accent dark:text-accent-light">9+ <span class="text-lg font-majalla text-luxury-600 dark:text-luxury-400" data-i18n="badge_years">سنوات</span></p>
@@ -892,7 +895,7 @@
                         <i class="fas fa-graduation-cap text-2xl text-accent dark:text-accent-light"></i>
                     </div>
                     <div>
-                        <h3 class="font-majalla font-bold text-xl" data-i18n="cert0">بكالوريوس إدارة الأعمال</h3>
+                        <h4 class="font-majalla font-bold text-xl" data-i18n="cert0">بكالوريوس إدارة الأعمال</h4>
                         <p class="text-base text-luxury-500 dark:text-luxury-400" data-i18n="cert0_sub">Midocean University</p>
                         <p class="text-base text-luxury-500 dark:text-luxury-400 cert-date" data-i18n="cert0_date">2026 - مستمر</p>
                     </div>
@@ -902,7 +905,7 @@
                         <i class="fas fa-university text-2xl text-accent dark:text-accent-light"></i>
                     </div>
                     <div>
-                        <h3 class="font-majalla font-bold text-xl" data-i18n="cert8">دبلوم الاتصال وتقنيات الإعلام</h3>
+                        <h4 class="font-majalla font-bold text-xl" data-i18n="cert8">دبلوم الاتصال وتقنيات الإعلام</h4>
                         <p class="text-base text-luxury-500 dark:text-luxury-400" data-i18n="cert8_sub">أكاديمية الأمير أحمد بن سلمان للإعلام التطبيقي</p>
                         <p class="text-base text-luxury-500 dark:text-luxury-400 cert-date" data-i18n="cert8_date">2016-2018</p>
                     </div>
@@ -913,7 +916,7 @@
                         <i class="fas fa-certificate text-2xl text-accent dark:text-accent-light"></i>
                     </div>
                     <div>
-                        <h3 class="font-majalla font-bold text-xl" data-i18n="cert1">PMP® Project Management Institute</h3>
+                        <h4 class="font-majalla font-bold text-xl" data-i18n="cert1">PMP® Project Management Institute</h4>
                         <p class="text-base text-luxury-500 dark:text-luxury-400 cert-date">2026</p>
                     </div>
                 </div>
@@ -923,7 +926,7 @@
                         <i class="fas fa-award text-2xl text-accent dark:text-accent-light"></i>
                     </div>
                     <div>
-                        <h3 class="font-majalla font-bold text-xl" data-i18n="cert2">SAP ERP (Business Software) Onsite Training</h3>
+                        <h4 class="font-majalla font-bold text-xl" data-i18n="cert2">SAP ERP (Business Software) Onsite Training</h4>
                         <p class="text-base text-luxury-500 dark:text-luxury-400 cert-date">2024</p>
                     </div>
                 </div>
@@ -933,7 +936,7 @@
                         <i class="fas fa-trophy text-2xl text-accent dark:text-accent-light group-hover:text-white transition-colors"></i>
                     </div>
                     <div>
-                        <h3 class="font-majalla font-bold text-xl group-hover:text-accent dark:group-hover:text-accent-light transition-colors" data-i18n="cert3">Sell like a Pro<br><span class="text-base font-normal text-luxury-500 dark:text-luxury-400">علي الذياب</span></h3>
+                        <h4 class="font-majalla font-bold text-xl group-hover:text-accent dark:group-hover:text-accent-light transition-colors" data-i18n="cert3">Sell like a Pro<br><span class="text-base font-normal text-luxury-500 dark:text-luxury-400">علي الذياب</span></h4>
                         <p class="text-base text-luxury-500 dark:text-luxury-400 cert-date">2023 <i class="fas fa-external-link-alt text-sm mr-1"></i></p>
                     </div>
                 </a>
@@ -943,7 +946,7 @@
                         <i class="fas fa-medal text-2xl text-accent dark:text-accent-light"></i>
                     </div>
                     <div>
-                        <h3 class="font-majalla font-bold text-xl" data-i18n="cert4">International Property Awards<br><span class="text-base font-normal text-luxury-500 dark:text-luxury-400">دبي</span></h3>
+                        <h4 class="font-majalla font-bold text-xl" data-i18n="cert4">International Property Awards<br><span class="text-base font-normal text-luxury-500 dark:text-luxury-400">دبي</span></h4>
                         <p class="text-base text-luxury-500 dark:text-luxury-400 cert-date">2022</p>
                     </div>
                 </div>
@@ -953,7 +956,7 @@
                         <i class="fas fa-lightbulb text-2xl text-accent dark:text-accent-light"></i>
                     </div>
                     <div>
-                        <h3 class="font-majalla font-bold text-xl" data-i18n="cert5">Brand Strategy Foundations<br><span class="text-base font-normal text-luxury-500 dark:text-luxury-400">هشام جبرة</span></h3>
+                        <h4 class="font-majalla font-bold text-xl" data-i18n="cert5">Brand Strategy Foundations<br><span class="text-base font-normal text-luxury-500 dark:text-luxury-400">هشام جبرة</span></h4>
                         <p class="text-base text-luxury-500 dark:text-luxury-400 cert-date">2019</p>
                     </div>
                 </div>
@@ -963,7 +966,7 @@
                         <i class="fas fa-paint-brush text-2xl text-accent dark:text-accent-light"></i>
                     </div>
                     <div>
-                        <h3 class="font-majalla font-bold text-xl" data-i18n="cert6">Calligraphy Workshop<br><span class="text-base font-normal text-luxury-500 dark:text-luxury-400">وائل مرقص</span></h3>
+                        <h4 class="font-majalla font-bold text-xl" data-i18n="cert6">Calligraphy Workshop<br><span class="text-base font-normal text-luxury-500 dark:text-luxury-400">وائل مرقص</span></h4>
                         <p class="text-base text-luxury-500 dark:text-luxury-400 cert-date">2019</p>
                     </div>
                 </div>
@@ -973,7 +976,7 @@
                         <i class="fas fa-tooth text-2xl text-accent dark:text-accent-light"></i>
                     </div>
                     <div>
-                        <h3 class="font-majalla font-bold text-xl" data-i18n="cert7">International Dental Certificate</h3>
+                        <h4 class="font-majalla font-bold text-xl" data-i18n="cert7">International Dental Certificate</h4>
                         <p class="text-base text-luxury-500 dark:text-luxury-400 cert-date">2010</p>
                     </div>
                 </div>
@@ -985,7 +988,7 @@
                         <i class="fas fa-tooth text-2xl text-accent dark:text-accent-light"></i>
                     </div>
                     <div>
-                        <h3 class="font-majalla font-bold text-xl" data-i18n="cert9">دبلوم علوم الاستعاضة السنية<br><span class="text-base font-normal text-luxury-500 dark:text-luxury-400">تقويم الأسنان</span></h3>
+                        <h4 class="font-majalla font-bold text-xl" data-i18n="cert9">دبلوم علوم الاستعاضة السنية<br><span class="text-base font-normal text-luxury-500 dark:text-luxury-400">تقويم الأسنان</span></h4>
                         <p class="text-base text-luxury-500 dark:text-luxury-400" data-i18n="cert9_sub">جامعة دمشق</p>
                         <p class="text-base text-luxury-500 dark:text-luxury-400 cert-date" data-i18n="cert9_date">2010-2012</p>
                     </div>
@@ -1004,72 +1007,69 @@
             </div>
             <div class="columns-2 md:columns-2 lg:columns-3 gap-4 md:gap-5 space-y-4 md:space-y-5">
                 <!-- GIF Added -->
-                <div class="memory-card break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up">
-                    <video src="images/profile-hero.mp4" poster="images/profile-hero-poster.jpg" class="w-full object-cover transition-transform duration-700 group-hover:scale-105" autoplay loop muted playsinline preload="none" aria-label="Presenting work for the Al Madinah Hotels project" role="img">
-                        <source src="images/profile-hero.webm" type="video/webm">
-                        <source src="images/profile-hero.mp4" type="video/mp4">
-                    </video>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up">
+                    <img src="images/profile-hero.gif" alt="Presenting work for the Al Madinah Hotels project" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <div class="absolute bottom-4 right-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         <p class="font-majalla text-lg" data-i18n="memory_gif_caption">تقديم عمل لمشروع فنادق المدينة (فترة كورونا)</p>
                     </div>
                 </div>
 
-                <div class="memory-card break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="50">
+                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="50">
                     <img src="memories/memory-01-event.jpg" alt="Event" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <div class="memory-card break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="100">
+                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="100">
                     <img src="memories/memory-02-construction-site.jpg" alt="Construction Site" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <div class="memory-card break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="150">
+                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="150">
                     <img src="memories/memory-03-team.jpg" alt="Team" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <div class="memory-card break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="200">
+                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="200">
                     <img src="memories/memory-04-bankruptcy-commission.jpg" alt="Bankruptcy Commission" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <div class="memory-card break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="250">
+                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="250">
                     <img src="memories/memory-05-bussma.jpg" alt="Bussma" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <div class="memory-card break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="300">
+                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="300">
                     <img src="memories/memory-06-alajlan-project.jpg" alt="Al Ajlan Project" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <div class="memory-card break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="350">
+                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="350">
                     <img src="memories/memory-07-planning.jpg" alt="Planning" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <div class="memory-card break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="400">
+                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="400">
                     <img src="memories/memory-08-team-office.jpg" alt="Team Office" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <div class="memory-card break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="450">
+                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="450">
                     <img src="memories/memory-09-team.jpg" alt="Team" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <div class="memory-card break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="500">
+                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="500">
                     <img src="memories/memory-10-presentation.jpg" alt="Presentation" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <div class="memory-card break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="550">
+                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="550">
                     <img src="memories/memory-11-team-gathering.jpg" alt="Team Gathering" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <div class="memory-card break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="600">
+                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="600">
                     <img src="memories/memory-12-awards.jpg" alt="Awards" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <div class="memory-card break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="650">
+                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="650">
                     <img src="memories/memory-13-portrait.jpg" alt="Portrait" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <div class="memory-card break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="700">
+                <div class="break-inside-avoid rounded-2xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="700">
                     <img src="memories/memory-14-harf-gallery.jpg" alt="Harf Gallery" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
             </div>
         </div>
@@ -1159,22 +1159,15 @@
 
     <!-- JavaScript -->
     <script>
-        function initAOS() {
-            AOS.init({
-                once: true,
-                offset: 80,
-                duration: 900,
-                easing: 'ease-out-cubic',
-                delay: 0,
-                mirror: false,
-                anchorPlacement: 'top-bottom',
-            });
-        }
-        if (typeof AOS !== 'undefined') {
-            initAOS();
-        } else {
-            document.addEventListener('DOMContentLoaded', initAOS);
-        }
+        AOS.init({
+            once: true,
+            offset: 80,
+            duration: 900,
+            easing: 'ease-out-cubic',
+            delay: 0,
+            mirror: false,
+            anchorPlacement: 'top-bottom',
+        });
 
         // Scroll Progress & Scroll to Top
         const scrollProgressFill = document.getElementById('scrollProgressFill');
@@ -1510,10 +1503,8 @@
     <script>
         // On every viewport (mobile, tablet, laptop, desktop): as soon as the
         // Alsoliman Business Compound launch video starts playing, request
-        // fullscreen automatically, with a smooth zoom/fade motion on both
-        // opening (play) and closing (exiting fullscreen / pause). Skipping
-        // (scrubbing the seek bar) while playing in fullscreen ends the
-        // "cinema" experience: the video pauses and fullscreen is exited.
+        // fullscreen automatically, with a subtle scale animation on both
+        // opening (play) and closing (exiting fullscreen / pause).
         (function () {
             const container = document.querySelector('#video .video-container');
             const iframe = container ? container.querySelector('iframe') : null;
@@ -1521,28 +1512,18 @@
             container.classList.add('video-fx');
             const player = new Vimeo.Player(iframe);
             let fullscreenRequested = false;
-            let isPlaying = false;
-            // Matches the 0.6s transition duration set on .video-fx in CSS.
-            const FX_DURATION = 600;
 
             function playEffect() {
-                container.classList.remove('video-fx-closing');
-                // Restart the animation cleanly even if triggered again
-                // mid-transition.
-                void container.offsetWidth;
                 container.classList.add('video-fx-active');
-                window.setTimeout(() => container.classList.remove('video-fx-active'), FX_DURATION);
+                window.setTimeout(() => container.classList.remove('video-fx-active'), 450);
             }
 
             function closeEffect() {
-                container.classList.remove('video-fx-active');
-                void container.offsetWidth;
                 container.classList.add('video-fx-closing');
-                window.setTimeout(() => container.classList.remove('video-fx-closing'), FX_DURATION);
+                window.setTimeout(() => container.classList.remove('video-fx-closing'), 450);
             }
 
             player.on('play', function () {
-                isPlaying = true;
                 playEffect();
                 if (fullscreenRequested) return;
                 fullscreenRequested = true;
@@ -1552,41 +1533,121 @@
                 });
             });
 
-            player.on('pause', function () {
-                isPlaying = false;
-                closeEffect();
-            });
-
+            player.on('pause', closeEffect);
             player.on('ended', function () {
-                isPlaying = false;
                 closeEffect();
                 fullscreenRequested = false;
-            });
-
-            // Skipping/scrubbing the video while it's playing in the
-            // fullscreen "cinema" mode stops playback and exits fullscreen,
-            // rather than continuing to play at the new position.
-            player.on('seeked', function () {
-                if (!isPlaying || !fullscreenRequested) return;
-                player.pause().catch(function () {});
-                if (document.fullscreenElement) {
-                    document.exitFullscreen().catch(function () {});
-                }
             });
 
             document.addEventListener('fullscreenchange', function () {
                 if (!document.fullscreenElement) {
                     closeEffect();
                     fullscreenRequested = false;
-                    // Closing fullscreen (Escape key, the browser's own
-                    // close/exit control, back gesture, etc.) should stop
-                    // playback automatically rather than leaving the video
-                    // playing in the background.
-                    if (isPlaying) {
-                        player.pause().catch(function () {});
-                    }
                 }
             });
+        })();
+    </script>
+
+    <!-- Memory Gallery Lightbox (تكبير الصور والتنقل بينها يمين ويسار) -->
+    <script>
+        (function () {
+            const gallery = document.querySelector('#memory .columns-2');
+            if (!gallery) return;
+            const imgs = Array.from(gallery.querySelectorAll('img'));
+            if (!imgs.length) return;
+
+            // Build the lightbox overlay once.
+            const overlay = document.createElement('div');
+            overlay.id = 'memory-lightbox';
+            overlay.className = 'fixed inset-0 z-[100] bg-black/95 hidden items-center justify-center';
+            overlay.innerHTML = `
+                <button type="button" class="lightbox-close absolute top-5 right-5 text-white/80 hover:text-white text-3xl w-12 h-12 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors" aria-label="Close">
+                    <i class="fas fa-times"></i>
+                </button>
+                <button type="button" class="lightbox-prev absolute top-1/2 -translate-y-1/2 start-3 sm:start-6 text-white/80 hover:text-white text-2xl sm:text-3xl w-11 h-11 sm:w-14 sm:h-14 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors" aria-label="Previous">
+                    <i class="fas fa-chevron-right rtl-flip"></i>
+                </button>
+                <button type="button" class="lightbox-next absolute top-1/2 -translate-y-1/2 end-3 sm:end-6 text-white/80 hover:text-white text-2xl sm:text-3xl w-11 h-11 sm:w-14 sm:h-14 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors" aria-label="Next">
+                    <i class="fas fa-chevron-left rtl-flip"></i>
+                </button>
+                <img class="lightbox-img max-w-[92vw] max-h-[88vh] object-contain rounded-lg shadow-2xl select-none" src="" alt="">
+            `;
+            document.body.appendChild(overlay);
+
+            const imgEl = overlay.querySelector('.lightbox-img');
+            const btnClose = overlay.querySelector('.lightbox-close');
+            const btnPrev = overlay.querySelector('.lightbox-prev');
+            const btnNext = overlay.querySelector('.lightbox-next');
+            let currentIndex = 0;
+
+            function show(index) {
+                currentIndex = (index + imgs.length) % imgs.length;
+                const src = imgs[currentIndex].currentSrc || imgs[currentIndex].src;
+                imgEl.src = src;
+                imgEl.alt = imgs[currentIndex].alt || '';
+            }
+
+            function open(index) {
+                show(index);
+                overlay.classList.remove('hidden');
+                overlay.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function close() {
+                overlay.classList.add('hidden');
+                overlay.classList.remove('flex');
+                document.body.style.overflow = '';
+            }
+
+            // Each image sits under an absolutely-positioned caption/gradient
+            // overlay div, which was silently swallowing clicks meant for the
+            // image beneath it. Delegate the click to the card wrapper
+            // instead so it fires no matter which layer (image, overlay, or
+            // caption text) was actually clicked.
+            imgs.forEach((img, i) => {
+                img.style.cursor = 'zoom-in';
+                const card = img.closest('.break-inside-avoid') || img.parentElement;
+                card.style.cursor = 'zoom-in';
+                card.addEventListener('click', () => open(i));
+            });
+
+            btnClose.addEventListener('click', close);
+            btnPrev.addEventListener('click', () => show(currentIndex - 1));
+            btnNext.addEventListener('click', () => show(currentIndex + 1));
+
+            overlay.addEventListener('click', (e) => {
+                if (e.target === overlay) close();
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (overlay.classList.contains('hidden')) return;
+                if (e.key === 'Escape') close();
+                else if (e.key === 'ArrowLeft') {
+                    // In RTL layout, left arrow key visually moves to the
+                    // "next" (following) image and right arrow to "previous".
+                    document.documentElement.dir === 'rtl' ? show(currentIndex + 1) : show(currentIndex - 1);
+                } else if (e.key === 'ArrowRight') {
+                    document.documentElement.dir === 'rtl' ? show(currentIndex - 1) : show(currentIndex + 1);
+                }
+            });
+
+            // Basic touch swipe support for mobile/tablet.
+            let touchStartX = null;
+            overlay.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].clientX;
+            }, { passive: true });
+            overlay.addEventListener('touchend', (e) => {
+                if (touchStartX === null) return;
+                const dx = e.changedTouches[0].clientX - touchStartX;
+                if (Math.abs(dx) > 40) {
+                    const forward = dx < 0; // swipe left -> forward
+                    const rtl = document.documentElement.dir === 'rtl';
+                    if (forward) rtl ? show(currentIndex - 1) : show(currentIndex + 1);
+                    else rtl ? show(currentIndex + 1) : show(currentIndex - 1);
+                }
+                touchStartX = null;
+            }, { passive: true });
         })();
     </script>
 </body>
