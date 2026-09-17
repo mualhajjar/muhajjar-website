@@ -102,6 +102,44 @@
             font-style: normal;
             font-display: swap;
         }
+
+        /* Thmanyah Serif Display Font (مستضاف محليًا) */
+        @font-face {
+            font-family: "Thmanyah Serif Display";
+            src: url("fonts/thmanyahserifdisplay-Light.woff2") format("woff2");
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "Thmanyah Serif Display";
+            src: url("fonts/thmanyahserifdisplay-Regular.woff2") format("woff2");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "Thmanyah Serif Display";
+            src: url("fonts/thmanyahserifdisplay-Medium.woff2") format("woff2");
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "Thmanyah Serif Display";
+            src: url("fonts/thmanyahserifdisplay-Bold.woff2") format("woff2");
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "Thmanyah Serif Display";
+            src: url("fonts/thmanyahserifdisplay-Black.woff2") format("woff2");
+            font-weight: 900;
+            font-style: normal;
+            font-display: swap;
+        }
+
         /* حماية إضافية: يمنع letter-spacing من كسر اتصال الحروف العربية
            إذا أُضيف مستقبلًا على أي عنصر */
         :lang(ar) { letter-spacing: normal; }
@@ -123,7 +161,7 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        'majalla': ['"Thmanyah Sans"', 'Traditional Arabic', 'Arial', 'sans-serif'],
+                        'majalla': ['"Thmanyah Serif Display"', 'Traditional Arabic', 'Arial', 'serif'],
                     },
                     colors: {
                         luxury: {
@@ -338,7 +376,7 @@
             position: fixed;
             right: 45px;
             bottom: 110px;
-            font-family: "Thmanyah Sans", sans-serif;
+            font-family: "Thmanyah Serif Display", serif;
             font-size: 1rem;
             color: #B8956A;
             opacity: 0;
