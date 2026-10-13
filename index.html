@@ -436,6 +436,17 @@
         html.dark .project-logo {
             filter: brightness(0) invert(1);
         }
+
+        /* Selected work gallery */
+        .work-chip { font-family: inherit; font-size: 0.95rem; padding: 0.5rem 1.15rem; border-radius: 9999px; border: 1px solid rgba(184,149,106,0.45); color: #6b5b4b; background: transparent; transition: all .25s ease; }
+        .work-chip:hover { border-color: #B8956A; color: #B8956A; }
+        .work-chip.is-active { background: #B8956A; border-color: #B8956A; color: #fff; }
+        .dark .work-chip { color: #d6cbbd; }
+        .dark .work-chip.is-active { color: #1a1612; }
+        .work-item { break-inside: avoid; }
+        .work-item.is-hidden { display: none; }
+        #work-lightbox figcaption { max-width: 92vw; }
+
     </style>
 </head>
 <body class="font-majalla bg-luxury-50 text-luxury-900 dark:bg-luxury-950 dark:text-luxury-100 transition-colors duration-500">
@@ -463,6 +474,7 @@
                     <a href="#about" class="link-luxury tracking-wide uppercase" data-i18n="nav_about">نبذة</a>
                     <a href="#experience" class="link-luxury tracking-wide uppercase" data-i18n="nav_experience">خبرات</a>
                     <a href="#projects" class="link-luxury tracking-wide uppercase" data-i18n="nav_projects">أعمال</a>
+                    <a href="#work" class="link-luxury tracking-wide uppercase" data-i18n="nav_work">معرض</a>
                     <a href="#certifications" class="link-luxury tracking-wide uppercase" data-i18n="nav_certs">شهادات</a>
                     <a href="#contact" class="link-luxury tracking-wide uppercase" data-i18n="nav_contact">تواصل</a>
                 </div>
@@ -485,6 +497,7 @@
                 <a href="#about" class="block py-2 text-xl" data-i18n="nav_about">نبذة</a>
                 <a href="#experience" class="block py-2 text-xl" data-i18n="nav_experience">خبرات</a>
                 <a href="#projects" class="block py-2 text-xl" data-i18n="nav_projects">أعمال</a>
+                <a href="#work" class="block py-2 text-xl" data-i18n="nav_work">معرض</a>
                 <a href="#certifications" class="block py-2 text-xl" data-i18n="nav_certs">شهادات</a>
                 <a href="#contact" class="block py-2 text-xl" data-i18n="nav_contact">تواصل</a>
             </div>
@@ -870,6 +883,212 @@
     </section>
 
 
+
+    <!-- Case Study: Bader Villas -->
+    <section id="case-study" class="py-28">
+        <div class="max-w-7xl mx-auto px-8 sm:px-10 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <p class="text-accent dark:text-accent-light tracking-[0.3em] text-base uppercase mb-4" data-i18n="case_sub">دراسة حالة</p>
+                <h2 class="font-majalla text-section-title mb-6" data-i18n="case_title">فلل بدر: تسويق تطويري فائز بجائزة دولية</h2>
+                <div class="gold-line active mx-auto max-w-xs"></div>
+            </div>
+            <div class="luxury-card bg-white dark:bg-luxury-950 rounded-3xl overflow-hidden grid lg:grid-cols-2" data-aos="fade-up">
+                <div class="relative">
+                    <img src="images/work/bader-villa.webp" alt="Bader Villas, International Property Awards" loading="lazy" decoding="async" class="w-full h-full object-cover min-h-[280px]">
+                </div>
+                <div class="p-8 md:p-12 flex flex-col justify-center">
+                    <span class="inline-flex items-center gap-2 self-start text-sm bg-accent/10 text-accent dark:text-accent-light px-4 py-2 rounded-full mb-6"><i class="fas fa-trophy"></i><span data-i18n="case_badge">فائز · International Property Awards 2022</span></span>
+                    <div class="space-y-5 text-body-lg leading-relaxed text-luxury-700 dark:text-luxury-300 font-majalla">
+                        <p data-i18n="case_p1">حملة تسويق متكاملة لمشروع فلل بدر التابع لشركة السليمان العقارية في الرياض، فازت بجائزة International Property Awards لأفريقيا والجزيرة العربية 2022 عن فئة التسويق التطويري في السعودية.</p>
+                        <p data-i18n="case_p2">جمعت الحملة بين القنوات الخارجية (لوحات الطرق، الفيلا النموذجية، متحف المواصفات، المعارض العقارية والتعاون مع المكاتب) والقنوات الرقمية (LEAP 2022، منصات العقار الرقمية، الشراكات البنكية، تجربة 360 درجة، والمؤثرين).</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mt-8">
+                        <div class="p-4 bg-luxury-50 dark:bg-luxury-900 rounded-xl text-center"><p class="font-majalla text-3xl text-accent dark:text-accent-light">95,000+</p><p class="text-sm text-luxury-500 dark:text-luxury-400" data-i18n="case_s1">مساحة المشروع بالمتر المربع</p></div>
+                        <div class="p-4 bg-luxury-50 dark:bg-luxury-900 rounded-xl text-center"><p class="font-majalla text-3xl text-accent dark:text-accent-light">83,000+</p><p class="text-sm text-luxury-500 dark:text-luxury-400" data-i18n="case_s2">مسطحات البناء بالمتر المربع</p></div>
+                        <div class="p-4 bg-luxury-50 dark:bg-luxury-900 rounded-xl text-center"><p class="font-majalla text-3xl text-accent dark:text-accent-light">400+</p><p class="text-sm text-luxury-500 dark:text-luxury-400" data-i18n="case_s3">وحدة سكنية</p></div>
+                        <div class="p-4 bg-luxury-50 dark:bg-luxury-900 rounded-xl text-center"><p class="font-majalla text-3xl text-accent dark:text-accent-light">350+</p><p class="text-sm text-luxury-500 dark:text-luxury-400" data-i18n="case_s4">مليون ريال قيمة سوقية</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Selected Work Gallery -->
+    <section id="work" class="py-28 bg-luxury-100 dark:bg-luxury-900/30 transition-colors duration-500">
+        <div class="max-w-7xl mx-auto px-8 sm:px-10 lg:px-8">
+            <div class="text-center mb-10" data-aos="fade-up">
+                <p class="text-accent dark:text-accent-light tracking-[0.3em] text-base uppercase mb-4" data-i18n="work_sub">معرض الأعمال</p>
+                <h2 class="font-majalla text-section-title mb-6" data-i18n="work_title">أعمال مختارة</h2>
+                <div class="gold-line active mx-auto max-w-xs mb-6"></div>
+                <p class="text-luxury-600 dark:text-luxury-400 max-w-3xl mx-auto font-majalla text-lg" data-i18n="work_note">نماذج من مشاريع شاركت في إدارتها وتطويرها ضمن فرق العمل في وكالة هوية الإعلامية وشركة السليمان العقارية.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-10" role="tablist"><button type="button" class="work-chip is-active" data-filter="all" data-i18n="work_f_all">الكل</button><button type="button" class="work-chip" data-filter="realestate" data-i18n="work_f_realestate">عقاري</button><button type="button" class="work-chip" data-filter="identity" data-i18n="work_f_identity">هويات وعلامات</button><button type="button" class="work-chip" data-filter="gov" data-i18n="work_f_gov">حكومي ومؤسسي</button><button type="button" class="work-chip" data-filter="products" data-i18n="work_f_products">منتجات</button></div>
+            <div id="work-grid" class="columns-1 sm:columns-2 lg:columns-3 gap-4 md:gap-5">
+                <figure class="work-item break-inside-avoid rounded-2xl overflow-hidden group relative mb-4 md:mb-5 cursor-zoom-in" data-cat="realestate">
+                    <img src="images/work/bader-cover.webp" alt="Bader Villas" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                    <figcaption class="absolute inset-x-0 bottom-0 p-4 md:p-5 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-white">
+                        <p class="font-majalla text-lg leading-snug" data-i18n="w_bader_villa_t">فلل بدر</p>
+                        <p class="text-sm text-white/80 leading-snug mt-1 work-cap" data-i18n="w_bader_villa_c">السليمان العقارية · حملة تسويق تطويري فائزة بجائزة International Property Awards 2022</p>
+                    </figcaption>
+                </figure>
+                <figure class="work-item break-inside-avoid rounded-2xl overflow-hidden group relative mb-4 md:mb-5 cursor-zoom-in" data-cat="realestate">
+                    <img src="images/work/bader-billboard.webp" alt="Bader Villas: Outdoor Campaign" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                    <figcaption class="absolute inset-x-0 bottom-0 p-4 md:p-5 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-white">
+                        <p class="font-majalla text-lg leading-snug" data-i18n="w_bader_billboard_t">فلل بدر: الحملة الخارجية</p>
+                        <p class="text-sm text-white/80 leading-snug mt-1 work-cap" data-i18n="w_bader_billboard_c">لوحات الطرق الرئيسية ضمن خطة التسويق غير الرقمي</p>
+                    </figcaption>
+                </figure>
+                <figure class="work-item break-inside-avoid rounded-2xl overflow-hidden group relative mb-4 md:mb-5 cursor-zoom-in" data-cat="realestate">
+                    <img src="images/work/bader-ooh.webp" alt="Bader Villas: Touchpoints" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                    <figcaption class="absolute inset-x-0 bottom-0 p-4 md:p-5 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-white">
+                        <p class="font-majalla text-lg leading-snug" data-i18n="w_bader_ooh_t">فلل بدر: نقاط التواصل</p>
+                        <p class="text-sm text-white/80 leading-snug mt-1 work-cap" data-i18n="w_bader_ooh_c">لوحات الموقع والطرق ونقاط البيع</p>
+                    </figcaption>
+                </figure>
+                <figure class="work-item break-inside-avoid rounded-2xl overflow-hidden group relative mb-4 md:mb-5 cursor-zoom-in" data-cat="realestate">
+                    <img src="images/work/riyadh-front-aerial.webp" alt="Riyadh Front" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                    <figcaption class="absolute inset-x-0 bottom-0 p-4 md:p-5 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-white">
+                        <p class="font-majalla text-lg leading-snug" data-i18n="w_riyadh_front_aerial_t">واجهة الرياض</p>
+                        <p class="text-sm text-white/80 leading-snug mt-1 work-cap" data-i18n="w_riyadh_front_aerial_c">هوية وتطبيقات مشروع أعمال وتسوق</p>
+                    </figcaption>
+                </figure>
+                <figure class="work-item break-inside-avoid rounded-2xl overflow-hidden group relative mb-4 md:mb-5 cursor-zoom-in" data-cat="realestate">
+                    <img src="images/work/riyadh-front-mall.webp" alt="Riyadh Front: Applications" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                    <figcaption class="absolute inset-x-0 bottom-0 p-4 md:p-5 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-white">
+                        <p class="font-majalla text-lg leading-snug" data-i18n="w_riyadh_front_mall_t">واجهة الرياض: التطبيقات</p>
+                        <p class="text-sm text-white/80 leading-snug mt-1 work-cap" data-i18n="w_riyadh_front_mall_c">الإرشاد والتطبيقات داخل المجمع</p>
+                    </figcaption>
+                </figure>
+                <figure class="work-item break-inside-avoid rounded-2xl overflow-hidden group relative mb-4 md:mb-5 cursor-zoom-in" data-cat="realestate">
+                    <img src="images/work/yamam-aerial.webp" alt="Yamam Village" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                    <figcaption class="absolute inset-x-0 bottom-0 p-4 md:p-5 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-white">
+                        <p class="font-majalla text-lg leading-snug" data-i18n="w_yamam_aerial_t">يمام فيليج</p>
+                        <p class="text-sm text-white/80 leading-snug mt-1 work-cap" data-i18n="w_yamam_aerial_c">استراتيجية العلامة والتسويق متعدد القنوات لمجمع سكني فاخر</p>
+                    </figcaption>
+                </figure>
+                <figure class="work-item break-inside-avoid rounded-2xl overflow-hidden group relative mb-4 md:mb-5 cursor-zoom-in" data-cat="realestate">
+                    <img src="images/work/bouvardia-render.webp" alt="Bouvardia City" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                    <figcaption class="absolute inset-x-0 bottom-0 p-4 md:p-5 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-white">
+                        <p class="font-majalla text-lg leading-snug" data-i18n="w_bouvardia_render_t">بوفارديا سيتي</p>
+                        <p class="text-sm text-white/80 leading-snug mt-1 work-cap" data-i18n="w_bouvardia_render_c">الهوية البصرية الشاملة لمشروع الديار العربية في جدة</p>
+                    </figcaption>
+                </figure>
+                <figure class="work-item break-inside-avoid rounded-2xl overflow-hidden group relative mb-4 md:mb-5 cursor-zoom-in" data-cat="identity">
+                    <img src="images/work/bouvardia-flags.webp" alt="Bouvardia: Identity Applications" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                    <figcaption class="absolute inset-x-0 bottom-0 p-4 md:p-5 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-white">
+                        <p class="font-majalla text-lg leading-snug" data-i18n="w_bouvardia_flags_t">بوفارديا: تطبيقات الهوية</p>
+                        <p class="text-sm text-white/80 leading-snug mt-1 work-cap" data-i18n="w_bouvardia_flags_c">الأعلام واللوحات والمطبوعات</p>
+                    </figcaption>
+                </figure>
+                <figure class="work-item break-inside-avoid rounded-2xl overflow-hidden group relative mb-4 md:mb-5 cursor-zoom-in" data-cat="identity">
+                    <img src="images/work/yamam-identity.webp" alt="Yamam: Brand Toolkit" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                    <figcaption class="absolute inset-x-0 bottom-0 p-4 md:p-5 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-white">
+                        <p class="font-majalla text-lg leading-snug" data-i18n="w_yamam_identity_t">يمام: أدوات الهوية</p>
+                        <p class="text-sm text-white/80 leading-snug mt-1 work-cap" data-i18n="w_yamam_identity_c">المطبوعات والملف التعريفي والتطبيقات الرقمية</p>
+                    </figcaption>
+                </figure>
+                <figure class="work-item break-inside-avoid rounded-2xl overflow-hidden group relative mb-4 md:mb-5 cursor-zoom-in" data-cat="identity">
+                    <img src="images/work/bussma-office.webp" alt="Bussma Real Estate" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                    <figcaption class="absolute inset-x-0 bottom-0 p-4 md:p-5 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-white">
+                        <p class="font-majalla text-lg leading-snug" data-i18n="w_bussma_office_t">بصمة العقارية</p>
+                        <p class="text-sm text-white/80 leading-snug mt-1 work-cap" data-i18n="w_bussma_office_c">الهوية المؤسسية وتموضع العلامة لشركة تقييم وإدارة أملاك</p>
+                    </figcaption>
+                </figure>
+                <figure class="work-item break-inside-avoid rounded-2xl overflow-hidden group relative mb-4 md:mb-5 cursor-zoom-in" data-cat="identity">
+                    <img src="images/work/bussma-billboard.webp" alt="Bussma: Campaign" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                    <figcaption class="absolute inset-x-0 bottom-0 p-4 md:p-5 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-white">
+                        <p class="font-majalla text-lg leading-snug" data-i18n="w_bussma_billboard_t">بصمة: الحملة الإعلانية</p>
+                        <p class="text-sm text-white/80 leading-snug mt-1 work-cap" data-i18n="w_bussma_billboard_c">تطبيق الهوية في الحملات الخارجية</p>
+                    </figcaption>
+                </figure>
+                <figure class="work-item break-inside-avoid rounded-2xl overflow-hidden group relative mb-4 md:mb-5 cursor-zoom-in" data-cat="identity">
+                    <img src="images/work/almashreq-night.webp" alt="Al Mashreq Boutique Hotel" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                    <figcaption class="absolute inset-x-0 bottom-0 p-4 md:p-5 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-white">
+                        <p class="font-majalla text-lg leading-snug" data-i18n="w_almashreq_night_t">فندق المشرق البوتيك</p>
+                        <p class="text-sm text-white/80 leading-snug mt-1 work-cap" data-i18n="w_almashreq_night_c">الهوية والتطبيقات لقطاع الضيافة</p>
+                    </figcaption>
+                </figure>
+                <figure class="work-item break-inside-avoid rounded-2xl overflow-hidden group relative mb-4 md:mb-5 cursor-zoom-in" data-cat="identity">
+                    <img src="images/work/almashreq-identity.webp" alt="Al Mashreq: Premium Print" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                    <figcaption class="absolute inset-x-0 bottom-0 p-4 md:p-5 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-white">
+                        <p class="font-majalla text-lg leading-snug" data-i18n="w_almashreq_identity_t">المشرق: المطبوعات الفاخرة</p>
+                        <p class="text-sm text-white/80 leading-snug mt-1 work-cap" data-i18n="w_almashreq_identity_c">بطاقات ومطبوعات بتشطيبات ذهبية</p>
+                    </figcaption>
+                </figure>
+                <figure class="work-item break-inside-avoid rounded-2xl overflow-hidden group relative mb-4 md:mb-5 cursor-zoom-in" data-cat="identity">
+                    <img src="images/work/kaizen-station.webp" alt="KAIZEN Stations" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                    <figcaption class="absolute inset-x-0 bottom-0 p-4 md:p-5 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-white">
+                        <p class="font-majalla text-lg leading-snug" data-i18n="w_kaizen_station_t">محطات كايزن</p>
+                        <p class="text-sm text-white/80 leading-snug mt-1 work-cap" data-i18n="w_kaizen_station_c">الهوية البصرية وتطبيقاتها على المحطات</p>
+                    </figcaption>
+                </figure>
+                <figure class="work-item break-inside-avoid rounded-2xl overflow-hidden group relative mb-4 md:mb-5 cursor-zoom-in" data-cat="identity">
+                    <img src="images/work/kaizen-truck.webp" alt="KAIZEN: Fleet" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                    <figcaption class="absolute inset-x-0 bottom-0 p-4 md:p-5 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-white">
+                        <p class="font-majalla text-lg leading-snug" data-i18n="w_kaizen_truck_t">كايزن: أسطول النقل</p>
+                        <p class="text-sm text-white/80 leading-snug mt-1 work-cap" data-i18n="w_kaizen_truck_c">تطبيق الهوية على أسطول الشاحنات والهدايا</p>
+                    </figcaption>
+                </figure>
+                <figure class="work-item break-inside-avoid rounded-2xl overflow-hidden group relative mb-4 md:mb-5 cursor-zoom-in" data-cat="identity">
+                    <img src="images/work/alqahtani-stationery.webp" alt="Saad Al Qahtani Law Firm" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                    <figcaption class="absolute inset-x-0 bottom-0 p-4 md:p-5 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-white">
+                        <p class="font-majalla text-lg leading-snug" data-i18n="w_alqahtani_stationery_t">مكتب سعد القحطاني للمحاماة</p>
+                        <p class="text-sm text-white/80 leading-snug mt-1 work-cap" data-i18n="w_alqahtani_stationery_c">الهوية البصرية ودليل الاستخدام والمطبوعات</p>
+                    </figcaption>
+                </figure>
+                <figure class="work-item break-inside-avoid rounded-2xl overflow-hidden group relative mb-4 md:mb-5 cursor-zoom-in" data-cat="gov">
+                    <img src="images/work/bankruptcy-event.webp" alt="Bankruptcy Commission" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                    <figcaption class="absolute inset-x-0 bottom-0 p-4 md:p-5 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-white">
+                        <p class="font-majalla text-lg leading-snug" data-i18n="w_bankruptcy_event_t">لجنة الإفلاس</p>
+                        <p class="text-sm text-white/80 leading-snug mt-1 work-cap" data-i18n="w_bankruptcy_event_c">إطلاق الهوية والمحتوى التوعوي والتقارير</p>
+                    </figcaption>
+                </figure>
+                <figure class="work-item break-inside-avoid rounded-2xl overflow-hidden group relative mb-4 md:mb-5 cursor-zoom-in" data-cat="gov">
+                    <img src="images/work/sahab-award.webp" alt="SAHAB Electronic Solutions" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                    <figcaption class="absolute inset-x-0 bottom-0 p-4 md:p-5 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-white">
+                        <p class="font-majalla text-lg leading-snug" data-i18n="w_sahab_award_t">سحاب للحلول الإلكترونية</p>
+                        <p class="text-sm text-white/80 leading-snug mt-1 work-cap" data-i18n="w_sahab_award_c">الهوية الكاملة لشركة حكومية تابعة للهلال الأحمر</p>
+                    </figcaption>
+                </figure>
+                <figure class="work-item break-inside-avoid rounded-2xl overflow-hidden group relative mb-4 md:mb-5 cursor-zoom-in" data-cat="gov">
+                    <img src="images/work/sahab-web.webp" alt="SAHAB: Digital Presence" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                    <figcaption class="absolute inset-x-0 bottom-0 p-4 md:p-5 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-white">
+                        <p class="font-majalla text-lg leading-snug" data-i18n="w_sahab_web_t">سحاب: الحضور الرقمي</p>
+                        <p class="text-sm text-white/80 leading-snug mt-1 work-cap" data-i18n="w_sahab_web_c">الموقع الإلكتروني والمطبوعات</p>
+                    </figcaption>
+                </figure>
+                <figure class="work-item break-inside-avoid rounded-2xl overflow-hidden group relative mb-4 md:mb-5 cursor-zoom-in" data-cat="products">
+                    <img src="images/work/harf-gallery.webp" alt="Harf Gallery" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                    <figcaption class="absolute inset-x-0 bottom-0 p-4 md:p-5 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-white">
+                        <p class="font-majalla text-lg leading-snug" data-i18n="w_harf_gallery_t">حرف جاليري</p>
+                        <p class="text-sm text-white/80 leading-snug mt-1 work-cap" data-i18n="w_harf_gallery_c">معرض أعمال الخط العربي: أكثر من 350 عملًا فنيًا</p>
+                    </figcaption>
+                </figure>
+                <figure class="work-item break-inside-avoid rounded-2xl overflow-hidden group relative mb-4 md:mb-5 cursor-zoom-in" data-cat="products">
+                    <img src="images/work/harf-a101.webp" alt="Harf Gallery: A++ Collection" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                    <figcaption class="absolute inset-x-0 bottom-0 p-4 md:p-5 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-white">
+                        <p class="font-majalla text-lg leading-snug" data-i18n="w_harf_a101_t">حرف جاليري: مجموعة A++</p>
+                        <p class="text-sm text-white/80 leading-snug mt-1 work-cap" data-i18n="w_harf_a101_c">لوحات خط عربي بمقاسات متعددة للمساحات السكنية</p>
+                    </figcaption>
+                </figure>
+                <figure class="work-item break-inside-avoid rounded-2xl overflow-hidden group relative mb-4 md:mb-5 cursor-zoom-in" data-cat="products">
+                    <img src="images/work/harf-a202.webp" alt="Harf Gallery: A Collection" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                    <figcaption class="absolute inset-x-0 bottom-0 p-4 md:p-5 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-white">
+                        <p class="font-majalla text-lg leading-snug" data-i18n="w_harf_a202_t">حرف جاليري: مجموعة A</p>
+                        <p class="text-sm text-white/80 leading-snug mt-1 work-cap" data-i18n="w_harf_a202_c">تصميم وإنتاج وتسعير المنتجات حتى الإغلاق المالي</p>
+                    </figcaption>
+                </figure>
+                <figure class="work-item break-inside-avoid rounded-2xl overflow-hidden group relative mb-4 md:mb-5 cursor-zoom-in" data-cat="products">
+                    <img src="images/work/harf-a215.webp" alt="Harf Gallery: Signature Pieces" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                    <figcaption class="absolute inset-x-0 bottom-0 p-4 md:p-5 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-white">
+                        <p class="font-majalla text-lg leading-snug" data-i18n="w_harf_a215_t">حرف جاليري: لوحات مميزة</p>
+                        <p class="text-sm text-white/80 leading-snug mt-1 work-cap" data-i18n="w_harf_a215_c">مجموعة مختارة للمساحات الفاخرة</p>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
     <!-- Video Section -->
     <section id="video" class="py-28 bg-luxury-100 dark:bg-luxury-900/30 transition-colors duration-500">
         <div class="max-w-5xl mx-auto px-8 sm:px-10 lg:px-8">
@@ -1252,6 +1471,70 @@
 
         const translations = {
             ar: {
+                nav_work: "معرض",
+                work_sub: "معرض الأعمال",
+                work_title: "أعمال مختارة",
+                work_note: "نماذج من مشاريع شاركت في إدارتها وتطويرها ضمن فرق العمل في وكالة هوية الإعلامية وشركة السليمان العقارية.",
+                work_f_all: "الكل",
+                work_f_realestate: "عقاري",
+                work_f_identity: "هويات وعلامات",
+                work_f_gov: "حكومي ومؤسسي",
+                work_f_products: "منتجات",
+                case_sub: "دراسة حالة",
+                case_title: "فلل بدر: تسويق تطويري فائز بجائزة دولية",
+                case_p1: "حملة تسويق متكاملة لمشروع فلل بدر التابع لشركة السليمان العقارية في الرياض، فازت بجائزة International Property Awards لأفريقيا والجزيرة العربية 2022 عن فئة التسويق التطويري في السعودية.",
+                case_p2: "جمعت الحملة بين القنوات الخارجية (لوحات الطرق، الفيلا النموذجية، متحف المواصفات، المعارض العقارية والتعاون مع المكاتب) والقنوات الرقمية (LEAP 2022، منصات العقار الرقمية، الشراكات البنكية، تجربة 360 درجة، والمؤثرين).",
+                case_s1: "مساحة المشروع بالمتر المربع",
+                case_s2: "مسطحات البناء بالمتر المربع",
+                case_s3: "وحدة سكنية",
+                case_s4: "مليون ريال قيمة سوقية",
+                case_badge: "فائز · International Property Awards 2022",
+                w_bader_villa_t: "فلل بدر",
+                w_bader_villa_c: "السليمان العقارية · حملة تسويق تطويري فائزة بجائزة International Property Awards 2022",
+                w_bader_billboard_t: "فلل بدر: الحملة الخارجية",
+                w_bader_billboard_c: "لوحات الطرق الرئيسية ضمن خطة التسويق غير الرقمي",
+                w_bader_ooh_t: "فلل بدر: نقاط التواصل",
+                w_bader_ooh_c: "لوحات الموقع والطرق ونقاط البيع",
+                w_riyadh_front_aerial_t: "واجهة الرياض",
+                w_riyadh_front_aerial_c: "هوية وتطبيقات مشروع أعمال وتسوق",
+                w_riyadh_front_mall_t: "واجهة الرياض: التطبيقات",
+                w_riyadh_front_mall_c: "الإرشاد والتطبيقات داخل المجمع",
+                w_yamam_aerial_t: "يمام فيليج",
+                w_yamam_aerial_c: "استراتيجية العلامة والتسويق متعدد القنوات لمجمع سكني فاخر",
+                w_bouvardia_render_t: "بوفارديا سيتي",
+                w_bouvardia_render_c: "الهوية البصرية الشاملة لمشروع الديار العربية في جدة",
+                w_bouvardia_flags_t: "بوفارديا: تطبيقات الهوية",
+                w_bouvardia_flags_c: "الأعلام واللوحات والمطبوعات",
+                w_yamam_identity_t: "يمام: أدوات الهوية",
+                w_yamam_identity_c: "المطبوعات والملف التعريفي والتطبيقات الرقمية",
+                w_bussma_office_t: "بصمة العقارية",
+                w_bussma_office_c: "الهوية المؤسسية وتموضع العلامة لشركة تقييم وإدارة أملاك",
+                w_bussma_billboard_t: "بصمة: الحملة الإعلانية",
+                w_bussma_billboard_c: "تطبيق الهوية في الحملات الخارجية",
+                w_almashreq_night_t: "فندق المشرق البوتيك",
+                w_almashreq_night_c: "الهوية والتطبيقات لقطاع الضيافة",
+                w_almashreq_identity_t: "المشرق: المطبوعات الفاخرة",
+                w_almashreq_identity_c: "بطاقات ومطبوعات بتشطيبات ذهبية",
+                w_kaizen_station_t: "محطات كايزن",
+                w_kaizen_station_c: "الهوية البصرية وتطبيقاتها على المحطات",
+                w_kaizen_truck_t: "كايزن: أسطول النقل",
+                w_kaizen_truck_c: "تطبيق الهوية على أسطول الشاحنات والهدايا",
+                w_alqahtani_stationery_t: "مكتب سعد القحطاني للمحاماة",
+                w_alqahtani_stationery_c: "الهوية البصرية ودليل الاستخدام والمطبوعات",
+                w_bankruptcy_event_t: "لجنة الإفلاس",
+                w_bankruptcy_event_c: "إطلاق الهوية والمحتوى التوعوي والتقارير",
+                w_sahab_award_t: "سحاب للحلول الإلكترونية",
+                w_sahab_award_c: "الهوية الكاملة لشركة حكومية تابعة للهلال الأحمر",
+                w_sahab_web_t: "سحاب: الحضور الرقمي",
+                w_sahab_web_c: "الموقع الإلكتروني والمطبوعات",
+                w_harf_gallery_t: "حرف جاليري",
+                w_harf_gallery_c: "معرض أعمال الخط العربي: أكثر من 350 عملًا فنيًا",
+                w_harf_a101_t: "حرف جاليري: مجموعة A++",
+                w_harf_a101_c: "لوحات خط عربي بمقاسات متعددة للمساحات السكنية",
+                w_harf_a202_t: "حرف جاليري: مجموعة A",
+                w_harf_a202_c: "تصميم وإنتاج وتسعير المنتجات حتى الإغلاق المالي",
+                w_harf_a215_t: "حرف جاليري: لوحات مميزة",
+                w_harf_a215_c: "مجموعة مختارة للمساحات الفاخرة",
                 nav_about: "نبذة",
                 nav_experience: "خبرات",
                 nav_projects: "أعمال",
@@ -1379,6 +1662,70 @@
                 coverletter_dl: "تحميل الموجز<span class=\"resume-break\"> التعريفي</span>"
             },
             en: {
+                nav_work: "Portfolio",
+                work_sub: "Portfolio",
+                work_title: "Selected Work",
+                work_note: "Samples from projects I helped manage and develop as part of the teams at HAWYIA Agency and Alsoliman Real Estate.",
+                work_f_all: "All",
+                work_f_realestate: "Real Estate",
+                work_f_identity: "Brand Identity",
+                work_f_gov: "Government",
+                work_f_products: "Products",
+                case_sub: "Case Study",
+                case_title: "Bader Villas: Award Winning Development Marketing",
+                case_p1: "An integrated marketing campaign for Bader Villas by Alsoliman Real Estate in Riyadh, winner of the International Property Awards Africa & Arabia 2022 in the Development Marketing, Saudi Arabia category.",
+                case_p2: "The campaign combined offline channels (highway signage, show villa, specifications museum, property exhibitions and broker partnerships) with digital ones (LEAP 2022, property platforms, bank partnerships, a 360° experience and influencers).",
+                case_s1: "m² site area",
+                case_s2: "m² built up area",
+                case_s3: "residential units",
+                case_s4: "SAR million market value",
+                case_badge: "Winner · International Property Awards 2022",
+                w_bader_villa_t: "Bader Villas",
+                w_bader_villa_c: "Alsoliman Real Estate · award winning development marketing, International Property Awards 2022",
+                w_bader_billboard_t: "Bader Villas: Outdoor Campaign",
+                w_bader_billboard_c: "Highway billboards as part of the offline marketing plan",
+                w_bader_ooh_t: "Bader Villas: Touchpoints",
+                w_bader_ooh_c: "Site, road and point of sale signage",
+                w_riyadh_front_aerial_t: "Riyadh Front",
+                w_riyadh_front_aerial_c: "Identity and applications for a business and retail destination",
+                w_riyadh_front_mall_t: "Riyadh Front: Applications",
+                w_riyadh_front_mall_c: "Wayfinding and in mall applications",
+                w_yamam_aerial_t: "Yamam Village",
+                w_yamam_aerial_c: "Brand strategy and multichannel marketing for a luxury residential community",
+                w_bouvardia_render_t: "Bouvardia City",
+                w_bouvardia_render_c: "Full visual identity for an Arabian Dyar community in Jeddah",
+                w_bouvardia_flags_t: "Bouvardia: Identity Applications",
+                w_bouvardia_flags_c: "Flags, billboards and print",
+                w_yamam_identity_t: "Yamam: Brand Toolkit",
+                w_yamam_identity_c: "Stationery, profile and digital applications",
+                w_bussma_office_t: "Bussma Real Estate",
+                w_bussma_office_c: "Corporate identity and positioning for a valuation and property management firm",
+                w_bussma_billboard_t: "Bussma: Campaign",
+                w_bussma_billboard_c: "Identity applied to outdoor advertising",
+                w_almashreq_night_t: "Al Mashreq Boutique Hotel",
+                w_almashreq_night_c: "Hospitality identity and applications",
+                w_almashreq_identity_t: "Al Mashreq: Premium Print",
+                w_almashreq_identity_c: "Gold finished cards and collateral",
+                w_kaizen_station_t: "KAIZEN Stations",
+                w_kaizen_station_c: "Visual identity applied across fuel stations",
+                w_kaizen_truck_t: "KAIZEN: Fleet",
+                w_kaizen_truck_c: "Identity on fleet and merchandise",
+                w_alqahtani_stationery_t: "Saad Al Qahtani Law Firm",
+                w_alqahtani_stationery_c: "Visual identity, guidelines and stationery",
+                w_bankruptcy_event_t: "Bankruptcy Commission",
+                w_bankruptcy_event_c: "Identity launch, awareness content and reports",
+                w_sahab_award_t: "SAHAB Electronic Solutions",
+                w_sahab_award_c: "Full identity for a government owned company",
+                w_sahab_web_t: "SAHAB: Digital Presence",
+                w_sahab_web_c: "Website and stationery",
+                w_harf_gallery_t: "Harf Gallery",
+                w_harf_gallery_c: "Arabic calligraphy gallery: 350+ artworks",
+                w_harf_a101_t: "Harf Gallery: A++ Collection",
+                w_harf_a101_c: "Calligraphy canvases in multiple sizes for living spaces",
+                w_harf_a202_t: "Harf Gallery: A Collection",
+                w_harf_a202_c: "Design, production and pricing through financial close",
+                w_harf_a215_t: "Harf Gallery: Signature Pieces",
+                w_harf_a215_c: "Curated pieces for premium interiors",
                 nav_about: "About",
                 nav_experience: "Experience",
                 nav_projects: "Works",
@@ -1712,6 +2059,80 @@
                 }
                 touchStartX = null;
             }, { passive: true });
+        })();
+    </script>
+
+    <!-- Selected Work: filters + lightbox -->
+    <script>
+        (function () {
+            const grid = document.getElementById('work-grid');
+            if (!grid) return;
+            const items = Array.from(grid.querySelectorAll('.work-item'));
+            const chips = Array.from(document.querySelectorAll('#work .work-chip'));
+            chips.forEach(chip => chip.addEventListener('click', () => {
+                const f = chip.dataset.filter;
+                chips.forEach(c => { c.classList.toggle('is-active', c === chip); c.setAttribute('aria-selected', c === chip); });
+                items.forEach(it => it.classList.toggle('is-hidden', f !== 'all' && it.dataset.cat !== f));
+            }));
+
+            const overlay = document.createElement('div');
+            overlay.id = 'work-lightbox';
+            overlay.className = 'fixed inset-0 z-[100] bg-black/95 hidden flex-col items-center justify-center p-4';
+            overlay.innerHTML = `
+                <button type="button" class="wl-close absolute top-5 right-5 text-white/80 hover:text-white text-3xl w-12 h-12 flex items-center justify-center rounded-full hover:bg-white/10" aria-label="Close"><i class="fas fa-times"></i></button>
+                <button type="button" class="wl-prev absolute top-1/2 -translate-y-1/2 start-3 sm:start-6 text-white/80 hover:text-white text-2xl sm:text-3xl w-11 h-11 sm:w-14 sm:h-14 flex items-center justify-center rounded-full hover:bg-white/10" aria-label="Previous"><i class="fas fa-chevron-right rtl-flip"></i></button>
+                <button type="button" class="wl-next absolute top-1/2 -translate-y-1/2 end-3 sm:end-6 text-white/80 hover:text-white text-2xl sm:text-3xl w-11 h-11 sm:w-14 sm:h-14 flex items-center justify-center rounded-full hover:bg-white/10" aria-label="Next"><i class="fas fa-chevron-left rtl-flip"></i></button>
+                <img class="wl-img max-w-[92vw] max-h-[78vh] object-contain rounded-lg shadow-2xl select-none" src="" alt="">
+                <figcaption class="wl-cap text-center text-white mt-4 px-4">
+                    <p class="wl-title font-majalla text-xl"></p>
+                    <p class="wl-sub text-sm text-white/75 mt-1"></p>
+                </figcaption>`;
+            document.body.appendChild(overlay);
+            const img = overlay.querySelector('.wl-img');
+            const title = overlay.querySelector('.wl-title');
+            const sub = overlay.querySelector('.wl-sub');
+            let list = [], idx = 0;
+
+            function show(i) {
+                idx = (i + list.length) % list.length;
+                const it = list[idx];
+                const im = it.querySelector('img');
+                img.src = im.currentSrc || im.src; img.alt = im.alt;
+                const ps = it.querySelectorAll('figcaption p');
+                title.textContent = ps[0] ? ps[0].textContent : '';
+                sub.textContent = ps[1] ? ps[1].textContent : '';
+            }
+            function open(it) {
+                list = items.filter(x => !x.classList.contains('is-hidden'));
+                show(list.indexOf(it));
+                overlay.classList.remove('hidden'); overlay.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            }
+            function close() {
+                overlay.classList.add('hidden'); overlay.classList.remove('flex');
+                document.body.style.overflow = '';
+            }
+            items.forEach(it => it.addEventListener('click', () => open(it)));
+            overlay.querySelector('.wl-close').addEventListener('click', close);
+            overlay.querySelector('.wl-prev').addEventListener('click', e => { e.stopPropagation(); show(idx - 1); });
+            overlay.querySelector('.wl-next').addEventListener('click', e => { e.stopPropagation(); show(idx + 1); });
+            overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
+            document.addEventListener('keydown', e => {
+                if (overlay.classList.contains('hidden')) return;
+                const rtl = document.documentElement.dir === 'rtl';
+                if (e.key === 'Escape') close();
+                else if (e.key === 'ArrowLeft') show(idx + (rtl ? 1 : -1));
+                else if (e.key === 'ArrowRight') show(idx + (rtl ? -1 : 1));
+            });
+            let x0 = null;
+            overlay.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
+            overlay.addEventListener('touchend', e => {
+                if (x0 === null) return;
+                const dx = e.changedTouches[0].clientX - x0; x0 = null;
+                if (Math.abs(dx) < 40) return;
+                const rtl = document.documentElement.dir === 'rtl';
+                show(idx + ((dx < 0) !== rtl ? 1 : -1));
+            });
         })();
     </script>
 </body>
