@@ -1393,7 +1393,7 @@
                             <p class="font-majalla font-semibold contact-value break-words">mu.alhajjar</p>
                         </div>
                     </a>
-                    <a href="https://drive.google.com/drive/folders/13k9np2Xb5v-hgxUFDuo4V4sWREvSreTR?usp=sharing" target="_blank" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors min-w-0 contact-link">
+                    <a href="files/Munther-AlHajjar-CV-AR.pdf" data-href-ar="files/Munther-AlHajjar-CV-AR.pdf" data-href-en="files/Munther-AlHajjar-CV-EN.pdf" target="_blank" rel="noopener" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors min-w-0 contact-link">
                         <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors flex-shrink-0 contact-icon">
                             <i class="fas fa-file-alt text-2xl text-accent dark:text-accent-light group-hover:text-white transition-colors"></i>
                         </div>
@@ -1402,7 +1402,7 @@
                             <p class="font-majalla font-semibold contact-value break-words" data-i18n="resume_dl">تحميل السيرة<span class="resume-break"> الذاتية</span></p>
                         </div>
                     </a>
-                    <a href="https://drive.google.com/drive/folders/166S7H-xh7p7V11q4NMQAVnm5G6Q0hR1a?usp=sharing" target="_blank" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors min-w-0 contact-link">
+                    <a href="files/Munther-AlHajjar-Cover-Letter-AR.pdf" data-href-ar="files/Munther-AlHajjar-Cover-Letter-AR.pdf" data-href-en="files/Munther-AlHajjar-Cover-Letter-EN.pdf" target="_blank" rel="noopener" class="group flex items-center gap-5 p-5 rounded-xl hover:bg-luxury-50 dark:hover:bg-luxury-900 transition-colors min-w-0 contact-link">
                         <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors flex-shrink-0 contact-icon">
                             <i class="fas fa-envelope-open-text text-2xl text-accent dark:text-accent-light group-hover:text-white transition-colors"></i>
                         </div>
@@ -1866,6 +1866,9 @@
                 if (translations[currentLang][key]) {
                     el.innerHTML = translations[currentLang][key];
                 }
+            });
+            document.querySelectorAll('[data-href-' + currentLang + ']').forEach(el => {
+                el.setAttribute('href', el.getAttribute('data-href-' + currentLang));
             });
             setTimeout(() => { AOS.refreshHard(); }, 100);
         }
