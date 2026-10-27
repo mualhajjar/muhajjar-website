@@ -122,8 +122,8 @@ export function Footer({ route }: { route: Route }) {
           <a href={person.linktree} target="_blank" rel="noopener noreferrer">
             Linktree
           </a>
-          <a href={person.cv[lang]} target="_blank" rel="noopener">
-            {t(ui.contact.cv, lang)}
+          <a href={person.cvDrive} target="_blank" rel="noopener">
+            {t(ui.contact.cvDrive, lang)}
           </a>
           <a href={person.phoneHref} dir="ltr" className="foot-phone">
             {person.phoneDisplay}
