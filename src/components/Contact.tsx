@@ -54,7 +54,7 @@ export function ContactBand({ route }: { route: Route }) {
     { icon: 'mail' as const, label: c.email, value: person.email, href: `mailto:${person.email}` },
     { icon: 'whatsapp' as const, label: c.whatsapp, value: person.phoneDisplay, href: person.whatsapp, ext: true },
     { icon: 'linkedin' as const, label: c.linkedin, value: 'in/munther-alhajjar', href: person.linkedin, ext: true },
-    { icon: 'link' as const, label: c.linktree, value: 'linktr.ee/mu.alhajjar', href: person.linktree, ext: true },
+    { icon: 'download' as const, label: c.cvDrive, value: 'muhajjar.com/drive', href: person.cvDrive, ext: true },
   ];
   return (
     <section className="band contact" id="contact" aria-labelledby="contact-title">
