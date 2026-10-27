@@ -21,6 +21,8 @@ export const person = {
   linkedin: 'https://linkedin.com/in/munther-alhajjar/',
   linktree: 'https://linktr.ee/mu.alhajjar',
   cv: { ar: '/files/Munther-AlHajjar-CV-AR.pdf', en: '/files/Munther-AlHajjar-CV-EN.pdf' } as T,
+  /** Résumé folder (muhajjar.com/drive redirects to Google Drive). Used by the About page. */
+  cvDrive: 'https://muhajjar.com/drive',
   coverLetter: {
     ar: '/files/Munther-AlHajjar-Cover-Letter-AR.pdf',
     en: '/files/Munther-AlHajjar-Cover-Letter-EN.pdf',

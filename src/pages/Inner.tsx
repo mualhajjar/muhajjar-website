@@ -37,11 +37,8 @@ export function About({ route }: { route: Route }) {
             </p>
           ))}
           <div className="cta-row">
-            <a className="btn btn-ink" href={person.cv[lang]} target="_blank" rel="noopener">
-              <Icon name="download" /> {t(ui.contact.cv, lang)}
-            </a>
-            <a className="btn btn-line" href={person.coverLetter[lang]} target="_blank" rel="noopener">
-              {t(ui.contact.cover, lang)}
+            <a className="btn btn-ink" href={person.cvDrive} target="_blank" rel="noopener">
+              {t(ui.contact.cvDrive, lang)} <Icon name="external" />
             </a>
           </div>
         </div>

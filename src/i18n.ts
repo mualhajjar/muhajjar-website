@@ -54,6 +54,7 @@ export const ui = {
     copy: { ar: 'نسخ', en: 'Copy' },
     copied: { ar: 'تم النسخ', en: 'Copied' },
     cv: { ar: 'السيرة الذاتية (PDF)', en: 'Résumé (PDF)' },
+    cvDrive: { ar: 'السيرة الذاتية', en: 'Résumé' },
     cover: { ar: 'الخطاب التعريفي (PDF)', en: 'Cover letter (PDF)' },
     write: { ar: 'راسلني بالبريد', en: 'Email me' },
     chat: { ar: 'محادثة واتساب', en: 'Chat on WhatsApp' },
