@@ -9,6 +9,7 @@ const NAV: { page: PageId | 'contact'; key: keyof typeof ui.nav }[] = [
   { page: 'about', key: 'about' },
   { page: 'experience', key: 'experience' },
   { page: 'projects', key: 'projects' },
+  { page: 'work', key: 'work' },
   { page: 'expertise', key: 'expertise' },
   { page: 'contact', key: 'contact' },
 ];

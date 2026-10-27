@@ -40,6 +40,15 @@ export function meta(route: Route): { title: string; description: string } {
       const p = projects.find((x) => x.slug === route.slug)!;
       return { title: `${t(p.name, lang)} | ${name}`, description: clip(t(p.overview, lang)) };
     }
+    case 'work':
+      return {
+        title: L(`الأعمال الإعلامية | ${name}`, `Media Work | ${name}`, lang),
+        description: L(
+          'أعمال إعلامية وتسويقية ضمن فريق وكالة هوية (2019 إلى 2022): حلول إطلاق المشاريع العقارية، والملفات التعريفية، والمسؤولية الاجتماعية، ودليل المشاريع.',
+          'Media and marketing work with HAWYIA Agency (2019 to 2022): real-estate launch solutions, corporate profiles, social responsibility, and a project directory.',
+          lang,
+        ),
+      };
     case 'expertise':
       return {
         title: L(`مجالات الخبرة | ${name}`, `Expertise | ${name}`, lang),

@@ -50,3 +50,13 @@
 - Deployment to Hostinger, DNS, and HTTPS (not performed from here). The `.htaccess` was written for Apache/LiteSpeed but has not run on Hostinger's servers.
 - Real devices and Safari/Firefox (tests used Chromium).
 - External links were checked for correct URLs, not fetched (LinkedIn/WhatsApp block automated requests).
+
+## Update — 28 Oct 2026: HAWYIA media files and the marketing plan
+
+On your instruction, the HAWYIA media PDFs and the digital marketing plan are now used on the site:
+
+- **New page: Media Work** (`/media-work/`, `/en/media-work/`) — real-estate launch solutions (12 items, from *Marketing Solutions 2020*), profiles and reports (4, from *Profiles & Annual Reports*), social responsibility (4, from the 2021 CSR presentation), and a filterable directory of the 38 projects in your HAWYIA list.
+- **New case study: Harf Gallery** — collections catalogue (A+, A, B, S), desktop and oud gifts, companion items, the three-step B2B client journey, and six images from the Harf catalogues.
+- **Al-Basateen case study** — goals, content standards, platforms, and the 30-day workstreams (social, website, Google) from *الخطة التسويقية الجديدة*.
+
+Kept out on purpose: the HAWYIA team photos, client logos sheets, financial proposal, and any page showing third-party people without context. Several HAWYIA proposals (e.g. the launch toolkit) describe the agency's service offering; the page labels them as work of the HAWYIA team that you were part of, not as your sole work.

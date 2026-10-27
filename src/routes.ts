@@ -1,7 +1,7 @@
 import { projects } from './data/projects';
 import type { Lang } from './data/types';
 
-export type PageId = 'home' | 'about' | 'experience' | 'projects' | 'project' | 'expertise' | 'notfound';
+export type PageId = 'home' | 'about' | 'experience' | 'projects' | 'project' | 'work' | 'expertise' | 'notfound';
 
 export interface Route {
   lang: Lang;
@@ -13,6 +13,7 @@ const SEGMENT: Record<Exclude<PageId, 'home' | 'project' | 'notfound'>, string> 
   about: 'about',
   experience: 'experience',
   projects: 'projects',
+  work: 'media-work',
   expertise: 'expertise',
 };
 
@@ -49,7 +50,7 @@ export function resolve(pathname: string): Route {
 export function allRoutes(): Route[] {
   const out: Route[] = [];
   for (const lang of ['ar', 'en'] as Lang[]) {
-    for (const page of ['home', 'about', 'experience', 'projects', 'expertise'] as PageId[]) out.push({ lang, page });
+    for (const page of ['home', 'about', 'experience', 'projects', 'work', 'expertise'] as PageId[]) out.push({ lang, page });
     for (const p of projects) out.push({ lang, page: 'project', slug: p.slug });
   }
   return out;

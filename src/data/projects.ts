@@ -10,6 +10,7 @@ export const categories: { id: ProjectCategory; label: T }[] = [
   { id: 'brand', label: { ar: 'استراتيجية العلامة', en: 'Brand Strategy' } },
   { id: 'events', label: { ar: 'الفعاليات', en: 'Events' } },
   { id: 'media', label: { ar: 'الإعلام', en: 'Media' } },
+  { id: 'products', label: { ar: 'المنتجات', en: 'Products' } },
 ];
 
 const HAWYIA_SRC: T = { ar: 'الصور من ملف أعمال وكالة هوية', en: 'Images: HAWYIA Agency portfolio' };
@@ -245,24 +246,139 @@ export const projects: Project[] = [
   {
     slug: 'al-basateen-real-estate',
     name: { ar: 'البساتين العقارية', en: 'Al-Basateen Real Estate' },
-    summary: { ar: 'الهوية البصرية والمواد التسويقية والترويجية لمشاريع الشركة.', en: 'Visual identity, marketing collateral, and promotional assets.' },
-    categories: ['real-estate', 'brand'],
+    summary: { ar: 'الهوية البصرية والمواد التسويقية، وخطة تسويق رقمي لإطلاق مجتمع البساتين خلال 30 يومًا.', en: 'Visual identity, marketing collateral, and a 30-day digital marketing plan for the Al-Basateen community.' },
+    categories: ['real-estate', 'brand', 'media'],
     overview: {
-      ar: 'تطوير الهوية البصرية والمواد التسويقية والترويجية لمشاريع شركة البساتين العقارية.',
-      en: 'Visual identity, marketing collateral, and promotional assets for Al-Basateen Real Estate developments.',
+      ar: 'تطوير الهوية البصرية والمواد التسويقية والترويجية لمشاريع شركة البساتين العقارية، ومنها مجتمع البساتين ومشروعا بالمز وجاردنز، مع خطة تسويق رقمي تغطي منصات التواصل والموقع الإلكتروني وخدمات Google.',
+      en: 'Visual identity, marketing collateral, and promotional assets for Al-Basateen Real Estate developments, including the Al-Basateen community and its Palms and Gardens projects, with a digital marketing plan covering social media, the website, and Google services.',
     },
-    role: { ar: 'تطوير الهوية البصرية ومواد التسويق.', en: 'Developed the visual identity and marketing materials.' },
+    role: { ar: 'تطوير الهوية البصرية ومواد التسويق، وإعداد خطة التسويق الرقمي.', en: 'Developed the visual identity and marketing materials, and prepared the digital marketing plan.' },
     scope: [
       { ar: 'الهوية البصرية', en: 'Visual identity' },
       { ar: 'المواد التسويقية والترويجية', en: 'Marketing and promotional materials' },
+      { ar: 'خطة التسويق الرقمي', en: 'Digital marketing plan' },
+      { ar: 'محتوى منصات التواصل بالعربية والإنجليزية', en: 'Bilingual social media content' },
     ],
     deliverables: [
       { ar: 'الهوية البصرية', en: 'Visual identity' },
       { ar: 'المواد التسويقية', en: 'Marketing collateral' },
+      { ar: 'خطة تسويق رقمي وخط زمني لـ 30 يومًا', en: 'Digital marketing plan and 30-day timeline' },
+      { ar: 'تقويم محتوى تويتر وإنستغرام', en: 'Twitter and Instagram content calendar' },
     ],
     results: [],
+    sections: [
+      {
+        title: { ar: 'أهداف التسويق الرقمي', en: 'Digital marketing goals' },
+        items: [
+          { ar: 'التواجد والظهور والانتشار', en: 'Presence, visibility, and reach' },
+          { ar: 'التموضع بين المنافسين كمطور عقاري مثالي وبناء السمعة', en: 'Positioning against competitors as a model developer, and building reputation' },
+          { ar: 'رفع الوعي عبر التسويق بالمحتوى', en: 'Raising awareness through content marketing' },
+          { ar: 'تحويل الاهتمام إلى مبيعات', en: 'Turning interest into sales' },
+        ],
+      },
+      {
+        title: { ar: 'معايير المحتوى', en: 'Content standards' },
+        items: [
+          { ar: 'سلامة المحتوى من الأخطاء اللغوية', en: 'Error-free language' },
+          { ar: 'الاختصار والتركيز بلغة متخصصة في العقار', en: 'Concise, focused, real-estate language' },
+          { ar: 'العناية بالجانب البصري وجمال المشروع', en: 'Care for visuals and the project’s design' },
+          { ar: 'الاستعداد المسبق للأسئلة والردود', en: 'Prepared answers for expected questions' },
+          { ar: 'التوقيت المناسب للنشر والتفاعل', en: 'Well-timed posting and replies' },
+        ],
+      },
+      {
+        title: { ar: 'المحتوى والمنصات', en: 'Content and platforms' },
+        items: [
+          { ar: 'تويتر وإنستغرام بهوية حساب موحدة', en: 'Twitter and Instagram under one account identity' },
+          { ar: 'الإنجليزية لغةً رئيسية والعربية لغةً ثانية، بنبرة رسمية', en: 'English first and Arabic second, in a formal tone' },
+          { ar: 'محتوى تعريفي وتسويقي وتثقيفي وإخباري', en: 'Introductory, promotional, educational, and news content' },
+          { ar: 'نصوص وتصاميم وفيديو وإنفوجرافيك', en: 'Copy, design, video, and infographics' },
+        ],
+      },
+    ],
+    tracks: [
+      {
+        title: { ar: 'منصات التواصل', en: 'Social media' },
+        steps: [
+          { ar: 'التحليل', en: 'Analysis' },
+          { ar: 'تهيئة الحسابات', en: 'Account setup' },
+          { ar: 'كتابة المحتوى', en: 'Copywriting' },
+          { ar: 'تجهيز التصاميم', en: 'Design production' },
+          { ar: 'النشر والتفاعل', en: 'Publishing and engagement' },
+          { ar: 'الحملة الترويجية', en: 'Promotional campaign' },
+        ],
+      },
+      {
+        title: { ar: 'الموقع الإلكتروني', en: 'Website' },
+        steps: [
+          { ar: 'التحليل', en: 'Analysis' },
+          { ar: 'التصميم', en: 'Design' },
+          { ar: 'المحتوى', en: 'Content' },
+          { ar: 'البرمجة', en: 'Development' },
+          { ar: 'الإطلاق', en: 'Launch' },
+        ],
+      },
+      {
+        title: { ar: 'Google', en: 'Google' },
+        steps: [
+          { ar: 'تحسين الظهور SEO', en: 'SEO' },
+          { ar: 'Google Ads', en: 'Google Ads' },
+          { ar: 'Google Maps', en: 'Google Maps' },
+        ],
+      },
+    ],
     plate: { word: { ar: 'البساتين', en: 'Al-Basateen' }, sub: { ar: 'هوية ومواد تسويقية', en: 'Identity & collateral' } },
     plateLogo: 'albasateen-realestate',
+  },
+  {
+    slug: 'harf-gallery',
+    name: { ar: 'حرف جاليري', en: 'Harf Gallery' },
+    summary: { ar: 'تطوير أكثر من 350 عملًا فنيًا في الخط العربي، وخط هدايا الشركات، ومسار الطلب للشركات.', en: '350+ Arabic calligraphy artworks, a corporate gifting line, and a B2B ordering journey.' },
+    categories: ['products', 'brand'],
+    date: { ar: '2021 إلى 2022', en: '2021 to 2022' },
+    context: { ar: 'وكالة هوية', en: 'HAWYIA Agency' },
+    overview: {
+      ar: 'معرض للوحات الخط العربي وهدايا الشركات. بُني كتالوج المجموعات على فئات (A+ وA وB وS)، يُقدَّم كل عمل فيها بعدة مقاسات على القماش، إلى جانب خط هدايا مكتبية وهدايا مع العود، ومنتجات مصاحبة مثل الأسورة والسبحة والساعة والقلم والعطر.',
+      en: 'A gallery of Arabic calligraphy artworks and corporate gifts. The collections catalogue is organised in categories (A+, A, B and S), with each piece offered in several canvas sizes, alongside desktop gifts, gift sets with oud, and companion items such as bracelets, prayer beads, watches, pens, and fragrance.',
+    },
+    role: {
+      ar: 'مدير تطوير الأعمال والمنتجات: إدارة وتطوير الأعمال الفنية من التصميم حتى الإغلاق المالي، وبناء الكتالوج وخط الهدايا، وتحليل السوق، والتفاوض مع العملاء والموردين.',
+      en: 'Business Development & Product Manager: managed artworks from design to financial close, built the catalogue and gifting line, analysed the market, and negotiated with clients and suppliers.',
+    },
+    scope: [
+      { ar: 'إدارة وتطوير أكثر من 350 عملًا فنيًا', en: 'Managing and developing 350+ artworks' },
+      { ar: 'كتالوج مجموعات اللوحات', en: 'Art collections catalogue' },
+      { ar: 'خط هدايا الشركات', en: 'Corporate gifting line' },
+      { ar: 'مسار الطلب للشركات (B2B)', en: 'B2B ordering journey' },
+      { ar: 'تحليل السوق وتوجيه خطط الإنتاج', en: 'Market analysis to guide production' },
+    ],
+    deliverables: [
+      { ar: 'كتالوج المجموعات (A+ وA وB وS)', en: 'Collections catalogue (A+, A, B, S)' },
+      { ar: 'هدايا مكتبية وهدايا مع العود', en: 'Desktop gifts and oud gift sets' },
+      { ar: 'منتجات مصاحبة: أسورة، سبحة، ساعة، قلم، عطر', en: 'Companion items: bracelet, prayer beads, watch, pen, fragrance' },
+    ],
+    results: [{ value: '350+', label: { ar: 'عمل فني في الخط العربي', en: 'Arabic calligraphy artworks' } }],
+    tracks: [
+      {
+        title: { ar: 'رحلة العميل (B2B)', en: 'Client journey (B2B)' },
+        steps: [
+          { ar: 'انتقاء المنتج', en: 'Select a product' },
+          { ar: 'اعتماد السعر والكمية', en: 'Approve price and quantity' },
+          { ar: 'إتمام الشراء', en: 'Complete the purchase' },
+        ],
+      },
+    ],
+    cover: { key: 'harf-interior', alt: { ar: 'داخل معرض حرف جاليري', en: 'Inside Harf Gallery' } },
+    gallery: [
+      { key: 'harf-room', alt: { ar: 'لوحة من مجموعة A+ في مساحة معيشة', en: 'An A+ collection piece in a living space' }, caption: { ar: 'من كتالوج المجموعات', en: 'From the collections catalogue' } },
+      { key: 'harf-store', alt: { ar: 'واجهة حرف جاليري', en: 'Harf Gallery storefront' }, caption: { ar: 'واجهة المعرض', en: 'Gallery storefront' } },
+      { key: 'harf-art', alt: { ar: 'لوحات حرف في مساحة استقبال', en: 'Harf artworks in a reception space' }, caption: { ar: 'تطبيق في المساحات', en: 'In situ' } },
+      { key: 'harf-desk', alt: { ar: 'هدية مكتبية من حرف', en: 'Harf desktop gift' }, caption: { ar: 'هدايا مكتبية', en: 'Desktop gifts' } },
+      { key: 'harf-oud', alt: { ar: 'طقم هدية مع العود', en: 'Gift set with oud' }, caption: { ar: 'هدايا مع العود', en: 'Gift sets with oud' } },
+      { key: 'harf-giftbox', alt: { ar: 'علبة هدية من حرف', en: 'Harf gift box' }, caption: { ar: 'تغليف الهدايا', en: 'Gift packaging' } },
+    ],
+    galleryLayout: 'grid',
+    imageSource: { ar: 'الصور من كتالوج حرف جاليري 2021 وعرض منتجات حرف', en: 'Images: Harf Gallery 2021 catalogue and Harf products presentation' },
   },
   {
     slug: 'basmah-real-estate-appraisal',

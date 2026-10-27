@@ -213,6 +213,77 @@
   "w": 671,
   "h": 604
  },
+ "csr-healthwaqf": {
+  "variants": [
+   {
+    "src": "/images/projects/csr-healthwaqf-720.webp",
+    "w": 720,
+    "h": 749
+   }
+  ],
+  "w": 720,
+  "h": 749
+ },
+ "csr-subaie": {
+  "variants": [
+   {
+    "src": "/images/projects/csr-subaie-720.webp",
+    "w": 720,
+    "h": 526
+   }
+  ],
+  "w": 720,
+  "h": 526
+ },
+ "csr-subaie-booth": {
+  "variants": [
+   {
+    "src": "/images/projects/csr-subaie-booth-720.webp",
+    "w": 720,
+    "h": 547
+   },
+   {
+    "src": "/images/projects/csr-subaie-booth-1400.webp",
+    "w": 1400,
+    "h": 1064
+   }
+  ],
+  "w": 1400,
+  "h": 1064
+ },
+ "csr-traof": {
+  "variants": [
+   {
+    "src": "/images/projects/csr-traof-689.webp",
+    "w": 689,
+    "h": 418
+   }
+  ],
+  "w": 689,
+  "h": 418
+ },
+ "harf-art": {
+  "variants": [
+   {
+    "src": "/images/projects/harf-art-720.webp",
+    "w": 720,
+    "h": 718
+   }
+  ],
+  "w": 720,
+  "h": 718
+ },
+ "harf-desk": {
+  "variants": [
+   {
+    "src": "/images/projects/harf-desk-720.webp",
+    "w": 720,
+    "h": 702
+   }
+  ],
+  "w": 720,
+  "h": 702
+ },
  "harf-gallery": {
   "variants": [
    {
@@ -228,6 +299,257 @@
   ],
   "w": 882,
   "h": 511
+ },
+ "harf-giftbox": {
+  "variants": [
+   {
+    "src": "/images/projects/harf-giftbox-720.webp",
+    "w": 720,
+    "h": 637
+   }
+  ],
+  "w": 720,
+  "h": 637
+ },
+ "harf-interior": {
+  "variants": [
+   {
+    "src": "/images/projects/harf-interior-720.webp",
+    "w": 720,
+    "h": 419
+   }
+  ],
+  "w": 720,
+  "h": 419
+ },
+ "harf-oud": {
+  "variants": [
+   {
+    "src": "/images/projects/harf-oud-720.webp",
+    "w": 720,
+    "h": 457
+   }
+  ],
+  "w": 720,
+  "h": 457
+ },
+ "harf-room": {
+  "variants": [
+   {
+    "src": "/images/projects/harf-room-720.webp",
+    "w": 720,
+    "h": 718
+   },
+   {
+    "src": "/images/projects/harf-room-1400.webp",
+    "w": 1400,
+    "h": 1396
+   }
+  ],
+  "w": 1400,
+  "h": 1396
+ },
+ "harf-store": {
+  "variants": [
+   {
+    "src": "/images/projects/harf-store-720.webp",
+    "w": 720,
+    "h": 718
+   }
+  ],
+  "w": 720,
+  "h": 718
+ },
+ "kit-360": {
+  "variants": [
+   {
+    "src": "/images/projects/kit-360-715.webp",
+    "w": 715,
+    "h": 530
+   }
+  ],
+  "w": 715,
+  "h": 530
+ },
+ "kit-3dfilm": {
+  "variants": [
+   {
+    "src": "/images/projects/kit-3dfilm-720.webp",
+    "w": 681,
+    "h": 351
+   },
+   {
+    "src": "/images/projects/kit-3dfilm-1400.webp",
+    "w": 1325,
+    "h": 684
+   }
+  ],
+  "w": 1325,
+  "h": 684
+ },
+ "kit-3dsign": {
+  "variants": [
+   {
+    "src": "/images/projects/kit-3dsign-720.webp",
+    "w": 720,
+    "h": 428
+   }
+  ],
+  "w": 720,
+  "h": 428
+ },
+ "kit-campaign": {
+  "variants": [
+   {
+    "src": "/images/projects/kit-campaign-720.webp",
+    "w": 720,
+    "h": 499
+   }
+  ],
+  "w": 720,
+  "h": 499
+ },
+ "kit-exhibition": {
+  "variants": [
+   {
+    "src": "/images/projects/kit-exhibition-720.webp",
+    "w": 720,
+    "h": 511
+   }
+  ],
+  "w": 720,
+  "h": 511
+ },
+ "kit-gifts": {
+  "variants": [
+   {
+    "src": "/images/projects/kit-gifts-720.webp",
+    "w": 720,
+    "h": 531
+   }
+  ],
+  "w": 720,
+  "h": 531
+ },
+ "kit-hoarding": {
+  "variants": [
+   {
+    "src": "/images/projects/kit-hoarding-720.webp",
+    "w": 720,
+    "h": 349
+   },
+   {
+    "src": "/images/projects/kit-hoarding-1400.webp",
+    "w": 1400,
+    "h": 678
+   }
+  ],
+  "w": 1400,
+  "h": 678
+ },
+ "kit-maquette": {
+  "variants": [
+   {
+    "src": "/images/projects/kit-maquette-720.webp",
+    "w": 720,
+    "h": 431
+   }
+  ],
+  "w": 720,
+  "h": 431
+ },
+ "kit-neighborhood": {
+  "variants": [
+   {
+    "src": "/images/projects/kit-neighborhood-685.webp",
+    "w": 685,
+    "h": 640
+   }
+  ],
+  "w": 685,
+  "h": 640
+ },
+ "kit-salescenter": {
+  "variants": [
+   {
+    "src": "/images/projects/kit-salescenter-720.webp",
+    "w": 720,
+    "h": 389
+   }
+  ],
+  "w": 720,
+  "h": 389
+ },
+ "kit-saleskit": {
+  "variants": [
+   {
+    "src": "/images/projects/kit-saleskit-720.webp",
+    "w": 720,
+    "h": 545
+   }
+  ],
+  "w": 720,
+  "h": 545
+ },
+ "kit-website": {
+  "variants": [
+   {
+    "src": "/images/projects/kit-website-720.webp",
+    "w": 720,
+    "h": 544
+   },
+   {
+    "src": "/images/projects/kit-website-1400.webp",
+    "w": 1400,
+    "h": 1058
+   }
+  ],
+  "w": 1400,
+  "h": 1058
+ },
+ "rep-bankruptcy": {
+  "variants": [
+   {
+    "src": "/images/projects/rep-bankruptcy-720.webp",
+    "w": 720,
+    "h": 583
+   }
+  ],
+  "w": 720,
+  "h": 583
+ },
+ "rep-bouvardia": {
+  "variants": [
+   {
+    "src": "/images/projects/rep-bouvardia-720.webp",
+    "w": 720,
+    "h": 316
+   }
+  ],
+  "w": 720,
+  "h": 316
+ },
+ "rep-bussma": {
+  "variants": [
+   {
+    "src": "/images/projects/rep-bussma-720.webp",
+    "w": 720,
+    "h": 559
+   }
+  ],
+  "w": 720,
+  "h": 559
+ },
+ "rep-yamam": {
+  "variants": [
+   {
+    "src": "/images/projects/rep-yamam-691.webp",
+    "w": 691,
+    "h": 605
+   }
+  ],
+  "w": 691,
+  "h": 605
  },
  "sahab-award": {
   "variants": [

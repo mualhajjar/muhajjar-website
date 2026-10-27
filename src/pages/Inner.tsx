@@ -5,6 +5,7 @@ import { Pic } from '../components/Pic';
 import { expertiseGroups, process } from '../data/expertise';
 import { award, bio, certifications, earlierExperience, education, experience, languages, organisations, person } from '../data/profile';
 import { categories, projects } from '../data/projects';
+import { csr, directory, reports, sectors, toolkit, type Sector, type WorkItem } from '../data/work';
 import type { ProjectCategory } from '../data/types';
 import { range, t, ui } from '../i18n';
 import { pathFor, type Route } from '../routes';
@@ -184,7 +185,11 @@ export function Projects({ route }: { route: Route }) {
   return (
     <>
       <section className="wrap page-head">
-        <SectionHead as="h1" label={t(pr.label, lang)} title={t(pr.title, lang)} mute={t(pr.titleMute, lang)} />
+        <SectionHead as="h1" label={t(pr.label, lang)} title={t(pr.title, lang)} mute={t(pr.titleMute, lang)}>
+          <a className="link head-link" href={pathFor(lang, 'work')}>
+            {t(ui.nav.work, lang)} <Icon name="arrow" flip />
+          </a>
+        </SectionHead>
       </section>
       <section className="wrap chapter" aria-label={t(pr.label, lang)}>
         <div className="fbar" role="group" aria-label={t(pr.filterLabel, lang)}>
@@ -336,6 +341,40 @@ export function ProjectDetail({ route }: { route: Route }) {
             </div>
           </section>
         )}
+        {p.sections && (
+          <div className="case-sections">
+            {p.sections.map((sec) => (
+              <section className="case-sec" key={sec.title.en}>
+                <h2 className="mono label">{t(sec.title, lang)}</h2>
+                <ul className="ticks">
+                  {sec.items.map((it) => (
+                    <li key={it.en}>{t(it, lang)}</li>
+                  ))}
+                </ul>
+              </section>
+            ))}
+          </div>
+        )}
+        {p.tracks && (
+          <section className="case-sec">
+            <h2 className="mono label">{t(p.tracks.length > 1 ? pr.timeline : p.tracks[0].title, lang)}</h2>
+            <div className="tracks">
+              {p.tracks.map((tr) => (
+                <div className="track" key={tr.title.en}>
+                  {p.tracks!.length > 1 && <b>{t(tr.title, lang)}</b>}
+                  <ol>
+                    {tr.steps.map((st, i) => (
+                      <li key={st.en}>
+                        <span className="mono">{String(i + 1).padStart(2, '0')}</span>
+                        {t(st, lang)}
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
       </div>
 
       {p.gallery && p.gallery.length > 0 && (
@@ -343,7 +382,7 @@ export function ProjectDetail({ route }: { route: Route }) {
           <h2 className="mono label" id="imagery">
             {t(pr.imagery, lang)}
           </h2>
-          <div className={`gal gal-${Math.min(p.gallery.length, 3)}`}>
+          <div className={p.galleryLayout === 'grid' ? 'gal gal-grid' : `gal gal-${Math.min(p.gallery.length, 3)}`}>
             {p.gallery.map((g) => (
               <figure key={g.key} className="rise">
                 <Pic k={g.key} alt={t(g.alt, lang)} sizes="(max-width: 760px) 100vw, 45vw" />
@@ -428,5 +467,87 @@ export function NotFound({ route }: { route: Route }) {
         </a>
       </div>
     </section>
+  );
+}
+
+/* ------------------------------------------------------------- Media work */
+function WorkGrid({ items, lang, cols = 3 }: { items: WorkItem[]; lang: Route['lang']; cols?: 2 | 3 | 4 }) {
+  return (
+    <div className={`wgrid wgrid-${cols}`}>
+      {items.map((it) => (
+        <figure className="witem rise" key={it.key}>
+          <div className="witem-img">
+            <Pic k={it.key} alt={t(it.title, lang)} sizes={`(max-width: 560px) 100vw, (max-width: 960px) 50vw, ${Math.round(100 / cols)}vw`} />
+          </div>
+          <figcaption>
+            <b>{t(it.title, lang)}</b>
+            {it.text && <span>{t(it.text, lang)}</span>}
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  );
+}
+
+export function Work({ route }: { route: Route }) {
+  const { lang } = route;
+  const w = ui.work;
+  const [sector, setSector] = useState<Sector | 'all'>('all');
+  const rows = directory.filter((d) => sector === 'all' || d.s === sector);
+  return (
+    <>
+      <section className="wrap page-head">
+        <SectionHead as="h1" label={t(w.label, lang)} title={t(w.title, lang)} mute={t(w.titleMute, lang)}>
+          <p className="lead head-lead">{t(w.lead, lang)}</p>
+        </SectionHead>
+      </section>
+
+      <section className="wrap chapter" aria-labelledby="toolkit">
+        <SectionHead id="toolkit" label="01" title={t(w.toolkit, lang)}>
+          <p className="mono head-note">{t(w.toolkitNote, lang)}</p>
+        </SectionHead>
+        <WorkGrid items={toolkit} lang={lang} cols={4} />
+      </section>
+
+      <section className="wrap chapter" aria-labelledby="reports">
+        <SectionHead id="reports" label="02" title={t(w.reports, lang)} />
+        <WorkGrid items={reports} lang={lang} cols={2} />
+      </section>
+
+      <section className="wrap chapter" aria-labelledby="csr">
+        <SectionHead id="csr" label="03" title={t(w.csr, lang)}>
+          <p className="mono head-note">{t(w.csrNote, lang)}</p>
+        </SectionHead>
+        <WorkGrid items={csr} lang={lang} cols={4} />
+      </section>
+
+      <section className="wrap chapter" aria-labelledby="directory">
+        <SectionHead id="directory" label="04" title={`${t(w.directory, lang)} · ${directory.length}`}>
+          <p className="mono head-note">{t(w.directoryNote, lang)}</p>
+        </SectionHead>
+        <div className="fbar" role="group" aria-label={t(ui.projects.filterLabel, lang)}>
+          <button type="button" aria-pressed={sector === 'all'} onClick={() => setSector('all')}>
+            {t(w.all, lang)} <sup>{directory.length}</sup>
+          </button>
+          {sectors.map((sc) => (
+            <button key={sc.id} type="button" aria-pressed={sector === sc.id} onClick={() => setSector(sc.id)}>
+              {t(sc.label, lang)} <sup>{directory.filter((d) => d.s === sc.id).length}</sup>
+            </button>
+          ))}
+        </div>
+        <ol className="dir">
+          {rows.map((d) => (
+            <li key={d.name.en}>
+              <span className="mono">{String(directory.indexOf(d) + 1).padStart(2, '0')}</span>
+              <span>
+                <b>{t(d.name, lang)}</b>
+                <small>{t(d.note, lang)}</small>
+              </span>
+            </li>
+          ))}
+        </ol>
+        <p className="mono source">{t(w.source, lang)}</p>
+      </section>
+    </>
   );
 }
