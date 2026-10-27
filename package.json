@@ -1,0 +1,32 @@
+{
+  "name": "muhajjar-website",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "description": "Munther AlHajjar \u2014 bilingual executive portfolio (muhajjar.com)",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run typecheck && vite build --outDir dist && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs",
+    "typecheck": "tsc --noEmit",
+    "preview": "vite preview --outDir dist --port 4173",
+    "images": "node scripts/scan-images.mjs"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@fontsource/ibm-plex-mono": "^5.2.5",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "@vitejs/plugin-react": "^4.4.1",
+    "preact": "^11.1.0",
+    "preact-render-to-string": "^6.8.2",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,39 @@
+# Source lives on the `source` branch. On every push there, this workflow
+# builds the site and commits the finished static files (dist/) to `main`,
+# which Hostinger deploys to public_html automatically. Hostinger never
+# needs Node.js, and `main` keeps a readable history of every release.
+name: Build and publish
+
+on:
+  push:
+    branches: [source]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Commit dist/ to main
+        run: |
+          git clone --depth 1 --branch main "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" site
+          find site -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          cp -a dist/. site/
+          cd site
+          git add -A
+          if git diff --cached --quiet; then echo "No changes to publish"; exit 0; fi
+          git -c user.name="github-actions" -c user.email="github-actions@users.noreply.github.com" commit -q -m "Publish build of ${GITHUB_SHA::7}"
+          git push origin main

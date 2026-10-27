@@ -1,0 +1,53 @@
+export type Lang = 'ar' | 'en';
+
+/** A string in both languages. */
+export interface T {
+  ar: string;
+  en: string;
+}
+
+export interface ImageRef {
+  /** Key in images.json */
+  key: string;
+  alt: T;
+  caption?: T;
+}
+
+export type ProjectCategory = 'real-estate' | 'brand' | 'events' | 'media';
+
+export interface Project {
+  slug: string;
+  name: T;
+  /** One line used on cards and the index. */
+  summary: T;
+  categories: ProjectCategory[];
+  /** Only dates stated in the CV. */
+  date?: T;
+  /** Context line, e.g. organisation or location — only when stated in the CV. */
+  context?: T;
+  overview: T;
+  role: T;
+  scope: T[];
+  deliverables: T[];
+  /** Verified results only. `value` is shown large. */
+  results: { value: string; label: T; note?: T }[];
+  /** Typographic plate when no real imagery is available. */
+  plate?: { word: T; sub: T };
+  /** Logo shown on the typographic plate. */
+  plateLogo?: string;
+  cover?: ImageRef;
+  gallery?: ImageRef[];
+  /** Short attribution for project imagery. */
+  imageSource?: T;
+  featured?: boolean;
+}
+
+export interface Role {
+  title: T;
+  company: T;
+  location: T;
+  start: T;
+  end: T;
+  promoted?: boolean;
+  points: T[];
+}

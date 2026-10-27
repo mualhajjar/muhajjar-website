@@ -1,0 +1,307 @@
+{
+ "alqahtani-stationery": {
+  "variants": [
+   {
+    "src": "/images/projects/alqahtani-stationery-720.webp",
+    "w": 662,
+    "h": 604
+   }
+  ],
+  "w": 662,
+  "h": 604
+ },
+ "bader-billboard": {
+  "variants": [
+   {
+    "src": "/images/projects/bader-billboard-720.webp",
+    "w": 720,
+    "h": 240
+   },
+   {
+    "src": "/images/projects/bader-billboard-1400.webp",
+    "w": 1400,
+    "h": 467
+   }
+  ],
+  "w": 1400,
+  "h": 467
+ },
+ "bader-cover": {
+  "variants": [
+   {
+    "src": "/images/projects/bader-cover-720.webp",
+    "w": 720,
+    "h": 518
+   },
+   {
+    "src": "/images/projects/bader-cover-1400.webp",
+    "w": 1400,
+    "h": 1007
+   }
+  ],
+  "w": 1400,
+  "h": 1007
+ },
+ "bader-exhibition": {
+  "variants": [
+   {
+    "src": "/images/projects/bader-exhibition-720.webp",
+    "w": 720,
+    "h": 192
+   },
+   {
+    "src": "/images/projects/bader-exhibition-1134.webp",
+    "w": 1134,
+    "h": 303
+   }
+  ],
+  "w": 1134,
+  "h": 303
+ },
+ "bader-highway": {
+  "variants": [
+   {
+    "src": "/images/projects/bader-highway-720.webp",
+    "w": 720,
+    "h": 294
+   },
+   {
+    "src": "/images/projects/bader-highway-1400.webp",
+    "w": 1400,
+    "h": 571
+   }
+  ],
+  "w": 1400,
+  "h": 571
+ },
+ "bader-museum": {
+  "variants": [
+   {
+    "src": "/images/projects/bader-museum-720.webp",
+    "w": 720,
+    "h": 385
+   },
+   {
+    "src": "/images/projects/bader-museum-1134.webp",
+    "w": 1134,
+    "h": 606
+   }
+  ],
+  "w": 1134,
+  "h": 606
+ },
+ "bader-planning": {
+  "variants": [
+   {
+    "src": "/images/projects/bader-planning-720.webp",
+    "w": 720,
+    "h": 307
+   },
+   {
+    "src": "/images/projects/bader-planning-1400.webp",
+    "w": 1400,
+    "h": 596
+   }
+  ],
+  "w": 1400,
+  "h": 596
+ },
+ "bader-showvilla": {
+  "variants": [
+   {
+    "src": "/images/projects/bader-showvilla-720.webp",
+    "w": 720,
+    "h": 385
+   },
+   {
+    "src": "/images/projects/bader-showvilla-1134.webp",
+    "w": 1134,
+    "h": 606
+   }
+  ],
+  "w": 1134,
+  "h": 606
+ },
+ "bader-villa": {
+  "variants": [
+   {
+    "src": "/images/projects/bader-villa-720.webp",
+    "w": 720,
+    "h": 408
+   },
+   {
+    "src": "/images/projects/bader-villa-1400.webp",
+    "w": 1400,
+    "h": 793
+   }
+  ],
+  "w": 1400,
+  "h": 793
+ },
+ "bankruptcy-event": {
+  "variants": [
+   {
+    "src": "/images/projects/bankruptcy-event-720.webp",
+    "w": 720,
+    "h": 588
+   },
+   {
+    "src": "/images/projects/bankruptcy-event-740.webp",
+    "w": 740,
+    "h": 604
+   }
+  ],
+  "w": 740,
+  "h": 604
+ },
+ "bankruptcy-infographic": {
+  "variants": [
+   {
+    "src": "/images/projects/bankruptcy-infographic-720.webp",
+    "w": 720,
+    "h": 343
+   },
+   {
+    "src": "/images/projects/bankruptcy-infographic-929.webp",
+    "w": 929,
+    "h": 442
+   }
+  ],
+  "w": 929,
+  "h": 442
+ },
+ "basmah-billboard": {
+  "variants": [
+   {
+    "src": "/images/projects/basmah-billboard-720.webp",
+    "w": 720,
+    "h": 476
+   },
+   {
+    "src": "/images/projects/basmah-billboard-914.webp",
+    "w": 914,
+    "h": 604
+   }
+  ],
+  "w": 914,
+  "h": 604
+ },
+ "basmah-infographic": {
+  "variants": [
+   {
+    "src": "/images/projects/basmah-infographic-720.webp",
+    "w": 720,
+    "h": 343
+   },
+   {
+    "src": "/images/projects/basmah-infographic-929.webp",
+    "w": 929,
+    "h": 442
+   }
+  ],
+  "w": 929,
+  "h": 442
+ },
+ "basmah-office": {
+  "variants": [
+   {
+    "src": "/images/projects/basmah-office-720.webp",
+    "w": 671,
+    "h": 604
+   }
+  ],
+  "w": 671,
+  "h": 604
+ },
+ "harf-gallery": {
+  "variants": [
+   {
+    "src": "/images/projects/harf-gallery-720.webp",
+    "w": 720,
+    "h": 417
+   },
+   {
+    "src": "/images/projects/harf-gallery-882.webp",
+    "w": 882,
+    "h": 511
+   }
+  ],
+  "w": 882,
+  "h": 511
+ },
+ "sahab-award": {
+  "variants": [
+   {
+    "src": "/images/projects/sahab-award-720.webp",
+    "w": 720,
+    "h": 367
+   },
+   {
+    "src": "/images/projects/sahab-award-1184.webp",
+    "w": 1184,
+    "h": 604
+   }
+  ],
+  "w": 1184,
+  "h": 604
+ },
+ "sahab-web": {
+  "variants": [
+   {
+    "src": "/images/projects/sahab-web-720.webp",
+    "w": 720,
+    "h": 476
+   },
+   {
+    "src": "/images/projects/sahab-web-913.webp",
+    "w": 913,
+    "h": 604
+   }
+  ],
+  "w": 913,
+  "h": 604
+ },
+ "yamam-aerial": {
+  "variants": [
+   {
+    "src": "/images/projects/yamam-aerial-720.webp",
+    "w": 705,
+    "h": 604
+   }
+  ],
+  "w": 705,
+  "h": 604
+ },
+ "yamam-identity": {
+  "variants": [
+   {
+    "src": "/images/projects/yamam-identity-720.webp",
+    "w": 720,
+    "h": 462
+   },
+   {
+    "src": "/images/projects/yamam-identity-942.webp",
+    "w": 942,
+    "h": 604
+   }
+  ],
+  "w": 942,
+  "h": 604
+ },
+ "portrait": {
+  "variants": [
+   {
+    "src": "/images/portrait-480.webp",
+    "w": 480,
+    "h": 480
+   },
+   {
+    "src": "/images/portrait-900.webp",
+    "w": 900,
+    "h": 900
+   }
+  ],
+  "w": 900,
+  "h": 900
+ }
+}
