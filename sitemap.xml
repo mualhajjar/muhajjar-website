@@ -57,6 +57,20 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/projects/"/>
   </url>
   <url>
+    <loc>https://muhajjar.com/media-work/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/media-work/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/media-work/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/media-work/"/>
+  </url>
+  <url>
+    <loc>https://muhajjar.com/en/media-work/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/media-work/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/media-work/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/media-work/"/>
+  </url>
+  <url>
     <loc>https://muhajjar.com/expertise/</loc>
     <lastmod>2026-10-27</lastmod>
     <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/expertise/"/>
@@ -181,6 +195,20 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/projects/al-basateen-real-estate/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/projects/al-basateen-real-estate/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/projects/al-basateen-real-estate/"/>
+  </url>
+  <url>
+    <loc>https://muhajjar.com/projects/harf-gallery/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/projects/harf-gallery/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/projects/harf-gallery/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/projects/harf-gallery/"/>
+  </url>
+  <url>
+    <loc>https://muhajjar.com/en/projects/harf-gallery/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/projects/harf-gallery/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/projects/harf-gallery/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/projects/harf-gallery/"/>
   </url>
   <url>
     <loc>https://muhajjar.com/projects/basmah-real-estate-appraisal/</loc>
