@@ -28,7 +28,7 @@
 
 ## Flagged for your review (not changed silently)
 
-1. **Bader Villas "1.39M+ impressions".** Both CVs say impressions. The IPA submission says **1,398,600 messages and calls from interested buyers**, and **89,930,580 total impressions**. The site follows the CV as instructed, but the CV figure appears to be mislabelled. Recommended fix: change the CV and `src/data/projects.ts` to either "1.39M+ buyer messages & calls" or "89.9M impressions".
+1. **Bader Villas figures — resolved 28 Oct 2026.** On your instruction the case study now uses the award-submission data: 95,000+ m² site, 83,000+ m² built-up area, 89.9M impressions, 54.3M views, 11.5M website visits, 1.39M buyer messages and calls, and the 40% on-ground / 60% digital channel mix. The CVs still say "1.39M+ impressions"; update them to "1.39M+ buyer messages and calls".
 2. **Overlapping dates.** Harf Gallery (Oct 2021 – Apr 2022) overlaps HAWYIA Media Project Manager (Oct 2020 – Apr 2022). Shown exactly as in the CV; confirm they were concurrent.
 3. **Job title.** The brief and CVs use *Media Project Manager & Business Development*. You also approved *Media Projects Management & Development Manager / مدير إدارة وتطوير المشاريع الإعلامية* in October 2026. The site uses the CV title; change `person.title` in `src/data/profile.ts` if you prefer the newer one.
 4. **Portrait.** The only portrait available is `memories/memory-15-portrait.jpg` from the current site. Please confirm it is you and that you want it used. Its orange background has a fine line pattern that can shimmer when scaled; a photo on a plain background would look better.

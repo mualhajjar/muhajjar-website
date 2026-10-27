@@ -31,6 +31,10 @@ export interface Project {
   deliverables: T[];
   /** Verified results only. `value` is shown large. */
   results: { value: string; label: T; note?: T }[];
+  /** Campaign performance figures (company-level results), shown separately from project facts. */
+  campaign?: { value: string; label: T }[];
+  /** Marketing channel mix, with each channel's share of the budget. */
+  channels?: { title: T; share: string; items: T[] }[];
   /** Typographic plate when no real imagery is available. */
   plate?: { word: T; sub: T };
   /** Logo shown on the typographic plate. */

@@ -290,8 +290,8 @@ export function ProjectDetail({ route }: { route: Route }) {
         </div>
         {p.results.length > 0 && (
           <section className="case-sec">
-            <h2 className="mono label">{t(pr.results, lang)}</h2>
-            <ul className="res">
+            <h2 className="mono label">{t(p.campaign ? pr.facts : pr.results, lang)}</h2>
+            <ul className={p.results.length === 4 ? 'res res-4' : 'res'}>
               {p.results.map((r) => (
                 <li key={r.value}>
                   <b dir="ltr">{r.value}</b>
@@ -299,6 +299,41 @@ export function ProjectDetail({ route }: { route: Route }) {
                 </li>
               ))}
             </ul>
+          </section>
+        )}
+        {p.campaign && (
+          <section className="case-sec">
+            <h2 className="mono label">{t(pr.campaign, lang)}</h2>
+            <ul className={p.campaign.length === 4 ? 'res res-4 res-big' : 'res res-big'}>
+              {p.campaign.map((r) => (
+                <li key={r.value}>
+                  <b dir="ltr">{r.value}</b>
+                  <span>{t(r.label, lang)}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+        {p.channels && (
+          <section className="case-sec">
+            <h2 className="mono label">{t(pr.channels, lang)}</h2>
+            <div className="chan">
+              {p.channels.map((c) => (
+                <div key={c.title.en}>
+                  <h3>
+                    <span>{t(c.title, lang)}</span>
+                    <span className="mono chan-share">
+                      <span dir="ltr">{c.share}</span> {t(pr.budgetShare, lang)}
+                    </span>
+                  </h3>
+                  <ul className="ticks">
+                    {c.items.map((it) => (
+                      <li key={it.en}>{t(it, lang)}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </section>
         )}
       </div>

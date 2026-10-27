@@ -51,13 +51,13 @@ export const projects: Project[] = [
     slug: 'bader-villas',
     featured: true,
     name: { ar: 'فلل البدر', en: 'Bader Villas' },
-    summary: { ar: 'حملة تسويق عقاري متكاملة لأكثر من 400 وحدة، فازت بجائزة دولية.', en: 'An integrated development marketing campaign for 400+ units that won an international award.' },
+    summary: { ar: 'حملة تسويق تطويري متكاملة فازت بجائزة International Property Awards لأفريقيا والجزيرة العربية عن فئة التسويق التطويري في السعودية.', en: 'An integrated development marketing campaign that won the International Property Awards Africa & Arabia, Development Marketing, Saudi Arabia.' },
     categories: ['real-estate', 'media'],
     context: { ar: 'شركة السليمان العقارية', en: 'Alsoliman Real Estate Company' },
     date: { ar: 'جائزة 2022', en: 'Award 2022' },
     overview: {
-      ar: 'حملة تسويق تطويري متكاملة لمشروع سكني يضم أكثر من 400 وحدة بقيمة سوقية تتجاوز 350 مليون ريال، جمعت بين شراكات مع بنك محلي ومنصات عقارية رقمية، ونظام إدارة علاقات العملاء، والتسويق عبر المؤثرين، وتجربة الواقع الافتراضي 360°.',
-      en: 'An integrated development marketing campaign for a residential project of 400+ units with a market value exceeding SAR 350 million, combining partnerships with a local bank and digital real estate platforms, CRM, influencer marketing, and a 360° VR experience.',
+      ar: 'مشروع سكني في الرياض على أرض تتجاوز 95 ألف متر مربع، يضم أكثر من 400 وحدة بقيمة سوقية تتجاوز 350 مليون ريال. جمعت الحملة بين التسويق الميداني والرقمي: شراكة مع بنك محلي ومنصات عقارية رقمية، ونظام إدارة علاقات العملاء، والتسويق عبر المؤثرين، وتجربة الواقع الافتراضي 360°.',
+      en: 'A residential project in Riyadh on a site of more than 95,000 square metres, with 400+ units and a market value exceeding SAR 350 million. The campaign combined on-ground and digital marketing: a local bank partnership and digital real estate platforms, CRM, influencer marketing, and a 360° VR experience.',
     },
     role: {
       ar: 'عضو في فريق الحملة؛ أسهمت في الحملة المتكاملة ضمن دوري مديرًا للمشاريع في شركة السليمان العقارية.',
@@ -75,7 +75,44 @@ export const projects: Project[] = [
     results: [
       { value: '400+', label: { ar: 'وحدة سكنية', en: 'Residential units' } },
       { value: '350M+', label: { ar: 'ريال قيمة سوقية', en: 'SAR market value' } },
-      { value: '1.39M+', label: { ar: 'ظهور', en: 'Impressions' } },
+      { value: '95,000+', label: { ar: 'متر مربع مساحة المشروع', en: 'm² site area' } },
+      { value: '83,000+', label: { ar: 'متر مربع مسطحات البناء', en: 'm² built-up area' } },
+    ],
+    campaign: [
+      { value: '89.9M', label: { ar: 'ظهور للحملات الترويجية', en: 'Campaign impressions' } },
+      { value: '54.3M', label: { ar: 'مشاهدة للحملات', en: 'Campaign views' } },
+      { value: '11.5M', label: { ar: 'زيارة لموقع المشروع', en: 'Project website visits' } },
+      { value: '1.39M', label: { ar: 'رسالة واتصال من مهتمين بالشراء', en: 'Messages and calls from interested buyers' } },
+    ],
+    channels: [
+      {
+        title: { ar: 'التسويق الميداني', en: 'On-ground marketing' },
+        share: '40%',
+        items: [
+          { ar: 'لوحات الطرق الرئيسية', en: 'Highway billboards' },
+          { ar: 'الفيلا النموذجية', en: 'Show villa' },
+          { ar: 'متحف مواصفات البناء', en: 'Building specifications showroom' },
+          { ar: 'المعارض العقارية', en: 'Property exhibitions' },
+          { ar: 'التعاون مع المكاتب العقارية', en: 'Real estate broker partnerships' },
+          { ar: 'هدايا المشترين وكوبونات الشركاء', en: 'Buyer gifts and partner coupons' },
+          { ar: 'الكتيبات والإعلانات المطبوعة', en: 'Brochures and print advertising' },
+          { ar: 'فريق الصيانة', en: 'Maintenance team' },
+        ],
+      },
+      {
+        title: { ar: 'التسويق الرقمي', en: 'Digital marketing' },
+        share: '60%',
+        items: [
+          { ar: 'المؤثرون على سناب شات ويوتيوب', en: 'Snapchat and YouTube influencers' },
+          { ar: 'المشاركة في LEAP 2022', en: 'LEAP 2022 participation' },
+          { ar: 'معرض مستقبل العقار 2022', en: 'Future of Real Estate Exhibition 2022' },
+          { ar: 'تجربة واقع افتراضي 360°', en: '360° virtual reality experience' },
+          { ar: 'شراكة مع بنك محلي', en: 'Local bank partnership' },
+          { ar: 'منصات عقارية رقمية', en: 'Digital real estate platforms' },
+          { ar: 'موقع المشروع وتحسين الظهور SEO', en: 'Project website and SEO' },
+          { ar: 'إدارة العملاء CRM', en: 'Customer management (CRM)' },
+        ],
+      },
     ],
     cover: { key: 'bader-villa', alt: { ar: 'تصوّر لإحدى فلل مشروع فلل البدر', en: 'Rendering of a Bader Villas residence' } },
     gallery: [
