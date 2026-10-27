@@ -1,8 +1,213 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://muhajjar.com/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/"/>
+  </url>
+  <url>
+    <loc>https://muhajjar.com/en/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/"/>
+  </url>
+  <url>
+    <loc>https://muhajjar.com/about/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/about/"/>
+  </url>
+  <url>
+    <loc>https://muhajjar.com/en/about/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/about/"/>
+  </url>
+  <url>
+    <loc>https://muhajjar.com/experience/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/experience/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/experience/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/experience/"/>
+  </url>
+  <url>
+    <loc>https://muhajjar.com/en/experience/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/experience/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/experience/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/experience/"/>
+  </url>
+  <url>
+    <loc>https://muhajjar.com/projects/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/projects/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/projects/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/projects/"/>
+  </url>
+  <url>
+    <loc>https://muhajjar.com/en/projects/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/projects/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/projects/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/projects/"/>
+  </url>
+  <url>
+    <loc>https://muhajjar.com/expertise/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/expertise/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/expertise/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/expertise/"/>
+  </url>
+  <url>
+    <loc>https://muhajjar.com/en/expertise/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/expertise/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/expertise/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/expertise/"/>
+  </url>
+  <url>
+    <loc>https://muhajjar.com/projects/alsoliman-business-compound/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/projects/alsoliman-business-compound/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/projects/alsoliman-business-compound/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/projects/alsoliman-business-compound/"/>
+  </url>
+  <url>
+    <loc>https://muhajjar.com/en/projects/alsoliman-business-compound/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/projects/alsoliman-business-compound/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/projects/alsoliman-business-compound/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/projects/alsoliman-business-compound/"/>
+  </url>
+  <url>
+    <loc>https://muhajjar.com/projects/bader-villas/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/projects/bader-villas/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/projects/bader-villas/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/projects/bader-villas/"/>
+  </url>
+  <url>
+    <loc>https://muhajjar.com/en/projects/bader-villas/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/projects/bader-villas/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/projects/bader-villas/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/projects/bader-villas/"/>
+  </url>
+  <url>
+    <loc>https://muhajjar.com/projects/sukina-compound/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/projects/sukina-compound/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/projects/sukina-compound/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/projects/sukina-compound/"/>
+  </url>
+  <url>
+    <loc>https://muhajjar.com/en/projects/sukina-compound/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/projects/sukina-compound/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/projects/sukina-compound/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/projects/sukina-compound/"/>
+  </url>
+  <url>
+    <loc>https://muhajjar.com/projects/alsoliman-brand-development/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/projects/alsoliman-brand-development/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/projects/alsoliman-brand-development/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/projects/alsoliman-brand-development/"/>
+  </url>
+  <url>
+    <loc>https://muhajjar.com/en/projects/alsoliman-brand-development/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/projects/alsoliman-brand-development/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/projects/alsoliman-brand-development/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/projects/alsoliman-brand-development/"/>
+  </url>
+  <url>
+    <loc>https://muhajjar.com/projects/yamam-luxury-residential-compound/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/projects/yamam-luxury-residential-compound/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/projects/yamam-luxury-residential-compound/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/projects/yamam-luxury-residential-compound/"/>
+  </url>
+  <url>
+    <loc>https://muhajjar.com/en/projects/yamam-luxury-residential-compound/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/projects/yamam-luxury-residential-compound/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/projects/yamam-luxury-residential-compound/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/projects/yamam-luxury-residential-compound/"/>
+  </url>
+  <url>
+    <loc>https://muhajjar.com/projects/sahab-govtech/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/projects/sahab-govtech/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/projects/sahab-govtech/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/projects/sahab-govtech/"/>
+  </url>
+  <url>
+    <loc>https://muhajjar.com/en/projects/sahab-govtech/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/projects/sahab-govtech/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/projects/sahab-govtech/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/projects/sahab-govtech/"/>
+  </url>
+  <url>
+    <loc>https://muhajjar.com/projects/saudi-bankruptcy-authority/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/projects/saudi-bankruptcy-authority/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/projects/saudi-bankruptcy-authority/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/projects/saudi-bankruptcy-authority/"/>
+  </url>
+  <url>
+    <loc>https://muhajjar.com/en/projects/saudi-bankruptcy-authority/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/projects/saudi-bankruptcy-authority/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/projects/saudi-bankruptcy-authority/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/projects/saudi-bankruptcy-authority/"/>
+  </url>
+  <url>
+    <loc>https://muhajjar.com/projects/al-basateen-real-estate/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/projects/al-basateen-real-estate/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/projects/al-basateen-real-estate/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/projects/al-basateen-real-estate/"/>
+  </url>
+  <url>
+    <loc>https://muhajjar.com/en/projects/al-basateen-real-estate/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/projects/al-basateen-real-estate/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/projects/al-basateen-real-estate/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/projects/al-basateen-real-estate/"/>
+  </url>
+  <url>
+    <loc>https://muhajjar.com/projects/basmah-real-estate-appraisal/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/projects/basmah-real-estate-appraisal/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/projects/basmah-real-estate-appraisal/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/projects/basmah-real-estate-appraisal/"/>
+  </url>
+  <url>
+    <loc>https://muhajjar.com/en/projects/basmah-real-estate-appraisal/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/projects/basmah-real-estate-appraisal/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/projects/basmah-real-estate-appraisal/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/projects/basmah-real-estate-appraisal/"/>
+  </url>
+  <url>
+    <loc>https://muhajjar.com/projects/saad-alqahtani-law-firm/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/projects/saad-alqahtani-law-firm/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/projects/saad-alqahtani-law-firm/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/projects/saad-alqahtani-law-firm/"/>
+  </url>
+  <url>
+    <loc>https://muhajjar.com/en/projects/saad-alqahtani-law-firm/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/projects/saad-alqahtani-law-firm/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/projects/saad-alqahtani-law-firm/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/projects/saad-alqahtani-law-firm/"/>
   </url>
 </urlset>
