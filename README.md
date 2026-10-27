@@ -102,4 +102,4 @@ If the workflow ever cannot run (for example, Actions disabled), build locally a
 
 ## Contact form
 
-There is no form on purpose: the contact section links straight to email, WhatsApp, LinkedIn, and Linktree, so there is no backend to maintain. If you want a form later, a static-friendly service such as Formspree, Web3Forms, or Hostinger's own form handler can be added without a server; each needs an account and a form endpoint, and the endpoint must not be a secret key.
+There is no form on purpose: the contact section links straight to email, WhatsApp, LinkedIn, and the résumé, so there is no backend to maintain. If you want a form later, a static-friendly service such as Formspree, Web3Forms, or Hostinger's own form handler can be added without a server; each needs an account and a form endpoint, and the endpoint must not be a secret key.

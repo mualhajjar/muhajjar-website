@@ -119,9 +119,6 @@ export function Footer({ route }: { route: Route }) {
           <a href={person.linkedin} target="_blank" rel="noopener noreferrer">
             LinkedIn
           </a>
-          <a href={person.linktree} target="_blank" rel="noopener noreferrer">
-            Linktree
-          </a>
           <a href={person.cvDrive} target="_blank" rel="noopener">
             {t(ui.contact.cvDrive, lang)}
           </a>

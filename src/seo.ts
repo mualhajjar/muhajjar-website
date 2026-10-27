@@ -71,7 +71,7 @@ function personLd(lang: Lang) {
     award: `${award.title.en}, ${award.detail.en} (company award; campaign team member)`,
     knowsLanguage: ['ar', 'en'],
     knowsAbout: ['Project Management', 'Business Development', 'RFP Development', 'Contract Negotiation', 'Procurement', 'SAP ERP (MM)', 'Bitrix24 CRM', 'Real Estate Marketing', 'Brand Strategy', 'Media Production', 'Events & Exhibitions'],
-    sameAs: [person.linkedin, person.linktree],
+    sameAs: [person.linkedin],
   };
 }
 

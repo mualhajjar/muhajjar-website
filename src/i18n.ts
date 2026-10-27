@@ -50,7 +50,6 @@ export const ui = {
     whatsapp: { ar: 'واتساب', en: 'WhatsApp' },
     phone: { ar: 'الهاتف', en: 'Phone' },
     linkedin: { ar: 'لينكدإن', en: 'LinkedIn' },
-    linktree: { ar: 'Linktree', en: 'Linktree' },
     copy: { ar: 'نسخ', en: 'Copy' },
     copied: { ar: 'تم النسخ', en: 'Copied' },
     cv: { ar: 'السيرة الذاتية (PDF)', en: 'Résumé (PDF)' },
