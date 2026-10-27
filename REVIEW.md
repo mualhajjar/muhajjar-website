@@ -17,7 +17,7 @@
 - The quote attributed to you («كل عقد أوقّعه يبدأ بسؤالين…») — invented.
 - "Dubai" as the award location; "PMP 2025" (CV: 2024); Bader figures 89.9M / 54.3M / 11.5M and the 60/40 budget split (from the award PDF, not the CV); site area 95,000 m².
 - The 37-project HAWYIA directory, the Al-Basateen 30-day digital plan, the launch-tools grid, Harf customer journey, and external links to Vimeo/X (not verifiable from the CVs).
-- Logos that appear on the live site but not in the CVs or HAWYIA list (Al-Khoyool, Al-Buyut Al-Maktabiya, Al-Nakhla, Al-Mashreq, Riyadh Front, Qusour Al-Amariyah, Bader Contracting, Al-Subaie Charity).
+- (Restored on request, 28 Oct 2026) the eight logos from the live site that are not in the CVs: Al-Khoyool, Al-Buyut Al-Maktabiya, Al-Nakhla, Al-Mashreq, Riyadh Front, Qusour Al-Amariyah, Bader Contracting, Al-Subaie Charity.
 
 **Bugs fixed from the concepts / live site**
 - Arabic text had letter-spacing applied (breaks Arabic letter joining) — removed for Arabic.

@@ -49,7 +49,7 @@ export function About({ route }: { route: Route }) {
         <ul className="logos">
           {organisations.map((o) => (
             <li key={o.logo}>
-              <img src={`/images/logos/${o.logo}.webp`} alt="" loading="lazy" decoding="async" />
+              <img src={`/images/logos/${o.logo}.${o.ext ?? 'webp'}`} alt="" loading="lazy" decoding="async" />
               <span className="mono">{t(o.name, lang)}</span>
             </li>
           ))}

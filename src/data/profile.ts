@@ -179,8 +179,8 @@ export const languages: { name: T; level: T }[] = [
   { name: { ar: 'الإنجليزية', en: 'English' }, level: { ar: 'متوسط', en: 'Intermediate' } },
 ];
 
-/** Organisations named in the CVs or the HAWYIA project list. Logos come from the current muhajjar.com. */
-export const organisations: { logo: string; name: T }[] = [
+/** Organisations the user has worked with (CVs, HAWYIA project list, and the user's own list). Logos in /public/images/logos. */
+export const organisations: { logo: string; ext?: 'webp' | 'svg'; name: T }[] = [
   { logo: 'alsoliman-realestate', name: { ar: 'شركة السليمان العقارية', en: 'Alsoliman Real Estate' } },
   { logo: 'knight-frank', name: { ar: 'نايت فرانك', en: 'Knight Frank' } },
   { logo: 'sahab-company', name: { ar: 'سحاب', en: 'Sahab' } },
@@ -193,4 +193,12 @@ export const organisations: { logo: string; name: T }[] = [
   { logo: 'barcode-realestate-valuation', name: { ar: 'باركود للتقييم العقاري', en: 'Barcode Real Estate Valuation' } },
   { logo: 'arabian-dyar-realestate', name: { ar: 'الديار العربية', en: 'Arabian Dyar' } },
   { logo: 'alajlan-brothers', name: { ar: 'أبناء عبدالعزيز العجلان', en: 'Abdulaziz Alajlan Sons' } },
+  { logo: 'alsubaie-charity', name: { ar: 'مؤسسة السبيعي الخيرية', en: 'Alsubaie Charitable Foundation' } },
+  { logo: 'riyadh-front', name: { ar: 'واجهة الرياض', en: 'Riyadh Front' } },
+  { logo: 'almashreq-hotel', name: { ar: 'فندق المشرق', en: 'Al Mashreq Hotel' } },
+  { logo: 'alkhoyool-realestate', name: { ar: 'الخيول العربية العقارية', en: 'Al Khayool Al Arabiah Real Estate' } },
+  { logo: 'albuyut-almaktabiya', name: { ar: 'البيوت المكتبية', en: 'Al Buyut Al-Maktabiya' } },
+  { logo: 'alnakhla-compound', name: { ar: 'كمباوند النخلة', en: 'Al Nakhlah Compound' } },
+  { logo: 'qusour-al-amariyah', name: { ar: 'مخطط قصور العمارية', en: 'Qusour Al-Amariyah Plan' } },
+  { logo: 'bader-contracting', ext: 'svg', name: { ar: 'شركة بدر للمقاولات', en: 'Bader Contracting Company' } },
 ];
