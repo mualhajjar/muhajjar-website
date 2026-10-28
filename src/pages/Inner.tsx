@@ -628,7 +628,6 @@ export function Systems({ lang }: { lang: Route['lang'] }) {
               </ul>
             </div>
             <footer className="sys-foot">
-              <span className="mono">{t(s.source, lang)}</span>
               <a className="mono" href={s.url} target="_blank" rel="noopener noreferrer">
                 {t(sy.official, lang)} <Icon name="external" />
               </a>
@@ -636,7 +635,6 @@ export function Systems({ lang }: { lang: Route['lang'] }) {
           </article>
         ))}
       </div>
-      <p className="mono source">{t(sy.trademark, lang)}</p>
     </section>
   );
 }
