@@ -29,9 +29,10 @@ function More({ lang }: { lang: Lang }) {
 }
 
 function Shot({ m, lang, sizes, onOpen }: { m: Moment; lang: Lang; sizes: string; onOpen: (m: Moment) => void }) {
-  const native = imageMeta(m.key)?.w;
+  const meta = imageMeta(m.key);
+  const style = meta ? ({ '--native': `${meta.w}px`, '--ar': `${meta.w} / ${meta.h}` } as CSSProperties) : undefined;
   return (
-    <figure className="shot rise" style={native ? ({ '--native': `${native}px` } as CSSProperties) : undefined}>
+    <figure className="shot rise" style={style}>
       <button type="button" className="shot-frame" onClick={() => onOpen(m)} aria-label={`${t(ui.journal.open, lang)}: ${t(m.alt, lang)}`}>
         <Pic k={m.key} alt={t(m.alt, lang)} sizes={sizes} />
       </button>
@@ -66,7 +67,7 @@ export function Interlude(p: Props) {
   const lb = useLightbox(lang);
   if (p.kind === 'wide') {
     return (
-      <section className="interlude il-wide" aria-label={t(p.items[0].caption, lang)}>
+      <section className="interlude il-wide wrap" aria-label={t(p.items[0].caption, lang)}>
         <Shot m={p.items[0]} lang={lang} sizes="100vw" onOpen={lb.open} />
         {lb.node}
       </section>
