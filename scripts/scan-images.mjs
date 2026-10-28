@@ -1,4 +1,4 @@
-// Rebuilds src/data/images.json from the WebP files in public/images/projects
+// Rebuilds src/data/images.json from the WebP files in public/images/projects and public/images/moments
 // (and the portrait), reading each file's real pixel size. No dependencies.
 //
 // Naming rule: <key>-<width>.webp, e.g. bader-villa-720.webp and bader-villa-1400.webp.
@@ -23,15 +23,17 @@ function webpSize(file) {
 }
 
 const out = {};
-const dir = path.join(root, 'public/images/projects');
-for (const f of fs.readdirSync(dir).filter((x) => x.endsWith('.webp')).sort()) {
-  const m = f.match(/^(.*)-(\d+)\.webp$/);
-  if (!m) {
-    console.warn(`Skipped ${f}: name it <key>-<width>.webp`);
-    continue;
+for (const folder of ['projects', 'moments']) {
+  const dir = path.join(root, 'public/images', folder);
+  for (const f of fs.readdirSync(dir).filter((x) => x.endsWith('.webp')).sort()) {
+    const m = f.match(/^(.*)-(\d+)\.webp$/);
+    if (!m) {
+      console.warn(`Skipped ${f}: name it <key>-<width>.webp`);
+      continue;
+    }
+    const { w, h } = webpSize(path.join(dir, f));
+    (out[m[1]] ??= { variants: [] }).variants.push({ src: `/images/${folder}/${f}`, w, h });
   }
-  const { w, h } = webpSize(path.join(dir, f));
-  (out[m[1]] ??= { variants: [] }).variants.push({ src: `/images/projects/${f}`, w, h });
 }
 const portrait = ['portrait-480.webp', 'portrait-900.webp'].map((f) => ({ src: `/images/${f}`, ...webpSize(path.join(root, 'public/images', f)) }));
 out.portrait = { variants: portrait };

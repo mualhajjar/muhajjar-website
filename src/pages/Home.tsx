@@ -1,6 +1,8 @@
 import { CountUp } from '../components/motion';
 import { Icon } from '../components/Icon';
 import { Pic } from '../components/Pic';
+import { Interlude } from '../components/Interlude';
+import { moments as M } from '../data/moments';
 import { ProjectStory, SectionHead } from '../components/Blocks';
 import { expertiseGroups } from '../data/expertise';
 import { award, experience, hero, metrics, overview, person } from '../data/profile';
@@ -75,6 +77,8 @@ export function Home({ route }: { route: Route }) {
         </ul>
       </section>
 
+      <Interlude kind="film" items={[M.presentation, M.studio]} lang={lang} />
+
       <section className="wrap chapter" aria-labelledby="selected-title">
         <SectionHead id="selected-title" label={t(s.selected, lang)} title={t(s.selectedTitle, lang)} mute={t(s.selectedTitleMute, lang)}>
           <a className="link head-link" href={pathFor(lang, 'projects')}>
@@ -87,6 +91,8 @@ export function Home({ route }: { route: Route }) {
           ))}
         </div>
       </section>
+
+      <Interlude kind="wide" items={[M.event]} lang={lang} />
 
       <section className="wrap chapter" aria-labelledby="expertise-title">
         <SectionHead id="expertise-title" label={t(s.expertise, lang)} title={t(s.expertiseTitle, lang)} mute={t(s.expertiseTitleMute, lang)}>
@@ -134,6 +140,8 @@ export function Home({ route }: { route: Route }) {
           </div>
         </div>
       </section>
+
+      <Interlude kind="trio" items={[M.gathering, M.site, M.awards]} lang={lang} />
     </>
   );
 }

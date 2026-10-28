@@ -2,6 +2,8 @@ import { useEffect, useRef, useState, type MouseEvent } from 'react';
 import { catLabel, Plate, SectionHead } from '../components/Blocks';
 import { Icon } from '../components/Icon';
 import { Pic } from '../components/Pic';
+import { Interlude } from '../components/Interlude';
+import { moments as M } from '../data/moments';
 import { expertiseGroups, process } from '../data/expertise';
 import { award, bio, certifications, earlierExperience, education, experience, languages, organisations, person } from '../data/profile';
 import { categories, projects } from '../data/projects';
@@ -45,6 +47,8 @@ export function About({ route }: { route: Route }) {
         </div>
       </section>
 
+      <Interlude kind="pair" items={[M.portrait, M.planning]} lang={lang} />
+
       <section className="wrap chapter" aria-labelledby="orgs">
         <SectionHead id="orgs" label={t(a.organisations, lang)} title={t(a.organisations, lang)} />
         <ul className="logos">
@@ -56,6 +60,8 @@ export function About({ route }: { route: Route }) {
           ))}
         </ul>
       </section>
+
+      <Interlude kind="wide" items={[M.stage]} lang={lang} />
 
       <section className="wrap chapter cred-grid" aria-label={t(a.education, lang)}>
         <div>
@@ -151,7 +157,10 @@ export function Experience({ route }: { route: Route }) {
             </li>
           ))}
         </ol>
-        <h2 className="mini-title">{t(x.earlier, lang)}</h2>
+      </section>
+      <Interlude kind="trio" items={[M.siteTeam, M.office, M.team]} lang={lang} />
+      <section className="wrap chapter" aria-labelledby="earlier">
+        <h2 className="mini-title" id="earlier">{t(x.earlier, lang)}</h2>
         <ul className="rows">
           {earlierExperience.map((r) => (
             <li key={r.title.en}>
@@ -234,6 +243,7 @@ export function Projects({ route }: { route: Route }) {
           {peekSrc && <img src={peekSrc} alt="" />}
         </div>
       </section>
+      <Interlude kind="wide" items={[M.booth]} lang={lang} />
     </>
   );
 }
@@ -437,6 +447,8 @@ export function Expertise({ route }: { route: Route }) {
           ))}
         </div>
       </section>
+      <Interlude kind="pair" items={[M.presentation, M.planning]} lang={lang} />
+
       <section className="wrap chapter" aria-labelledby="process">
         <SectionHead id="process" label={t(e.process, lang)} title={t(e.process, lang)} />
         <ol className="steps">
@@ -509,6 +521,8 @@ export function Work({ route }: { route: Route }) {
         <WorkGrid items={toolkit} lang={lang} cols={4} />
       </section>
 
+      <Interlude kind="pair" items={[M.office, M.gallery]} lang={lang} />
+
       <section className="wrap chapter" aria-labelledby="reports">
         <SectionHead id="reports" label="02" title={t(w.reports, lang)} />
         <WorkGrid items={reports} lang={lang} cols={2} />
@@ -520,6 +534,8 @@ export function Work({ route }: { route: Route }) {
         </SectionHead>
         <WorkGrid items={csr} lang={lang} cols={4} />
       </section>
+
+      <Interlude kind="wide" items={[M.awards]} lang={lang} />
 
       <section className="wrap chapter" aria-labelledby="directory">
         <SectionHead id="directory" label="04" title={`${t(w.directory, lang)} · ${directory.length}`}>

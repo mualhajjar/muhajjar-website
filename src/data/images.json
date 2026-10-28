@@ -610,6 +610,200 @@
   "w": 942,
   "h": 604
  },
+ "m01-event": {
+  "variants": [
+   {
+    "src": "/images/moments/m01-event-900.webp",
+    "w": 900,
+    "h": 600
+   },
+   {
+    "src": "/images/moments/m01-event-1600.webp",
+    "w": 1600,
+    "h": 1067
+   }
+  ],
+  "w": 1600,
+  "h": 1067
+ },
+ "m02-construction-site": {
+  "variants": [
+   {
+    "src": "/images/moments/m02-construction-site-900.webp",
+    "w": 900,
+    "h": 600
+   },
+   {
+    "src": "/images/moments/m02-construction-site-1600.webp",
+    "w": 1600,
+    "h": 1066
+   }
+  ],
+  "w": 1600,
+  "h": 1066
+ },
+ "m03-team": {
+  "variants": [
+   {
+    "src": "/images/moments/m03-team-900.webp",
+    "w": 900,
+    "h": 601
+   },
+   {
+    "src": "/images/moments/m03-team-1600.webp",
+    "w": 1600,
+    "h": 1069
+   }
+  ],
+  "w": 1600,
+  "h": 1069
+ },
+ "m04-bankruptcy-commission": {
+  "variants": [
+   {
+    "src": "/images/moments/m04-bankruptcy-commission-900.webp",
+    "w": 900,
+    "h": 599
+   }
+  ],
+  "w": 900,
+  "h": 599
+ },
+ "m05-bussma": {
+  "variants": [
+   {
+    "src": "/images/moments/m05-bussma-900.webp",
+    "w": 900,
+    "h": 682
+   },
+   {
+    "src": "/images/moments/m05-bussma-1600.webp",
+    "w": 1600,
+    "h": 1213
+   }
+  ],
+  "w": 1600,
+  "h": 1213
+ },
+ "m06-alajlan-project": {
+  "variants": [
+   {
+    "src": "/images/moments/m06-alajlan-project-900.webp",
+    "w": 900,
+    "h": 1200
+   }
+  ],
+  "w": 900,
+  "h": 1200
+ },
+ "m07-planning": {
+  "variants": [
+   {
+    "src": "/images/moments/m07-planning-640.webp",
+    "w": 640,
+    "h": 640
+   }
+  ],
+  "w": 640,
+  "h": 640
+ },
+ "m08-team-office": {
+  "variants": [
+   {
+    "src": "/images/moments/m08-team-office-900.webp",
+    "w": 900,
+    "h": 600
+   }
+  ],
+  "w": 900,
+  "h": 600
+ },
+ "m09-team": {
+  "variants": [
+   {
+    "src": "/images/moments/m09-team-865.webp",
+    "w": 865,
+    "h": 692
+   }
+  ],
+  "w": 865,
+  "h": 692
+ },
+ "m10-presentation": {
+  "variants": [
+   {
+    "src": "/images/moments/m10-presentation-900.webp",
+    "w": 900,
+    "h": 506
+   },
+   {
+    "src": "/images/moments/m10-presentation-1600.webp",
+    "w": 1600,
+    "h": 900
+   }
+  ],
+  "w": 1600,
+  "h": 900
+ },
+ "m11-team-gathering": {
+  "variants": [
+   {
+    "src": "/images/moments/m11-team-gathering-900.webp",
+    "w": 900,
+    "h": 506
+   },
+   {
+    "src": "/images/moments/m11-team-gathering-1600.webp",
+    "w": 1600,
+    "h": 900
+   }
+  ],
+  "w": 1600,
+  "h": 900
+ },
+ "m12-awards": {
+  "variants": [
+   {
+    "src": "/images/moments/m12-awards-900.webp",
+    "w": 900,
+    "h": 600
+   },
+   {
+    "src": "/images/moments/m12-awards-1600.webp",
+    "w": 1600,
+    "h": 1067
+   }
+  ],
+  "w": 1600,
+  "h": 1067
+ },
+ "m13-portrait": {
+  "variants": [
+   {
+    "src": "/images/moments/m13-portrait-900.webp",
+    "w": 900,
+    "h": 655
+   },
+   {
+    "src": "/images/moments/m13-portrait-1600.webp",
+    "w": 1600,
+    "h": 1164
+   }
+  ],
+  "w": 1600,
+  "h": 1164
+ },
+ "m14-harf-gallery": {
+  "variants": [
+   {
+    "src": "/images/moments/m14-harf-gallery-720.webp",
+    "w": 720,
+    "h": 1280
+   }
+  ],
+  "w": 720,
+  "h": 1280
+ },
  "portrait": {
   "variants": [
    {
