@@ -3,7 +3,8 @@ import { catLabel, Plate, SectionHead } from '../components/Blocks';
 import { Icon } from '../components/Icon';
 import { Pic } from '../components/Pic';
 import { Interlude } from '../components/Interlude';
-import { journal, moments as M, type Moment } from '../data/moments';
+import { journal, moments as M } from '../data/moments';
+import { useLightbox } from '../components/Lightbox';
 import { evidenceLabels, systems, type Evidence } from '../data/systems';
 import { expertiseGroups, process } from '../data/expertise';
 import { award, bio, certifications, earlierExperience, education, experience, languages, organisations, person } from '../data/profile';
@@ -62,7 +63,7 @@ export function About({ route }: { route: Route }) {
         </ul>
       </section>
 
-      <Interlude kind="wide" items={[M.stage]} lang={lang} />
+      <Interlude kind="wide" items={[M.awards]} lang={lang} />
 
       <section className="wrap chapter cred-grid" aria-label={t(a.education, lang)}>
         <div>
@@ -538,7 +539,7 @@ export function Work({ route }: { route: Route }) {
         <WorkGrid items={csr} lang={lang} cols={4} />
       </section>
 
-      <Interlude kind="wide" items={[M.awards]} lang={lang} />
+      <Interlude kind="wide" items={[M.site]} lang={lang} />
 
       <section className="wrap chapter" aria-labelledby="directory">
         <SectionHead id="directory" label="04" title={`${t(w.directory, lang)} · ${directory.length}`}>
@@ -644,16 +645,7 @@ export function Systems({ lang }: { lang: Route['lang'] }) {
 export function Journal({ route }: { route: Route }) {
   const { lang } = route;
   const j = ui.journal;
-  const dlg = useRef<HTMLDialogElement>(null);
-  const closeBtn = useRef<HTMLButtonElement>(null);
-  const [cur, setCur] = useState<Moment | null>(null);
-  useEffect(() => {
-    if (cur) closeBtn.current?.focus();
-  }, [cur]);
-  const open = (m: Moment) => {
-    setCur(m);
-    dlg.current?.showModal();
-  };
+  const lb = useLightbox(lang);
   return (
     <>
       <section className="wrap page-head">
@@ -665,7 +657,7 @@ export function Journal({ route }: { route: Route }) {
         <ul className="journal">
           {journal.map((m) => (
             <li key={m.key} className="rise">
-              <button type="button" className="journal-item" onClick={() => open(m)} aria-label={`${t(j.open, lang)}: ${t(m.alt, lang)}`}>
+              <button type="button" className="journal-item" onClick={() => lb.open(m)} aria-label={`${t(j.open, lang)}: ${t(m.alt, lang)}`}>
                 <Pic k={m.key} alt={t(m.alt, lang)} sizes="(max-width: 560px) 100vw, (max-width: 960px) 50vw, 33vw" />
               </button>
               <span className="mono">{t(m.caption, lang)}</span>
@@ -673,19 +665,7 @@ export function Journal({ route }: { route: Route }) {
           ))}
         </ul>
       </section>
-      <dialog ref={dlg} className="lightbox" onClick={(e) => e.target === dlg.current && dlg.current?.close()} onClose={() => setCur(null)}>
-        {cur && (
-          <figure>
-            <Pic k={cur.key} alt={t(cur.alt, lang)} sizes="100vw" eager />
-            <figcaption>
-              <span className="mono">{t(cur.caption, lang)}</span>
-              <button ref={closeBtn} type="button" className="icon-btn" onClick={() => dlg.current?.close()}>
-                {t(j.close, lang)}
-              </button>
-            </figcaption>
-          </figure>
-        )}
-      </dialog>
+      {lb.node}
     </>
   );
 }

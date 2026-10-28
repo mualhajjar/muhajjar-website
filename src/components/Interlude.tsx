@@ -1,10 +1,11 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, type CSSProperties } from 'react';
 import { atWorkVideo, type Moment } from '../data/moments';
 import type { Lang } from '../data/types';
 import { t, ui } from '../i18n';
 import { pathFor } from '../routes';
 import { Icon } from './Icon';
-import { Pic } from './Pic';
+import { imageMeta, Pic } from './Pic';
+import { useLightbox } from './Lightbox';
 
 /**
  * Visual pause between sections: real photographs, shown large and quiet.
@@ -27,12 +28,13 @@ function More({ lang }: { lang: Lang }) {
   );
 }
 
-function Shot({ m, lang, sizes }: { m: Moment; lang: Lang; sizes: string }) {
+function Shot({ m, lang, sizes, onOpen }: { m: Moment; lang: Lang; sizes: string; onOpen: (m: Moment) => void }) {
+  const native = imageMeta(m.key)?.w;
   return (
-    <figure className="shot rise">
-      <div className="shot-frame">
+    <figure className="shot rise" style={native ? ({ '--native': `${native}px` } as CSSProperties) : undefined}>
+      <button type="button" className="shot-frame" onClick={() => onOpen(m)} aria-label={`${t(ui.journal.open, lang)}: ${t(m.alt, lang)}`}>
         <Pic k={m.key} alt={t(m.alt, lang)} sizes={sizes} />
-      </div>
+      </button>
       <figcaption className="mono">{t(m.caption, lang)}</figcaption>
     </figure>
   );
@@ -61,10 +63,12 @@ function Film({ lang }: { lang: Lang }) {
 
 export function Interlude(p: Props) {
   const { lang } = p;
+  const lb = useLightbox(lang);
   if (p.kind === 'wide') {
     return (
       <section className="interlude il-wide" aria-label={t(p.items[0].caption, lang)}>
-        <Shot m={p.items[0]} lang={lang} sizes="100vw" />
+        <Shot m={p.items[0]} lang={lang} sizes="100vw" onOpen={lb.open} />
+        {lb.node}
       </section>
     );
   }
@@ -72,8 +76,9 @@ export function Interlude(p: Props) {
     return (
       <section className="interlude il-film wrap" aria-label={t(atWorkVideo.caption, lang)}>
         <Film lang={lang} />
-        <Shot m={p.items[0]} lang={lang} sizes="(max-width: 760px) 100vw, 40vw" />
-        <Shot m={p.items[1]} lang={lang} sizes="(max-width: 760px) 100vw, 30vw" />
+        <Shot m={p.items[0]} lang={lang} sizes="(max-width: 760px) 100vw, 40vw" onOpen={lb.open} />
+        <Shot m={p.items[1]} lang={lang} sizes="(max-width: 760px) 100vw, 30vw" onOpen={lb.open} />
+        {lb.node}
       </section>
     );
   }
@@ -81,9 +86,10 @@ export function Interlude(p: Props) {
   return (
     <section className={`interlude ${cls} wrap`} aria-label={p.items.map((m) => t(m.caption, lang)).join(' · ')}>
       {p.items.map((m, i) => (
-        <Shot key={m.key} m={m} lang={lang} sizes={i === 0 ? '(max-width: 760px) 100vw, 55vw' : '(max-width: 760px) 100vw, 35vw'} />
+        <Shot key={m.key} m={m} lang={lang} sizes={i === 0 ? '(max-width: 760px) 100vw, 55vw' : '(max-width: 760px) 100vw, 35vw'} onOpen={lb.open} />
       ))}
       {p.more && <More lang={lang} />}
+      {lb.node}
     </section>
   );
 }
