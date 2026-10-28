@@ -200,23 +200,10 @@ main:focus { outline: none; }
 .hero .portrait-img { animation: settle 1.1s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
 @keyframes settle { from { opacity: 0; transform: scale(1.025); } to { opacity: 1; transform: none; } }
 
-.years {
-  display: flex; justify-content: space-between; gap: 4px; margin-top: clamp(40px, 6vw, 72px); padding-top: 12px;
-  border-top: 1px solid var(--rule); font: 400 12px/1 var(--f-mono); color: var(--mute); font-variant-numeric: tabular-nums;
-}
-.years span { position: relative; }
-.years .mark { color: var(--ink); }
-.years .now { color: var(--bronze); font-weight: 500; }
-.years .now::before {
-  content: ''; position: absolute; top: -17px; inset-inline-start: 50%; width: 7px; height: 7px; margin-inline-start: -3.5px;
-  border-radius: 50%; background: var(--bronze); animation: pulse 2.8s ease-in-out infinite;
-}
-@keyframes pulse { 0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--bronze) 45%, transparent); } 50% { box-shadow: 0 0 0 7px transparent; } }
 @media (max-width: 860px) {
   .hero-grid { grid-template-columns: 1fr; align-items: start; }
   .portrait { max-width: 420px; }
   .hero .portrait { max-width: 260px; }
-  .years span:nth-child(even):not(.now) { visibility: hidden; }
 }
 
 /* -------------------------------------------------------- Brief + nums */

@@ -24,8 +24,7 @@ export const ui = {
   ctaExplore: { ar: 'استكشف أعمالي', en: 'Explore My Work' },
   ctaContact: { ar: 'تواصل معي', en: 'Get in Touch' },
   portraitAlt: { ar: 'منذر الحجار', en: 'Munther AlHajjar' },
-  kicker: { ar: 'الرياض · منذ 2013', en: 'Riyadh · since 2013' },
-  yearsAria: { ar: 'المسار المهني من 2013 حتى 2026', en: 'Career timeline, 2013 to 2026' },
+  kicker: { ar: 'الرياض', en: 'Riyadh' },
   sec: {
     overview: { ar: 'في سطور', en: 'In brief' },
     metrics: { ar: 'أرقام من المسيرة', en: 'Career in numbers' },

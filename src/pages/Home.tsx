@@ -10,9 +10,7 @@ import { featuredProjects, projects } from '../data/projects';
 import { range, t, ui } from '../i18n';
 import { pathFor, type Route } from '../routes';
 
-const YEARS = [13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26];
 /** Years where a role began (from the CV). */
-const MILESTONES = new Set([13, 16, 19, 20, 21, 22, 24]);
 
 export function Home({ route }: { route: Route }) {
   const { lang } = route;
@@ -50,13 +48,6 @@ export function Home({ route }: { route: Route }) {
               <span>{t(person.location, lang)}</span>
             </figcaption>
           </figure>
-        </div>
-        <div className="years" role="img" aria-label={t(ui.yearsAria, lang)}>
-          {YEARS.map((y) => (
-            <span key={y} className={y === 26 ? 'now' : MILESTONES.has(y) ? 'mark' : undefined}>
-              {y}
-            </span>
-          ))}
         </div>
       </section>
 
