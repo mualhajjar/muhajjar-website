@@ -10,6 +10,7 @@ DirectoryIndex index.html
   RewriteRule ^ https://muhajjar.com%{REQUEST_URI} [L,R=301]
   # Images moved to /assets/images/ in Oct 2026: keep old links working
   RewriteRule ^images/(.*)$ /assets/images/$1 [L,R=301]
+  RewriteRule ^(en/)?projects/sukina-compound/?$ /$1projects/sakenah-compound/ [L,R=301]
   # Add a trailing slash to page folders (e.g. /about -> /about/)
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteCond %{REQUEST_URI} !/$

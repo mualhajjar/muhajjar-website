@@ -19,34 +19,100 @@ export const projects: Project[] = [
   {
     slug: 'alsoliman-business-compound',
     featured: true,
-    name: { ar: 'السليمان بزنس كمباوند', en: 'Al-Sulaiman Business Compound' },
-    summary: { ar: 'فعالية إطلاق لثلاثة أيام دعمت تأمين تمويل بقيمة 90 مليون ريال.', en: 'A three-day launch event that supported securing SAR 90 million in funding.' },
+    name: { ar: 'السليمان بزنس كمباوند', en: 'Alsoliman Business Compound' },
+    summary: {
+      ar: 'قدتُ إدارة وتنفيذ فعالية افتتاح مجمع مكاتب فاخر في الرياض امتدت ثلاثة أيام، ودعمت جهود تأمين تمويل بقيمة 90 مليون ريال.',
+      en: 'I led the three-day opening of a premium office compound in Riyadh and supported securing SAR 90 million in project funding.',
+    },
     categories: ['events', 'real-estate'],
     date: { ar: 'ديسمبر 2025', en: 'December 2025' },
-    context: { ar: 'شركة السليمان العقارية', en: 'Alsoliman Real Estate Company' },
+    context: { ar: 'شركة السليمان العقارية · الرياض', en: 'Alsoliman Real Estate Company · Riyadh' },
     overview: {
-      ar: 'تدشين مشروع السليمان بزنس كمباوند عبر فعالية امتدت ثلاثة أيام، سبقتها دورة تحضير مكثفة استمرت 45 يومًا، وشهدت الإعلان عن شراكات استراتيجية.',
-      en: 'The launch of Al-Sulaiman Business Compound through a three-day event, preceded by an intensive 45-day preparation cycle and featuring strategic partnership announcements.',
+      ar: 'مجمع مكاتب فاخر من تطوير شركة السليمان العقارية في حي النرجس شمال الرياض، على طريق الأمير فيصل بن بندر بن عبدالعزيز وقريبًا من طريق الملك سلمان وطريق أنس بن مالك. يضم 22 مكتبًا بنماذج متنوعة، بمساحات عمل مفتوحة ونوافذ ممتدة من الأرض حتى السقف وأسطح خضراء، ويستهدف الشركات والهيئات.',
+      en: 'A premium office compound by Alsoliman Real Estate in Al Narjis, north Riyadh, on Prince Faisal bin Bandar bin Abdulaziz Road near King Salman Road and Anas bin Malik Road. It offers 22 offices in varied layouts, with open-plan workspaces, floor-to-ceiling windows, and green rooftop terraces, and is aimed at companies and institutions.',
     },
+    facts: [
+      { value: '24,000', label: { ar: 'م² مساحة الأرض', en: 'm² land area' } },
+      { value: '76,000+', label: { ar: 'م² مساحات البناء', en: 'm² built-up area' } },
+      { value: '22', label: { ar: 'مكتبًا فاخرًا', en: 'Premium offices' } },
+      { value: '1,100+', label: { ar: 'موقف سيارات', en: 'Parking spaces' } },
+    ],
+    factsAt: 'intro',
+    challenge: {
+      ar: 'افتتاح وجهة أعمال راقية يعني أن تجتمع عناصر كثيرة في موعد واحد وبمستوى واحد: موردون ووكالات ومقدمو خدمات، ومواد إعلامية وتسويقية، وتجهيزات ميدانية، واعتمادات من الإدارة. وقد سبقت الفعالية التي امتدت ثلاثة أيام دورةُ تحضير مدتها 45 يومًا.',
+      en: 'Opening a premium business destination means bringing many parts together on one date and to one standard: suppliers, agencies and service providers, media and marketing materials, on-site preparations, and management approvals. The three-day event followed a 45-day preparation cycle.',
+    },
+    lead: {
+      title: { ar: 'قائد إدارة وتنفيذ الافتتاح', en: 'Opening Event Lead' },
+      summary: {
+        ar: 'تولّيت المسؤولية المباشرة عن إدارة افتتاح السليمان بزنس كمباوند وتنفيذه، من التخطيط والتحضير حتى التنفيذ الميداني والتنسيق بين جميع الأطراف المشاركة.',
+        en: 'I was directly responsible for managing and delivering the Alsoliman Business Compound opening, from planning and preparation through on-site execution and coordination of every party involved.',
+      },
+      groups: [
+        {
+          title: { ar: 'قيادة الفعالية', en: 'Event leadership' },
+          items: [
+            { ar: 'قدت تخطيط فعالية الافتتاح وتنظيمها وإدارة تنفيذها.', en: 'Led the planning, organisation, and delivery of the opening event.' },
+            { ar: 'حوّلت أهداف الافتتاح إلى خطة تنفيذية بالمهام والجداول الزمنية والمتطلبات التشغيلية والمخرجات.', en: 'Turned the opening objectives into an execution plan of tasks, timelines, operational requirements, and deliverables.' },
+            { ar: 'أشرفت على جاهزية جميع عناصر الفعالية، وقدت التنسيق الميداني ومعالجة التحديات أثناء التنفيذ.', en: 'Oversaw readiness of every element, and directed on-site coordination and problem-solving during the event.' },
+          ],
+        },
+        {
+          title: { ar: 'الموردون والوكالات', en: 'Suppliers & agencies' },
+          items: [
+            { ar: 'أدرت التنسيق مع الموردين والوكالات ومقدمي الخدمات المشاركين في التنفيذ.', en: 'Managed coordination with the suppliers, agencies, and service providers involved.' },
+            { ar: 'تابعت نطاقات العمل والمواصفات الفنية والجودة ومواعيد التسليم.', en: 'Followed up scopes of work, technical specifications, quality, and delivery dates.' },
+            { ar: 'تأكدت من تكامل التجهيزات والخدمات الميدانية وجاهزيتها قبل الافتتاح وأثناءه.', en: 'Ensured on-site set-ups and services were complete and ready before and during the opening.' },
+          ],
+        },
+        {
+          title: { ar: 'الإنتاج الإعلامي والتسويقي', en: 'Media & marketing production' },
+          items: [
+            { ar: 'قدت تنسيق إنتاج المواد الإعلامية والتسويقية الداعمة لإطلاق المشروع.', en: 'Led the coordination of media and marketing materials supporting the launch.' },
+            { ar: 'أدرت متابعة المخرجات المرئية من تصوير وفيديو ومحتوى ترويجي وفق نطاق العمل المعتمد.', en: 'Managed visual deliverables, including photography, video, and promotional content, within the approved scope.' },
+            { ar: 'حرصت على اتساق المواد مع هوية المشروع ومستوى تقديمه بوصفه وجهة أعمال راقية.', en: 'Kept materials consistent with the project identity and its positioning as a premium business destination.' },
+          ],
+        },
+        {
+          title: { ar: 'أصحاب المصلحة', en: 'Stakeholders' },
+          items: [
+            { ar: 'قدت التنسيق بين الإدارة والفرق الداخلية والموردين والجهات المشاركة.', en: 'Directed coordination among management, internal teams, suppliers, and partners.' },
+            { ar: 'تابعت الاعتمادات والملاحظات والقرارات التنفيذية المرتبطة بالفعالية.', en: 'Followed up approvals, feedback, and execution decisions for the event.' },
+            { ar: 'حرصت على اتساق الرسائل التسويقية وتجربة الحضور مع الأهداف التجارية للمشروع.', en: 'Aligned marketing messages and the guest experience with the project’s commercial goals.' },
+          ],
+        },
+      ],
+    },
+    film: { vimeoId: '1220414895', title: { ar: 'افتتاح السليمان بزنس كمباوند', en: 'Alsoliman Business Compound Opening' }, ratio: 1.894 },
+    outcome: {
+      ar: 'اكتمل الافتتاح في ديسمبر 2025 عبر فعالية امتدت ثلاثة أيام شهدت الإعلان عن شراكات استراتيجية. وعلى مستوى المشروع، حصل على تمويل بقيمة 90 مليون ريال، وكان دوري دعم جهود تأمينه.',
+      en: 'The opening was completed in December 2025 with a three-day event that included strategic partnership announcements. At project level, SAR 90 million in funding was secured; my part was supporting that effort.',
+    },
+    sections: [
+      {
+        title: { ar: 'مرافق المجمع', en: 'Amenities' },
+        items: [
+          { ar: 'مواقف سيارات تحت الأرض، منها مواقف كبار الشخصيات وذوي الإعاقة', en: 'Underground parking, including VIP and accessible bays' },
+          { ar: 'نادٍ رياضي ونادٍ اجتماعي', en: 'Gym and clubhouse' },
+          { ar: 'مصليات ومجلس ضيافة', en: 'Prayer halls and a guest majlis' },
+          { ar: 'استقبال فاخر وأنظمة أمن', en: 'Premium reception and security' },
+          { ar: 'مكاتب ذكية بمساحات مرنة وأسطح خضراء', en: 'Smart offices with flexible layouts and green rooftop terraces' },
+        ],
+      },
+    ],
+    officialUrl: 'https://alsoliman.com.sa/ar/project/The-Business-Compound',
     role: {
-      ar: 'تخطيط فعالية الإطلاق وتنفيذها، وتيسير إعلانات الشراكات الاستراتيجية، ودعم جهود تأمين تمويل المشروع.',
-      en: 'Planned and executed the launch event, facilitated the strategic partnership announcements, and supported the effort to secure project funding.',
+      ar: 'قائد إدارة وتنفيذ الافتتاح: المسؤولية المباشرة عن التخطيط والموردين والمخرجات الإعلامية والتنفيذ الميداني.',
+      en: 'Opening Event Lead: direct responsibility for planning, suppliers, media deliverables, and on-site execution.',
     },
-    scope: [
-      { ar: 'تخطيط فعالية إطلاق لثلاثة أيام', en: 'Planning a three-day launch event' },
-      { ar: 'إدارة دورة تحضير مدتها 45 يومًا', en: 'Managing a 45-day preparation cycle' },
-      { ar: 'تنسيق إعلانات الشراكات الاستراتيجية', en: 'Coordinating strategic partnership announcements' },
-    ],
-    deliverables: [
-      { ar: 'فعالية التدشين', en: 'Launch event' },
-      { ar: 'برنامج إعلانات الشراكات', en: 'Partnership announcement programme' },
-    ],
+    scope: [],
+    deliverables: [],
     results: [
-      { value: '90M', label: { ar: 'ريال تمويل للمشروع، أسهمتُ في دعم تأمينه', en: 'SAR in project funding I supported securing' } },
+      { value: '3', label: { ar: 'أيام لفعالية الافتتاح', en: 'Days of opening event' } },
       { value: '45', label: { ar: 'يومًا من التحضير', en: 'Days of preparation' } },
-      { value: '3', label: { ar: 'أيام لفعالية الإطلاق', en: 'Days of launch event' } },
+      { value: '90M', label: { ar: 'ريال تمويل للمشروع، دعمتُ جهود تأمينه', en: 'SAR project funding I supported securing' } },
     ],
-    plate: { word: { ar: '3 أيام', en: '3 days' }, sub: { ar: 'إطلاق · ديسمبر 2025', en: 'Launch · December 2025' } },
+    plate: { word: { ar: '3 أيام', en: '3 days' }, sub: { ar: 'افتتاح · ديسمبر 2025', en: 'Opening · December 2025' } },
   },
   {
     slug: 'bader-villas',
@@ -127,28 +193,98 @@ export const projects: Project[] = [
     imageSource: { ar: 'الصور من ملف المشاركة في جائزة International Property Awards', en: 'Images: International Property Awards submission portfolio' },
   },
   {
-    slug: 'sukina-compound',
+    slug: 'sakenah-compound',
     featured: true,
-    name: { ar: 'سكينة كمباوند · مكة المكرمة', en: 'Sukina Compound · Makkah' },
-    summary: { ar: 'المساهمة في الإطلاق الاستراتيجي وتنفيذ فعالية التدشين.', en: 'Contribution to the strategic launch and event execution.' },
+    name: { ar: 'سكينة كمباوند · مكة المكرمة', en: 'Sakenah Compound · Makkah' },
+    summary: {
+      ar: 'قدتُ إدارة وتنفيذ حفل افتتاح مجمع سكني متكامل داخل حدود الحرم المكي الشريف.',
+      en: 'I led the opening event of an integrated residential compound within the boundaries of the Haram in Makkah.',
+    },
     categories: ['events', 'real-estate'],
     date: { ar: 'مارس 2026', en: 'March 2026' },
-    context: { ar: 'مكة المكرمة', en: 'Makkah' },
+    context: { ar: 'شركة السليمان العقارية · مكة المكرمة', en: 'Alsoliman Real Estate Company · Makkah' },
     overview: {
-      ar: 'إطلاق مشروع سكينة كمباوند في مكة المكرمة وتنفيذ فعالية تدشينه في مارس 2026.',
-      en: 'The launch of Sukina Compound in Makkah and the execution of its launch event in March 2026.',
+      ar: 'مجمع سكني متكامل من تطوير شركة السليمان العقارية، يقع داخل حدود الحرم المكي الشريف على تلّة في وسط مكة المكرمة. يضم شققًا من الاستوديو حتى ثلاث غرف نوم، ومرافق منها نادٍ رياضي ومسبح وحدائق مفتوحة ومناطق ألعاب وحضانة للأطفال ومجلس ضيافة. وهو مشروع سكني، على خلاف السليمان بزنس كمباوند المكتبي.',
+      en: 'An integrated residential compound by Alsoliman Real Estate, within the boundaries of the Haram on a hill in central Makkah. It offers apartments from studios to three bedrooms, with amenities including a sports club, swimming pool, open gardens, children’s play areas and nursery, and a guest majlis. It is a residential project, unlike the office-led Alsoliman Business Compound.',
     },
-    role: {
-      ar: 'المساهمة في الإطلاق الاستراتيجي للمشروع وتنفيذ فعالية التدشين.',
-      en: 'Contributed to the strategic launch and the execution of the launch event.',
+    lead: {
+      title: { ar: 'قائد إدارة وتنفيذ حفل الافتتاح', en: 'Opening Event Lead' },
+      summary: {
+        ar: 'تولّيت المسؤولية المباشرة عن قيادة حفل افتتاح سكينة كمباوند وإدارته: التخطيط والتحضير والتنسيق والتنفيذ.',
+        en: 'I was directly responsible for leading and managing the Sakenah Compound opening: planning, preparation, coordination, and execution.',
+      },
+      groups: [
+        {
+          title: { ar: 'قيادة الحفل وتنفيذه', en: 'Event leadership & execution' },
+          items: [
+            { ar: 'قدت تخطيط حفل الافتتاح وتنظيمه وتنفيذه المباشر.', en: 'Led the planning, organisation, and direct execution of the opening event.' },
+            { ar: 'أعددت الخطة التنفيذية وتابعت الجدول الزمني والمهام والمتطلبات التشغيلية.', en: 'Prepared the execution plan and managed the timeline, tasks, and operational requirements.' },
+            { ar: 'أشرفت على جاهزية موقع الحفل والتجهيزات، وأدرت التنسيق الميداني أثناء الحفل.', en: 'Oversaw venue readiness and set-ups, and managed on-site coordination during the event.' },
+          ],
+        },
+        {
+          title: { ar: 'الموردون ومقدمو الخدمات', en: 'Vendors & suppliers' },
+          items: [
+            { ar: 'أدرت التنسيق مع الموردين والوكالات ومقدمي الخدمات المشاركين في الافتتاح.', en: 'Managed the suppliers, agencies, and service providers involved in the opening.' },
+            { ar: 'تابعت نطاقات العمل والجودة والمواصفات ومواعيد التسليم.', en: 'Followed up scopes of work, quality, specifications, and deadlines.' },
+            { ar: 'تأكدت من تكامل التجهيزات والخدمات ومعالجة الملاحظات التنفيذية.', en: 'Ensured set-ups and services came together and execution issues were resolved.' },
+          ],
+        },
+        {
+          title: { ar: 'المواد الإعلامية والتسويقية', en: 'Media & marketing materials' },
+          items: [
+            { ar: 'قدت تنسيق إعداد المواد الإعلامية والتسويقية الخاصة بالافتتاح.', en: 'Directed the coordination of media and marketing materials for the opening.' },
+            { ar: 'تابعت إنتاج الفيديو والتصوير والمحتوى المرئي والمواد الترويجية بحسب نطاق العمل.', en: 'Followed video, photography, visual content, and promotional production within scope.' },
+            { ar: 'حرصت على اتساق العرض والمواد مع هوية المشروع وتموضعه في السوق.', en: 'Kept the presentation and materials aligned with the project identity and market positioning.' },
+          ],
+        },
+        {
+          title: { ar: 'التنسيق مع أصحاب المصلحة', en: 'Stakeholder coordination' },
+          items: [
+            { ar: 'قدت التنسيق بين الإدارة والفرق الداخلية والموردين والجهات المشاركة.', en: 'Led coordination among management, internal teams, suppliers, and partners.' },
+            { ar: 'تابعت الاعتمادات والمتطلبات التشغيلية لضمان جاهزية عناصر الحفل.', en: 'Followed approvals and operational requirements to keep every element ready.' },
+            { ar: 'أسهمت في تقديم تجربة متكاملة للحضور تعكس مكانة المشروع.', en: 'Helped deliver a complete guest experience that reflects the project’s standing.' },
+          ],
+        },
+      ],
     },
-    scope: [
-      { ar: 'الإطلاق الاستراتيجي', en: 'Strategic launch' },
-      { ar: 'تنفيذ الفعالية', en: 'Event execution' },
+    film: { vimeoId: '1240078861', title: { ar: 'حفل افتتاح مشروع سكينة كمباوند في مكة المكرمة', en: 'Sakenah Compound opening ceremony, Makkah' }, ratio: 16 / 9 },
+    facts: [
+      { value: '11,043', label: { ar: 'م² مساحة الأرض', en: 'm² land area' } },
+      { value: '47,040', label: { ar: 'م² مساحة البناء', en: 'm² built-up area' } },
+      { value: '276', label: { ar: 'وحدة سكنية', en: 'Residential units' } },
+      { value: '290', label: { ar: 'موقفًا', en: 'Parking spaces' } },
     ],
-    deliverables: [{ ar: 'فعالية التدشين', en: 'Launch event' }],
+    factsAt: 'end',
+    sections: [
+      {
+        title: { ar: 'نماذج الوحدات', en: 'Unit types' },
+        items: [
+          { ar: 'استوديو · 14 وحدة · من 50 م²', en: 'Studio · 14 units · from 50 m²' },
+          { ar: 'غرفة نوم واحدة · 68 وحدة · من 80 م²', en: 'One bedroom · 68 units · from 80 m²' },
+          { ar: 'غرفتا نوم · 155 وحدة · من 115 م²', en: 'Two bedrooms · 155 units · from 115 m²' },
+          { ar: 'ثلاث غرف نوم · 39 وحدة · من 140 م²', en: 'Three bedrooms · 39 units · from 140 m²' },
+        ],
+      },
+      {
+        title: { ar: 'مرافق المجمع', en: 'Amenities' },
+        items: [
+          { ar: 'نادٍ رياضي ومسبح', en: 'Sports club and swimming pool' },
+          { ar: 'حدائق مفتوحة ومناطق ترفيهية', en: 'Open gardens and recreation areas' },
+          { ar: 'مناطق ألعاب وحضانة للأطفال', en: 'Children’s play areas and nursery' },
+          { ar: 'استقبال فاخر وجلسات ومجلس ضيافة', en: 'Premium reception, lounges, and a guest majlis' },
+        ],
+      },
+    ],
+    officialUrl: 'https://alsoliman.com.sa/ar/project/%D8%B3%D9%83%D9%8A%D9%86%D8%A9-%D9%83%D9%85%D8%A8%D8%A7%D9%88%D9%86%D8%AF-%D9%85%D9%83%D8%A9-%D8%A7%D9%84%D9%85%D9%83%D8%B1%D9%85%D8%A9',
+    role: {
+      ar: 'قائد إدارة وتنفيذ حفل الافتتاح: المسؤولية المباشرة عن التخطيط والموردين والمواد الإعلامية والتنفيذ.',
+      en: 'Opening Event Lead: direct responsibility for planning, suppliers, media materials, and execution.',
+    },
+    scope: [],
+    deliverables: [],
     results: [],
-    plate: { word: { ar: 'مكة', en: 'Makkah' }, sub: { ar: 'مارس 2026', en: 'March 2026' } },
+    plate: { word: { ar: 'مكة', en: 'Makkah' }, sub: { ar: 'افتتاح · مارس 2026', en: 'Opening · March 2026' } },
   },
   {
     slug: 'alsoliman-brand-development',

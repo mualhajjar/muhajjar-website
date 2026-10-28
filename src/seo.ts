@@ -32,7 +32,7 @@ export function meta(route: Route): { title: string; description: string } {
         title: L(`المشاريع المختارة | ${name}`, `Selected Projects | ${name}`, lang),
         description: L(
           'مشاريع مختارة في العقار واستراتيجية العلامة والفعاليات: السليمان بزنس كمباوند، فلل البدر، سكينة كمباوند، سحاب، وغيرها.',
-          'Selected work in real estate, brand strategy, and events: Al-Sulaiman Business Compound, Bader Villas, Sukina Compound, Sahab, and more.',
+          'Selected work in real estate, brand strategy, and events: Al-Sulaiman Business Compound, Bader Villas, Sakenah Compound, Sahab, and more.',
           lang,
         ),
       };

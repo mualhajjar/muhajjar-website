@@ -3,6 +3,7 @@ import { catLabel, Plate, SectionHead } from '../components/Blocks';
 import { Icon } from '../components/Icon';
 import { Pic } from '../components/Pic';
 import { Interlude } from '../components/Interlude';
+import { LeadBody } from '../components/CaseLead';
 import { journal, moments as M } from '../data/moments';
 import { useLightbox } from '../components/Lightbox';
 import { evidenceLabels, systems, type Evidence } from '../data/systems';
@@ -271,7 +272,22 @@ export function ProjectDetail({ route }: { route: Route }) {
         </p>
         <h1 className="case-title">{t(p.name, lang)}</h1>
         <p className="lead case-lead">{t(p.summary, lang)}</p>
+        {p.lead && (
+          <p className="case-role">
+            <span className="mono">{t(pr.role, lang)}</span>
+            <b>{t(p.lead.title, lang)}</b>
+            {p.film && (
+              <a className="link" href="#film">
+                {t(pr.watchFilm, lang)} <Icon name="arrow" flip />
+              </a>
+            )}
+          </p>
+        )}
       </header>
+      {p.lead ? (
+        <LeadBody p={p} lang={lang} />
+      ) : (
+      <>
       <div className="wrap case-cover">
         {p.cover ? <Pic k={p.cover.key} alt={t(p.cover.alt, lang)} sizes="100vw" eager /> : <Plate p={p} lang={lang} big />}
       </div>
@@ -388,6 +404,8 @@ export function ProjectDetail({ route }: { route: Route }) {
           </section>
         )}
       </div>
+      </>
+      )}
 
       {p.gallery && p.gallery.length > 0 && (
         <section className="wrap case-gallery" aria-labelledby="imagery">

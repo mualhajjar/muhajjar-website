@@ -39,6 +39,24 @@ export interface Project {
   sections?: { title: T; items: T[] }[];
   /** Sequential workstreams, each a chain of steps (e.g. a 30-day plan). */
   tracks?: { title: T; note?: T; steps: T[] }[];
+  /** Leadership case study (projects the user personally led). */
+  lead?: {
+    title: T;
+    summary: T;
+    groups: { title: T; items: T[] }[];
+  };
+  /** Delivery demands of the project, described without invented specifics. */
+  challenge?: T;
+  /** Official project facts (from the developer's project page). */
+  facts?: { value: string; label: T }[];
+  /** Where the facts block appears in the case study. */
+  factsAt?: 'intro' | 'end';
+  /** Official film, embedded with the Vimeo player. */
+  film?: { vimeoId: string; title: T; ratio: number };
+  /** What was completed, stated without invented metrics. */
+  outcome?: T;
+  /** Official project page. */
+  officialUrl?: string;
   /** Typographic plate when no real imagery is available. */
   plate?: { word: T; sub: T };
   /** Logo shown on the typographic plate. */

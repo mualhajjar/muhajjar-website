@@ -82,3 +82,12 @@ Product logos are not used: the site shows product names in its own typography, 
 - Captions now state only what the file name and picture show (e.g. "Event", "Construction site", "Bussma") — no invented dates, places, or stories.
 - New page: Visual Journal (`/journal/`, `/en/journal/`) — all 14 photographs at their natural proportions, with a lightbox. Linked from the menu, footer, and home page.
 - The contact section has a faint photograph behind it under a navy veil; text contrast is unchanged.
+
+## Update — opening case studies (Business Compound, Sakenah)
+- Both rebuilt as leadership case studies (`lead`, `challenge`, `film`, `outcome`, `facts`, `officialUrl` fields; renderer `src/components/CaseLead.tsx`).
+- Role: «قائد إدارة وتنفيذ الافتتاح / حفل الافتتاح» · Opening Event Lead, with four responsibility groups.
+- Official films embedded via the Vimeo player (lazy iframe, no autoplay, `dnt=1`, fallback link to vimeo.com).
+- Project facts taken from alsoliman.com.sa official pages (land, built-up area, units/offices, parking, unit mix, amenities).
+- 90M funding kept as a project-level result he supported, not a personal achievement. No budgets, attendance or sales figures added for either opening.
+- Slug `sukina-compound` → `sakenah-compound`; 301 redirect in `.htaccess`.
+- Not done: official project photos (alsoliman.com.sa unreachable from the build workspace). The Vimeo player could not be loaded locally for the same reason; verify playback on the live site.
