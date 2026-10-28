@@ -44,7 +44,8 @@ public/
   images/             ← portrait, project images, logos
   files/              ← CV and cover-letter PDFs (Arabic and English)
   .htaccess           ← HTTPS redirect, 404 pages, caching, compression
-  og-image.jpg, favicon.svg, favicon-32.png, apple-touch-icon.png, icon-512.png
+  images/logo-black.png, images/logo-white.png  ← HAJJAR wordmark for light / dark themes
+  og-image.jpg, favicon-32.png, favicon-32-dark.png, apple-touch-icon.png, icon-512.png
 ```
 
 All career facts are in `src/data`. Edit there and rebuild; no other file holds content.
@@ -57,7 +58,9 @@ All career facts are in `src/data`. Edit there and rebuild; no other file holds 
 
 **Logos** — transparent WebP or PNG in `public/images/logos/`, listed in `organisations` in `src/data/profile.ts`. Logos are shown as single-colour silhouettes so they sit quietly in both themes.
 
-**Favicon / social image** — replace `public/favicon.svg`, `favicon-32.png`, `apple-touch-icon.png` (180 × 180), `icon-512.png`, and `og-image.jpg` (1200 × 630).
+**Logo** — the header shows `public/images/logo-black.png` on the light theme and `logo-white.png` on the dark theme (transparent PNGs, 371 × 120). Replace both with the same size to update it.
+
+**Favicon / social image** — replace `public/favicon-32.png` (light), `favicon-32-dark.png` (dark), `apple-touch-icon.png` (180 × 180), `icon-512.png`, and `og-image.jpg` (1200 × 630). The favicons use the H from the HAJJAR wordmark.
 
 **Fonts** — WOFF2 files in `public/fonts/`, declared at the top of `src/styles/global.css`. Thmanyah fonts are distributed by Thmanyah under their own licence (embedded in the font files); review it before commercial use. IBM Plex Mono comes from `@fontsource/ibm-plex-mono` (SIL Open Font License).
 

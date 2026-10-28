@@ -121,10 +121,18 @@ main:focus { outline: none; }
   border-bottom: 1px solid var(--rule); max-width: none; padding-inline: max(var(--gutter), calc((100% - var(--max)) / 2 + var(--gutter)));
 }
 .brand { display: inline-flex; align-items: center; gap: 12px; white-space: nowrap; }
-.brand-mark {
-  display: inline-grid; place-items: center; width: 32px; height: 32px; border: 1px solid var(--ink);
-  font: 700 17px/1 var(--f-serif); padding-top: 2px;
+.brand-mark { display: inline-flex; align-items: center; }
+.brand-mark img { display: block; height: 24px; width: auto; }
+.brand-mark + .brand-name { padding-inline-start: 12px; border-inline-start: 1px solid var(--rule); }
+/* HAJJAR wordmark: black ink on the light theme, white ink on the dark theme. */
+.logo-light-ink { display: none !important; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .logo-dark-ink { display: none !important; }
+  :root:not([data-theme='light']) .logo-light-ink { display: block !important; }
 }
+:root[data-theme='dark'] .logo-dark-ink { display: none !important; }
+:root[data-theme='dark'] .logo-light-ink { display: block !important; }
+@media (max-width: 340px) { .brand-mark + .brand-name { display: none; } }
 .brand-name { font: 700 19px/1 var(--f-serif); }
 :lang(en) .brand-name { font-weight: 500; letter-spacing: 0.01em; }
 .nav { display: flex; gap: clamp(16px, 2vw, 30px); margin-inline-start: auto; }
@@ -157,6 +165,7 @@ main:focus { outline: none; }
   position: fixed; inset: 0; z-index: 60; background: var(--band); color: var(--band-fg);
   display: flex; flex-direction: column; overflow-y: auto; padding-bottom: 28px;
 }
+.overlay .brand-mark + .brand-name { border-color: var(--band-rule); }
 .overlay-top { display: flex; align-items: center; justify-content: space-between; height: var(--bar-h); border-bottom: 1px solid var(--band-rule); }
 .overlay .icon-btn { border-color: var(--band-rule); color: var(--band-fg); }
 .overlay-nav { display: grid; margin-block: 5vh auto; }

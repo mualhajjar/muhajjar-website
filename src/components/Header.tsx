@@ -86,7 +86,8 @@ export function Header({ route }: { route: Route }) {
       <header className="bar wrap">
         <a className="brand" href={pathFor(lang, 'home')}>
           <span className="brand-mark" aria-hidden="true">
-            {lang === 'ar' ? 'م' : 'M'}
+            <img className="logo-dark-ink" src="/images/logo-black.png" alt="" width="371" height="120" />
+            <img className="logo-light-ink" src="/images/logo-white.png" alt="" width="371" height="120" />
           </span>
           <span className="brand-name">{t(person.name, lang)}</span>
         </a>
@@ -108,6 +109,9 @@ export function Header({ route }: { route: Route }) {
       <div id="site-menu" className="overlay" role="dialog" aria-modal="true" aria-label={t(ui.menu, lang)} hidden={!open} onKeyDown={(e) => e.key === 'Escape' && close()}>
         <div className="overlay-top wrap">
           <span className="brand">
+            <span className="brand-mark" aria-hidden="true">
+              <img src="/images/logo-white.png" alt="" width="371" height="120" />
+            </span>
             <span className="brand-name">{t(person.name, lang)}</span>
           </span>
           <button ref={closeRef} type="button" className="icon-btn" onClick={close}>
