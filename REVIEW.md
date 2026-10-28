@@ -60,3 +60,16 @@ On your instruction, the HAWYIA media PDFs and the digital marketing plan are no
 - **Al-Basateen case study** — goals, content standards, platforms, and the 30-day workstreams (social, website, Google) from *الخطة التسويقية الجديدة*.
 
 Kept out on purpose: the HAWYIA team photos, client logos sheets, financial proposal, and any page showing third-party people without context. Several HAWYIA proposals (e.g. the launch toolkit) describe the agency's service offering; the page labels them as work of the HAWYIA team that you were part of, not as your sole work.
+
+## Update — 28 Oct 2026: Enterprise Systems section
+
+Added to the Expertise page (`/expertise/#systems`). Three evidence levels are kept visibly apart:
+
+| Platform | Level shown | Basis |
+| --- | --- | --- |
+| SAP ERP · MM | Hands-on experience | CV: MM procurement cycle PR → RFQ → PO → GR → SES; SAP ERP training 2024 |
+| Bitrix24 | Documented training | CV: Bitrix24 Program 2026; Bitrix24 CRM in core competencies |
+| monday.com | Platform of interest | Not in the CV — no claim of experience |
+
+Not added: Microsoft Project, Power BI, Excel, Jira, Asana, Salesforce. None appears in the CVs. Confirm any you use and they can be added at the right level (edit `src/data/systems.ts`).
+Product logos are not used: the site shows product names in its own typography, with links to each official site and a trademark note. Official logos can be added later if you prefer, subject to each vendor's brand guidelines.

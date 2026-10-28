@@ -4,6 +4,7 @@ import { Icon } from '../components/Icon';
 import { Pic } from '../components/Pic';
 import { Interlude } from '../components/Interlude';
 import { moments as M } from '../data/moments';
+import { evidenceLabels, systems, type Evidence } from '../data/systems';
 import { expertiseGroups, process } from '../data/expertise';
 import { award, bio, certifications, earlierExperience, education, experience, languages, organisations, person } from '../data/profile';
 import { categories, projects } from '../data/projects';
@@ -447,6 +448,8 @@ export function Expertise({ route }: { route: Route }) {
           ))}
         </div>
       </section>
+      <Systems lang={lang} />
+
       <Interlude kind="pair" items={[M.presentation, M.planning]} lang={lang} />
 
       <section className="wrap chapter" aria-labelledby="process">
@@ -565,5 +568,74 @@ export function Work({ route }: { route: Route }) {
         <p className="mono source">{t(w.source, lang)}</p>
       </section>
     </>
+  );
+}
+
+/* ------------------------------------------------- Enterprise systems */
+export function Systems({ lang }: { lang: Route['lang'] }) {
+  const sy = ui.systems;
+  const order: Evidence[] = ['experience', 'training', 'interest'];
+  return (
+    <section className="wrap chapter" id="systems" aria-labelledby="systems-title">
+      <SectionHead id="systems-title" label={t(sy.label, lang)} title={t(sy.title, lang)} mute={t(sy.titleMute, lang)}>
+        <p className="lead head-lead">{t(sy.lead, lang)}</p>
+      </SectionHead>
+      <ul className="evidence-key" aria-label={t(sy.keyLabel, lang)}>
+        {order.map((ev) => (
+          <li key={ev} className={`ev ev-${ev}`}>
+            <span className="ev-dot" aria-hidden="true" />
+            <b>{t(evidenceLabels[ev].label, lang)}</b>
+            <span>{t(evidenceLabels[ev].note, lang)}</span>
+          </li>
+        ))}
+      </ul>
+      <div className="sys-grid">
+        {systems.map((s) => (
+          <article key={s.id} className={`sys sys-${s.id} ev-${s.evidence} rise`}>
+            <header className="sys-head">
+              <span className={`ev-badge ev-${s.evidence}`}>
+                <span className="ev-dot" aria-hidden="true" />
+                {t(evidenceLabels[s.evidence].label, lang)}
+              </span>
+              <h3 lang="en" dir="ltr">
+                {s.name}
+              </h3>
+              <p className="mono sys-kind">{t(s.kind, lang)}</p>
+            </header>
+            {s.flow && (
+              <ol className="sys-flow" aria-label={t(sy.flowLabel, lang)}>
+                {s.flow.map((f) => (
+                  <li key={f.code}>
+                    <b lang="en">{f.code}</b>
+                    <span>{t(f.label, lang)}</span>
+                  </li>
+                ))}
+              </ol>
+            )}
+            {s.mine && (
+              <div className="sys-block">
+                <h4 className="mono">{t(sy.mine, lang)}</h4>
+                <p>{t(s.mine, lang)}</p>
+              </div>
+            )}
+            <div className="sys-block">
+              <h4 className="mono">{t(s.mine ? sy.supports : sy.supportsOnly, lang)}</h4>
+              <ul className="sys-list">
+                {s.supports.map((x) => (
+                  <li key={x.en}>{t(x, lang)}</li>
+                ))}
+              </ul>
+            </div>
+            <footer className="sys-foot">
+              <span className="mono">{t(s.source, lang)}</span>
+              <a className="mono" href={s.url} target="_blank" rel="noopener noreferrer">
+                {t(sy.official, lang)} <Icon name="external" />
+              </a>
+            </footer>
+          </article>
+        ))}
+      </div>
+      <p className="mono source">{t(sy.trademark, lang)}</p>
+    </section>
   );
 }

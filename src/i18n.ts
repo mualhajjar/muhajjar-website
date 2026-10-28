@@ -126,6 +126,25 @@ export const ui = {
     all: { ar: 'الكل', en: 'All' },
     source: { ar: 'الصور من ملفات أعمال وكالة هوية الإعلامية.', en: 'Images: HAWYIA Agency portfolios.' },
   },
+  systems: {
+    label: { ar: 'الأنظمة الرقمية', en: 'Digital systems' },
+    title: { ar: 'أنظمة الأعمال ', en: 'Enterprise Systems ' },
+    titleMute: { ar: 'وإدارة المشاريع الرقمية.', en: '& Digital Work Management.' },
+    lead: {
+      ar: 'أستخدم الأنظمة الرقمية أداةً للتنفيذ والحوكمة: دورة مشتريات موثّقة، وميزانية تحت السيطرة، وعلاقات عملاء وفرق تُدار بوضوح. وأفصل هنا بين ما أستخدمه فعليًا، وما تدرّبت عليه، وما أتابعه من منصات.',
+      en: 'I use digital systems as tools for delivery and governance: a documented procurement cycle, a budget under control, and clearly managed client and team work. Below, what I use in practice is kept apart from what I have trained on and from platforms I follow.',
+    },
+    keyLabel: { ar: 'مستويات الخبرة', en: 'Evidence levels' },
+    flowLabel: { ar: 'دورة المشتريات', en: 'Procurement cycle' },
+    mine: { ar: 'خبرتي', en: 'My experience' },
+    supports: { ar: 'ما يدعمه في الأعمال', en: 'Business value' },
+    supportsOnly: { ar: 'ما تدعمه المنصة', en: 'What the platform supports' },
+    official: { ar: 'الموقع الرسمي', en: 'Official site' },
+    trademark: {
+      ar: 'SAP وBitrix24 وmonday.com علامات تجارية لمالكيها، ووصف قدرات كل منصة عام لا يمثّل ادعاءً بخبرة إضافية.',
+      en: 'SAP, Bitrix24, and monday.com are trademarks of their owners. Platform capability notes are general and do not claim additional experience.',
+    },
+  },
   expertise: {
     label: { ar: 'مجالات الخبرة', en: 'Expertise' },
     title: { ar: 'قدرات تجمع ', en: 'Capabilities that join ' },
