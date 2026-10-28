@@ -10,6 +10,7 @@ const NAV: { page: PageId | 'contact'; key: keyof typeof ui.nav }[] = [
   { page: 'experience', key: 'experience' },
   { page: 'projects', key: 'projects' },
   { page: 'work', key: 'work' },
+  { page: 'journal', key: 'journal' },
   { page: 'expertise', key: 'expertise' },
   { page: 'contact', key: 'contact' },
 ];
@@ -86,13 +87,13 @@ export function Header({ route }: { route: Route }) {
       <header className="bar wrap">
         <a className="brand" href={pathFor(lang, 'home')}>
           <span className="brand-mark" aria-hidden="true">
-            <img className="logo-dark-ink" src="/images/logo-black.png" alt="" width="371" height="120" />
-            <img className="logo-light-ink" src="/images/logo-white.png" alt="" width="371" height="120" />
+            <img className="logo-dark-ink" src="/assets/images/logo-black.png" alt="" width="371" height="120" />
+            <img className="logo-light-ink" src="/assets/images/logo-white.png" alt="" width="371" height="120" />
           </span>
           <span className="brand-name">{t(person.name, lang)}</span>
         </a>
         <nav className="nav" aria-label={t(ui.primaryNav, lang)}>
-          {NAV.slice(1).map((n) => (
+          {NAV.slice(1).filter((n) => n.page !== 'journal').map((n) => (
             <a key={n.key} href={navHref(route, n.page)} aria-current={isCurrent(route, n.page) ? 'page' : undefined}>
               {t(ui.nav[n.key], lang)}
             </a>
@@ -110,7 +111,7 @@ export function Header({ route }: { route: Route }) {
         <div className="overlay-top wrap">
           <span className="brand">
             <span className="brand-mark" aria-hidden="true">
-              <img src="/images/logo-white.png" alt="" width="371" height="120" />
+              <img src="/assets/images/logo-white.png" alt="" width="371" height="120" />
             </span>
             <span className="brand-name">{t(person.name, lang)}</span>
           </span>

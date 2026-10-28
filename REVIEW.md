@@ -73,3 +73,12 @@ Added to the Expertise page (`/expertise/#systems`). Three evidence levels are k
 
 Not added: Microsoft Project, Power BI, Excel, Jira, Asana, Salesforce. None appears in the CVs. Confirm any you use and they can be added at the right level (edit `src/data/systems.ts`).
 Product logos are not used: the site shows product names in its own typography, with links to each official site and a trademark note. Official logos can be added later if you prefer, subject to each vendor's brand guidelines.
+
+## Update — 28 Oct 2026: photographs and local assets
+
+- All site images now live inside the project at `public/assets/images/` (served at `/assets/images/`): `projects/`, `moments/`, `logos/`, the portrait, and the HAJJAR wordmark. The video is at `/assets/media/`. Nothing loads from Google Drive. Old `/images/...` links redirect (301) via `.htaccess`.
+- The 14 "memories" photographs were re-encoded from the originals: WebP at 900, 1200 and 1600 px with light sharpening (quality 82). The originals top out at 1600 px, so that is the maximum true resolution; nothing is upscaled.
+- Colour filters removed in the light theme (photos shown as shot); a slight dim only in the dark theme.
+- Captions now state only what the file name and picture show (e.g. "Event", "Construction site", "Bussma") — no invented dates, places, or stories.
+- New page: Visual Journal (`/journal/`, `/en/journal/`) — all 14 photographs at their natural proportions, with a lightbox. Linked from the menu, footer, and home page.
+- The contact section has a faint photograph behind it under a navy veil; text contrast is unchanged.

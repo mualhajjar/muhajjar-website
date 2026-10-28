@@ -28,7 +28,7 @@ export function catLabel(p: Project, lang: Lang) {
 export function Plate({ p, lang, big = false, compact = false }: { p: Project; lang: Lang; big?: boolean; compact?: boolean }) {
   return (
     <div className={big ? 'plate plate-big' : 'plate'} role="img" aria-label={t(p.name, lang)}>
-      {p.plateLogo && !compact && <img className="plate-logo" src={`/images/logos/${p.plateLogo}.webp`} alt="" width="160" height="160" loading="lazy" />}
+      {p.plateLogo && !compact && <img className="plate-logo" src={`/assets/images/logos/${p.plateLogo}.webp`} alt="" width="160" height="160" loading="lazy" />}
       <b>{p.plate ? t(p.plate.word, lang) : t(p.name, lang)}</b>
       {p.plate && !compact && <small>{t(p.plate.sub, lang)}</small>}
     </div>

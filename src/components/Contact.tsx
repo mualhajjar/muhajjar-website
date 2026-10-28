@@ -113,6 +113,7 @@ export function Footer({ route }: { route: Route }) {
           <a href={pathFor(lang, 'experience')}>{t(ui.nav.experience, lang)}</a>
           <a href={pathFor(lang, 'projects')}>{t(ui.nav.projects, lang)}</a>
           <a href={pathFor(lang, 'work')}>{t(ui.nav.work, lang)}</a>
+          <a href={pathFor(lang, 'journal')}>{t(ui.nav.journal, lang)}</a>
           <a href={pathFor(lang, 'expertise')}>{t(ui.nav.expertise, lang)}</a>
         </nav>
         <div className="foot-col">

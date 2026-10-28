@@ -49,6 +49,15 @@ export function meta(route: Route): { title: string; description: string } {
           lang,
         ),
       };
+    case 'journal':
+      return {
+        title: L(`يوميات مصوّرة | ${name}`, `Visual Journal | ${name}`, lang),
+        description: L(
+          'صور من الأرشيف الشخصي لمنذر الحجار: لحظات من المكاتب ومواقع المشاريع والمعارض والفعاليات.',
+          'Photographs from Munther AlHajjar’s personal archive: moments from offices, project sites, exhibitions, and events.',
+          lang,
+        ),
+      };
     case 'expertise':
       return {
         title: L(`مجالات الخبرة | ${name}`, `Expertise | ${name}`, lang),
@@ -71,7 +80,7 @@ function personLd(lang: Lang) {
     alternateName: person.name.ar,
     jobTitle: t(person.title, lang),
     url: `${SITE_URL}/`,
-    image: `${SITE_URL}/images/portrait-900.jpg`,
+    image: `${SITE_URL}/assets/images/portrait-900.jpg`,
     email: `mailto:${person.email}`,
     telephone: '+966555947624',
     address: { '@type': 'PostalAddress', addressLocality: 'Riyadh', addressCountry: 'SA' },
@@ -139,7 +148,7 @@ export function head(route: Route): string {
       url: self,
       inLanguage: lang,
       contributor: { '@type': 'Person', name: person.name.en, url: `${SITE_URL}/` },
-      ...(p.cover ? { image: `${SITE_URL}/images/projects/${p.cover.key}-720.webp` } : {}),
+      ...(p.cover ? { image: `${SITE_URL}/assets/images/projects/${p.cover.key}-720.webp` } : {}),
     });
     graph.push({
       '@type': 'BreadcrumbList',

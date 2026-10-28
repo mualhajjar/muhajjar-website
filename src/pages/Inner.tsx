@@ -3,7 +3,7 @@ import { catLabel, Plate, SectionHead } from '../components/Blocks';
 import { Icon } from '../components/Icon';
 import { Pic } from '../components/Pic';
 import { Interlude } from '../components/Interlude';
-import { moments as M } from '../data/moments';
+import { journal, moments as M, type Moment } from '../data/moments';
 import { evidenceLabels, systems, type Evidence } from '../data/systems';
 import { expertiseGroups, process } from '../data/expertise';
 import { award, bio, certifications, earlierExperience, education, experience, languages, organisations, person } from '../data/profile';
@@ -55,7 +55,7 @@ export function About({ route }: { route: Route }) {
         <ul className="logos">
           {organisations.map((o) => (
             <li key={o.logo}>
-              <img src={`/images/logos/${o.logo}.${o.ext ?? 'webp'}`} alt="" loading="lazy" decoding="async" />
+              <img src={`/assets/images/logos/${o.logo}.${o.ext ?? 'webp'}`} alt="" loading="lazy" decoding="async" />
               <span className="mono">{t(o.name, lang)}</span>
             </li>
           ))}
@@ -222,7 +222,7 @@ export function Projects({ route }: { route: Route }) {
               <li key={p.slug}>
                 <a
                   href={pathFor(lang, 'project', p.slug)}
-                  onMouseEnter={() => fine && setPeekSrc(p.cover ? `/images/projects/${p.cover.key}-720.webp` : null)}
+                  onMouseEnter={() => fine && setPeekSrc(p.cover ? `/assets/images/projects/${p.cover.key}-720.webp` : null)}
                   onMouseLeave={() => setPeekSrc(null)}
                 >
                   <span className="thumb" aria-hidden="true">
@@ -637,5 +637,55 @@ export function Systems({ lang }: { lang: Route['lang'] }) {
       </div>
       <p className="mono source">{t(sy.trademark, lang)}</p>
     </section>
+  );
+}
+
+/* ---------------------------------------------------------- Visual journal */
+export function Journal({ route }: { route: Route }) {
+  const { lang } = route;
+  const j = ui.journal;
+  const dlg = useRef<HTMLDialogElement>(null);
+  const closeBtn = useRef<HTMLButtonElement>(null);
+  const [cur, setCur] = useState<Moment | null>(null);
+  useEffect(() => {
+    if (cur) closeBtn.current?.focus();
+  }, [cur]);
+  const open = (m: Moment) => {
+    setCur(m);
+    dlg.current?.showModal();
+  };
+  return (
+    <>
+      <section className="wrap page-head">
+        <SectionHead as="h1" label={t(j.label, lang)} title={t(j.title, lang)} mute={t(j.titleMute, lang)}>
+          <p className="lead head-lead">{t(j.lead, lang)}</p>
+        </SectionHead>
+      </section>
+      <section className="wrap chapter" aria-label={t(j.label, lang)}>
+        <ul className="journal">
+          {journal.map((m) => (
+            <li key={m.key} className="rise">
+              <button type="button" className="journal-item" onClick={() => open(m)} aria-label={`${t(j.open, lang)}: ${t(m.alt, lang)}`}>
+                <Pic k={m.key} alt={t(m.alt, lang)} sizes="(max-width: 560px) 100vw, (max-width: 960px) 50vw, 33vw" />
+              </button>
+              <span className="mono">{t(m.caption, lang)}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+      <dialog ref={dlg} className="lightbox" onClick={(e) => e.target === dlg.current && dlg.current?.close()} onClose={() => setCur(null)}>
+        {cur && (
+          <figure>
+            <Pic k={cur.key} alt={t(cur.alt, lang)} sizes="100vw" eager />
+            <figcaption>
+              <span className="mono">{t(cur.caption, lang)}</span>
+              <button ref={closeBtn} type="button" className="icon-btn" onClick={() => dlg.current?.close()}>
+                {t(j.close, lang)}
+              </button>
+            </figcaption>
+          </figure>
+        )}
+      </dialog>
+    </>
   );
 }

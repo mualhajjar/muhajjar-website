@@ -11,6 +11,7 @@ export const ui = {
     experience: { ar: 'الخبرات', en: 'Experience' },
     projects: { ar: 'المشاريع المختارة', en: 'Selected Projects' },
     work: { ar: 'الأعمال الإعلامية', en: 'Media Work' },
+    journal: { ar: 'يوميات مصوّرة', en: 'Visual Journal' },
     expertise: { ar: 'مجالات الخبرة', en: 'Expertise' },
     contact: { ar: 'تواصل', en: 'Contact' },
   },
@@ -125,6 +126,15 @@ export const ui = {
     directoryNote: { ar: 'مشاريع إعلامية عملت عليها في وكالة هوية.', en: 'Media projects I worked on at HAWYIA Agency.' },
     all: { ar: 'الكل', en: 'All' },
     source: { ar: 'الصور من ملفات أعمال وكالة هوية الإعلامية.', en: 'Images: HAWYIA Agency portfolios.' },
+  },
+  journal: {
+    label: { ar: 'يوميات مصوّرة', en: 'Visual journal' },
+    title: { ar: 'لحظات من الطريق، ', en: 'Moments along the way, ' },
+    titleMute: { ar: 'بين المكاتب والمواقع والمعارض.', en: 'across offices, sites, and exhibitions.' },
+    lead: { ar: 'صور من أرشيفي الشخصي على مدار السنوات. هي لحظات من بيئة العمل وليست توثيقًا لمشاريع بعينها.', en: 'Photographs from my personal archive over the years: moments from working life rather than records of specific projects.' },
+    open: { ar: 'عرض الصورة', en: 'View photo' },
+    close: { ar: 'إغلاق', en: 'Close' },
+    more: { ar: 'اليوميات المصوّرة', en: 'Visual journal' },
   },
   systems: {
     label: { ar: 'الأنظمة الرقمية', en: 'Digital systems' },

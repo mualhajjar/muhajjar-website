@@ -1,7 +1,9 @@
 import { useEffect, useRef } from 'react';
 import { atWorkVideo, type Moment } from '../data/moments';
 import type { Lang } from '../data/types';
-import { t } from '../i18n';
+import { t, ui } from '../i18n';
+import { pathFor } from '../routes';
+import { Icon } from './Icon';
 import { Pic } from './Pic';
 
 /**
@@ -12,10 +14,18 @@ import { Pic } from './Pic';
  * - film:  the at-work video beside two photographs
  */
 type Props =
-  | { kind: 'wide'; items: [Moment]; lang: Lang }
-  | { kind: 'pair'; items: [Moment, Moment]; lang: Lang }
-  | { kind: 'trio'; items: [Moment, Moment, Moment]; lang: Lang }
-  | { kind: 'film'; items: [Moment, Moment]; lang: Lang };
+  | { kind: 'wide'; items: [Moment]; lang: Lang; more?: boolean }
+  | { kind: 'pair'; items: [Moment, Moment]; lang: Lang; more?: boolean }
+  | { kind: 'trio'; items: [Moment, Moment, Moment]; lang: Lang; more?: boolean }
+  | { kind: 'film'; items: [Moment, Moment]; lang: Lang; more?: boolean };
+
+function More({ lang }: { lang: Lang }) {
+  return (
+    <a className="link il-more" href={pathFor(lang, 'journal')}>
+      {t(ui.journal.more, lang)} <Icon name="arrow" flip />
+    </a>
+  );
+}
 
 function Shot({ m, lang, sizes }: { m: Moment; lang: Lang; sizes: string }) {
   return (
@@ -73,6 +83,7 @@ export function Interlude(p: Props) {
       {p.items.map((m, i) => (
         <Shot key={m.key} m={m} lang={lang} sizes={i === 0 ? '(max-width: 760px) 100vw, 55vw' : '(max-width: 760px) 100vw, 35vw'} />
       ))}
+      {p.more && <More lang={lang} />}
     </section>
   );
 }

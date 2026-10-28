@@ -141,7 +141,7 @@ export function Home({ route }: { route: Route }) {
         </div>
       </section>
 
-      <Interlude kind="trio" items={[M.gathering, M.site, M.awards]} lang={lang} />
+      <Interlude kind="trio" items={[M.gathering, M.site, M.awards]} lang={lang} more />
     </>
   );
 }

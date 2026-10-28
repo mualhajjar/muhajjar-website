@@ -178,7 +178,7 @@ export const languages: { name: T; level: T }[] = [
   { name: { ar: 'الإنجليزية', en: 'English' }, level: { ar: 'متوسط', en: 'Intermediate' } },
 ];
 
-/** Organisations the user has worked with (CVs, HAWYIA project list, and the user's own list). Logos in /public/images/logos. */
+/** Organisations the user has worked with (CVs, HAWYIA project list, and the user's own list). Logos in /public/assets/images/logos. */
 export const organisations: { logo: string; ext?: 'webp' | 'svg'; name: T }[] = [
   { logo: 'alsoliman-realestate', name: { ar: 'شركة السليمان العقارية', en: 'Alsoliman Real Estate' } },
   { logo: 'knight-frank', name: { ar: 'نايت فرانك', en: 'Knight Frank' } },

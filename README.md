@@ -16,7 +16,7 @@ Bilingual (Arabic RTL / English LTR) executive portfolio. React + TypeScript + V
 | `npm run dev` | Local development server at http://localhost:5173 (client-rendered, hot reload). |
 | `npm run build` | Type-checks, builds, and prerenders every page into `dist/`. |
 | `npm run preview` | Serves `dist/` at http://localhost:4173 to check the production build. |
-| `npm run images` | Rebuilds `src/data/images.json` after you add or replace project images. |
+| `npm run images` | Rebuilds `src/data/images.json` after you add or replace images in `public/assets/images/projects` or `moments`. |
 
 ## How it is built
 
@@ -41,10 +41,10 @@ src/
   styles/global.css   ← the whole design system (colour tokens at the top)
 public/
   fonts/              ← Thmanyah Sans + Thmanyah Serif Display (WOFF2)
-  images/             ← portrait, project images, logos
+  assets/images/      ← portrait, project images (projects/), photographs (moments/), logos (logos/)
   files/              ← CV and cover-letter PDFs (Arabic and English)
   .htaccess           ← HTTPS redirect, 404 pages, caching, compression
-  images/logo-black.png, images/logo-white.png  ← HAJJAR wordmark for light / dark themes
+  assets/images/logo-black.png, logo-white.png  ← HAJJAR wordmark for light / dark themes
   og-image.jpg, favicon-32.png, favicon-32-dark.png, apple-touch-icon.png, icon-512.png
 ```
 
@@ -52,13 +52,13 @@ All career facts are in `src/data`. Edit there and rebuild; no other file holds 
 
 ## Replacing assets
 
-**Profile photograph** — replace `public/images/portrait-480.webp`, `portrait-900.webp` and `portrait-900.jpg` with square crops of the new photo (same names, 480 × 480 and 900 × 900). Then run `npm run images`. The site shows the portrait in warm monochrome; to show it in colour, change `--portrait-filter` in `src/styles/global.css` to `none`. A photo against a plain background will look best (the current background has a fine line pattern).
+**Profile photograph** — replace `public/assets/images/portrait-480.webp`, `portrait-900.webp` and `portrait-900.jpg` with square crops of the new photo (same names, 480 × 480 and 900 × 900). Then run `npm run images`. The site shows the portrait in warm monochrome; to show it in colour, change `--portrait-filter` in `src/styles/global.css` to `none`. A photo against a plain background will look best (the current background has a fine line pattern).
 
-**Project images** — export WebP files (for example with squoosh.app) named `<key>-720.webp` and `<key>-1400.webp` into `public/images/projects/`, run `npm run images`, then reference `<key>` in `src/data/projects.ts` (`cover` or `gallery`). Always state where the image comes from in `imageSource`. Projects without imagery show a typographic plate instead of stock photography.
+**Project images** — export WebP files (for example with squoosh.app) named `<key>-720.webp` and `<key>-1400.webp` into `public/assets/images/projects/`, run `npm run images`, then reference `<key>` in `src/data/projects.ts` (`cover` or `gallery`). Always state where the image comes from in `imageSource`. Projects without imagery show a typographic plate instead of stock photography.
 
-**Logos** — transparent WebP or PNG in `public/images/logos/`, listed in `organisations` in `src/data/profile.ts`. Logos are shown as single-colour silhouettes so they sit quietly in both themes.
+**Logos** — transparent WebP or PNG in `public/assets/images/logos/`, listed in `organisations` in `src/data/profile.ts`. Logos are shown as single-colour silhouettes so they sit quietly in both themes.
 
-**Logo** — the header shows `public/images/logo-black.png` on the light theme and `logo-white.png` on the dark theme (transparent PNGs, 371 × 120). Replace both with the same size to update it.
+**Logo** — the header shows `public/assets/images/logo-black.png` on the light theme and `logo-white.png` on the dark theme (transparent PNGs, 371 × 120). Replace both with the same size to update it.
 
 **Favicon / social image** — replace `public/favicon-32.png` (light), `favicon-32-dark.png` (dark), `apple-touch-icon.png` (180 × 180), `icon-512.png`, and `og-image.jpg` (1200 × 630). The favicons use the H from the HAJJAR wordmark.
 
