@@ -99,6 +99,20 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/expertise/"/>
   </url>
   <url>
+    <loc>https://muhajjar.com/privacy/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/privacy/"/>
+  </url>
+  <url>
+    <loc>https://muhajjar.com/en/privacy/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhajjar.com/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://muhajjar.com/privacy/"/>
+  </url>
+  <url>
     <loc>https://muhajjar.com/projects/alsoliman-business-compound/</loc>
     <lastmod>2026-10-29</lastmod>
     <xhtml:link rel="alternate" hreflang="ar" href="https://muhajjar.com/projects/alsoliman-business-compound/"/>
