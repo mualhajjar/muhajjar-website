@@ -90,7 +90,7 @@ The repository `mualhajjar/muhajjar-website` has two branches:
 - **`source`** — this project (the code you edit).
 - **`main`** — the finished static site only. Hostinger's Git deployment pulls `main` into `public_html` automatically, as before.
 
-Publishing flow: edit on `source` and push. The workflow `.github/workflows/deploy.yml` runs on GitHub, builds the site, and commits the new `dist/` to `main`; Hostinger then deploys it. Do not edit `main` by hand; the next build overwrites it.
+Publishing flow: edit on `source` and push. The workflow `.github/workflows/deploy.yml` runs on GitHub, builds the site, and commits the new `dist/` to `main`; Hostinger then deploys it. The previous release's JavaScript file is kept for one more release, so pages still in Hostinger's or a browser's cache keep working. If the site looks out of date after a release, use **Clear cache** on the site's hPanel dashboard. Do not edit `main` by hand; the next build overwrites it.
 
 The previous single-page site is kept on the branch `legacy-site`.
 
