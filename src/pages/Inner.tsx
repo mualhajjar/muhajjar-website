@@ -3,7 +3,11 @@ import { catLabel, Plate, SectionHead } from '../components/Blocks';
 import { Icon } from '../components/Icon';
 import { Pic } from '../components/Pic';
 import { Interlude } from '../components/Interlude';
+import { PageNav, type PageSection } from '../components/PageNav';
+import logoSizes from '../data/logos.json';
 import { LeadBody } from '../components/CaseLead';
+import { ConsentSettingsButton } from '../components/Consent';
+import { privacySections } from '../data/privacy';
 import { journal, moments as M } from '../data/moments';
 import { useLightbox } from '../components/Lightbox';
 import { evidenceLabels, systems, type Evidence } from '../data/systems';
@@ -16,6 +20,18 @@ import { range, t, ui } from '../i18n';
 import { pathFor, type Route } from '../routes';
 
 /* ------------------------------------------------------------------ About */
+const LOGOS = logoSizes as Record<string, { w: number; h: number }>;
+
+/** About-page sections in the "On this page" navigation (IDs shared by both languages). */
+const ABOUT_SECTIONS: PageSection[] = [
+  { id: 'story', label: ui.about.story },
+  { id: 'orgs', label: ui.about.organisationsShort },
+  { id: 'education', label: ui.about.education },
+  { id: 'certifications', label: ui.about.certifications },
+  { id: 'awards', label: ui.about.awards },
+  { id: 'languages', label: ui.about.languages },
+];
+
 export function About({ route }: { route: Route }) {
   const { lang } = route;
   const a = ui.about;
@@ -25,9 +41,11 @@ export function About({ route }: { route: Route }) {
         <SectionHead as="h1" label={t(a.label, lang)} title={t(a.title, lang)} mute={t(a.titleMute, lang)} />
       </section>
 
+      <PageNav sections={ABOUT_SECTIONS} lang={lang} />
+
       <section className="wrap chapter split" aria-labelledby="story">
         <figure className="portrait portrait-about">
-          <Pic k="portrait" alt={t(ui.portraitAlt, lang)} sizes="(max-width: 860px) 80vw, 30vw" className="portrait-img" />
+          <Pic k="portrait" alt={t(ui.portraitAlt, lang)} sizes="(max-width: 860px) min(80vw, 360px), 30vw" eager className="portrait-img" />
           <figcaption className="mono">
             <span>{t(person.name, lang)}</span>
             <span>{t(person.title, lang)}</span>
@@ -57,7 +75,7 @@ export function About({ route }: { route: Route }) {
         <ul className="logos">
           {organisations.map((o) => (
             <li key={o.logo}>
-              <img src={`/assets/images/logos/${o.logo}.${o.ext ?? 'webp'}`} alt="" loading="lazy" decoding="async" />
+              <img src={`/assets/images/logos/${o.logo}.${o.ext ?? 'webp'}`} alt="" width={LOGOS[o.logo]?.w} height={LOGOS[o.logo]?.h} loading="lazy" decoding="async" />
               <span className="mono">{t(o.name, lang)}</span>
             </li>
           ))}
@@ -682,6 +700,34 @@ export function Journal({ route }: { route: Route }) {
         </ul>
       </section>
       {lb.node}
+    </>
+  );
+}
+
+/* ---------------------------------------------------------------- Privacy */
+export function Privacy({ route }: { route: Route }) {
+  const { lang } = route;
+  const pv = ui.privacy;
+  return (
+    <>
+      <section className="wrap page-head">
+        <SectionHead as="h1" label={t(pv.label, lang)} title={t(pv.title, lang) + ' '} mute={t(pv.titleMute, lang)}>
+          <p className="mono head-note">{t(pv.updated, lang)}</p>
+        </SectionHead>
+      </section>
+      <section className="wrap chapter privacy" aria-label={t(pv.label, lang)}>
+        {privacySections.map((sec) => (
+          <section key={sec.id} className="privacy-sec" aria-labelledby={`pv-${sec.id}`}>
+            <h2 id={`pv-${sec.id}`} className="mini-title">
+              {t(sec.title, lang)}
+            </h2>
+            {sec.body.map((b, i) => (
+              <p key={i}>{t(b, lang)}</p>
+            ))}
+            {sec.id === 'meta-pixel' && <ConsentSettingsButton lang={lang} className="btn btn-line" />}
+          </section>
+        ))}
+      </section>
     </>
   );
 }

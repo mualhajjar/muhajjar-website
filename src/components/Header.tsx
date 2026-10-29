@@ -4,23 +4,30 @@ import { t, ui } from '../i18n';
 import { other, pathFor, type PageId, type Route } from '../routes';
 import { Icon } from './Icon';
 
-const NAV: { page: PageId | 'contact'; key: keyof typeof ui.nav }[] = [
-  { page: 'home', key: 'home' },
+type NavItem = { page: PageId | 'contact'; key: keyof typeof ui.nav; hash?: string; desktop?: boolean };
+
+/** `desktop: false` keeps an item out of the compact desktop bar (it stays in the full menu and footer). */
+const NAV: NavItem[] = [
+  { page: 'home', key: 'home', desktop: false },
   { page: 'about', key: 'about' },
   { page: 'experience', key: 'experience' },
   { page: 'projects', key: 'projects' },
   { page: 'work', key: 'work' },
-  { page: 'journal', key: 'journal' },
+  { page: 'journal', key: 'journal', desktop: false },
   { page: 'expertise', key: 'expertise' },
+  { page: 'about', key: 'certifications', hash: 'certifications' },
   { page: 'contact', key: 'contact' },
 ];
 
-export function navHref(route: Route, page: PageId | 'contact') {
-  return page === 'contact' ? '#contact' : pathFor(route.lang, page);
+export function navHref(route: Route, page: PageId | 'contact', hash?: string) {
+  if (page === 'contact') return '#contact';
+  // Same page: a bare #anchor scrolls without reloading.
+  if (hash) return route.page === page ? `#${hash}` : `${pathFor(route.lang, page)}#${hash}`;
+  return pathFor(route.lang, page);
 }
 
-function isCurrent(route: Route, page: PageId | 'contact') {
-  if (page === 'contact') return false;
+function isCurrent(route: Route, page: PageId | 'contact', hash?: string) {
+  if (page === 'contact' || hash) return false;
   if (page === 'projects') return route.page === 'projects' || route.page === 'project';
   return route.page === page;
 }
@@ -109,14 +116,14 @@ export function Header({ route }: { route: Route }) {
       <header className="bar wrap">
         <a className="brand" href={pathFor(lang, 'home')}>
           <span className="brand-mark" aria-hidden="true">
-            <img className="logo-dark-ink" src="/assets/images/logo-black.png" alt="" width="371" height="120" />
-            <img className="logo-light-ink" src="/assets/images/logo-white.png" alt="" width="371" height="120" />
+            <img className="logo-dark-ink" src="/assets/images/logo-black.webp" alt="" width="222" height="72" />
+            <img className="logo-light-ink" src="/assets/images/logo-white.webp" alt="" width="222" height="72" />
           </span>
           <span className="brand-name">{t(person.name, lang)}</span>
         </a>
         <nav className="nav" aria-label={t(ui.primaryNav, lang)}>
-          {NAV.slice(1).filter((n) => n.page !== 'journal').map((n) => (
-            <a key={n.key} href={navHref(route, n.page)} aria-current={isCurrent(route, n.page) ? 'page' : undefined}>
+          {NAV.filter((n) => n.desktop !== false).map((n) => (
+            <a key={n.key} href={navHref(route, n.page, n.hash)} aria-current={isCurrent(route, n.page, n.hash) ? 'page' : undefined}>
               {t(ui.nav[n.key], lang)}
             </a>
           ))}
@@ -133,7 +140,7 @@ export function Header({ route }: { route: Route }) {
         <div className="overlay-top wrap">
           <span className="brand">
             <span className="brand-mark" aria-hidden="true">
-              <img src="/assets/images/logo-white.png" alt="" width="371" height="120" />
+              <img src="/assets/images/logo-white.webp" alt="" width="222" height="72" />
             </span>
             <span className="brand-name">{t(person.name, lang)}</span>
           </span>
@@ -143,7 +150,7 @@ export function Header({ route }: { route: Route }) {
         </div>
         <nav className="overlay-nav wrap" aria-label={t(ui.primaryNav, lang)}>
           {NAV.map((n, i) => (
-            <a key={n.key} href={navHref(route, n.page)} onClick={() => setOpen(false)} aria-current={isCurrent(route, n.page) ? 'page' : undefined}>
+            <a key={n.key} href={navHref(route, n.page, n.hash)} onClick={() => setOpen(false)} aria-current={isCurrent(route, n.page, n.hash) ? 'page' : undefined}>
               <span>{t(ui.nav[n.key], lang)}</span>
               <span className="mono">{String(i + 1).padStart(2, '0')}</span>
             </a>

@@ -91,3 +91,36 @@ Product logos are not used: the site shows product names in its own typography, 
 - 90M funding kept as a project-level result he supported, not a personal achievement. No budgets, attendance or sales figures added for either opening.
 - Slug `sukina-compound` → `sakenah-compound`; 301 redirect in `.htaccess`.
 - Not done: official project photos (alsoliman.com.sa unreachable from the build workspace). The Vimeo player could not be loaded locally for the same reason; verify playback on the live site.
+
+## Update — 29 Oct 2026: SEO, navigation, measurement
+
+Audit first (build crawl of every page, browser checks at 390 and 1440 px, Lighthouse mobile on a local gzip server). The site already had clean basics: one `h1` per page, canonical + `hreflang`, sitemap and robots, meaningful alts, no CLS. Changes:
+
+**Search and AI understanding**
+- JSON-LD on every indexable page as one linked graph: `Person` (with `@id`), current employer `Organization` (name from the Experience page, URL the official site the case studies already cite), `WebSite`, and a page node — `ProfilePage` for home and About, `CollectionPage` + `ItemList` for Projects, `WebPage` + `CreativeWork` for each case study, `WebPage` elsewhere — plus `BreadcrumbList` on all inner pages. Only facts shown on the site are used.
+- `robots: index, follow, max-image-preview:large` on indexable pages (404 keeps `noindex`).
+- Share previews: case studies with a large enough cover now get their own 1200 × 630 JPEG card (`public/og/`, `npm run og`); others keep the site card. Added `og:image:type` and `twitter:image:alt`.
+- Not added: `llms.txt` or other AI-specific files. No major search or answer engine documents using them; the prerendered HTML, sitemap and structured data are what these systems read, and nothing in robots.txt blocks them.
+
+**Performance and quality**
+- About: the portrait (its LCP element) was lazy-loaded; now eager with high priority and a correct `sizes` plus a new 640 px variant.
+- 480 px WebP variants for 60 project and moment images (picked up automatically by `npm run images`); corrected `sizes` for the film/pair interludes and the home stories.
+- Organisation logos now carry width/height (`src/data/logos.json`, generated).
+- Header wordmark: was squeezed out of proportion on phones; now scales with `object-fit` and ships as a 4.6 KB WebP instead of a 14 KB PNG.
+- Lighthouse (mobile, local): SEO 100 and Best Practices 100 on all tested pages; Accessibility 100 except a contrast flag Lighthouse raises on photo captions mid-fade-in (the settled colour passes). Performance varies ±8 between runs in this environment; side-by-side runs showed About LCP improving (~4.3 s → ~3.5 s) and the home page unchanged within noise. Home LCP is the hero paragraph waiting on the Arabic web fonts (~80 KB each); subsetting the Thmanyah fonts is the next lever, not done here because it needs the licence check in item 8 above.
+
+**Navigation**
+- "Certifications" link (to `/about/#certifications`) in the desktop bar, the full menu and the footer; desktop spacing tightened between 1081 and 1240 px so all links fit.
+- About page gets the same "On this page" strip as home (story, organisations, education, certifications, awards, languages). Current-section highlighting now works by position, so it is right both in the two-column desktop layout and when stacked.
+- Anchors inside sections no longer land under the sticky bars.
+
+**Featured projects carousel (phones only)**
+- Evaluated: on phones the four stacked stories took ~2,450 px of scrolling; on desktop the editorial rows read well. So the carousel applies only below 760 px: CSS scroll-snap with the next card peeking, previous/next buttons (44 px targets), a "2 / 4" counter announced politely, arrow-key support, and `region`/`group` carousel semantics. No autoplay. All four projects stay in the HTML in every mode, and without JavaScript the stacked list remains. Section height on phones: ~920 px.
+
+**Meta Pixel and privacy** — see `ANALYTICS.md`. Off until an ID is configured; consent required; Global Privacy Control honoured; no personal data in events; new Privacy page (`/privacy/`) and a "Privacy settings" control.
+
+**Search Console** — no previous verification file or tag existed in either branch. Domain property via DNS TXT is recommended (steps in `ANALYTICS.md`); an optional HTML-tag path is wired through `GOOGLE_SITE_VERIFICATION`.
+
+Verification: `npm run build` (typecheck + 38 prerendered pages), crawl of all pages (titles, descriptions, one `h1`, no heading skips, alts, JSON-LD parses and every `@id` reference resolves), browser tests for the carousel (buttons, swipe, arrow keys, focus, both languages), the Certifications anchor, the menu, and the full consent flow against a test Pixel ID with Meta's script stubbed (no request before consent, decline persists, accept → `consent grant` / `autoConfig false` / `init` / `PageView`, each conversion event, revoke clears `_fbp`, GPC). The test ID was never committed.
+
+**Font licence check (29 Oct 2026, item 8).** The licence embedded in the Thmanyah font files allows commercial use on websites, but forbids modifying, adapting, or creating derivative fonts; font subsetting therefore stays off the table unless Thmanyah grants it in writing (Ask@thmanyah.com). The same licence allows web embedding "only as part of a bundled, packaged or obfuscated product" and forbids making the files extractable or downloadable on their own. The site currently serves the WOFF2 files from `/fonts/` like any self-hosted web font; ask Thmanyah to confirm this is acceptable for a personal website (not legal advice).

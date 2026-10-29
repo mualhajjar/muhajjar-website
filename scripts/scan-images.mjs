@@ -35,7 +35,7 @@ for (const folder of ['projects', 'moments']) {
     (out[m[1]] ??= { variants: [] }).variants.push({ src: `/assets/images/${folder}/${f}`, w, h });
   }
 }
-const portrait = ['portrait-480.webp', 'portrait-900.webp'].map((f) => ({ src: `/assets/images/${f}`, ...webpSize(path.join(root, 'public/assets/images', f)) }));
+const portrait = ['portrait-480.webp', 'portrait-640.webp', 'portrait-900.webp'].map((f) => ({ src: `/assets/images/${f}`, ...webpSize(path.join(root, 'public/assets/images', f)) }));
 out.portrait = { variants: portrait };
 
 for (const e of Object.values(out)) {
@@ -48,3 +48,23 @@ for (const e of Object.values(out)) {
 }
 fs.writeFileSync(path.join(root, 'src/data/images.json'), JSON.stringify(out, null, 1) + '\n');
 console.log(`images.json: ${Object.keys(out).length} images`);
+
+// Logo sizes (WebP and SVG) so each <img> carries width/height and the page does not shift while they load.
+function svgSize(file) {
+  const s = fs.readFileSync(file, 'utf8').slice(0, 2000);
+  const vb = s.match(/viewBox="\s*[\d.-]+[\s,]+[\d.-]+[\s,]+([\d.]+)[\s,]+([\d.]+)/);
+  if (vb) return { w: Math.round(+vb[1]), h: Math.round(+vb[2]) };
+  const w = s.match(/\swidth="([\d.]+)/);
+  const h = s.match(/\sheight="([\d.]+)/);
+  if (w && h) return { w: Math.round(+w[1]), h: Math.round(+h[1]) };
+  throw new Error(`No size in ${file}`);
+}
+const logoDir = path.join(root, 'public/assets/images/logos');
+const logos = {};
+for (const f of fs.readdirSync(logoDir).sort()) {
+  const m = f.match(/^(.*)\.(webp|svg)$/);
+  if (!m) continue;
+  logos[m[1]] = m[2] === 'svg' ? svgSize(path.join(logoDir, f)) : webpSize(path.join(logoDir, f));
+}
+fs.writeFileSync(path.join(root, 'src/data/logos.json'), JSON.stringify(logos, null, 1) + '\n');
+console.log(`logos.json: ${Object.keys(logos).length} logos`);

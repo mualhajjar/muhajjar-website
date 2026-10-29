@@ -78,7 +78,7 @@ export function Interlude(p: Props) {
       <section id={id} className="interlude il-film wrap" aria-label={t(atWorkVideo.caption, lang)}>
         <Film lang={lang} />
         <Shot m={p.items[0]} lang={lang} sizes="(max-width: 760px) 100vw, 40vw" onOpen={lb.open} />
-        <Shot m={p.items[1]} lang={lang} sizes="(max-width: 760px) 100vw, 30vw" onOpen={lb.open} />
+        <Shot m={p.items[1]} lang={lang} sizes="(max-width: 760px) 56vw, 30vw" onOpen={lb.open} />
         {lb.node}
       </section>
     );
@@ -87,7 +87,7 @@ export function Interlude(p: Props) {
   return (
     <section id={id} className={`interlude ${cls} wrap`} aria-label={p.items.map((m) => t(m.caption, lang)).join(' · ')}>
       {p.items.map((m, i) => (
-        <Shot key={m.key} m={m} lang={lang} sizes={i === 0 ? '(max-width: 760px) 100vw, 55vw' : '(max-width: 760px) 100vw, 35vw'} onOpen={lb.open} />
+        <Shot key={m.key} m={m} lang={lang} sizes={i === 0 ? '(max-width: 760px) 100vw, 55vw' : p.kind === 'pair' ? '(max-width: 760px) 72vw, 35vw' : '(max-width: 760px) 100vw, 35vw'} onOpen={lb.open} />
       ))}
       {p.more && <More lang={lang} />}
       {lb.node}

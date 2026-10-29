@@ -7,7 +7,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dist = path.join(root, 'dist');
 const SITE = 'https://muhajjar.com';
 
-const { render, allRoutes, pathFor } = await import(pathToFileURL(path.join(root, 'dist-ssr/entry-server.js')).href);
+const { render, allRoutes, pathFor, META_PIXEL_ID, META_PIXEL_INVALID, GOOGLE_SITE_VERIFICATION } = await import(pathToFileURL(path.join(root, 'dist-ssr/entry-server.js')).href);
 let template = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
 
 // Inline the stylesheet (about 7 KB gzipped) so first paint does not wait on a request.
@@ -54,3 +54,5 @@ fs.writeFileSync(
 fs.writeFileSync(path.join(dist, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`);
 fs.rmSync(path.join(root, 'dist-ssr'), { recursive: true, force: true });
 console.log(`Prerendered ${routes.length} pages + 404 pages, sitemap.xml, robots.txt`);
+console.log(`Meta Pixel: ${META_PIXEL_ID ? 'on (' + META_PIXEL_ID + '), consent required' : 'off'} · Search Console meta tag: ${GOOGLE_SITE_VERIFICATION ? 'on' : 'off'}`);
+if (META_PIXEL_INVALID) console.warn('WARNING: META_PIXEL_ID is set but is not a numeric Pixel ID, so the Pixel stays off. Check src/config.ts or the build variable.');

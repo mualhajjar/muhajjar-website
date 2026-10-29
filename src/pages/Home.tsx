@@ -3,7 +3,8 @@ import { Icon } from '../components/Icon';
 import { Pic } from '../components/Pic';
 import { Interlude } from '../components/Interlude';
 import { moments as M } from '../data/moments';
-import { ProjectStory, SectionHead } from '../components/Blocks';
+import { SectionHead } from '../components/Blocks';
+import { StoryRail } from '../components/StoryRail';
 import { PageNav, type PageSection } from '../components/PageNav';
 import { expertiseGroups } from '../data/expertise';
 import { award, experience, hero, metrics, overview, person } from '../data/profile';
@@ -87,11 +88,7 @@ export function Home({ route }: { route: Route }) {
             {t(s.allProjects, lang)} ({projects.length}) <Icon name="arrow" flip />
           </a>
         </SectionHead>
-        <div className="stories">
-          {featuredProjects.map((p, i) => (
-            <ProjectStory key={p.slug} p={p} lang={lang} index={i} />
-          ))}
-        </div>
+        <StoryRail items={featuredProjects} lang={lang} />
       </section>
 
       <Interlude kind="wide" items={[M.event]} lang={lang} />

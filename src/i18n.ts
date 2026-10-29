@@ -13,6 +13,7 @@ export const ui = {
     work: { ar: 'الأعمال الإعلامية', en: 'Media Work' },
     journal: { ar: 'يوميات مصوّرة', en: 'Visual Journal' },
     expertise: { ar: 'مجالات الخبرة', en: 'Expertise' },
+    certifications: { ar: 'الشهادات', en: 'Certifications' },
     contact: { ar: 'تواصل', en: 'Contact' },
   },
   menu: { ar: 'القائمة', en: 'Menu' },
@@ -81,6 +82,7 @@ export const ui = {
     awards: { ar: 'الجوائز', en: 'Awards' },
     languages: { ar: 'اللغات', en: 'Languages' },
     organisations: { ar: 'جهات عملت معها', en: 'Organisations I have worked with' },
+    organisationsShort: { ar: 'الجهات', en: 'Organisations' },
   },
   experience: {
     label: { ar: 'الخبرات', en: 'Experience' },
@@ -176,6 +178,32 @@ export const ui = {
     titleMute: { ar: 'بين الإبداع والانضباط التجاري.', en: 'creative vision and commercial discipline.' },
     process: { ar: 'طريقة العمل', en: 'How I work' },
     tools: { ar: 'الأنظمة', en: 'Systems' },
+  },
+  rail: {
+    label: { ar: 'مشاريع مختارة', en: 'Selected projects' },
+    prev: { ar: 'المشروع السابق', en: 'Previous project' },
+    next: { ar: 'المشروع التالي', en: 'Next project' },
+    of: { ar: 'من', en: 'of' },
+    hint: { ar: 'اسحب أفقيًا لتصفّح المشاريع', en: 'Swipe sideways to browse projects' },
+  },
+  consent: {
+    title: { ar: 'قياس الإعلانات', en: 'Advertising measurement' },
+    text: {
+      ar: 'أستخدم Meta Pixel لقياس زيارات الموقع ونتائج الإعلانات على فيسبوك وإنستغرام، ولا يعمل إلا بموافقتك. يمكنك تغيير اختيارك في أي وقت.',
+      en: 'I use Meta Pixel to measure site visits and the results of ads on Facebook and Instagram. It runs only if you agree, and you can change your choice at any time.',
+    },
+    more: { ar: 'سياسة الخصوصية', en: 'Privacy notice' },
+    accept: { ar: 'موافق', en: 'Accept' },
+    decline: { ar: 'رفض', en: 'Decline' },
+    settings: { ar: 'إعدادات الخصوصية', en: 'Privacy settings' },
+    stateOn: { ar: 'الحالة الآن: القياس مفعّل.', en: 'Current choice: measurement on.' },
+    stateOff: { ar: 'الحالة الآن: القياس متوقف.', en: 'Current choice: measurement off.' },
+  },
+  privacy: {
+    label: { ar: 'الخصوصية', en: 'Privacy' },
+    title: { ar: 'الخصوصية', en: 'Privacy' },
+    titleMute: { ar: 'وبيانات الزوار.', en: 'and visitor data.' },
+    updated: { ar: 'آخر تحديث: أكتوبر 2026', en: 'Last updated: October 2026' },
   },
   notfound: {
     title: { ar: 'الصفحة غير موجودة', en: 'Page not found' },

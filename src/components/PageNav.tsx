@@ -35,10 +35,21 @@ export function PageNav({ sections, lang }: { sections: PageSection[]; lang: Lan
     const update = () => {
       raf = 0;
       const line = (bar?.offsetHeight ?? 0) + (navRef.current?.offsetHeight ?? 0) + 40;
+      // By position, not list order: on the About page some sections sit side by side
+      // on wide screens and stack in a different order on phones.
       let id: string | null = null;
-      for (const el of els) if (el.getBoundingClientRect().top <= line) id = el.id;
+      let best = -Infinity;
+      let lowest: HTMLElement = els[0];
+      for (const el of els) {
+        const top = el.getBoundingClientRect().top;
+        if (top <= line && top >= best) {
+          best = top;
+          id = el.id;
+        }
+        if (top >= lowest.getBoundingClientRect().top) lowest = el;
+      }
       // At the very bottom the last section may never reach the line.
-      if (innerHeight + scrollY >= document.documentElement.scrollHeight - 2) id = els[els.length - 1].id;
+      if (innerHeight + scrollY >= document.documentElement.scrollHeight - 2) id = lowest.id;
       setCurrent((prev) => (prev === id ? prev : id));
     };
     const onScroll = () => {

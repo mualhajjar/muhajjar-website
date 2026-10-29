@@ -13,3 +13,4 @@ export function render(route: Route) {
 }
 
 export { allRoutes, pathFor, resolve };
+export { GOOGLE_SITE_VERIFICATION, META_PIXEL_ID, META_PIXEL_INVALID } from './config';

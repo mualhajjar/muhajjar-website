@@ -3,7 +3,7 @@
 ## قبل النشر
 - [ ] راجع البنود المعلّمة «للمراجعة» في `REVIEW.md` وصحّح ما يلزم في `src/data/`.
 - [ ] تأكد أن الصورة الشخصية صورتك، وأن ملفات السيرة في `public/files/` هي النسخ الأحدث.
-- [ ] `npm install` ثم `npm run build` دون أخطاء (يطبع: Prerendered 30 pages).
+- [ ] `npm install` ثم `npm run build` دون أخطاء (يطبع: Prerendered 38 pages، وسطر حالة Meta Pixel).
 - [ ] `npm run preview` وافتح http://localhost:4173 و http://localhost:4173/en/ للمعاينة.
 - [ ] خذ نسخة احتياطية من `public_html` الحالي (الموقع السابق محفوظ في المستودع في الفرع `legacy-site`).
 
@@ -26,6 +26,7 @@
 - [ ] `https://muhajjar.com/sitemap.xml` و `https://muhajjar.com/robots.txt` يظهران.
 
 ## خلال الأسبوع الأول
-- [ ] Google Search Console: أضف النطاق وأرسل `sitemap.xml`.
+- [ ] Google Search Console: خاصية «نطاق» عبر سجل TXT في hPanel، ثم أرسل `sitemap.xml` (الخطوات في `ANALYTICS.md`).
+- [ ] Meta Pixel (اختياري): أضف المتغيّر `META_PIXEL_ID` في GitHub وأعد النشر، ثم تحقّق بـ Meta Pixel Helper أن Pixel لا يعمل قبل «موافق» ويعمل بعده.
 - [ ] LinkedIn Post Inspector: حدّث معاينة الرابط لتظهر صورة المشاركة الجديدة.
 - [ ] اختبر PageSpeed Insights على الرابط الحي (مع ضغط Hostinger وذاكرته المؤقتة تكون النتيجة أفضل من الاختبار المحلي).
