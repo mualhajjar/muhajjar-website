@@ -34,6 +34,11 @@ jobs:
       - name: Commit dist/ to main
         run: |
           git clone --depth 1 --branch main "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" site
+          # Keep the previous release's JS/CSS (content-hashed names) for one more release, so pages
+          # still held in a server or browser cache keep working until they refresh.
+          for f in $(grep -rhoE '/assets/[A-Za-z0-9_.-]+\.(js|css)' site --include='*.html' | sort -u || true); do
+            if [ -f "site$f" ] && [ ! -f "dist$f" ]; then cp "site$f" "dist$f"; echo "kept $f"; fi
+          done
           find site -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
           cp -a dist/. site/
           cd site
