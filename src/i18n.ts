@@ -18,6 +18,10 @@ export const ui = {
   menu: { ar: 'القائمة', en: 'Menu' },
   close: { ar: 'إغلاق', en: 'Close' },
   primaryNav: { ar: 'التنقل الرئيسي', en: 'Primary' },
+  pageNav: {
+    label: { ar: 'أقسام الصفحة', en: 'On this page' },
+    moments: { ar: 'من الذاكرة', en: 'Moments' },
+  },
   langSwitch: { ar: 'English', en: 'العربية' },
   langSwitchLabel: { ar: 'Switch to English', en: 'التبديل إلى العربية' },
   themeLabel: { ar: 'تبديل المظهر الفاتح والداكن', en: 'Toggle light and dark theme' },

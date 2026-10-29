@@ -15,10 +15,10 @@ import { useLightbox } from './Lightbox';
  * - film:  the at-work video beside two photographs
  */
 type Props =
-  | { kind: 'wide'; items: [Moment]; lang: Lang; more?: boolean }
-  | { kind: 'pair'; items: [Moment, Moment]; lang: Lang; more?: boolean }
-  | { kind: 'trio'; items: [Moment, Moment, Moment]; lang: Lang; more?: boolean }
-  | { kind: 'film'; items: [Moment, Moment]; lang: Lang; more?: boolean };
+  | { id?: string; kind: 'wide'; items: [Moment]; lang: Lang; more?: boolean }
+  | { id?: string; kind: 'pair'; items: [Moment, Moment]; lang: Lang; more?: boolean }
+  | { id?: string; kind: 'trio'; items: [Moment, Moment, Moment]; lang: Lang; more?: boolean }
+  | { id?: string; kind: 'film'; items: [Moment, Moment]; lang: Lang; more?: boolean };
 
 function More({ lang }: { lang: Lang }) {
   return (
@@ -63,11 +63,11 @@ function Film({ lang }: { lang: Lang }) {
 }
 
 export function Interlude(p: Props) {
-  const { lang } = p;
+  const { lang, id } = p;
   const lb = useLightbox(lang);
   if (p.kind === 'wide') {
     return (
-      <section className="interlude il-wide wrap" aria-label={t(p.items[0].caption, lang)}>
+      <section id={id} className="interlude il-wide wrap" aria-label={t(p.items[0].caption, lang)}>
         <Shot m={p.items[0]} lang={lang} sizes="100vw" onOpen={lb.open} />
         {lb.node}
       </section>
@@ -75,7 +75,7 @@ export function Interlude(p: Props) {
   }
   if (p.kind === 'film') {
     return (
-      <section className="interlude il-film wrap" aria-label={t(atWorkVideo.caption, lang)}>
+      <section id={id} className="interlude il-film wrap" aria-label={t(atWorkVideo.caption, lang)}>
         <Film lang={lang} />
         <Shot m={p.items[0]} lang={lang} sizes="(max-width: 760px) 100vw, 40vw" onOpen={lb.open} />
         <Shot m={p.items[1]} lang={lang} sizes="(max-width: 760px) 100vw, 30vw" onOpen={lb.open} />
@@ -85,7 +85,7 @@ export function Interlude(p: Props) {
   }
   const cls = p.kind === 'pair' ? 'il-pair' : 'il-trio';
   return (
-    <section className={`interlude ${cls} wrap`} aria-label={p.items.map((m) => t(m.caption, lang)).join(' · ')}>
+    <section id={id} className={`interlude ${cls} wrap`} aria-label={p.items.map((m) => t(m.caption, lang)).join(' · ')}>
       {p.items.map((m, i) => (
         <Shot key={m.key} m={m} lang={lang} sizes={i === 0 ? '(max-width: 760px) 100vw, 55vw' : '(max-width: 760px) 100vw, 35vw'} onOpen={lb.open} />
       ))}

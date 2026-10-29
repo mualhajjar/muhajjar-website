@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type MouseEvent } from 'react';
+import { useEffect, useRef, useState, type KeyboardEvent, type MouseEvent } from 'react';
 import { person } from '../data/profile';
 import { t, ui } from '../i18n';
 import { other, pathFor, type PageId, type Route } from '../routes';
@@ -63,10 +63,32 @@ export function Header({ route }: { route: Route }) {
     if (!open) return;
     document.body.style.overflow = 'hidden';
     closeRef.current?.focus();
+    // The menu is a mobile layout: if the screen widens to the desktop bar, close it.
+    const mq = matchMedia('(min-width: 1081px)');
+    const onMq = () => mq.matches && setOpen(false);
+    mq.addEventListener('change', onMq);
     return () => {
       document.body.style.overflow = '';
+      mq.removeEventListener('change', onMq);
     };
   }, [open]);
+
+  /** Escape closes; Tab stays inside the open menu (it is announced as a modal dialog). */
+  const onMenuKey = (e: KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === 'Escape') return close();
+    if (e.key !== 'Tab') return;
+    const items = Array.from(e.currentTarget.querySelectorAll<HTMLElement>('a[href], button:not([disabled])'));
+    if (!items.length) return;
+    const first = items[0];
+    const last = items[items.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  };
 
   /** Keep the reader's place: carry the current #section across languages. */
   const keepHash = (e: MouseEvent<HTMLAnchorElement>) => {
@@ -107,7 +129,7 @@ export function Header({ route }: { route: Route }) {
           </button>
         </div>
       </header>
-      <div id="site-menu" className="overlay" role="dialog" aria-modal="true" aria-label={t(ui.menu, lang)} hidden={!open} onKeyDown={(e) => e.key === 'Escape' && close()}>
+      <div id="site-menu" className="overlay" role="dialog" aria-modal="true" aria-label={t(ui.menu, lang)} hidden={!open} onKeyDown={onMenuKey}>
         <div className="overlay-top wrap">
           <span className="brand">
             <span className="brand-mark" aria-hidden="true">

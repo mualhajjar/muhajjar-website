@@ -4,13 +4,22 @@ import { Pic } from '../components/Pic';
 import { Interlude } from '../components/Interlude';
 import { moments as M } from '../data/moments';
 import { ProjectStory, SectionHead } from '../components/Blocks';
+import { PageNav, type PageSection } from '../components/PageNav';
 import { expertiseGroups } from '../data/expertise';
 import { award, experience, hero, metrics, overview, person } from '../data/profile';
 import { featuredProjects, projects } from '../data/projects';
 import { range, t, ui } from '../i18n';
 import { pathFor, type Route } from '../routes';
 
-/** Years where a role began (from the CV). */
+/** Home-page sections reachable from the "On this page" navigation. IDs are shared by both languages. */
+const SECTIONS: PageSection[] = [
+  { id: 'overview', label: ui.sec.overview },
+  { id: 'projects', label: ui.sec.selected },
+  { id: 'expertise', label: ui.sec.expertise },
+  { id: 'career', label: ui.sec.career },
+  { id: 'moments', label: ui.pageNav.moments },
+  { id: 'contact', label: ui.nav.contact },
+];
 
 export function Home({ route }: { route: Route }) {
   const { lang } = route;
@@ -51,7 +60,9 @@ export function Home({ route }: { route: Route }) {
         </div>
       </section>
 
-      <section className="wrap metrics-sec" aria-labelledby="metrics-title">
+      <PageNav sections={SECTIONS} lang={lang} />
+
+      <section className="wrap metrics-sec" id="overview" aria-labelledby="metrics-title">
         <div className="brief">
           <p className="mono label" id="metrics-title">
             {t(s.overview, lang)}
@@ -70,7 +81,7 @@ export function Home({ route }: { route: Route }) {
 
       <Interlude kind="film" items={[M.presentation, M.studio]} lang={lang} />
 
-      <section className="wrap chapter" aria-labelledby="selected-title">
+      <section className="wrap chapter" id="projects" aria-labelledby="selected-title">
         <SectionHead id="selected-title" label={t(s.selected, lang)} title={t(s.selectedTitle, lang)} mute={t(s.selectedTitleMute, lang)}>
           <a className="link head-link" href={pathFor(lang, 'projects')}>
             {t(s.allProjects, lang)} ({projects.length}) <Icon name="arrow" flip />
@@ -85,7 +96,7 @@ export function Home({ route }: { route: Route }) {
 
       <Interlude kind="wide" items={[M.event]} lang={lang} />
 
-      <section className="wrap chapter" aria-labelledby="expertise-title">
+      <section className="wrap chapter" id="expertise" aria-labelledby="expertise-title">
         <SectionHead id="expertise-title" label={t(s.expertise, lang)} title={t(s.expertiseTitle, lang)} mute={t(s.expertiseTitleMute, lang)}>
           <a className="link head-link" href={pathFor(lang, 'expertise')}>
             {t(s.allExpertise, lang)} <Icon name="arrow" flip />
@@ -102,7 +113,7 @@ export function Home({ route }: { route: Route }) {
         </div>
       </section>
 
-      <section className="wrap chapter" aria-labelledby="career-title">
+      <section className="wrap chapter" id="career" aria-labelledby="career-title">
         <SectionHead id="career-title" label={t(s.career, lang)} title={t(s.careerTitle, lang)} mute={t(s.careerTitleMute, lang)}>
           <a className="link head-link" href={pathFor(lang, 'experience')}>
             {t(s.fullExperience, lang)} <Icon name="arrow" flip />
@@ -132,7 +143,7 @@ export function Home({ route }: { route: Route }) {
         </div>
       </section>
 
-      <Interlude kind="trio" items={[M.gathering, M.site, M.awards]} lang={lang} more />
+      <Interlude id="moments" kind="trio" items={[M.gathering, M.site, M.awards]} lang={lang} more />
     </>
   );
 }
