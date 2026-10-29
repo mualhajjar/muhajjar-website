@@ -11,7 +11,7 @@
  */
 
 /** Meta Pixel (Facebook/Instagram ads) dataset ID: digits only, from Meta Events Manager. */
-const META_PIXEL_ID_IN_FILE = '';
+const META_PIXEL_ID_IN_FILE = '2923322808032879';
 
 /**
  * Google Search Console "HTML tag" token (the content="…" value only), used only if you verify
