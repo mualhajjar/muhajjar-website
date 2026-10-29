@@ -117,7 +117,8 @@ function personLd(lang: Lang) {
     telephone: '+966555947624',
     address: { '@type': 'PostalAddress', addressLocality: 'Riyadh', addressCountry: 'SA' },
     worksFor: { '@id': EMPLOYER_ID },
-    alumniOf: education.map((e) => ({ '@type': 'EducationalOrganization', name: e.school.en })),
+    // Graduates only: a programme still in progress ("Present") is not alumni status.
+    alumniOf: education.filter((e) => !/Present/.test(e.dates.en)).map((e) => ({ '@type': 'EducationalOrganization', name: e.school.en })),
     award: `${award.title.en}, ${award.detail.en} (company award; campaign team member)`,
     knowsLanguage: ['ar', 'en'],
     knowsAbout: ['Project Management', 'Business Development', 'RFP Development', 'Contract Negotiation', 'Procurement', 'SAP ERP (MM)', 'Bitrix24 CRM', 'Real Estate Marketing', 'Brand Strategy', 'Media Production', 'Events & Exhibitions'],
