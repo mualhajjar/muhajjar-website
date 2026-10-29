@@ -2,6 +2,11 @@
  "alqahtani-stationery": {
   "variants": [
    {
+    "src": "/assets/images/projects/alqahtani-stationery-480.webp",
+    "w": 480,
+    "h": 438
+   },
+   {
     "src": "/assets/images/projects/alqahtani-stationery-720.webp",
     "w": 662,
     "h": 604
@@ -12,6 +17,11 @@
  },
  "bader-billboard": {
   "variants": [
+   {
+    "src": "/assets/images/projects/bader-billboard-480.webp",
+    "w": 480,
+    "h": 160
+   },
    {
     "src": "/assets/images/projects/bader-billboard-720.webp",
     "w": 720,
@@ -29,6 +39,11 @@
  "bader-cover": {
   "variants": [
    {
+    "src": "/assets/images/projects/bader-cover-480.webp",
+    "w": 480,
+    "h": 345
+   },
+   {
     "src": "/assets/images/projects/bader-cover-720.webp",
     "w": 720,
     "h": 518
@@ -44,6 +59,11 @@
  },
  "bader-exhibition": {
   "variants": [
+   {
+    "src": "/assets/images/projects/bader-exhibition-480.webp",
+    "w": 480,
+    "h": 128
+   },
    {
     "src": "/assets/images/projects/bader-exhibition-720.webp",
     "w": 720,
@@ -61,6 +81,11 @@
  "bader-highway": {
   "variants": [
    {
+    "src": "/assets/images/projects/bader-highway-480.webp",
+    "w": 480,
+    "h": 196
+   },
+   {
     "src": "/assets/images/projects/bader-highway-720.webp",
     "w": 720,
     "h": 294
@@ -76,6 +101,11 @@
  },
  "bader-museum": {
   "variants": [
+   {
+    "src": "/assets/images/projects/bader-museum-480.webp",
+    "w": 480,
+    "h": 257
+   },
    {
     "src": "/assets/images/projects/bader-museum-720.webp",
     "w": 720,
@@ -93,6 +123,11 @@
  "bader-planning": {
   "variants": [
    {
+    "src": "/assets/images/projects/bader-planning-480.webp",
+    "w": 480,
+    "h": 204
+   },
+   {
     "src": "/assets/images/projects/bader-planning-720.webp",
     "w": 720,
     "h": 307
@@ -108,6 +143,11 @@
  },
  "bader-showvilla": {
   "variants": [
+   {
+    "src": "/assets/images/projects/bader-showvilla-480.webp",
+    "w": 480,
+    "h": 257
+   },
    {
     "src": "/assets/images/projects/bader-showvilla-720.webp",
     "w": 720,
@@ -125,6 +165,11 @@
  "bader-villa": {
   "variants": [
    {
+    "src": "/assets/images/projects/bader-villa-480.webp",
+    "w": 480,
+    "h": 272
+   },
+   {
     "src": "/assets/images/projects/bader-villa-720.webp",
     "w": 720,
     "h": 408
@@ -140,6 +185,11 @@
  },
  "bankruptcy-event": {
   "variants": [
+   {
+    "src": "/assets/images/projects/bankruptcy-event-480.webp",
+    "w": 480,
+    "h": 392
+   },
    {
     "src": "/assets/images/projects/bankruptcy-event-720.webp",
     "w": 720,
@@ -157,6 +207,11 @@
  "bankruptcy-infographic": {
   "variants": [
    {
+    "src": "/assets/images/projects/bankruptcy-infographic-480.webp",
+    "w": 480,
+    "h": 228
+   },
+   {
     "src": "/assets/images/projects/bankruptcy-infographic-720.webp",
     "w": 720,
     "h": 343
@@ -172,6 +227,11 @@
  },
  "basmah-billboard": {
   "variants": [
+   {
+    "src": "/assets/images/projects/basmah-billboard-480.webp",
+    "w": 480,
+    "h": 317
+   },
    {
     "src": "/assets/images/projects/basmah-billboard-720.webp",
     "w": 720,
@@ -189,6 +249,11 @@
  "basmah-infographic": {
   "variants": [
    {
+    "src": "/assets/images/projects/basmah-infographic-480.webp",
+    "w": 480,
+    "h": 228
+   },
+   {
     "src": "/assets/images/projects/basmah-infographic-720.webp",
     "w": 720,
     "h": 343
@@ -205,6 +270,11 @@
  "basmah-office": {
   "variants": [
    {
+    "src": "/assets/images/projects/basmah-office-480.webp",
+    "w": 480,
+    "h": 432
+   },
+   {
     "src": "/assets/images/projects/basmah-office-720.webp",
     "w": 671,
     "h": 604
@@ -215,6 +285,11 @@
  },
  "csr-healthwaqf": {
   "variants": [
+   {
+    "src": "/assets/images/projects/csr-healthwaqf-480.webp",
+    "w": 480,
+    "h": 499
+   },
    {
     "src": "/assets/images/projects/csr-healthwaqf-720.webp",
     "w": 720,
@@ -227,6 +302,11 @@
  "csr-subaie": {
   "variants": [
    {
+    "src": "/assets/images/projects/csr-subaie-480.webp",
+    "w": 480,
+    "h": 351
+   },
+   {
     "src": "/assets/images/projects/csr-subaie-720.webp",
     "w": 720,
     "h": 526
@@ -237,6 +317,11 @@
  },
  "csr-subaie-booth": {
   "variants": [
+   {
+    "src": "/assets/images/projects/csr-subaie-booth-480.webp",
+    "w": 480,
+    "h": 365
+   },
    {
     "src": "/assets/images/projects/csr-subaie-booth-720.webp",
     "w": 720,
@@ -254,6 +339,11 @@
  "csr-traof": {
   "variants": [
    {
+    "src": "/assets/images/projects/csr-traof-480.webp",
+    "w": 480,
+    "h": 291
+   },
+   {
     "src": "/assets/images/projects/csr-traof-689.webp",
     "w": 689,
     "h": 418
@@ -264,6 +354,11 @@
  },
  "harf-art": {
   "variants": [
+   {
+    "src": "/assets/images/projects/harf-art-480.webp",
+    "w": 480,
+    "h": 479
+   },
    {
     "src": "/assets/images/projects/harf-art-720.webp",
     "w": 720,
@@ -276,6 +371,11 @@
  "harf-desk": {
   "variants": [
    {
+    "src": "/assets/images/projects/harf-desk-480.webp",
+    "w": 480,
+    "h": 468
+   },
+   {
     "src": "/assets/images/projects/harf-desk-720.webp",
     "w": 720,
     "h": 702
@@ -286,6 +386,11 @@
  },
  "harf-gallery": {
   "variants": [
+   {
+    "src": "/assets/images/projects/harf-gallery-480.webp",
+    "w": 480,
+    "h": 278
+   },
    {
     "src": "/assets/images/projects/harf-gallery-720.webp",
     "w": 720,
@@ -303,6 +408,11 @@
  "harf-giftbox": {
   "variants": [
    {
+    "src": "/assets/images/projects/harf-giftbox-480.webp",
+    "w": 480,
+    "h": 425
+   },
+   {
     "src": "/assets/images/projects/harf-giftbox-720.webp",
     "w": 720,
     "h": 637
@@ -313,6 +423,11 @@
  },
  "harf-interior": {
   "variants": [
+   {
+    "src": "/assets/images/projects/harf-interior-480.webp",
+    "w": 480,
+    "h": 279
+   },
    {
     "src": "/assets/images/projects/harf-interior-720.webp",
     "w": 720,
@@ -325,6 +440,11 @@
  "harf-oud": {
   "variants": [
    {
+    "src": "/assets/images/projects/harf-oud-480.webp",
+    "w": 480,
+    "h": 305
+   },
+   {
     "src": "/assets/images/projects/harf-oud-720.webp",
     "w": 720,
     "h": 457
@@ -335,6 +455,11 @@
  },
  "harf-room": {
   "variants": [
+   {
+    "src": "/assets/images/projects/harf-room-480.webp",
+    "w": 480,
+    "h": 479
+   },
    {
     "src": "/assets/images/projects/harf-room-720.webp",
     "w": 720,
@@ -352,6 +477,11 @@
  "harf-store": {
   "variants": [
    {
+    "src": "/assets/images/projects/harf-store-480.webp",
+    "w": 480,
+    "h": 479
+   },
+   {
     "src": "/assets/images/projects/harf-store-720.webp",
     "w": 720,
     "h": 718
@@ -363,6 +493,11 @@
  "kit-360": {
   "variants": [
    {
+    "src": "/assets/images/projects/kit-360-480.webp",
+    "w": 480,
+    "h": 356
+   },
+   {
     "src": "/assets/images/projects/kit-360-715.webp",
     "w": 715,
     "h": 530
@@ -373,6 +508,11 @@
  },
  "kit-3dfilm": {
   "variants": [
+   {
+    "src": "/assets/images/projects/kit-3dfilm-480.webp",
+    "w": 480,
+    "h": 248
+   },
    {
     "src": "/assets/images/projects/kit-3dfilm-720.webp",
     "w": 681,
@@ -390,6 +530,11 @@
  "kit-3dsign": {
   "variants": [
    {
+    "src": "/assets/images/projects/kit-3dsign-480.webp",
+    "w": 480,
+    "h": 285
+   },
+   {
     "src": "/assets/images/projects/kit-3dsign-720.webp",
     "w": 720,
     "h": 428
@@ -400,6 +545,11 @@
  },
  "kit-campaign": {
   "variants": [
+   {
+    "src": "/assets/images/projects/kit-campaign-480.webp",
+    "w": 480,
+    "h": 333
+   },
    {
     "src": "/assets/images/projects/kit-campaign-720.webp",
     "w": 720,
@@ -412,6 +562,11 @@
  "kit-exhibition": {
   "variants": [
    {
+    "src": "/assets/images/projects/kit-exhibition-480.webp",
+    "w": 480,
+    "h": 341
+   },
+   {
     "src": "/assets/images/projects/kit-exhibition-720.webp",
     "w": 720,
     "h": 511
@@ -423,6 +578,11 @@
  "kit-gifts": {
   "variants": [
    {
+    "src": "/assets/images/projects/kit-gifts-480.webp",
+    "w": 480,
+    "h": 354
+   },
+   {
     "src": "/assets/images/projects/kit-gifts-720.webp",
     "w": 720,
     "h": 531
@@ -433,6 +593,11 @@
  },
  "kit-hoarding": {
   "variants": [
+   {
+    "src": "/assets/images/projects/kit-hoarding-480.webp",
+    "w": 480,
+    "h": 232
+   },
    {
     "src": "/assets/images/projects/kit-hoarding-720.webp",
     "w": 720,
@@ -450,6 +615,11 @@
  "kit-maquette": {
   "variants": [
    {
+    "src": "/assets/images/projects/kit-maquette-480.webp",
+    "w": 480,
+    "h": 287
+   },
+   {
     "src": "/assets/images/projects/kit-maquette-720.webp",
     "w": 720,
     "h": 431
@@ -460,6 +630,11 @@
  },
  "kit-neighborhood": {
   "variants": [
+   {
+    "src": "/assets/images/projects/kit-neighborhood-480.webp",
+    "w": 480,
+    "h": 448
+   },
    {
     "src": "/assets/images/projects/kit-neighborhood-685.webp",
     "w": 685,
@@ -472,6 +647,11 @@
  "kit-salescenter": {
   "variants": [
    {
+    "src": "/assets/images/projects/kit-salescenter-480.webp",
+    "w": 480,
+    "h": 259
+   },
+   {
     "src": "/assets/images/projects/kit-salescenter-720.webp",
     "w": 720,
     "h": 389
@@ -483,6 +663,11 @@
  "kit-saleskit": {
   "variants": [
    {
+    "src": "/assets/images/projects/kit-saleskit-480.webp",
+    "w": 480,
+    "h": 363
+   },
+   {
     "src": "/assets/images/projects/kit-saleskit-720.webp",
     "w": 720,
     "h": 545
@@ -493,6 +678,11 @@
  },
  "kit-website": {
   "variants": [
+   {
+    "src": "/assets/images/projects/kit-website-480.webp",
+    "w": 480,
+    "h": 363
+   },
    {
     "src": "/assets/images/projects/kit-website-720.webp",
     "w": 720,
@@ -510,6 +700,11 @@
  "rep-bankruptcy": {
   "variants": [
    {
+    "src": "/assets/images/projects/rep-bankruptcy-480.webp",
+    "w": 480,
+    "h": 389
+   },
+   {
     "src": "/assets/images/projects/rep-bankruptcy-720.webp",
     "w": 720,
     "h": 583
@@ -520,6 +715,11 @@
  },
  "rep-bouvardia": {
   "variants": [
+   {
+    "src": "/assets/images/projects/rep-bouvardia-480.webp",
+    "w": 480,
+    "h": 211
+   },
    {
     "src": "/assets/images/projects/rep-bouvardia-720.webp",
     "w": 720,
@@ -532,6 +732,11 @@
  "rep-bussma": {
   "variants": [
    {
+    "src": "/assets/images/projects/rep-bussma-480.webp",
+    "w": 480,
+    "h": 373
+   },
+   {
     "src": "/assets/images/projects/rep-bussma-720.webp",
     "w": 720,
     "h": 559
@@ -543,6 +748,11 @@
  "rep-yamam": {
   "variants": [
    {
+    "src": "/assets/images/projects/rep-yamam-480.webp",
+    "w": 480,
+    "h": 420
+   },
+   {
     "src": "/assets/images/projects/rep-yamam-691.webp",
     "w": 691,
     "h": 605
@@ -553,6 +763,11 @@
  },
  "sahab-award": {
   "variants": [
+   {
+    "src": "/assets/images/projects/sahab-award-480.webp",
+    "w": 480,
+    "h": 245
+   },
    {
     "src": "/assets/images/projects/sahab-award-720.webp",
     "w": 720,
@@ -570,6 +785,11 @@
  "sahab-web": {
   "variants": [
    {
+    "src": "/assets/images/projects/sahab-web-480.webp",
+    "w": 480,
+    "h": 318
+   },
+   {
     "src": "/assets/images/projects/sahab-web-720.webp",
     "w": 720,
     "h": 476
@@ -586,6 +806,11 @@
  "yamam-aerial": {
   "variants": [
    {
+    "src": "/assets/images/projects/yamam-aerial-480.webp",
+    "w": 480,
+    "h": 411
+   },
+   {
     "src": "/assets/images/projects/yamam-aerial-720.webp",
     "w": 705,
     "h": 604
@@ -596,6 +821,11 @@
  },
  "yamam-identity": {
   "variants": [
+   {
+    "src": "/assets/images/projects/yamam-identity-480.webp",
+    "w": 480,
+    "h": 308
+   },
    {
     "src": "/assets/images/projects/yamam-identity-720.webp",
     "w": 720,
@@ -612,6 +842,11 @@
  },
  "m01-event": {
   "variants": [
+   {
+    "src": "/assets/images/moments/m01-event-480.webp",
+    "w": 480,
+    "h": 320
+   },
    {
     "src": "/assets/images/moments/m01-event-900.webp",
     "w": 900,
@@ -634,6 +869,11 @@
  "m02-construction-site": {
   "variants": [
    {
+    "src": "/assets/images/moments/m02-construction-site-480.webp",
+    "w": 480,
+    "h": 320
+   },
+   {
     "src": "/assets/images/moments/m02-construction-site-900.webp",
     "w": 900,
     "h": 600
@@ -654,6 +894,11 @@
  },
  "m03-team": {
   "variants": [
+   {
+    "src": "/assets/images/moments/m03-team-480.webp",
+    "w": 480,
+    "h": 321
+   },
    {
     "src": "/assets/images/moments/m03-team-900.webp",
     "w": 900,
@@ -676,6 +921,11 @@
  "m04-bankruptcy-commission": {
   "variants": [
    {
+    "src": "/assets/images/moments/m04-bankruptcy-commission-480.webp",
+    "w": 480,
+    "h": 319
+   },
+   {
     "src": "/assets/images/moments/m04-bankruptcy-commission-900.webp",
     "w": 900,
     "h": 599
@@ -686,6 +936,11 @@
  },
  "m05-bussma": {
   "variants": [
+   {
+    "src": "/assets/images/moments/m05-bussma-480.webp",
+    "w": 480,
+    "h": 364
+   },
    {
     "src": "/assets/images/moments/m05-bussma-900.webp",
     "w": 900,
@@ -708,6 +963,11 @@
  "m06-alajlan-project": {
   "variants": [
    {
+    "src": "/assets/images/moments/m06-alajlan-project-480.webp",
+    "w": 480,
+    "h": 640
+   },
+   {
     "src": "/assets/images/moments/m06-alajlan-project-900.webp",
     "w": 900,
     "h": 1200
@@ -719,6 +979,11 @@
  "m07-planning": {
   "variants": [
    {
+    "src": "/assets/images/moments/m07-planning-480.webp",
+    "w": 480,
+    "h": 480
+   },
+   {
     "src": "/assets/images/moments/m07-planning-640.webp",
     "w": 640,
     "h": 640
@@ -729,6 +994,11 @@
  },
  "m08-team-office": {
   "variants": [
+   {
+    "src": "/assets/images/moments/m08-team-office-480.webp",
+    "w": 480,
+    "h": 320
+   },
    {
     "src": "/assets/images/moments/m08-team-office-900.webp",
     "w": 900,
@@ -746,6 +1016,11 @@
  "m09-team": {
   "variants": [
    {
+    "src": "/assets/images/moments/m09-team-480.webp",
+    "w": 480,
+    "h": 384
+   },
+   {
     "src": "/assets/images/moments/m09-team-865.webp",
     "w": 865,
     "h": 692
@@ -756,6 +1031,11 @@
  },
  "m10-presentation": {
   "variants": [
+   {
+    "src": "/assets/images/moments/m10-presentation-480.webp",
+    "w": 480,
+    "h": 270
+   },
    {
     "src": "/assets/images/moments/m10-presentation-900.webp",
     "w": 900,
@@ -778,6 +1058,11 @@
  "m11-team-gathering": {
   "variants": [
    {
+    "src": "/assets/images/moments/m11-team-gathering-480.webp",
+    "w": 480,
+    "h": 270
+   },
+   {
     "src": "/assets/images/moments/m11-team-gathering-900.webp",
     "w": 900,
     "h": 506
@@ -798,6 +1083,11 @@
  },
  "m12-awards": {
   "variants": [
+   {
+    "src": "/assets/images/moments/m12-awards-480.webp",
+    "w": 480,
+    "h": 320
+   },
    {
     "src": "/assets/images/moments/m12-awards-900.webp",
     "w": 900,
@@ -820,6 +1110,11 @@
  "m13-portrait": {
   "variants": [
    {
+    "src": "/assets/images/moments/m13-portrait-480.webp",
+    "w": 480,
+    "h": 349
+   },
+   {
     "src": "/assets/images/moments/m13-portrait-900.webp",
     "w": 900,
     "h": 655
@@ -841,6 +1136,11 @@
  "m14-harf-gallery": {
   "variants": [
    {
+    "src": "/assets/images/moments/m14-harf-gallery-480.webp",
+    "w": 480,
+    "h": 853
+   },
+   {
     "src": "/assets/images/moments/m14-harf-gallery-720.webp",
     "w": 720,
     "h": 1280
@@ -855,6 +1155,11 @@
     "src": "/assets/images/portrait-480.webp",
     "w": 480,
     "h": 480
+   },
+   {
+    "src": "/assets/images/portrait-640.webp",
+    "w": 640,
+    "h": 640
    },
    {
     "src": "/assets/images/portrait-900.webp",

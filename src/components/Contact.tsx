@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { person } from '../data/profile';
 import { t, ui } from '../i18n';
 import { pathFor, type Route } from '../routes';
+import { ConsentSettingsButton } from './Consent';
 import { Icon } from './Icon';
 
 declare const __BUILD_YEAR__: number;
@@ -25,7 +26,7 @@ function CopyEmail({ lang }: { lang: Route['lang'] }) {
     }
   };
   return (
-    <button type="button" className="copy" onClick={copy} aria-live="polite">
+    <button type="button" className="copy" onClick={copy} aria-live="polite" data-track="copy-email">
       {done ? t(ui.contact.copied, lang) : t(ui.contact.copy, lang)}
     </button>
   );
@@ -115,6 +116,7 @@ export function Footer({ route }: { route: Route }) {
           <a href={pathFor(lang, 'work')}>{t(ui.nav.work, lang)}</a>
           <a href={pathFor(lang, 'journal')}>{t(ui.nav.journal, lang)}</a>
           <a href={pathFor(lang, 'expertise')}>{t(ui.nav.expertise, lang)}</a>
+          <a href={`${pathFor(lang, 'about')}#certifications`}>{t(ui.nav.certifications, lang)}</a>
         </nav>
         <div className="foot-col">
           <span className="mono">{t(f.elsewhere, lang)}</span>
@@ -138,9 +140,15 @@ export function Footer({ route }: { route: Route }) {
         <span className="mono">
           © {__BUILD_YEAR__} {t(person.name, lang)} · {t(f.rights, lang)}
         </span>
-        <a className="mono" href="#top">
-          {t(f.top, lang)} ↑
-        </a>
+        <span className="legal-links">
+          <a className="mono" href={pathFor(lang, 'privacy')}>
+            {t(ui.privacy.label, lang)}
+          </a>
+          <ConsentSettingsButton lang={lang} className="mono linkish" />
+          <a className="mono" href="#top">
+            {t(f.top, lang)} ↑
+          </a>
+        </span>
       </div>
     </footer>
   );

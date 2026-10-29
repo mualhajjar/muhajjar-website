@@ -1,0 +1,17 @@
+{
+ "bader-villas": {
+  "src": "/og/bader-villas.jpg",
+  "w": 1200,
+  "h": 630
+ },
+ "sahab-govtech": {
+  "src": "/og/sahab-govtech.jpg",
+  "w": 1200,
+  "h": 630
+ },
+ "basmah-real-estate-appraisal": {
+  "src": "/og/basmah-real-estate-appraisal.jpg",
+  "w": 1200,
+  "h": 630
+ }
+}

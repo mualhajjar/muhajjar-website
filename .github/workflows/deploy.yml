@@ -27,6 +27,10 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+        env:
+          # Optional. Set under Settings → Secrets and variables → Actions → Variables. Empty = off.
+          VITE_META_PIXEL_ID: ${{ vars.META_PIXEL_ID }}
+          VITE_GOOGLE_SITE_VERIFICATION: ${{ vars.GOOGLE_SITE_VERIFICATION }}
       - name: Commit dist/ to main
         run: |
           git clone --depth 1 --branch main "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" site

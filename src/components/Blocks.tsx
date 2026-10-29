@@ -46,7 +46,7 @@ export function ProjectStory({ p, lang, index }: { p: Project; lang: Lang; index
   return (
     <a className="story rise" href={pathFor(lang, 'project', p.slug)}>
       <div className="story-media">
-        <ProjectMedia p={p} lang={lang} sizes="(max-width: 760px) 100vw, 55vw" />
+        <ProjectMedia p={p} lang={lang} sizes="(max-width: 760px) 86vw, (max-width: 860px) 100vw, 55vw" />
       </div>
       <div className="story-body">
         <p className="mono">

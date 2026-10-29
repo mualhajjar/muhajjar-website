@@ -1,7 +1,7 @@
 import { projects } from './data/projects';
 import type { Lang } from './data/types';
 
-export type PageId = 'home' | 'about' | 'experience' | 'projects' | 'project' | 'work' | 'journal' | 'expertise' | 'notfound';
+export type PageId = 'home' | 'about' | 'experience' | 'projects' | 'project' | 'work' | 'journal' | 'expertise' | 'privacy' | 'notfound';
 
 export interface Route {
   lang: Lang;
@@ -16,6 +16,7 @@ const SEGMENT: Record<Exclude<PageId, 'home' | 'project' | 'notfound'>, string> 
   work: 'media-work',
   journal: 'journal',
   expertise: 'expertise',
+  privacy: 'privacy',
 };
 
 /** Arabic is the default language at the root; English lives under /en/. */
@@ -51,7 +52,7 @@ export function resolve(pathname: string): Route {
 export function allRoutes(): Route[] {
   const out: Route[] = [];
   for (const lang of ['ar', 'en'] as Lang[]) {
-    for (const page of ['home', 'about', 'experience', 'projects', 'work', 'journal', 'expertise'] as PageId[]) out.push({ lang, page });
+    for (const page of ['home', 'about', 'experience', 'projects', 'work', 'journal', 'expertise', 'privacy'] as PageId[]) out.push({ lang, page });
     for (const p of projects) out.push({ lang, page: 'project', slug: p.slug });
   }
   return out;

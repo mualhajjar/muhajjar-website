@@ -16,15 +16,16 @@ Bilingual (Arabic RTL / English LTR) executive portfolio. React + TypeScript + V
 | `npm run dev` | Local development server at http://localhost:5173 (client-rendered, hot reload). |
 | `npm run build` | Type-checks, builds, and prerenders every page into `dist/`. |
 | `npm run preview` | Serves `dist/` at http://localhost:4173 to check the production build. |
-| `npm run images` | Rebuilds `src/data/images.json` after you add or replace images in `public/assets/images/projects` or `moments`. |
+| `npm run images` | Rebuilds `src/data/images.json` (and `logos.json`) after you add or replace images in `public/assets/images/projects`, `moments` or `logos`. |
+| `npm run og` | Rebuilds the 1200 × 630 JPEG share images in `public/og/` from project covers (needs ImageMagick). Run after changing a cover. |
 
 ## How it is built
 
-- **30 static pages**: home, about, experience, selected projects (index + 10 case studies), expertise — each in Arabic (`/`) and English (`/en/`), plus `404.html` and `en/404.html`.
+- **38 static pages**: home, about, experience, selected projects (index + 11 case studies), media work, visual journal, expertise, privacy — each in Arabic (`/`) and English (`/en/`), plus `404.html` and `en/404.html`.
 - `scripts/prerender.mjs` renders every route with React's server renderer, writes `dist/<route>/index.html`, inlines the stylesheet, and generates `sitemap.xml` (with `hreflang` alternates) and `robots.txt`.
 - The browser then hydrates each page for the interactive parts: theme toggle, mobile menu, project filter, copy-email button, count-up numbers, reveal motion, and the Riyadh clock.
 - **Runtime size**: production builds swap React for Preact's React-compatible runtime (about 28 KB gzipped instead of about 90 KB). The source is plain React. To build with React itself: `USE_REACT=1 npm run build` (both builds were tested).
-- No tracking, cookies, API keys, environment variables, or third-party requests. All fonts are self-hosted.
+- No tracking by default. Meta Pixel and the Search Console tag are optional and off until a value is set (see `ANALYTICS.md`); the Pixel then loads only after the visitor accepts. The only other third-party requests are the Vimeo players on two case studies. All fonts are self-hosted.
 
 ## Where things live
 
@@ -37,6 +38,9 @@ src/
   i18n.ts             ← interface labels in Arabic and English
   routes.ts           ← URL structure (Arabic at /, English at /en/)
   seo.ts              ← titles, descriptions, canonical, hreflang, Open Graph, JSON-LD
+  config.ts           ← Meta Pixel ID and Search Console token (empty = off)
+  analytics.ts        ← consent-gated Meta Pixel and its events
+  data/privacy.ts     ← privacy notice text (update it when an integration changes)
   pages/, components/ ← layout and pages
   styles/global.css   ← the whole design system (colour tokens at the top)
 public/
@@ -44,7 +48,7 @@ public/
   assets/images/      ← portrait, project images (projects/), photographs (moments/), logos (logos/)
   files/              ← CV and cover-letter PDFs (Arabic and English)
   .htaccess           ← HTTPS redirect, 404 pages, caching, compression
-  assets/images/logo-black.png, logo-white.png  ← HAJJAR wordmark for light / dark themes
+  assets/images/logo-black.webp, logo-white.webp  ← HAJJAR wordmark for light / dark themes (PNG masters kept beside them)
   og-image.jpg, favicon-32.png, favicon-32-dark.png, apple-touch-icon.png, icon-512.png
 ```
 
@@ -58,7 +62,7 @@ All career facts are in `src/data`. Edit there and rebuild; no other file holds 
 
 **Logos** — transparent WebP or PNG in `public/assets/images/logos/`, listed in `organisations` in `src/data/profile.ts`. Logos are shown as single-colour silhouettes so they sit quietly in both themes.
 
-**Logo** — the header shows `public/assets/images/logo-black.png` on the light theme and `logo-white.png` on the dark theme (transparent PNGs, 371 × 120). Replace both with the same size to update it.
+**Logo** — the header shows `public/assets/images/logo-black.webp` on the light theme and `logo-white.webp` on the dark theme (222 × 72, made from the transparent 371 × 120 PNG masters next to them: `convert logo-black.png -resize 222x72 -define webp:lossless=true logo-black.webp`). Replace the PNGs and regenerate both WebP files to update it.
 
 **Favicon / social image** — replace `public/favicon-32.png` (light), `favicon-32-dark.png` (dark), `apple-touch-icon.png` (180 × 180), `icon-512.png`, and `og-image.jpg` (1200 × 630). The favicons use the H from the HAJJAR wordmark.
 
@@ -100,7 +104,7 @@ If the workflow ever cannot run (for example, Actions disabled), build locally a
 
 ### After going live
 
-- Google Search Console: add the property `https://muhajjar.com/`, then submit `https://muhajjar.com/sitemap.xml`.
+- Google Search Console and Meta Pixel: step-by-step in `ANALYTICS.md` (Domain property via DNS is recommended; then submit `https://muhajjar.com/sitemap.xml`).
 - Check the social preview with LinkedIn's Post Inspector (https://www.linkedin.com/post-inspector/) — LinkedIn caches previews.
 
 ## Contact form
