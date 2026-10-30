@@ -26,14 +26,16 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      # The published site, checked out first so the build can keep each unchanged page's sitemap lastmod.
+      - run: git clone --depth 1 --branch main "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" site
       - run: npm run build
         env:
           # Optional. Set under Settings → Secrets and variables → Actions → Variables. Empty = off.
           VITE_META_PIXEL_ID: ${{ vars.META_PIXEL_ID }}
           VITE_GOOGLE_SITE_VERIFICATION: ${{ vars.GOOGLE_SITE_VERIFICATION }}
+          PREV_SITE: site
       - name: Commit dist/ to main
         run: |
-          git clone --depth 1 --branch main "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" site
           # Keep the previous release's JS/CSS (content-hashed names) for one more release, so pages
           # still held in a server or browser cache keep working until they refresh.
           for f in $(grep -rhoE '/assets/[A-Za-z0-9_.-]+\.(js|css)' site --include='*.html' | sort -u || true); do

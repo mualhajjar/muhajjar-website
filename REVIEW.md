@@ -124,3 +124,16 @@ Audit first (build crawl of every page, browser checks at 390 and 1440 px, Light
 Verification: `npm run build` (typecheck + 38 prerendered pages), crawl of all pages (titles, descriptions, one `h1`, no heading skips, alts, JSON-LD parses and every `@id` reference resolves), browser tests for the carousel (buttons, swipe, arrow keys, focus, both languages), the Certifications anchor, the menu, and the full consent flow against a test Pixel ID with Meta's script stubbed (no request before consent, decline persists, accept → `consent grant` / `autoConfig false` / `init` / `PageView`, each conversion event, revoke clears `_fbp`, GPC). The test ID was never committed.
 
 **Font licence check (29 Oct 2026, item 8).** The licence embedded in the Thmanyah font files allows commercial use on websites, but forbids modifying, adapting, or creating derivative fonts; font subsetting therefore stays off the table unless Thmanyah grants it in writing (Ask@thmanyah.com). The same licence allows web embedding "only as part of a bundled, packaged or obfuscated product" and forbids making the files extractable or downloadable on their own. The site currently serves the WOFF2 files from `/fonts/` like any self-hosted web font; ask Thmanyah to confirm this is acceptable for a personal website (not legal advice).
+
+## Update — 30 Oct 2026: SEO audit, round 2
+
+Audit of the build and the live site (robots.txt, sitemap.xml, every page's head, structured data, links, images). The 29 Oct pass already covered indexing, canonical/hreflang, JSON-LD, alts, and performance; this round fixes what remained. Page bodies are unchanged (compared byte for byte with the published build).
+
+- **Case-study descriptions**: were the client overview cut at 158 characters, ending mid-sentence with "…" (Business Compound, Bader Villas, Sakenah, Al-Basateen, Harf). Now the overview when it fits whole, otherwise the first-person summary already shown on the Projects page. No new wording or facts.
+- **About description**: started mid-paragraph ("ومنذ 2022 …"). Now a one-line summary of the three story paragraphs, naming only employers shown there.
+- **Case-study titles**: "Name · first category | Munther AlHajjar" (e.g. "Sahab GovTech · Brand Strategy") when it stays within ~60 characters and the name does not already say it.
+- **404 pages**: own description instead of the home page's (they stay `noindex`).
+- **og:type**: `profile` only for home and About, `article` for case studies, `website` elsewhere.
+- **Sitemap lastmod**: was the build date on every page at every release, which makes it meaningless to search engines. The build now compares each page's title, description, structured data and `<main>` with the published copy (`PREV_SITE`, passed by the workflow) and keeps the previous date for unchanged pages.
+
+Checked and left as is: robots.txt (allows all, points to the sitemap), 38 sitemap URLs with reciprocal hreflang, canonical on every indexable page, one `h1` per page, alts on all images, prev/next and breadcrumb links on case studies, no tracking loaded (Meta Pixel paused; the old release's script that still holds its ID is dropped by the next publish). Not changed: the English home description (169 characters, it is the hero text) and the job title in titles (see item 3 above).

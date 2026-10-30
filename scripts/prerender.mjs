@@ -38,13 +38,48 @@ fs.mkdirSync(path.join(dist, 'en'), { recursive: true });
 fs.writeFileSync(path.join(dist, 'en', '404.html'), page({ lang: 'en', page: 'notfound' }));
 
 const today = new Date().toISOString().slice(0, 10);
+
+/*
+ * Accurate <lastmod>: a page keeps the date it last changed. When PREV_SITE points at the previous
+ * published build (the publish workflow passes the `main` checkout), each page's indexable content
+ * (title, description, structured data, <main>) is compared with the published copy; unchanged pages
+ * keep their previous lastmod, changed or new pages get today. Without PREV_SITE every page gets today.
+ */
+const prevDir = process.env.PREV_SITE ? path.resolve(process.env.PREV_SITE) : '';
+const prevLastmod = new Map();
+if (prevDir && fs.existsSync(path.join(prevDir, 'sitemap.xml'))) {
+  const xml = fs.readFileSync(path.join(prevDir, 'sitemap.xml'), 'utf8');
+  for (const m of xml.matchAll(/<loc>([^<]+)<\/loc>\s*<lastmod>([^<]+)<\/lastmod>/g)) prevLastmod.set(m[1], m[2]);
+}
+const indexable = (html) =>
+  [/<title>[\s\S]*?<\/title>/, /<meta name="description"[^>]*>/, /<script type="application\/ld\+json">[\s\S]*?<\/script>/, /<main[\s\S]*<\/main>/]
+    .map((re) => (html.match(re) || [''])[0])
+    .join('\n');
+function lastmodFor(loc, url) {
+  const prev = prevLastmod.get(loc);
+  const prevFile = path.join(prevDir, url, 'index.html');
+  if (!prev || !prevDir || !fs.existsSync(prevFile)) return today;
+  const now = fs.readFileSync(path.join(dist, url, 'index.html'), 'utf8');
+  if (indexable(now) !== indexable(fs.readFileSync(prevFile, 'utf8'))) return today;
+  kept++;
+  return prev;
+}
+let kept = 0;
 const urls = routes
   .filter((r) => r.lang === 'ar')
   .map((r) => {
     const ar = SITE + pathFor('ar', r.page, r.slug);
     const en = SITE + pathFor('en', r.page, r.slug);
     const alts = `\n    <xhtml:link rel="alternate" hreflang="ar" href="${ar}"/>\n    <xhtml:link rel="alternate" hreflang="en" href="${en}"/>\n    <xhtml:link rel="alternate" hreflang="x-default" href="${ar}"/>`;
-    return [ar, en].map((loc) => `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${today}</lastmod>${alts}\n  </url>`).join('\n');
+    return [
+      [ar, pathFor('ar', r.page, r.slug)],
+      [en, pathFor('en', r.page, r.slug)],
+    ]
+      .map(([loc, url]) => {
+        const lastmod = lastmodFor(loc, url);
+        return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${lastmod}</lastmod>${alts}\n  </url>`;
+      })
+      .join('\n');
   })
   .join('\n');
 fs.writeFileSync(
@@ -54,5 +89,6 @@ fs.writeFileSync(
 fs.writeFileSync(path.join(dist, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`);
 fs.rmSync(path.join(root, 'dist-ssr'), { recursive: true, force: true });
 console.log(`Prerendered ${routes.length} pages + 404 pages, sitemap.xml, robots.txt`);
+console.log(prevDir ? `Sitemap lastmod: ${routes.length - kept} changed or new, ${kept} unchanged (compared with ${path.relative(root, prevDir) || prevDir})` : 'Sitemap lastmod: all pages dated today (no PREV_SITE to compare with)');
 console.log(`Meta Pixel: ${META_PIXEL_ID ? 'on (' + META_PIXEL_ID + '), consent required' : 'off'} · Search Console meta tag: ${GOOGLE_SITE_VERIFICATION ? 'on' : 'off'}`);
 if (META_PIXEL_INVALID) console.warn('WARNING: META_PIXEL_ID is set but is not a numeric Pixel ID, so the Pixel stays off. Check src/config.ts or the build variable.');
