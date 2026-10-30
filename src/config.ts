@@ -10,8 +10,12 @@
  * See ANALYTICS.md for the setup and how to check that it works.
  */
 
-/** Meta Pixel (Facebook/Instagram ads) dataset ID: digits only, from Meta Events Manager. */
-const META_PIXEL_ID_IN_FILE = '2923322808032879';
+/**
+ * Meta Pixel (Facebook/Instagram ads) dataset ID: digits only, from Meta Events Manager.
+ * Paused on 30 Oct 2026 at the owner's request. To switch it back on, set this to '2923322808032879'
+ * (dataset "muhajjar.com" in Events Manager) and publish.
+ */
+const META_PIXEL_ID_IN_FILE = '';
 
 /**
  * Google Search Console "HTML tag" token (the content="…" value only), used only if you verify
