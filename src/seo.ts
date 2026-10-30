@@ -1,6 +1,6 @@
 import { catLabel } from './components/Blocks';
 import { GOOGLE_SITE_VERIFICATION } from './config';
-import { award, bio, education, experience, hero, person, SITE_URL } from './data/profile';
+import { award, education, experience, hero, person, SITE_URL } from './data/profile';
 import ogCards from './data/og.json';
 import { projects } from './data/projects';
 import type { Lang, T } from './data/types';
@@ -8,7 +8,31 @@ import { t, ui } from './i18n';
 import { other, pathFor, type PageId, type Route } from './routes';
 
 const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+/** Search snippets are cut at roughly 155–160 characters. */
+const DESC_MAX = 160;
 const clip = (s: string, n = 158) => (s.length <= n ? s : s.slice(0, s.lastIndexOf(' ', n - 1)) + '…');
+
+/**
+ * Case-study description built from text shown on the site: the overview when it fits whole,
+ * otherwise the first-person summary of his contribution (also shown on the Projects page).
+ * This avoids snippets that stop mid-sentence with "…".
+ */
+function projectDescription(p: (typeof projects)[number], lang: Lang) {
+  const overview = t(p.overview, lang);
+  if (overview.length <= DESC_MAX) return overview;
+  const summary = t(p.summary, lang);
+  return summary.length <= DESC_MAX ? summary : clip(overview);
+}
+
+/** "Name · first category | Person" when it stays within ~60 characters; otherwise "Name | Person". */
+function projectTitle(p: (typeof projects)[number], lang: Lang, person: string) {
+  const name = t(p.name, lang);
+  const cat = catLabel(p, lang).split(' · ')[0];
+  const withCat = `${name} · ${cat} | ${person}`;
+  // Skip the category when the name already says it (e.g. "Al-Basateen Real Estate") or already has a qualifier.
+  const redundant = name.toLowerCase().includes(cat.toLowerCase()) || name.includes('·');
+  return !redundant && withCat.length <= 60 ? withCat : `${name} | ${person}`;
+}
 
 const L = (ar: string, en: string, lang: Lang) => (lang === 'ar' ? ar : en);
 
@@ -20,7 +44,15 @@ export function meta(route: Route): { title: string; description: string } {
     case 'home':
       return { title: `${name} | ${title}`, description: t(hero.lead, lang) };
     case 'about':
-      return { title: L(`نبذة | ${name}`, `About | ${name}`, lang), description: clip(t(bio[2], lang)) };
+      // Summarises the three story paragraphs on the About page; every employer named there appears in them.
+      return {
+        title: L(`نبذة | ${name}`, `About | ${name}`, lang),
+        description: L(
+          'نبذة عن منذر الحجار: من المبيعات والتصميم والإنتاج إلى إدارة المشاريع الإعلامية في وكالة هوية، وتطوير الأعمال في حرف جاليري، ثم شركة السليمان العقارية منذ 2022.',
+          'Munther AlHajjar’s path from sales, design, and production to media projects at HAWYIA Agency, business development at Harf Gallery, and Alsoliman Real Estate.',
+          lang,
+        ),
+      };
     case 'experience':
       return {
         title: L(`الخبرات | ${name}`, `Experience | ${name}`, lang),
@@ -41,7 +73,7 @@ export function meta(route: Route): { title: string; description: string } {
       };
     case 'project': {
       const p = projects.find((x) => x.slug === route.slug)!;
-      return { title: `${t(p.name, lang)} | ${name}`, description: clip(t(p.overview, lang)) };
+      return { title: projectTitle(p, lang, name), description: projectDescription(p, lang) };
     }
     case 'work':
       return {
@@ -80,7 +112,10 @@ export function meta(route: Route): { title: string; description: string } {
         ),
       };
     default:
-      return { title: L(`الصفحة غير موجودة | ${name}`, `Page not found | ${name}`, lang), description: t(hero.lead, lang) };
+      return {
+        title: L(`الصفحة غير موجودة | ${name}`, `Page not found | ${name}`, lang),
+        description: L('الصفحة المطلوبة غير موجودة. تصفّح الصفحة الرئيسية أو المشاريع المختارة في موقع منذر الحجار.', 'The page you asked for does not exist. Browse the home page or the selected projects on Munther AlHajjar’s website.', lang),
+      };
   }
 }
 
@@ -189,7 +224,7 @@ export function head(route: Route): string {
           `<link rel="alternate" hreflang="x-default" href="${arUrl}">`,
         ]),
     ...(route.page === 'home' && GOOGLE_SITE_VERIFICATION ? [`<meta name="google-site-verification" content="${esc(GOOGLE_SITE_VERIFICATION)}">`] : []),
-    `<meta property="og:type" content="${route.page === 'project' ? 'article' : 'profile'}">`,
+    `<meta property="og:type" content="${route.page === 'project' ? 'article' : route.page === 'home' || route.page === 'about' ? 'profile' : 'website'}">`,
     `<meta property="og:site_name" content="${esc(t(person.name, lang))}">`,
     `<meta property="og:title" content="${esc(m.title)}">`,
     `<meta property="og:description" content="${esc(m.description)}">`,
