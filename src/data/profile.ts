@@ -83,8 +83,8 @@ export const experience: Role[] = [
       { ar: 'الإشراف على إعداد الميزانيات والمشتريات وتتبع التكاليف، ورفع المستخلصات عبر SAP MM (PR · RFQ · PO · GR · SES)، وإدارة دورة المشتريات للتسويق والمبيعات.', en: 'Budget preparation, procurement, and cost governance, processing progress billings through SAP MM (PR · RFQ · PO · GR · SES) and owning the Marketing & Sales procurement cycle.' },
       { ar: 'إدارة العلاقة مع المستثمرين والعملاء ومتخذي القرار لعرض خطط العمل وإغلاق العقود.', en: 'Managing relationships with investors, clients, and decision-makers to present business plans and close contracts.' },
     ],
-    // Opening events led in this role (December 2025 and March 2026).
-    projects: ['alsoliman-business-compound', 'sakenah-compound'],
+    // Opening events led in this role (December 2025 and March 2026); brand development led in this role (confirmed by the owner, Nov 2026).
+    projects: ['alsoliman-business-compound', 'sakenah-compound', 'alsoliman-brand-development'],
   },
   {
     title: { ar: 'مدير المشاريع', en: 'Project Manager' },

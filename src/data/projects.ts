@@ -289,13 +289,13 @@ export const projects: Project[] = [
   {
     slug: 'alsoliman-brand-development',
     featured: true,
-    name: { ar: 'تطوير العلامة التجارية للسليمان العقارية', en: 'Al-Sulaiman Real Estate Brand Development' },
+    name: { ar: 'تطوير العلامة التجارية للسليمان العقارية', en: 'Alsoliman Real Estate Brand Development' },
     summary: { ar: 'تطوير الهوية التجارية وبناء الاستراتيجية التسويقية للشركة.', en: 'Brand identity development and overarching marketing strategy.' },
     categories: ['brand', 'real-estate'],
     context: { ar: 'شركة السليمان العقارية', en: 'Alsoliman Real Estate Company' },
     overview: {
       ar: 'تطوير الهوية التجارية لشركة السليمان العقارية وبناء استراتيجيتها التسويقية الشاملة، بهدف تعزيز تموضعها في السوق وقيمة علامتها.',
-      en: 'Developing the brand identity of Al-Sulaiman Real Estate and its overarching marketing strategy to strengthen market positioning and brand equity.',
+      en: 'Developing the brand identity of Alsoliman Real Estate and its overarching marketing strategy to strengthen market positioning and brand equity.',
     },
     role: {
       ar: 'قيادة تطوير الهوية التجارية والاستراتيجية التسويقية.',
