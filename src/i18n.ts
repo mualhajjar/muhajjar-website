@@ -89,6 +89,7 @@ export const ui = {
     title: { ar: 'خبرة تتجاوز تسع سنوات ', en: 'Nine years and more ' },
     titleMute: { ar: 'في العقار والإعلام والمعارض.', en: 'across real estate, media, and exhibitions.' },
     promoted: { ar: 'ترقية', en: 'Promoted' },
+    related: { ar: 'مشاريع من هذا الدور', en: 'Projects from this role' },
     earlier: { ar: 'خبرات سابقة', en: 'Earlier experience' },
     present: { ar: 'حتى الآن', en: 'Present' },
   },

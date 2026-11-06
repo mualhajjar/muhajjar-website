@@ -78,4 +78,6 @@ export interface Role {
   end: T;
   promoted?: boolean;
   points: T[];
+  /** Slugs of case studies from this role, linked under it on the Experience page. */
+  projects?: string[];
 }

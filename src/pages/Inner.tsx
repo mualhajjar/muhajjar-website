@@ -174,6 +174,19 @@ export function Experience({ route }: { route: Route }) {
                     </li>
                   ))}
                 </ul>
+                {r.projects && (
+                  <p className="role-links">
+                    <span className="mono">{t(x.related, lang)}</span>
+                    {r.projects.map((slug) => {
+                      const p = projects.find((q) => q.slug === slug)!;
+                      return (
+                        <a key={slug} className="link" href={pathFor(lang, 'project', slug)}>
+                          {t(p.name, lang)} <Icon name="arrow" flip />
+                        </a>
+                      );
+                    })}
+                  </p>
+                )}
               </div>
             </li>
           ))}
@@ -286,7 +299,14 @@ export function ProjectDetail({ route }: { route: Route }) {
         <p className="mono label">
           {catLabel(p, lang)}
           {p.date ? ` · ${t(p.date, lang)}` : ''}
-          {p.context ? ` · ${t(p.context, lang)}` : ''}
+          {p.context && ' · '}
+          {p.context &&
+            (experience.some((r) => t(p.context!, lang).startsWith(t(r.company, lang))) ? (
+              // His role at this employer is on the Experience page.
+              <a href={pathFor(lang, 'experience')}>{t(p.context, lang)}</a>
+            ) : (
+              t(p.context, lang)
+            ))}
         </p>
         <h1 className="case-title">{t(p.name, lang)}</h1>
         <p className="lead case-lead">{t(p.summary, lang)}</p>
