@@ -67,7 +67,7 @@ export function meta(route: Route): { title: string; description: string } {
         title: L(`المشاريع المختارة | ${name}`, `Selected Projects | ${name}`, lang),
         description: L(
           'مشاريع مختارة في العقار واستراتيجية العلامة والفعاليات: السليمان بزنس كمباوند، فلل البدر، سكينة كمباوند، سحاب، وغيرها.',
-          'Selected work in real estate, brand strategy, and events: Al-Sulaiman Business Compound, Bader Villas, Sakenah Compound, Sahab, and more.',
+          'Selected work in real estate, brand strategy, and events: Alsoliman Business Compound, Bader Villas, Sakenah Compound, Sahab, and more.',
           lang,
         ),
       };
@@ -282,6 +282,10 @@ export function head(route: Route): string {
         inLanguage: lang,
         genre: catLabel(p, lang),
         contributor: { '@id': PERSON_ID },
+        // Work done while employed by the organisation named on the page ("Alsoliman Real Estate Company").
+        ...(p.context && experience.some((r) => p.context!.en.startsWith(r.company.en) && r.company.en === experience[0].company.en)
+          ? { sourceOrganization: { '@id': EMPLOYER_ID } }
+          : {}),
         mainEntityOfPage: { '@id': `${self}#webpage` },
         ...(p.cover ? { image: `${SITE_URL}/assets/images/projects/${p.cover.key}-720.webp` } : {}),
         ...(p.officialUrl ? { sameAs: p.officialUrl } : {}),
